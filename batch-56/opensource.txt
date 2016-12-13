@@ -1,0 +1,80 @@
+
+Proprietory vs Opensource
+
+
+Proprietory
+* License
+* source code is not shared.
+ex: windows
+
+Proprietory
+------------
+Company A - Product A 
+       Us - requirement 
+       email to company - we will get back to you.
+       internet - no support/no workaround
+       
+* retention of customers
+* Frustrated customers
+
+Opensource
+------------
+Company A - Product A(GPL)  - publish source code online/intranet
+       Us - requirement 
+       email to company - we will get back to you.
+       internet - no support/no workaround
+       
+guy/gal B -> simulate the product in office/home - product + modificaiton - Product B(GPL) ( hit) - publish
+          intenet -> hey there we have Product B
+          reviews -> excellent/v.good/good/bad/worst
+          
+Fast 6 months
+---------------
+company A -> product A.3 (100 + 400) modifications -> 
+            internet -> hey there we have product A.3 ( we include B,C,D,E,F)
+            
+Benefits:
+----------
+* Customer retention.
+* Marketing
+* Cost cutting - 8cr
+
+Money
+------
+* support
+* training
+
+platinum/diamond/gold/silver/bronze
+
+License
+--------
+GPL - GNU General Public License.
+OSF - open source foundation - 1960
+
+Principles
+-----------
+* FREEdom to modify the product is called opensource.
+* you can modify and re-distribute it.
+* Community support.
+
+
+Opensource
+
+* operting system: ubuntu/linuxmint
+* databases : postgre,mariadb,casendra
+* Languages : python,R,perl,java
+* web frameworks : django,rails,bottle,flask,angularjs
+
+- oracle virtual box.
+- linuxmint/ubuntu
+- python 2.x,3.x
+
+
+
+
+
+* you can modify he code/customization - true
+* free - false
+* Donations - partially
+* licence/patent - true
+* we dont have support. - false

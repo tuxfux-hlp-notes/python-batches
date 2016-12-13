@@ -1,0 +1,277 @@
+In [8]: my_string="python"
+
+In [9]: type(my_string)
+Out[9]: str
+
+In [10]: my_num1=1
+
+In [11]: type(my_num1)
+Out[11]: int
+
+In [12]: my_num2=2.0
+
+In [13]: type(my_num2)
+Out[13]: float
+
+In [14]: # playing with strings
+
+In [15]: # p  y  t   h   o  n
+
+In [16]: # 0  1  2   3   4  5
+
+In [17]: # -6 -5 -4  -3  -2 -1
+
+In [18]: # indexing
+
+In [19]: my_string[2]
+Out[19]: 't'
+
+In [20]: my_string[5]
+Out[20]: 'n'
+
+In [21]: my_string[-4]
+Out[21]: 't'
+
+In [22]: # you cannot modifiy the content of a string
+
+In [23]: my_string[0]
+Out[23]: 'p'
+
+In [24]: my_string[0] = 'P'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-24-1feddb4205ea> in <module>()
+----> 1 my_string[0] = 'P'
+
+TypeError: 'str' object does not support item assignment
+
+In [25]: # slicing
+
+In [26]: my_string[0:3] # zero till 3
+Out[26]: 'pyt'
+
+In [27]: my_string[:3] # zero till 3
+Out[27]: 'pyt'
+
+In [28]: my_string[3:6]
+Out[28]: 'hon'
+
+In [29]: my_string[3:]
+Out[29]: 'hon'
+
+In [30]: # append +
+
+In [31]: my_string[:3] + my_string[3:]
+Out[31]: 'python'
+
+In [32]: #for(i=0;i<10;i++)
+
+In [33]: my_string[:]
+Out[33]: 'python'
+
+In [34]: my_string[::1]
+Out[34]: 'python'
+
+In [35]: my_string[::2]
+Out[35]: 'pto'
+
+In [36]: my_string[1::2]
+Out[36]: 'yhn'
+
+In [38]: #task1
+
+In [39]: my_string="python"
+
+In [40]: # Tython
+
+In [41]: 'T' + my_string[1:]
+Out[41]: 'Tython'
+
+In [42]: my_string[2].upper() + my_string[1:]
+Out[42]: 'Tython'
+
+In [43]: '-' * 10
+Out[43]: '----------'
+
+
+In [45]: # playing with numbers
+
+In [46]: 1 + 1
+Out[46]: 2
+
+In [47]: '1' + '1'
+Out[47]: '11'
+
+In [48]: 25 / 2
+Out[48]: 12
+
+In [49]: 25.0 / 2
+Out[49]: 12.5
+
+In [50]: 25 / 2.0
+Out[50]: 12.5
+
+In [51]: float(25) / 2
+Out[51]: 12.5
+
+In [52]: #int,float,str
+
+In [53]: 25 + 25 /2
+Out[53]: 37
+
+In [54]: #BODMAS
+
+In [55]: (25 + 25)/2
+Out[55]: 25
+
+In [56]: 2 ** 38
+Out[56]: 274877906944
+
+In [57]: import math
+
+In [58]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [59]: math.pow(2,38)
+Out[59]: 274877906944.0
+
+
+In [61]: # printing
+
+In [62]: my_school = "De Paul"
+
+In [63]: another_school = "st. xaviers"
+
+In [64]: town = "township"
+
+In [65]: beach = "blue"
+
+In [66]: commute = "bus"
+
+In [67]: print "my school name is my_school"
+my school name is my_school
+
+In [68]: print 'my school name is my_school'
+my school name is my_school
+
+In [69]: print 'my school name is', my_school
+my school name is De Paul
+
+In [70]: print 'my school name is', my_school , "There is one more school adjacent to us", another_s
+    ...: chool , ' we used to live in a small township ', town, "we have a beach which has colour", 
+    ...: beach , "we used to commute on" , commute
+my school name is De Paul There is one more school adjacent to us st. xaviers  we used to live in a small township  township we have a beach which has colour blue we used to commute on bus
+
+
+In [71]: # typecasting
+
+In [72]: # %s->string,%d->integer,%r->raw,%f->float
+
+In [73]: print "my school name is %s. The is one more school adjcent to us %s. We used to live in a 
+    ...: small township %s. We have a beach which has color %s.We used to commute on %s." %(my_schoo
+    ...: l,another_school,town,beach,commute)
+my school name is De Paul. The is one more school adjcent to us st. xaviers. We used to live in a small township township. We have a beach which has color blue.We used to commute on bus.
+
+In [74]: 
+
+In [76]: print "my school name is %s.I love my %s" %(my_school,my_school)
+my school name is De Paul.I love my De Paul
+
+In [77]: # format
+
+In [78]: print "my school name is {}.I love my {}".format(my_school,my_school)
+my school name is De Paul.I love my De Paul
+
+In [79]: print "my school name is {}.I love my {}".format(my_school,another_school)
+my school name is De Paul.I love my st. xaviers
+
+In [80]: print "my school name is {0}.I love my {0}".format(my_school,another_school)
+my school name is De Paul.I love my De Paul
+
+In [81]: print "my school name is {1}.I love my {1}".format(my_school,another_school)
+my school name is st. xaviers.I love my st. xaviers
+
+In [82]: print "my school name is {'ms'}.I love my {'ms'}".format(ms=my_school,an=another_school)
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-82-ff21a8bff066> in <module>()
+----> 1 print "my school name is {'ms'}.I love my {'ms'}".format(ms=my_school,an=another_school)
+
+KeyError: "'ms'"
+
+In [83]: print "my school name is {ms}.I love my {ms}".format(ms=my_school,an=another_school)
+my school name is De Paul.I love my De Paul
+
+In [84]: 
+
+
+In [85]: # Input
+
+In [86]: # raw_input and input
+
+In [87]: ## raw_input
+
+In [88]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [89]: print name
+kumar
+
+In [90]: print type(name)
+<type 'str'>
+
+In [91]: num = raw_input("please enter your number:")
+please enter your number:10
+
+In [92]: print num
+10
+
+In [93]: print type(num)
+<type 'str'>
+
+In [94]: num = int(raw_input("please enter your number:"))
+please enter your number:10
+
+In [95]: print num
+10
+
+In [96]: print type(num)
+<type 'int'>
+
+In [97]: num = int(raw_input("please enter your number:"))
+please enter your number:apple
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-97-8fff864f5642> in <module>()
+----> 1 num = int(raw_input("please enter your number:"))
+
+ValueError: invalid literal for int() with base 10: 'apple'
+
+In [98]: 
+
+
+In [99]: ## input
+
+In [100]: num = input("please enter a number:")
+please enter a number:10
+
+In [101]: print num
+10
+
+In [102]: print type(num)
+<type 'int'>
+
+In [103]: num = input("please enter your name:")
+please enter your name:name
+
+In [104]: print num
+kumar
+
+In [105]: print type(num)
+<type 'str'>
+
+

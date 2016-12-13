@@ -1,0 +1,99 @@
+Ubuntu/Linuxmint/Zorion
+------------------------
+# sudo apt-get install python
+# sudo apt-get install python3
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+# sudo apt-get install ipython-notebook (jupyter)
+
+Redhat/Fedora/Centos
+---------------------
+# yum install python
+# yum install python3
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+# yum install ipython-notebook (jupyter)
+
+Windows
+--------
+https://www.continuum.io/downloads
+
+IDE for python
+----------------
+http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+
+
+tcloudost@tcloudost-VirtualBox ~ $ ls
+a                                Downloads      new.sh                tcloudpython-Home.tar.gz
+{a                               e              Pictures              Templates
+Anaconda2-2.5.0-Linux-x86_64.sh  e}             Projects              Test
+b                                example.xlsx   Public                Untitled0.ipynb
+c                                f2.txt         puppet-labs           Untitled1.ipynb
+class3.ipynb                     file1.text     pycharm-edu-2.0       Untitled.ipynb
+clinet.py                        folder1        pycharm-edu-2.tar.gz  untitled.txt
+d                                helloworld.py  PycharmProjects       Videos
+Desktop                          local.py       python-examples       while.py
+Django-examples                  Music          server.py
+Documents                        newdir         SV.anaconda2
+tcloudost@tcloudost-VirtualBox ~ $ cd py
+pycharm-edu-2.0/ python-examples/ 
+tcloudost@tcloudost-VirtualBox ~ $ cd python-examples/
+tcloudost@tcloudost-VirtualBox ~/python-examples $ ls
+archieves  batch-56
+tcloudost@tcloudost-VirtualBox ~/python-examples $ cd batch-56/
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ls
+first.py  Installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ clear
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ls
+first.py  Installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ python first.py
+hello world!!!
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ perl first.py
+hello world!!!tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ls -l
+total 12
+-rw-r--r-- 1 tcloudost tcloudost   23 Dec 12 08:46 first.py
+-rw-r--r-- 1 tcloudost tcloudost  559 Dec 12 08:41 Installation.txt
+-rw-r--r-- 1 tcloudost tcloudost 1687 Dec  9 09:03 opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ chmod +x first.py 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ls -l
+total 12
+-rwxr-xr-x 1 tcloudost tcloudost   23 Dec 12 08:46 first.py
+-rw-r--r-- 1 tcloudost tcloudost  559 Dec 12 08:41 Installation.txt
+-rw-r--r-- 1 tcloudost tcloudost 1687 Dec  9 09:03 opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ 
+
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ./first.py 
+Warning: unknown mime-type for "hello world!!!" -- using "application/octet-stream"
+Error: no such file "hello world!!!"
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ python --version
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ls
+first.py  Installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ which python
+/usr/bin/python
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ echo $PATH
+/home/tcloudost/bin:/home/tcloudost/anaconda2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ./first.py 
+hello world!!!
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ which python3
+/usr/bin/python3
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ./first.py 
+  File "./first.py", line 2
+    print "hello world!!!"
+                         ^
+SyntaxError: Missing parentheses in call to 'print'
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ./first.py 
+hello world!!!
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ ./first.py 
+hello world!!!
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-56 $ 
+
+
