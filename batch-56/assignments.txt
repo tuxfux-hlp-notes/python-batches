@@ -1,0 +1,7 @@
+1) https://www.coursera.org/learn/python
+2) https://projecteuler.net/archives
+3) http://www.pythonchallenge.com/
+4) http://tinyurl.com/TconSeminars
+5) make sure we have only 3 iterations for our guess_me.py game.
+6) Modify the big.py make the logic work good.
+
