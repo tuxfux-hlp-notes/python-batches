@@ -1,0 +1,282 @@
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-57 $ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> LISTS
+
+Related help topics: LISTLITERALS
+
+help> 
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/local/lib/python2.7/dist-packages/IPython/kernel/__init__.py:13: ShimWarning: The `IPython.kernel` package has been deprecated. You should import from ipykernel or jupyter_client instead.
+  "You should import from ipykernel or jupyter_client instead.", ShimWarning)
+/usr/lib/python2.7/dist-packages/gobject/constants.py:24: Warning: g_boxed_type_register_static: assertion 'g_type_from_name (name) == 0' failed
+  import gobject._gobject
+No handlers could be found for logger "oneconf.distributor"
+/usr/lib/python2.7/dist-packages/gtk-2.0/gtk/__init__.py:127: RuntimeWarning: PyOS_InputHook is not available for interactive use of PyGTK
+  set_interactive(1)
+ANSI                anydbm              gtksourceview2      reportlab
+AptUrl              apt                 gtkunixprint        repr
+BaseHTTPServer      apt_inst            gzip                requests
+Bastion             apt_pkg             hashlib             resource
+BeautifulSoup       aptdaemon           heapq               rexec
+BeautifulSoupTests  aptsources          hmac                rfc822
+CDROM               argparse            hotshot             rlcompleter
+CGIHTTPServer       array               html5lib            rmagic
+Canvas              ast                 htmlentitydefs      robotparser
+CommandNotFound     asynchat            htmllib             runpy
+ConfigParser        asyncore            httplib             samba
+Cookie              atexit              httplib2            sched
+Crypto              atk                 idlelib             screen
+DLFCN               audiodev            ihooks              select
+Dialog              audioop             imaplib             serial
+DocXMLRPCServer     autoreload          imghdr              sessioninstaller
+Exscript            axi                 imp                 sets
+Exscriptd           backports           importlib           setuptools
+FSM                 backports_abc       imputil             sexy
+FileDialog          base64              inspect             sgmllib
+FixTk               bdb                 io                  sha
+HTMLParser          binascii            ipykernel           shelve
+IN                  binhex              ipython_genutils    shlex
+IPython             bisect              ipywidgets          shutil
+Image               bonobo              itertools           shutil_backports
+ImageChops          bpdb                jinja2              signal
+ImageColor          bpython             json                simplegeneric
+ImageCrackCode      bsddb               jsonschema          singledispatch
+ImageDraw           bz2                 jupyter             singledispatch_helpers
+ImageEnhance        cPickle             jupyter_client      sip
+ImageFile           cProfile            jupyter_console     sipconfig
+ImageFileIO         cStringIO           jupyter_core        sipconfig_nd
+ImageFilter         cairo               keyword             site
+ImageFont           calendar            ldb                 sitecustomize
+ImageGL             caribou             lib2to3             six
+ImageGrab           certifi             libxml2             smbc
+ImageMath           cgi                 libxml2mod          smtpd
+ImageOps            cgitb               linecache           smtplib
+ImagePalette        chardet             linuxaudiodev       sndhdr
+ImagePath           chunk               locale              socket
+ImageQt             cmath               lockfile            spwd
+ImageSequence       cmd                 logging             spyderlib
+ImageStat           code                lsb_release         spyderplugins
+ImageTk             codecs              lxml                sqlite3
+ImageWin            codeop              macpath             sre
+MimeWriter          collections         macurl2path         sre_compile
+MySQLdb             colorama            mailbox             sre_constants
+ORBit               colorsys            mailcap             sre_parse
+OpenSSL             commands            mako                ssl
+PAM                 compileall          markupbase          stat
+PIL                 compiler            markupsafe          statvfs
+PSDraw              configglue          marshal             storemagic
+PngImagePlugin      configobj           math                string
+PyQt4               configparser        md5                 stringold
+Queue               contextlib          mhlib               stringprep
+ScrolledText        cookielib           mimetools           strop
+SimpleDialog        copy                mimetypes           struct
+SimpleHTTPServer    copy_reg            mimify              subprocess
+SimpleXMLRPCServer  crypt               mistune             sunau
+SocketServer        csv                 mmap                sunaudio
+StringIO            ctypes              modulefinder        symbol
+TYPES               cups                multifile           sympyprinting
+Tix                 cupshelpers         multiprocessing     symtable
+TkExscript          curl                mutex               sys
+Tkconstants         curses              mysql               sysconfig
+Tkdnd               cv                  nbconvert           syslog
+Tkinter             cv2                 nbformat            tabnanny
+UbuntuSystemService cythonmagic         netrc               talloc
+UserDict            datetime            new                 tarfile
+UserList            dbhash              nis                 tdb
+UserString          dbm                 nntplib             telnetlib
+_LWPCookieJar       dbus                notebook            tempfile
+_MozillaCookieJar   deb822              ntdb                terminado
+__builtin__         debconf             ntpath              termios
+__future__          debian              nturl2path          test
+_abcoll             debian_bundle       numbers             tests
+_ast                debtagshw           numpy               textwrap
+_bisect             decimal             oauthlib            this
+_bsddb              decorator           oneconf             thread
+_codecs             defer               opcode              threading
+_codecs_cn          difflib             operator            tidy
+_codecs_hk          dircache            optparse            time
+_codecs_iso2022     dirspec             os                  timeit
+_codecs_jp          dis                 os2emxpath          tkColorChooser
+_codecs_kr          distlib             ossaudiodev         tkCommonDialog
+_codecs_tw          distutils           pango               tkFileDialog
+_collections        dns                 pangocairo          tkFont
+_csv                doctest             paramiko            tkMessageBox
+_ctypes             drv_libxml2         parser              tkSimpleDialog
+_ctypes_test        dsextras            parted              toaiff
+_curses             dumbdbm             pathlib2            token
+_curses_panel       dummy_thread        pdb                 tokenize
+_dbus_bindings      dummy_threading     pexpect             tornado
+_dbus_glib_bindings duplicity           pickle              trace
+_elementtree        easy_install        pickleshare         traceback
+_functools          email               pickletools         traitlets
+_hashlib            encodings           pip                 ttk
+_heapq              entrypoints         pipes               tty
+_hotshot            errno               piston_mini_client  turtle
+_io                 exceptions          pkg_resources       twisted
+_json               fabfile             pkgutil             types
+_locale             fabric              platform            ubuntu_sso
+_lsprof             fcntl               plistlib            unicodedata
+_markerlib          fdpexpect           popen2              unittest
+_md5                feedparser          poplib              urllib
+_multibytecodec     filecmp             posix               urllib2
+_multiprocessing    fileinput           posixfile           urllib3
+_mysql              fnmatch             posixpath           urlparse
+_mysql_exceptions   formatter           pprint              user
+_osx_support        fpectl              profile             uu
+_ped                fpformat            prompt_toolkit      uuid
+_pyio               fractions           pstats              validate
+_random             ftplib              pty                 virtualenv
+_sha                functools           ptyprocess          vte
+_sha256             functools32         pwd                 warnings
+_sha512             future_builtins     pxssh               wave
+_smbc               gc                  py_compile          wcwidth
+_socket             gconf               pyatspi             weakref
+_sqlite3            gdbm                pyclbr              webbrowser
+_sre                genericpath         pycurl              webkit
+_ssl                getopt              pydoc               whichdb
+_strptime           getpass             pydoc_data          widgetsnbextension
+_struct             gettext             pyexpat             wsgiref
+_symtable           gi                  pygments            xapian
+_sysconfigdata      gio                 pygtk               xdg
+_sysconfigdata_nd   glib                pygtkcompat         xdrlib
+_testcapi           glob                pyinotify           xml
+_threading_local    gnome               pynotify            xmllib
+_tkinter            gnomecanvas         pyodbc              xmlrpclib
+_warnings           gnomekeyring        pysqlite2           xxsubtype
+_weakref            gnomevfs            qtconsole           zipfile
+_weakrefset         gobject             quopri              zipimport
+abc                 google              random              zlib
+aifc                grp                 re                  zmq
+antigravity         gtk                 readline            zope
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> 
+
+
+>>> my_string="python"
+>>> dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> help(my_string.upper)
+
+>>> # give q after you are done seeing the help
+... 
+>>> 
+
+
+In [45]: my_string="python"
+
+In [46]: my_string.
+              my_string.capitalize my_string.isalnum    my_string.lstrip     my_string.splitlines 
+              my_string.center     my_string.isalpha    my_string.partition  my_string.startswith 
+              my_string.count      my_string.isdigit    my_string.replace    my_string.strip      
+              my_string.decode     my_string.islower    my_string.rfind      my_string.swapcase   
+              my_string.encode     my_string.isspace    my_string.rindex     my_string.title      
+              my_string.endswith   my_string.istitle    my_string.rjust      my_string.translate  
+              my_string.expandtabs my_string.isupper    my_string.rpartition my_string.upper      
+              my_string.find       my_string.join       my_string.rsplit     my_string.zfill      
+              my_string.format     my_string.ljust      my_string.rstrip                          
+              my_string.index      my_string.lower      my_string.split                           
+
+
+In [46]: my_string.upper?
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [47]: my_string.upper()
+Out[47]: 'PYTHON'
+
+In [48]: my_string.capitalize?
+Docstring:
+S.capitalize() -> string
+
+Return a copy of the string S with only its first character
+capitalized.
+Type:      builtin_function_or_method
+
+In [49]: my_string.capitalize()
+Out[49]: 'Python'
+
+In [50]: my_num=1
+
+In [51]: my_num. 
+                 my_num.bit_length  my_num.imag        
+                 my_num.conjugate   my_num.numerator   
+                 my_num.denominator my_num.real        
+
+In [51]: my_num1=2.0
+
+In [52]: my_num1.
+                  my_num1.as_integer_ratio my_num1.hex              my_num1.real             
+                  my_num1.conjugate        my_num1.imag                                      
+                  my_num1.fromhex          my_num1.is_integer                                
+
+
+
+

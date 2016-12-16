@@ -1,0 +1,146 @@
+In [1]: my_string="python"
+
+In [2]: print type(my_string)
+<type 'str'>
+
+In [3]: my_num=1.0
+
+In [4]: print type(my_num)
+<type 'float'>
+
+In [5]: my_num1=2
+
+In [6]: print type(my_num1)
+<type 'int'>
+
+In [7]: 
+
+
+In [15]: my_string="python"
+
+In [16]: # p  y  t   h  o   n
+
+In [17]: # 0  1  2  3   4  5  => +ve indexing or left to right
+
+In [18]: #-6 -5 -4  -3 -2  -1=> -ve indexing or right to left
+
+In [19]: # indexing
+
+In [20]: my_string[3]
+Out[20]: 'h'
+
+In [21]: my_string[-4]
+Out[21]: 't'
+
+In [22]: # slicing
+
+In [23]: my_string[0:3] # 0 till 3 , 3 not included.
+Out[23]: 'pyt'
+
+In [24]: my_string[3:6] 
+Out[24]: 'hon'
+
+In [25]: my_string[:3] # 0 till 3 , 3 not included.
+Out[25]: 'pyt'
+
+In [26]: my_string[3:] 
+Out[26]: 'hon'
+
+In [27]: my_string[:]
+Out[27]: 'python'
+
+In [28]: my_string[::1]  # go from 0 to 6 one by one.
+Out[28]: 'python'
+
+In [29]: my_string[::2]
+Out[29]: 'pto'
+
+In [30]: my_string[::3]
+Out[30]: 'ph'
+
+In [31]: my_string[::-1]
+Out[31]: 'nohtyp'
+
+In [32]: my_string[1::1]
+Out[32]: 'ython'
+
+In [38]: my_string[:3] + my_string[3:]
+Out[38]: 'python'
+
+In [39]: # task1
+
+In [40]: # i want my output as Tython , use my_string="python"
+
+In [41]: 'T' + my_string[1:]
+Out[41]: 'Tython'
+
+In [42]: my_string[2].upper() + my_string[1:]
+Out[42]: 'Tython'
+
+In [53]: # print
+
+In [54]: my_school="de paul"
+
+In [55]: another_school="st. xaviers"
+
+In [56]: town="township"
+
+In [57]: beach="blue"
+
+In [58]: commute="bus"
+
+In [59]: # printing
+
+In [60]: print "my school name is my_school"
+my school name is my_school
+
+In [61]: print 'my school name is my_school'
+my school name is my_school
+
+In [62]: print "my school name is " , my_school , "we have another school" , another_school , "we us
+    ...: ed to live in a small ", town, 'we have a beach which has colour', beach , "we used to comm
+    ...: ute on", comuute
+my school name is  de paul we have another school st. xaviers we used to live in a small  township we have a beach which has colour blue we used to commute on---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-62-16085fd169e3> in <module>()
+----> 1 print "my school name is " , my_school , "we have another school" , another_school , "we used to live in a small ", town, 'we have a beach which has colour', beach , "we used to commute on", comuute
+
+NameError: name 'comuute' is not defined
+
+In [63]: print "my school name is " , my_school , "we have another school" , another_school , "we us
+    ...: ed to live in a small ", town, 'we have a beach which has colour', beach , "we used to comm
+    ...: ute on", commute
+my school name is  de paul we have another school st. xaviers we used to live in a small  township we have a beach which has colour blue we used to commute on bus
+
+In [64]: 
+
+In [65]: # %s-> string,%d->digit,%r->raw,%f->float
+
+In [66]: print "my school name is %s.We have another school %s.We used to live in a small %s. we hav
+    ...: e a beach which has color %s.we used to commute on %s." %(my_school,another_school,town,bea
+    ...: ch,commute)
+my school name is de paul.We have another school st. xaviers.We used to live in a small township. we have a beach which has color blue.we used to commute on bus.
+
+In [67]: 
+
+In [67]: print "my school is %s. I love my school %s" %(my_school,my_school)
+my school is de paul. I love my school de paul
+
+In [68]: # format
+
+In [69]: print "my school is {}.I love my school {}".format(my_school,my_school)
+my school is de paul.I love my school de paul
+
+In [70]: print "my school is {}.I love my school {}".format(my_school,another_school)
+my school is de paul.I love my school st. xaviers
+
+In [71]: print "my school is {0}.I love my school {0}".format(my_school,another_school)
+my school is de paul.I love my school de paul
+
+In [72]: print "my school is {1}.I love my school {1}".format(my_school,another_school)
+my school is st. xaviers.I love my school st. xaviers
+
+In [73]: print "my school is {ans}.I love my school {ans}".format(ms=my_school,ans=another_school)
+my school is st. xaviers.I love my school st. xaviers
+
+

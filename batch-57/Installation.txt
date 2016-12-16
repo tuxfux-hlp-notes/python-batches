@@ -6,6 +6,7 @@ Ubuntu/Linuxmint/zorion
 * sudo apt-get install ipython3
 * sudo apt-get install bpython
 * sudo apt-get install bpython3
+* sudo apt-get install ipython-notebook
 
 Redhat/Fedora/Centos
 -------------------------
@@ -19,6 +20,7 @@ Redhat/Fedora/Centos
 Windows
 -------------------------
 https://www.continuum.io/downloads (ipython)
+ipython notebook
 
 IDE
 ----
@@ -54,4 +56,48 @@ hello world!!
 >>> 
 >>> quit()
 tcloudost@tcloudost-VirtualBox ~ $ 
+
+
+
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ ls
+batch-57.txt  first.py  Installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ python first.py
+hello world!!!
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ perl first.py
+hello world!!!tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ ls -l
+total 16
+-rw-r--r-- 1 tcloudost tcloudost  136 Dec 15 19:35 batch-57.txt
+-rw-r--r-- 1 tcloudost tcloudost   23 Dec 16 18:45 first.py
+-rw-r--r-- 1 tcloudost tcloudost 1272 Dec 15 19:17 Installation.txt
+-rw-r--r-- 1 tcloudost tcloudost 1659 Dec 14 19:39 opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ chmod +x first.py
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ ls -l
+total 16
+-rw-r--r-- 1 tcloudost tcloudost  136 Dec 15 19:35 batch-57.txt
+-rwxr-xr-x 1 tcloudost tcloudost   23 Dec 16 18:45 first.py
+-rw-r--r-- 1 tcloudost tcloudost 1272 Dec 15 19:17 Installation.txt
+-rw-r--r-- 1 tcloudost tcloudost 1659 Dec 14 19:39 opensource.txt
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ ./first.py 
+Warning: unknown mime-type for "hello world!!!" -- using "application/octet-stream"
+Error: no such file "hello world!!!"
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ # crontab and scheduler
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ 
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ echo $PATH
+/home/tcloudost/bin:/home/tcloudost/anaconda2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ python --version
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ which python
+/usr/bin/python
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ /usr/bin/python --version
+Python 2.7.6
+
+
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ ./first.py 
+hello world!!!
+tcloudost@tcloudost-VirtualBox ~/python-examples/batch-57 $ 
+
 
