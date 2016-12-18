@@ -4,4 +4,5 @@
 4) http://tinyurl.com/TconSeminars
 5) make sure we have only 3 iterations for our guess_me.py game.
 6) Modify the big.py make the logic work good.
+7) http://edx.org
 
