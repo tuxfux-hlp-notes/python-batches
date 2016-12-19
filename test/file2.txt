@@ -1,0 +1,6 @@
+line1 -- t1
+<<<<<<< Updated upstream
+line3 -- t1
+=======
+line1 -- t2
+>>>>>>> Stashed changes
