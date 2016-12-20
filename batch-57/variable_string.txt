@@ -143,4 +143,70 @@ my school is st. xaviers.I love my school st. xaviers
 In [73]: print "my school is {ans}.I love my school {ans}".format(ms=my_school,ans=another_school)
 my school is st. xaviers.I love my school st. xaviers
 
+In [1]: # raw_input and input
+
+In [2]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [3]: print name
+kumar
+
+In [4]: type(name)
+Out[4]: str
+
+In [5]: num = raw_input("please enter a number:")
+please enter a number:1
+
+In [6]: print num
+1
+
+In [7]: type(num)
+Out[7]: str
+
+In [8]: 1 + 1
+Out[8]: 2
+
+In [9]: '1' + '1'
+Out[9]: '11'
+
+In [10]: num = int(raw_input("please enter a number:"))
+please enter a number:1
+
+In [11]: # int,str,float
+
+In [12]: num = int(raw_input("please enter a number:"))
+please enter a number:ten
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-12-edb42c6cf795> in <module>()
+----> 1 num = int(raw_input("please enter a number:"))
+
+ValueError: invalid literal for int() with base 10: 'ten'
+
+In [13]: # input
+
+In [14]: name = input("please enter your number:")
+please enter your number:name
+
+In [15]: print name
+kumar
+
+In [16]: type(name)
+Out[16]: str
+
+In [17]: print name
+kumar
+
+In [18]: num = input("please enter a number:")
+please enter a number:10
+
+In [19]: type(num)
+Out[19]: int
+
+In [20]: print num
+10
+
+In [21]: # 3.0 => we dont have raw_input
+
+In [22]: 
 
