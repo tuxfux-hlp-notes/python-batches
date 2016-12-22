@@ -5,4 +5,6 @@
 5) make sure we have only 3 iterations for our guess_me.py game.
 6) Modify the big.py make the logic work good.
 7) http://edx.org
+8) make sure the gmax works for negative values like: gmax(-4,-5)
+9) https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
 
