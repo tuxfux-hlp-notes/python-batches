@@ -1,2 +1,4 @@
 1) https://www.youtube.com/watch?v=wf-BqAjZb8M
 2) https://www.python.org/dev/peps/pep-0008/#code-lay-out
+3) http://tinyurl.com/TconSeminars
+4) Learning python the hardway - pdf -> free
