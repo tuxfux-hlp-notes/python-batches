@@ -1,0 +1,4 @@
+Tue Dec 27 09:10:16 2016 - root - INFO - Your disk looks healthy at 10
+Tue Dec 27 09:10:47 2016 - root - ERROR - your disk is stomach full. It going to burst out 60
+Tue Dec 27 09:11:02 2016 - root - CRITICAL - your application is sleeping 99
+Tue Dec 27 09:11:07 2016 - root - INFO - Your disk looks healthy at 20
