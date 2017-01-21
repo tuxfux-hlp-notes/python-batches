@@ -1,0 +1,10 @@
+(lp0
+S'linux'
+p1
+aS'python'
+p2
+aS'django'
+p3
+aS'devops'
+p4
+a.
