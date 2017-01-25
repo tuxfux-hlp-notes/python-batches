@@ -1,0 +1,13 @@
+How to resolve an IP:
+
+  514  nslookup www.google.com
+  515  nslookup 74.125.200.104
+  516  host www.google.com
+  517  host 74.125.200.103
+  518  dig www.google.com
+  519  dig -x 74.125.200.99
+  
+How to check for ports:
+
+
+
