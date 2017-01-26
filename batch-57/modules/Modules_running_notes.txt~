@@ -1,0 +1,146 @@
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ ipython
+Python 2.7.10 (default, Oct 14 2015, 16:09:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.3.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: pwd
+Out[1]: u'/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules'
+
+In [2]: ls
+first.py*  Learning_Modules.ipynb
+
+In [3]: import first as f
+
+In [4]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'version']
+
+In [5]: f.version
+Out[5]: 1.0
+
+In [6]: f.my_add?
+Type:        function
+String form: <function my_add at 0x7fdc31f18de8>
+File:        /home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/first.py
+Definition:  f.my_add(a, b)
+Docstring:   this function is for addition of numbers and strings
+
+In [7]: f.my_sub?
+Type:        function
+String form: <function my_sub at 0x7fdc31ef9050>
+File:        /home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/first.py
+Definition:  f.my_sub(a, b)
+Docstring:   This function is for the substraction of two numbers 
+
+In [8]: f.my_div?
+Type:        function
+String form: <function my_div at 0x7fdc31ef90c8>
+File:        /home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/first.py
+Definition:  f.my_div(a, b=1)
+Docstring:   This function is for division of numbers 
+
+In [9]: f.my_multi?
+Type:        function
+String form: <function my_multi at 0x7fdc31ef9140>
+File:        /home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/first.py
+Definition:  f.my_multi(a, b)
+Docstring:   This function is for the multiplication of the numbers 
+
+In [10]: my_string="python"
+
+In [11]: my_string.
+my_string.capitalize  my_string.find        my_string.isspace     my_string.partition   my_string.rstrip      my_string.translate
+my_string.center      my_string.format      my_string.istitle     my_string.replace     my_string.split       my_string.upper
+my_string.count       my_string.index       my_string.isupper     my_string.rfind       my_string.splitlines  my_string.zfill
+my_string.decode      my_string.isalnum     my_string.join        my_string.rindex      my_string.startswith  
+my_string.encode      my_string.isalpha     my_string.ljust       my_string.rjust       my_string.strip       
+my_string.endswith    my_string.isdigit     my_string.lower       my_string.rpartition  my_string.swapcase    
+my_string.expandtabs  my_string.islower     my_string.lstrip      my_string.rsplit      my_string.title       
+
+In [11]: my_string.upper?
+Type:        builtin_function_or_method
+String form: <built-in method upper of str object at 0x7fdc34a00030>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [12]: f.my_add(10,20)
+Out[12]: 30
+
+In [13]: f.my_add("python","rocks"
+   ....: )
+Out[13]: 'pythonrocks'
+
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ ls
+first.py  first.pyc  Learning_Modules.ipynb  Modules_running_notes.txt
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ file first.pyc
+first.pyc: python 2.7 byte-compiled
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ cat first.pyc
+�
+�\jXc@s1dZd�Zd�Zdd�Zd�ZdS(g�?cC||S(s5 this function is for addition of numbers and strings((tatb((first.pytmy_addscCs ||kr||S||SdS(s6 This function is for the substraction of two numbers N((RR((first.pytmy_sus
+                                                                                                   icC||S(s* This function is for division of numbers ((RR((first.pytmy_divscC||S(s8 This function is for the multiplication of the numbers ((RR((first.pymy_multisN(tversionRRRR(((first.py<module>		
+                                 key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ file first.py
+first.py: Python script, ASCII text executable
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$
+
+In [15]: f.
+f.my_add    f.my_div    f.my_multi  f.my_sub    f.version   
+
+In [15]: f.version
+Out[15]: 1.0
+
+In [16]: pw
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-16-7453679f023f> in <module>()
+----> 1 pw
+
+NameError: name 'pw' is not defined
+
+In [17]: pwd
+Out[17]: u'/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules'
+
+In [18]: f.version
+Out[18]: 1.0
+
+In [19]: import first as f
+
+In [20]: f.version
+Out[20]: 1.0
+
+In [21]: # when ever you are importing a module, it creates a .pyc file and reads from there
+
+In [22]: # to achieve the changes in our currnet program to work on the ipython interface
+
+In [23]: # exit out of the interpreter and login again and import - NOT RECOMMENDED
+
+In [24]: # importing any number times is also not going to help you guys.. import will always ready from .pyc file
+
+In [25]: reload(f)
+Out[25]: <module 'first' from 'first.py'>
+
+
+In [27]: f.version
+Out[27]: 2.0
+
+In [28]: # any modification you do your file will be not reflected in a current session until you reload it
+
+In [29]: 
+
+In [27]: f.version
+Out[27]: 2.0
+
+In [28]: # any modification you do your file will be not reflected in a current session until you reload it
+
+In [29]: 
+
+

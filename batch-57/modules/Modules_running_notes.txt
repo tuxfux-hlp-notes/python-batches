@@ -136,11 +136,541 @@ In [28]: # any modification you do your file will be not reflected in a current 
 
 In [29]: 
 
-In [27]: f.version
-Out[27]: 2.0
+--- current new code --
 
-In [28]: # any modification you do your file will be not reflected in a current session until you reload it
+#!/usr/bin/python
+# usage: learning modules in depth
 
-In [29]: 
+version=2.0
+
+def my_add(a,b):
+  ''' this function is for addition of numbers and strings '''
+  return a + b
+  
+def my_sub(a,b):
+  ''' This function is for the substraction of two numbers '''
+  if a > b:
+    return a - b
+  else:
+    return b - a
+    
+def my_div(a,b=1):  
+   # b is a default value. Just to make sure that no one makes it zero and we hit on an exception.
+   ''' This function is for division of numbers '''
+   return a/b
+   
+def my_multi(a,b):
+   ''' This function is for the multiplication of the numbers '''
+   return a * b 
+   
+
+# Main
+print "i am launchng a missile."
+
+-------
+
+In [1]: import first
+i am launchng a missile.
+
+In [2]: 
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ python first.py
+i am launchng a missile.
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+
+In [2]: first.
+first.my_add    first.my_div    first.my_multi  first.my_sub    first.py        first.pyc       first.version   
+
+In [2]: first.my_add
+Out[2]: <function first.my_add>
+
+In [3]: print locals
+<built-in function locals>
+
+In [4]: print locals()
+{'_dh': [u'/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules'], '__': '', '__builtin__': <module '__builtin__' (built-in)>, 'quit': <IPython.core.autocall.ExitAutocall object at 0x7f0c92cffd90>, '_i4': u'print locals()', '_i3': u'print locals', '_i2': u'first.my_add', '_i1': u'import first', '__package__': None, 'exit': <IPython.core.autocall.ExitAutocall object at 0x7f0c92cffd90>, 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7f0c92cad250>>, '_i': u'print locals', '__doc__': 'Automatically created module for IPython interactive environment', '__builtins__': <module '__builtin__' (built-in)>, '_ih': ['', u'import first', u'first.my_add', u'print locals', u'print locals()'], '__name__': '__main__', '___': '', '_': <function my_add at 0x7f0c92ba3de8>, '_sh': <module 'IPython.core.shadowns' from '/usr/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>, '_2': <function my_add at 0x7f0c92ba3de8>, '_iii': u'import first', '_ii': u'first.my_add', 'In': ['', u'import first', u'first.my_add', u'print locals', u'print locals()'], 'Out': {2: <function my_add at 0x7f0c92ba3de8>}, '_oh': {2: <function my_add at 0x7f0c92ba3de8>}, 'first': <module 'first' from 'first.py'>}
+
+In [5]: def my_new():
+   ...:     pass
+   ...: 
+
+In [6]: my_new
+Out[6]: <function __main__.my_new>
 
 
+-- minor changes to the code ---
+
+ Main
+if __name__ == '__main__':
+  print "i am launchng a missile."
+
+
+In [1]: import first
+
+In [2]: 
+
+
+case 2:
+
+a) create a second.py and imported the function from first.py , it worked nicely when both were in same location.
+b) The moment i moved the first.py to a different directory called "extra" it failed miserably.
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ ls -l
+total 56
+drwxrwxr-x 2 key2gyaan key2gyaan  4096 Jan 26 10:53 extra
+-rw-rw-r-- 1 key2gyaan key2gyaan  1317 Jan 26 10:51 first.pyc
+-rw------- 1 key2gyaan key2gyaan 21195 Jan 26 10:24 Learning_Modules.ipynb
+-rw-rw-r-- 1 key2gyaan key2gyaan  8557 Jan 26 10:46 Modules_running_notes.txt
+-rw-rw-r-- 1 key2gyaan key2gyaan  5966 Jan  2 19:51 Modules_running_notes.txt~
+-rw-rw-r-- 1 key2gyaan key2gyaan   404 Jan 26 10:53 second.py
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ python second.py 
+this is for addition of numbers and strings.
+addition of two numbers is 41
+addition of two string is linux rocks
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ rm -f first.pyc 
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ tree extra
+The program 'tree' is currently not installed. You can install it by typing:
+sudo apt-get install tree
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ python second.py 
+Traceback (most recent call last):
+  File "second.py", line 2, in <module>
+    import first as f
+ImportError: No module named first
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+
+
+"math" module is working even if its not in current location
+
+In [3]: import math
+
+In [4]: pwd
+Out[4]: u'/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules'
+
+In [5]: ls
+extra/  Learning_Modules.ipynb  Modules_running_notes.txt  Modules_running_notes.txt~  second.py
+
+In [6]: 
+
+In [3]: import math
+
+In [4]: pwd
+Out[4]: u'/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules'
+
+In [5]: ls
+extra/  Learning_Modules.ipynb  Modules_running_notes.txt  Modules_running_notes.txt~  second.py
+
+In [6]: import sys
+
+In [7]: sys.path
+Out[7]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/pymodules/python2.7',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/key2gyaan/.ipython']
+
+ 
+1) can i dump the extra folder into one of these locations to make my code work ? yes
+2) is it recommeneded ? no
+sys.path locations are not managed by developers, managed by SA(system administrators)
+
+In [9]: sys.path.insert(0,'/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/extra')
+
+In [10]: sys.path
+Out[10]: 
+['/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/extra',
+ '',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/pymodules/python2.7',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/key2gyaan/.ipython']
+
+# installation
+
+# pip install <modulename>
+# easy_install <modulename>
+# setuptools
+
+=> installation using the virutal enviornment
+
+sudo apt-get install python-pip python-dev build-essential
+sudo pip install virtualenv
+
+
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ virtualenv sheets
+New python executable in /home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/sheets/bin/python
+Installing setuptools, pip, wheel...done.
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ ls -l
+total 64
+drwxrwxr-x 2 key2gyaan key2gyaan  4096 Jan 26 11:03 extra
+-rw-rw-r-- 1 key2gyaan key2gyaan   670 Jan 26 11:05 first.py
+-rw------- 1 key2gyaan key2gyaan 21195 Jan 26 10:24 Learning_Modules.ipynb
+-rw-rw-r-- 1 key2gyaan key2gyaan 12493 Jan 26 11:09 Modules_running_notes.txt
+-rw-rw-r-- 1 key2gyaan key2gyaan  5966 Jan  2 19:51 Modules_running_notes.txt~
+-rw-rw-r-- 1 key2gyaan key2gyaan   520 Jan 26 11:03 second.py
+drwxrwxr-x 6 key2gyaan key2gyaan  4096 Jan 26 11:09 sheets
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ source sheets/bin/activate
+(sheets) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ pip freeze
+appdirs==1.4.0
+packaging==16.8
+pyparsing==2.1.10
+six==1.10.0
+(sheets) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ pip install excel
+Collecting excel
+  Downloading excel-1.0.0.tar.gz
+Collecting xlrd (from excel)
+  Downloading xlrd-1.0.0.tar.gz (2.6MB)
+    100% |████████████████████████████████| 2.6MB 438kB/s 
+Building wheels for collected packages: excel, xlrd
+  Running setup.py bdist_wheel for excel ... done
+  Stored in directory: /home/key2gyaan/.cache/pip/wheels/4b/b6/1e/ebef7d7af6d3fa9c81e10a758d7b056cd4f06846109e2027d8
+  Running setup.py bdist_wheel for xlrd ... done
+  Stored in directory: /home/key2gyaan/.cache/pip/wheels/40/d4/6c/df6603e86ef3183ba2ecc97c5c3f1bf92802d54aa939522235
+Successfully built excel xlrd
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.0.0
+(sheets) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ pip freeze
+appdirs==1.4.0
+excel==1.0.0
+packaging==16.8
+pyparsing==2.1.10
+six==1.10.0
+xlrd==1.0.0
+(sheets) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ python
+Python 2.7.10 (default, Oct 14 2015, 16:09:02) 
+[GCC 5.2.1 20151010] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> quit()
+(sheets) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ python
+Python 2.7.10 (default, Oct 14 2015, 16:09:02) 
+[GCC 5.2.1 20151010] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named excel
+
+
+# packages: 
+https://docs.python.org/2/tutorial/modules.html#packages
+
+
+# understanding pakcages
+
+ey2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ mkdir OS
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ mkdir OS/{lin,sol,aix,hpux}
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+└── sol
+
+4 directories, 0 files
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules
+
+create four files with names - first.py,second.py,third.py,fourth.py
+
+-- example of first.py file -- 
+#!/usr/bin/python
+
+def my_lin1_first():
+  return "this is  my first lin1 function"
+
+def my_lin1_second():
+  return "this is my second lin1 function"
+
+def my_lin1_third():
+  return "this is my third lin1 function"
+
+def my_lin1_fourth():
+  return "this is my fourth lin1 function"
+
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS$ ls
+aix  hpux  lin  sol
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS$ pwd
+/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS$ ipython
+Python 2.7.10 (default, Oct 14 2015, 16:09:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.3.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+
+To make the import of lin folder work we need to create a '__init__.py' file under the folder.
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── __init__.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 5 files
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ 
+
+
+--- content of __init__.py file is ---
+
+import first
+import second
+import third
+import fourth
+
+
+In [2]: import lin
+
+In [3]: lin.
+lin.first   lin.fourth  lin.second  lin.third   
+
+In [3]: lin.first.
+lin.first.my_lin1_first   lin.first.my_lin1_fourth  lin.first.my_lin1_second  lin.first.my_lin1_third   
+
+In [3]: lin.first.my_lin1_first()
+Out[3]: 'this is  my first lin1 function'
+
+In [4]: lin.first.my_lin1_second()
+Out[4]: 'this is my second lin1 function'
+
+In [5]: lin.first.my_lin1_third()
+Out[5]: 'this is my third lin1 function'
+
+In [6]: lin.first.my_lin1_fourth()
+Out[6]: 'this is my fourth lin1 function'
+
+
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+
+
+Now create couple of files under sol using the following commmands:
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS$ cp lin/*.py sol/
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS$ pwd
+/home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules/OS$ 
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+    ├── first.py
+    ├── fourth.py
+    ├── __init__.py
+    ├── second.py
+    └── third.py
+
+content of __init__.py files.
+
+import first
+import second
+import third
+
+
+In [7]: import sol  
+
+# importing sol only gives us first,second and third modules activated. But fourth.py also exists.
+
+In [8]: sol.
+sol.first   sol.second  sol.third   
+
+In [8]: sol.first.
+sol.first.my_sol1_first   sol.first.my_sol1_fourth  sol.first.my_sol1_second  sol.first.my_sol1_third   
+
+In [8]: sol.first.my_sol1_first()
+Out[8]: 'this is  my first sol1 function'
+
+In [9]: sol.first.my_sol1_second()
+Out[9]: 'this is my second sol1 function'
+
+In [10]: sol.first.my_sol1_third()
+Out[10]: 'this is my third sol1 function'
+
+In [11]: sol.first.my_sol1_fourth()
+Out[11]: 'this is my fourth sol1 function'
+
+In [12]: from sol import fourth
+
+# you can explicitly activate the fourth by doing the above command.
+
+In [13]: sol.
+sol.first   sol.fourth  sol.second  sol.third   
+
+In [13]: sol.
+
+In [13]: import sys
+
+In [14]: sys.path
+Out[14]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/pymodules/python2.7',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/key2gyaan/.ipython']
+
+In [15]: 
+
+ex;
+
+key2gyaan@key2gyaan:/usr/lib/python2.7$ cd xml
+key2gyaan@key2gyaan:/usr/lib/python2.7/xml$ ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+key2gyaan@key2gyaan:/usr/lib/python2.7/xml$ ls dom
+domreg.py  expatbuilder.py  __init__.py  minicompat.py  minidom.py  NodeFilter.py  pulldom.py  xmlbuilder.py
+key2gyaan@key2gyaan:/usr/lib/python2.7/xml$ ls etree
+cElementTree.py  cElementTree.pyc  ElementInclude.py  ElementPath.py  ElementPath.pyc  ElementTree.py  ElementTree.pyc  __init__.py  __init__.pyc
+key2gyaan@key2gyaan:/usr/lib/python2.7/xml$ ls parsers
+expat.py  expat.pyc  __init__.py  __init__.pyc
+key2gyaan@key2gyaan:/usr/lib/python2.7/xml$ ls sax
+_exceptions.py   expatreader.py  handler.pyc  __init__.pyc  saxutils.pyc  xmlreader.pyc
+_exceptions.pyc  handler.py      __init__.py  saxutils.py   xmlreader.py
+key2gyaan@key2gyaan:/usr/lib/python2.7/xml$ cat __init__.py
+"""Core XML support for Python.
+
+This package contains four sub-packages:
+
+dom -- The W3C Document Object Model.  This supports DOM Level 1 +
+       Namespaces.
+
+parsers -- Python wrappers for XML parsers (currently only supports Expat).
+
+sax -- The Simple API for XML, developed by XML-Dev, led by David
+       Megginson and ported to Python by Lars Marius Garshol.  This
+       supports the SAX 2 API.
+
+etree -- The ElementTree XML library.  This is a subset of the full
+       ElementTree XML release.
+
+"""
+
+
+__all__ = ["dom", "parsers", "sax", "etree"]
+
+_MINIMUM_XMLPLUS_VERSION = (0, 8, 4)
+
+
+try:
+    import _xmlplus
+except ImportError:
+    pass
+else:
+    try:
+        v = _xmlplus.version_info
+    except AttributeError:
+        # _xmlplus is too old; ignore it
+        pass
+    else:
+        if v >= _MINIMUM_XMLPLUS_VERSION:
+            import sys
+            _xmlplus.__path__.extend(__path__)
+            sys.modules[__name__] = _xmlplus
+        else:
+            del v
+
+
+every module you install using pip is a package.
+
+pydoc
+
+ex:
+pydoc math
+pydoc first
+
+
+References:
+https://docs.python.org/2/installing/index.html
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/distutils/  - legacy
