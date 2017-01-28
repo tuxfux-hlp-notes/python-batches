@@ -1,0 +1,5 @@
+01-28 12:54 root         INFO     The is info message from logging module.
+01-28 12:54 myapp.area1  DEBUG    This is debug message from logger1.
+01-28 12:54 myapp.area1  INFO     This is info message from logger1.
+01-28 12:54 myapp.area2  WARNING  This is warning message from logger2.
+01-28 12:54 myapp.area2  ERROR    This is error message from logger2.

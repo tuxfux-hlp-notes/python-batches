@@ -1,0 +1,20 @@
+java/perl - log4j (complicated)
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/batch-57/logging$ sudo tail /var/log/syslog
+[sudo] password for key2gyaan: 
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Cairo.Surface is leaking, programmer is missing a call to Dispose
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Set MONO_CAIRO_DEBUG_DISPOSE to track allocation traces
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Cairo.Surface is leaking, programmer is missing a call to Dispose
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Set MONO_CAIRO_DEBUG_DISPOSE to track allocation traces
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Cairo.Surface is leaking, programmer is missing a call to Dispose
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Set MONO_CAIRO_DEBUG_DISPOSE to track allocation traces
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Cairo.Surface is leaking, programmer is missing a call to Dispose
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Set MONO_CAIRO_DEBUG_DISPOSE to track allocation traces
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Cairo.Surface is leaking, programmer is missing a call to Dispose
+Jan 28 10:32:06 key2gyaan gnome-session[1963]: Set MONO_CAIRO_DEBUG_DISPOSE to track allocation traces
+
+
+# references:
+https://docs.python.org/2/howto/logging.html#logging-basic-tutorial
+https://docs.python.org/2/howto/logging-cookbook.html
+

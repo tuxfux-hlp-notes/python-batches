@@ -1,0 +1,12 @@
+Sat Jan 28 11:06:23 2017 - root - INFO - The disk looks health at 20
+Sat Jan 28 11:06:53 2017 - root - WARNING - The disk is puking some warning at 50
+Sat Jan 28 11:07:10 2017 - root - INFO - The disk looks health at 40
+Sat Jan 28 11:07:22 2017 - root - ERROR - The disk seems to have some errors at 70
+Sat Jan 28 11:07:28 2017 - root - CRITICAL - you disk is having some errors at 90
+Sat Jan 28 11:07:32 2017 - root - INFO - The disk looks health at 20
+Sat Jan 28 11:18:01 2017 - root - INFO - The disk looks health at 33
+Sat Jan 28 11:18:10 2017 - root - INFO - The disk looks health at 33
+Sat Jan 28 11:18:10 2017 - root - INFO - The disk looks health at 33
+Sat Jan 28 11:18:11 2017 - root - INFO - The disk looks health at 33
+Sat Jan 28 11:18:12 2017 - root - INFO - The disk looks health at 33
+Sat Jan 28 11:18:13 2017 - root - INFO - The disk looks health at 33
