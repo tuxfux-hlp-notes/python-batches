@@ -1,0 +1,59 @@
+Ubuntu/Linuxmint/zorion
+------------------------
+# sudo apt-get install python (2.x)
+# sudo apt-get install python3 (3.x)
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+
+Redhat/Centos/Fedora
+----------------------
+# yum install python (2.x)
+# yum install python3 (3.x)
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+
+Window
+--------
+https://www.continuum.io/downloads
+
+IDE
+----
+http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+tcloudost@tcloudost-VirtualBox ~ $ which python
+/usr/bin/python
+tcloudost@tcloudost-VirtualBox ~ $ which python3
+/usr/bin/python3
+tcloudost@tcloudost-VirtualBox ~ $ python -V
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~ $ python3 -V
+Python 3.4.3
+tcloudost@tcloudost-VirtualBox ~ $ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world"
+hello world
+>>> 
+>>> quit()
+tcloudost@tcloudost-VirtualBox ~ $ python3
+Python 3.4.3 (default, Oct 14 2015, 20:28:29) 
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world"
+  File "<stdin>", line 1
+    print "hello world"
+                      ^
+SyntaxError: Missing parentheses in call to 'print'
+>>> 
+>>> print ("hello world")
+hello world
+>>> 
+>>> quit()
+

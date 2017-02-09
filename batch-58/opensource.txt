@@ -1,0 +1,77 @@
+Propreitory and opensource
+---------------------------
+
+Propreitory
+--------------
+Company A  -> Product A
+        Us -> requirements 
+            -> email -> we will get back to you soon.
+            -> internet -> support/answers -> no support/no workaround.
+            
+* retention of customers is a challenge.
+* Frustrated customers.
+
+
+
+company owns the products.
+ex: oracle,cisco,mircrosoft
+
+
+Opensource
+-------------
+Company A  -> Product A(GPL) -> publish the source code in internet.
+        Us -> requirements 
+            -> email -> we will get back to you soon.
+            -> internet -> support/answers -> no support/no workaround.
+            -> guys we have A.3
+
+Us(developers) guyB/galB -> download the code - makes modifications
+               Product B(5) -> Publish the source code. 
+               intenet -> hey guys i came up with a new product.
+               
+               reviews - Excellent/good/bad/worst
+               excellent.
+               
+products - homogeneous,hetrogenous               
+               
+Fast Forward six months
+------------------------
+Company A - A.3 ( 100 + 400) ->   Source code published in internet.
+
+* Retention of customers.
+* cost cutting.-> 8cr
+
+Money
+------
+* support.
+* patents.
+* Trainings.
+
+License
+----------
+GPL - GNU General Public License.
+GPL - Any modification made to the product should go back to the community.
+OSF - Open Source Foundation - 1960
+
+Principles
+------------
+* FREEdom to make the modification is called opensource.
+* No Piracy in opensource. You can modify and redistribute it.
+
+
+Ex:
+---
+OS: redhat/centos/ubuntu/fedora/linuxmint
+DB: mariadb/cassandra/mongodb
+web frameworks:Selinium,django,angularjs,bottle,flask,rails,oodo,nose.
+
+
+
+* we can access the source code and customize the source code. - TRUE
+* Freely available. - PRTIALLY
+* Opensource doesnt have the service model. FALSE
+* Limitation in opensource - no bug fixes or version.(not frequently) - FALSE
+* License version of opensource .- PARTIALLY
+* They capture and vanish. - PARTIALLY
+
+
