@@ -1,0 +1,74 @@
+Proprietory vs Opensource
+
+
+Proprietory 
+------------
+software owned by a company.
+ex: windows
+
+Company A - Product A
+      Us  - requirements 
+          - email - we will get back to you .
+          - internet - forums/newsgroups -> no support/no workaround.
+          
+* retention of customers.
+* frustrated customers.
+
+Opensource
+--------------
+
+Company A - Product A(GPL) - Publish the source code in internet
+      Us  - requirements 
+          - email - we will get back to you .
+          - internet - forums/newsgroups -> no support/no workaround. 
+          
+Guyb/Galb - Product A + modification - Product B (GPL) -> published in internet.
++ developers
+          - published in internet space
+          - forums/newsgroups - buddy we have a new product with x changes.
+          - ratings - excellent/vgood/good/bad/vbad
+
+* Homogenous
+* Hetrogeneous
+
+Fast forward 6 months
+------------------------
+Company A - A.3 - ( 100 + 400(community) ) modification
+
+* retention of customers.
+* cost cutting - 8cr profit.
+* marketing
+
+Money
+-------
+* support
+* training
+
+License
+---------
+GPL - GNU General Public License
+* any modification done to GPL product should go back to GPL.
+* Code should be published.
+OSF - Open source Foundation - 1960
+
+Priciples
+----------
+* FREEdom to modify the product is called opensource.
+* There is no piracy, you can modify and re-distribute.
+
+ex: 
+languages: perl/python/java/ruby/R/erlong
+Operating system: ubuntu/kali/mint/redhat/centos
+Databases : mariabd,mongodb,cassendra
+web frameworks: django,flask,bottle,angularjs,nodjs,rails
+cloud : openstack
+ 
+
+ 
+ 
+* source code is available to everyone. - true
+* Anyone can modify and change.   - true
+* Free of cost.  - false
+* modification go back to openrsource. - true
+* they make money via support. - true
+* Enterpise editions we get license. - partially
