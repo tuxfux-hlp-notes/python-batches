@@ -17,3 +17,8 @@ def my_div(a,b=1):
 def my_multi(a,b):
 	''' This is for multiplication of numbers '''
 	return a * b
+
+
+# Main
+if __name__ == '__main__':
+	print "Launching a Missile."
