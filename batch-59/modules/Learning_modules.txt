@@ -1,0 +1,406 @@
+Program1 - f1,f2,f3,f4
+program2 - f1,f2,f3,program1.f1
+
+# why do we save our program as .py extension.
+* convinence of konwing it python.
+* platform independent.
+* use it as a module.
+
+# 
+
+In [1]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/local/lib/python2.7/dist-packages/IPython/kernel/__init__.py:13: ShimWarning: The `IPython.kernel` package has been deprecated. You should import from ipykernel or jupyter_client instead.
+  "You should import from ipykernel or jupyter_client instead.", ShimWarning)
+/usr/lib/python2.7/dist-packages/gobject/constants.py:24: Warning: g_boxed_type_register_static: assertion 'g_type_from_name (name) == 0' failed
+  import gobject._gobject
+No handlers could be found for logger "oneconf.distributor"
+/usr/lib/python2.7/dist-packages/gtk-2.0/gtk/__init__.py:127: RuntimeWarning: PyOS_InputHook is not available for interactive use of PyGTK
+  set_interactive(1)
+ANSI                apt                 gtksourceview2      repr
+AptUrl              apt_inst            gtkunixprint        requests
+BaseHTTPServer      apt_pkg             gzip                resource
+Bastion             aptdaemon           hashlib             rexec
+BeautifulSoup       aptsources          heapq               rfc822
+BeautifulSoupTests  argparse            hmac                rlcompleter
+CDROM               array               hotshot             rmagic
+CGIHTTPServer       ast                 html5lib            robotparser
+Canvas              asynchat            htmlentitydefs      runpy
+CommandNotFound     asyncore            htmllib             samba
+ConfigParser        atexit              httplib             sched
+Cookie              atk                 httplib2            screen
+Crypto              audiodev            idlelib             select
+DLFCN               audioop             ihooks              serial
+Dialog              autoreload          imaplib             sessioninstaller
+DocXMLRPCServer     axi                 imghdr              sets
+Exscript            backports           imp                 setuptools
+Exscriptd           backports_abc       importlib           sexy
+FSM                 base64              imputil             sgmllib
+FileDialog          bdb                 inspect             sha
+FixTk               binascii            io                  shelve
+HTMLParser          binhex              ipykernel           shlex
+IN                  bisect              ipython_genutils    shutil
+IPython             bonobo              ipywidgets          shutil_backports
+Image               bpdb                itertools           signal
+ImageChops          bpython             jinja2              simplegeneric
+ImageColor          bsddb               json                singledispatch
+ImageCrackCode      bz2                 jsonschema          singledispatch_helpers
+ImageDraw           cPickle             jupyter             sip
+ImageEnhance        cProfile            jupyter_client      sipconfig
+ImageFile           cStringIO           jupyter_console     sipconfig_nd
+ImageFileIO         cairo               jupyter_core        site
+ImageFilter         calendar            keyword             sitecustomize
+ImageFont           caribou             ldb                 six
+ImageGL             certifi             lib2to3             smbc
+ImageGrab           cgi                 libxml2             smtpd
+ImageMath           cgitb               libxml2mod          smtplib
+ImageOps            chardet             linecache           sndhdr
+ImagePalette        chunk               linuxaudiodev       socket
+ImagePath           cmath               locale              spwd
+ImageQt             cmd                 lockfile            spyderlib
+ImageSequence       code                logging             spyderplugins
+ImageStat           codecs              lsb_release         sqlite3
+ImageTk             codeop              lxml                sre
+ImageWin            collections         macpath             sre_compile
+MimeWriter          colorama            macurl2path         sre_constants
+MySQLdb             colorsys            mailbox             sre_parse
+ORBit               commands            mailcap             ssl
+OpenSSL             compileall          mako                stat
+PAM                 compiler            markupbase          statvfs
+PIL                 configglue          markupsafe          storemagic
+PSDraw              configobj           marshal             string
+PngImagePlugin      configparser        math                stringold
+PyQt4               contextlib          md5                 stringprep
+Queue               cookielib           mhlib               strop
+ScrolledText        copy                mimetools           struct
+SimpleDialog        copy_reg            mimetypes           subprocess
+SimpleHTTPServer    crypt               mimify              sunau
+SimpleXMLRPCServer  csv                 mistune             sunaudio
+SocketServer        ctypes              mmap                symbol
+StringIO            cups                modulefinder        sympyprinting
+TYPES               cupshelpers         multifile           symtable
+Tix                 curl                multiprocessing     sys
+TkExscript          curses              mutex               sysconfig
+Tkconstants         cv                  mysql               syslog
+Tkdnd               cv2                 nbconvert           tabnanny
+Tkinter             cythonmagic         nbformat            talloc
+UbuntuSystemService datetime            netrc               tarfile
+UserDict            dbhash              new                 tdb
+UserList            dbm                 nis                 telnetlib
+UserString          dbus                nntplib             tempfile
+_LWPCookieJar       deb822              notebook            terminado
+_MozillaCookieJar   debconf             ntdb                termios
+__builtin__         debian              ntpath              test
+__future__          debian_bundle       nturl2path          tests
+_abcoll             debtagshw           numbers             textwrap
+_ast                decimal             numpy               this
+_bisect             decorator           oauthlib            thread
+_bsddb              defer               oneconf             threading
+_codecs             difflib             opcode              tidy
+_codecs_cn          dircache            operator            time
+_codecs_hk          dirspec             optparse            timeit
+_codecs_iso2022     dis                 os                  tkColorChooser
+_codecs_jp          distlib             os2emxpath          tkCommonDialog
+_codecs_kr          distutils           ossaudiodev         tkFileDialog
+_codecs_tw          django              pango               tkFont
+_collections        django-admin        pangocairo          tkMessageBox
+_csv                dns                 paramiko            tkSimpleDialog
+_ctypes             doctest             parser              toaiff
+_ctypes_test        drv_libxml2         parted              token
+_curses             dsextras            pathlib2            tokenize
+_curses_panel       dumbdbm             pdb                 tornado
+_dbus_bindings      dummy_thread        pexpect             trace
+_dbus_glib_bindings dummy_threading     pickle              traceback
+_elementtree        duplicity           pickleshare         traitlets
+_functools          easy_install        pickletools         ttk
+_hashlib            email               pip                 tty
+_heapq              encodings           pipes               turtle
+_hotshot            entrypoints         piston_mini_client  twisted
+_io                 errno               pkg_resources       types
+_json               exceptions          pkgutil             ubuntu_sso
+_locale             fabfile             platform            unicodedata
+_lsprof             fabric              plistlib            unittest
+_markerlib          fcntl               popen2              urllib
+_md5                fdpexpect           poplib              urllib2
+_multibytecodec     feedparser          posix               urllib3
+_multiprocessing    filecmp             posixfile           urlparse
+_mysql              fileinput           posixpath           user
+_mysql_exceptions   fnmatch             pprint              uu
+_osx_support        formatter           profile             uuid
+_ped                fpectl              prompt_toolkit      validate
+_pyio               fpformat            pstats              virtualenv
+_random             fractions           pty                 vte
+_sha                ftplib              ptyprocess          warnings
+_sha256             functools           pwd                 wave
+_sha512             functools32         pxssh               wcwidth
+_smbc               future_builtins     py_compile          weakref
+_socket             gc                  pyatspi             webbrowser
+_sqlite3            gconf               pyclbr              webkit
+_sre                gdbm                pycurl              whichdb
+_ssl                genericpath         pydoc               widgetsnbextension
+_strptime           getopt              pydoc_data          wsgiref
+_struct             getpass             pyexpat             xapian
+_symtable           gettext             pygments            xdg
+_sysconfigdata      gi                  pygtk               xdrlib
+_sysconfigdata_nd   gio                 pygtkcompat         xml
+_testcapi           glib                pyinotify           xmllib
+_threading_local    glob                pynotify            xmlrpclib
+_tkinter            gnome               pyodbc              xxsubtype
+_warnings           gnomecanvas         pysqlite2           zipfile
+_weakref            gnomekeyring        qtconsole           zipimport
+_weakrefset         gnomevfs            quopri              zlib
+abc                 gobject             random              zmq
+aifc                google              re                  zope
+antigravity         grp                 readline            
+anydbm              gtk                 reportlab           
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> quit
+
+
+In [3]: import math
+
+In [4]: print dir(math)
+['__doc__', '__name__', '__package__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+
+In [5]: math.
+        math.acos      math.ceil      math.erfc      math.frexp     math.lgamma    math.radians   
+        math.acosh     math.copysign  math.exp       math.fsum      math.log       math.sin       
+        math.asin      math.cos       math.expm1     math.gamma     math.log10     math.sinh      
+        math.asinh     math.cosh      math.fabs      math.hypot     math.log1p     math.sqrt      
+        math.atan      math.degrees   math.factorial math.isinf     math.modf      math.tan       
+        math.atan2     math.e         math.floor     math.isnan     math.pi        math.tanh      
+        math.atanh     math.erf       math.fmod      math.ldexp     math.pow       math.trunc     
+
+In [3]: import math
+
+In [4]: print dir(math)
+['__doc__', '__name__', '__package__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+
+In [5]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [6]: help(math.pow)
+
+
+In [7]: math.pow(2,3)
+Out[7]: 8.0
+
+In [8]: math.pi
+Out[8]: 3.141592653589793
+
+In [9]: import math as m
+
+In [10]: m.pow(2,3)
+Out[10]: 8.0
+
+In [11]: m.pi
+Out[11]: 3.141592653589793
+
+In [13]: from math import pow,pi
+
+In [14]: pow(2,3)
+Out[14]: 8.0
+
+In [15]: pi
+Out[15]: 3.141592653589793
+
+
+# dont try this at office and home
+# from math import *
+
+
+
+In [16]: pwd
+Out[16]: u'/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules'
+
+In [17]: ls
+first.py  Learning_modules.txt
+
+In [18]: import first as f
+
+In [19]: import xyz
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-19-ee019ec63415> in <module>()
+----> 1 import xyz
+
+ImportError: No module named xyz
+
+In [20]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_mutli', 'my_sub', 'version']
+
+In [21]: f.
+            f.my_add   f.my_sub   
+            f.my_div   f.version  
+            f.my_mutli            
+
+
+#let me make some modidication to first.py -> for say version=2.0 save it and later do f.version.
+we see the f.version is still showing 1.0
+
+In [31]: f.version
+Out[31]: 1.0
+
+In [32]: f.version
+Out[32]: 1.0
+
+In [33]: ls
+first.py  first.pyc  Learning_modules.txt
+
+In [34]: import first as f
+
+In [35]: f.version
+Out[35]: 1.0
+
+
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ file first.py
+first.py: Python script, ASCII text executable
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ file first.pyc
+first.pyc: python 2.7 byte-compiled
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ cat first.pyc 
+
+l.�Xc@s1dZd�Zd�Zdd�Zd�ZdS(g�?cCs||}|S(s- This is for addition of strings and numbers.((tatbtsum((first.pytmy_adds
+cCs,||kr||S||kr(||SdS(s( This is for substraction of two numbersN((RR((first.pytmy_sub
+
+ 
+  icC||S(s% This is for division of tow numbers ((RR((first.pytmy_divscC||S(s' this is for multiplication of numbers ((RR((first.pymy_mutlisN(tversionRRRR(((first.py<module>		
+                tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ 
+
+
+In [36]: reload(f)
+Out[36]: <module 'first' from 'first.py'>
+
+In [37]: f.version
+Out[37]: 2.0
+
+In [38]: f.my_multi(12,12)
+Out[38]: 144
+
+* .pyc is platform independent.
+* .pyc can be regenrated usiing python command line or while importing.
+
+
+# if i have some code .. it getting run while importing.
+
+In [1]: ls
+first.py  first.pyc  Learning_modules.txt  second.py
+
+In [2]: import first as f
+Deposit 1000 rupees in account
+
+In [3]: f.
+           f.my_add   f.my_sub   
+           f.my_div   f.version  
+           f.my_multi  
+
+
+In [3]: f.my_add
+Out[3]: <function first.my_add>
+
+In [4]: def g():
+   ...:     pass
+   ...: 
+
+In [5]: g
+Out[5]: <function __main__.g>
+
+In [6]: locals()
+Out[6]: 
+{'In': ['',
+  u"get_ipython().magic(u'ls ')",
+  u'import first as f',
+  u'f.my_add',
+  u'def g():\n    pass',
+  u'g',
+  u'locals()'],
+ 'Out': {3: <function first.my_add>, 5: <function __main__.g>},
+ '_': <function __main__.g>,
+ '_3': <function first.my_add>,
+ '_5': <function __main__.g>,
+ '__': <function first.my_add>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '__package__': None,
+ '_dh': [u'/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules'],
+ '_exit_code': 0,
+ '_i': u'g',
+ '_i1': u'ls',
+ '_i2': u'import first as f',
+ '_i3': u'f.my_add',
+ '_i4': u'def g():\n    pass',
+ '_i5': u'g',
+ '_i6': u'locals()',
+ '_ih': ['',
+  u"get_ipython().magic(u'ls ')",
+  u'import first as f',
+  u'f.my_add',
+  u'def g():\n    pass',
+  u'g',
+  u'locals()'],
+ '_ii': u'def g():\n    pass',
+ '_iii': u'f.my_add',
+ '_oh': {3: <function first.my_add>, 5: <function __main__.g>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7f4785a34c50>,
+ 'f': <module 'first' from 'first.py'>,
+ 'g': <function __main__.g>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7f4785a7c950>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7f4785a34c50>}
+
+In [7]: 
+
+# if i move my first.py under modules/extra folder and also delted the .pyc file.
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ ls
+first.py  first.pyc  Learning_modules.txt  second.py
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ mkdir extra
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ mv first.py extra/
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ ls
+extra  first.pyc  Learning_modules.txt  second.py
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ python second.py
+addition of two floats is 33.0
+addition of two string is pythondjango
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ rm -f first.pyc
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ ls
+extra  Learning_modules.txt  second.py
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ python second.py
+Traceback (most recent call last):
+  File "second.py", line 3, in <module>
+    import first as g
+ImportError: No module named first
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ 
+
+
+
+
+
+
