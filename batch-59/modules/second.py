@@ -1,5 +1,8 @@
 #!/usr/bin/python
 
+import sys
+sys.path.insert(0,'/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules/extra')
+
 import first as g
 
 def my_add(a,b):

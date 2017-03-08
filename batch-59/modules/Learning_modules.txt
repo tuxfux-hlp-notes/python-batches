@@ -400,6 +400,138 @@ ImportError: No module named first
 tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ 
 
 
+In [1]: import sys
+
+In [2]: sys.path
+Out[2]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/tcloudost/.ipython']
+
+In [3]: ls
+extra/  Learning_modules.txt  second.py
+
+In [4]: import math
+
+In [4]: import math
+
+In [5]: sys.path.insert(0,'/home/tcloudost/Documents/git_repositories/python-batches/batch-59/module
+   ...: s/extra')
+
+In [6]: sys.path
+Out[6]: 
+['/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules/extra',
+ '',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/tcloudost/.ipython']
+
+
+
+# installation of modules
+* os packages
+# sudo apt-get install <module> # ubunut/debian/linuxmint
+# yum install <modules> # redhat/fedora/centos
+# .msi,.exe (windows)
+
+* pip
+# pip install <module>
+ex: pip install excel
+ex: pip install excel==0.0.1
+
+* easy_install
+# easy_install <module>
+
+* setuptools
+
+
+# virtualenv
+
+https://virtualenv.pypa.io/en/stable/installation/
+Installation: pip install virtualenv
+
+Modules : pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules
+Modules : ls
+extra  Learning_modules.txt  second.py
+Modules : 
+Modules : virtualenv sheets
+New python executable in sheets/bin/python
+Installing setuptools, pip...done.
+Modules : 
+Modules : ls
+extra  Learning_modules.txt  second.py  sheets
+Modules : ls sheets/
+bin  include  lib  local
+Modules : 
+Modules : source sheets/bin/activate
+(sheets)Modules : 
+(sheets)Modules : pip freeze
+argparse==1.2.1
+wsgiref==0.1.2
+(sheets)Modules : pip install excel
+Downloading/unpacking excel
+  Downloading excel-1.0.0.tar.gz
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules/sheets/build/excel/setup.py) egg_info for package excel
+    
+Downloading/unpacking xlrd (from excel)
+  Downloading xlrd-1.0.0.tar.gz (2.6MB): 2.6MB downloaded
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules/sheets/build/xlrd/setup.py) egg_info for package xlrd
+    
+    warning: no files found matching 'README.html'
+Installing collected packages: excel, xlrd
+  Running setup.py install for excel
+    
+  Running setup.py install for xlrd
+    changing mode of build/scripts-2.7/runxlrd.py from 644 to 755
+    
+    warning: no files found matching 'README.html'
+    changing mode of /home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules/sheets/bin/runxlrd.py to 755
+Successfully installed excel xlrd
+Cleaning up...
+(sheets)Modules : 
+(sheets)Modules : pip freeze
+argparse==1.2.1
+excel==1.0.0
+wsgiref==0.1.2
+xlrd==1.0.0
+(sheets)Modules : python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> quit()
+(sheets)Modules : ls
+extra  Learning_modules.txt  second.py  sheets
+(sheets)Modules : deactivate 
+Modules : 
+Modules : 
+
+
+https://docs.python.org/2.7/installing/index.html
+https://docs.python.org/2.7/distributing/index.html
+
 
 
 
