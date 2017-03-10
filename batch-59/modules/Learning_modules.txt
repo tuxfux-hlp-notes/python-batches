@@ -533,6 +533,300 @@ https://docs.python.org/2.7/installing/index.html
 https://docs.python.org/2.7/distributing/index.html
 
 
+# packages:
+https://docs.python.org/2/tutorial/modules.html#packages
+
+p1 - f1,f2,f3
+p2 - f1,f2,f3,p1.f1
+
+
+
+folder(A):
++ p1
++ p2
+folder(B):
++ p1
++ p2
+
+ex:
+
++OS
+++Linux
+  + first.py   (OS.Linux.first)
+  + second.py
+  + third.py
+  + fourth.py
+++sol
+  + first.py    (OS.sol.first)
+  + second.py
+  + third.py
+  + fourth.py
+++aix
+++hpux
+
+
+# creating out own package
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ mkdir OS
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ mkdir OS/{lin,sol,aix,hpux}
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ 
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+`-- sol
+
+Under the lin folder created four programes first,second,third,fourth
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- fourth.py
+|   |-- second.py
+|   `-- third.py
+`-- sol
+
+4 directories, 4 files
+
+Go into the OS/ folder and do the following.
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ ls
+extra  Learning_modules.txt  OS  second.py  sheets
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ cd OS
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules/OS $ ls
+aix  hpux  lin  sol
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules/OS $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+# to make sure our lin works a as package create the __init__.py file.
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+
+
+In [2]: import lin
+
+In [3]: lin.
+             lin.first  lin.second 
+             lin.fourth lin.third  
+
+
+In [3]: lin.first.my_first_lin1()
+Out[3]: 'this is my first lin1 function'
+
+In [4]: lin.first.my_second_lin1()
+Out[4]: 'this is my second lin1 function'
+
+In [5]: lin.first.my_second_lin2()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-5-2787117cdbb3> in <module>()
+----> 1 lin.first.my_second_lin2()
+
+AttributeError: 'module' object has no attribute 'my_second_lin2'
+
+In [6]: lin.second.my_first.lin2()
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-6-d4387381e694> in <module>()
+----> 1 lin.second.my_first.lin2()
+
+AttributeError: 'module' object has no attribute 'my_first'
+
+In [7]: lin.second.my_first_lin2()
+Out[7]: 'this is my first lin2 function'
+
+# case II - scenerio
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ cp OS/lin/*.py OS/sol/
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-59/modules
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/modules $ tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+    |-- first.py
+    |-- fourth.py
+    |-- __init__.py
+    |-- second.py
+    `-- third.py
+
+4 directories, 15 files
+tcloudost@tcloudost-VirtualBox ~/Documents
+
+-- content of __init__.py --- 
+
+import first
+import second
+import third
+
+
+In [8]: import sol
+
+In [9]: sol.
+             sol.first  
+             sol.second 
+             sol.third  
+
+In [9]: from sol import fourth
+
+In [10]: sol.
+              sol.first  sol.second 
+              sol.fourth sol.third  
+
+
+# example of an xml module.
+
+In [10]: import sys
+
+In [11]: sys.path
+Out[11]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/tcloudost/.ipython']
+
+
+ modules : pwd
+/usr/lib/python2.7/xml
+modules : 
+
+modules : ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+modules : ls dom
+domreg.py        expatbuilder.pyc  minicompat.py   minidom.pyc     pulldom.py     xmlbuilder.pyc
+domreg.pyc       __init__.py       minicompat.pyc  NodeFilter.py   pulldom.pyc
+expatbuilder.py  __init__.pyc      minidom.py      NodeFilter.pyc  xmlbuilder.py
+modules : ls etree
+cElementTree.py   ElementInclude.py   ElementPath.py   ElementTree.py   __init__.py
+cElementTree.pyc  ElementInclude.pyc  ElementPath.pyc  ElementTree.pyc  __init__.pyc
+modules : ls parsers
+expat.py  expat.pyc  __init__.py  __init__.pyc
+modules : ls sax
+_exceptions.py   expatreader.py   handler.py   __init__.py   saxutils.py   xmlreader.py
+_exceptions.pyc  expatreader.pyc  handler.pyc  __init__.pyc  saxutils.pyc  xmlreader.pyc
+modules : cat __init__.py
+"""Core XML support for Python.
+
+This package contains four sub-packages:
+
+dom -- The W3C Document Object Model.  This supports DOM Level 1 +
+       Namespaces.
+
+parsers -- Python wrappers for XML parsers (currently only supports Expat).
+
+sax -- The Simple API for XML, developed by XML-Dev, led by David
+       Megginson and ported to Python by Lars Marius Garshol.  This
+       supports the SAX 2 API.
+
+etree -- The ElementTree XML library.  This is a subset of the full
+       ElementTree XML release.
+
+"""
+
+
+__all__ = ["dom", "parsers", "sax", "etree"]
+
+_MINIMUM_XMLPLUS_VERSION = (0, 8, 4)
+
+
+try:
+    import _xmlplus
+except ImportError:
+    pass
+else:
+    try:
+        v = _xmlplus.version_info
+    except AttributeError:
+        # _xmlplus is too old; ignore it
+        pass
+    else:
+        if v >= _MINIMUM_XMLPLUS_VERSION:
+            import sys
+            _xmlplus.__path__.extend(__path__)
+            sys.modules[__name__] = _xmlplus
+        else:
+            del v
+
+
+# refrences:
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2.7/distutils/
+
+
+# pydoc
+pydoc math
+pydoc sys
+
+
+
+
+
+
+
+
+
+
 
 
 
