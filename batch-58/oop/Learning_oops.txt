@@ -1,0 +1,74 @@
+Programming:
++ functional programming.
++ object oriented programming.
+
+Real life scenerious
+* python class.
+
+A - Abstraction 
+
+Defination of a class or object.
+
+car               * class
+ - tyres          - variables/data
+ - body
+ - seats
+ - color
+  + clutch         + function/methods
+  + acceleration
+  + break
+
+objects:
+* Benz.
+* BMW.
+* AUDI
+* Maruti.
+* Tata Nano.
+
+In [2]: my_string="python"
+
+In [3]: type(my_string)
+Out[3]: str
+
+str - class
+my_string -> object.
+
+
+P - Polymorphism
+
+poly - many
+morphism - forms
+many-forms
+
+In [6]: 1 + 1
+Out[6]: 2
+
+In [7]: 'a' + 'b'
+Out[7]: 'ab'
+
+In [8]: 'a' + 1
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-8-ad2b220c7e96> in <module>()
+----> 1 'a' + 1
+
+TypeError: cannot concatenate 'str' and 'int' objects
+
+In [9]: 
+
+
+I - Inheritance
+
+parent to child.
+parent/child
+super/child
+
+
+E - Encapsulation
+
+more concerned with functionality rather the data inside.
+binding of data and methods into one unit.
+
+# Magic Methods
+http://minhhh.github.io/posts/a-guide-to-pythons-magic-methods
+http://farmdev.com/src/secrets/magicmethod/
