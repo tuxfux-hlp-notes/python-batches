@@ -1,0 +1,6 @@
+Mon Mar 13 08:19:15 2017 - root - INFO - The disk is healthy at 10.
+Mon Mar 13 08:20:00 2017 - root - INFO - The disk is healthy at 50.
+Mon Mar 13 08:20:07 2017 - root - CRITICAL - The disk is completly filled up at 90
+Mon Mar 13 08:20:11 2017 - root - CRITICAL - The disk is completly filled up at 99
+Mon Mar 13 08:20:15 2017 - root - INFO - The disk is healthy at 10.
+Mon Mar 13 08:34:16 2017 - root - INFO - The disk is healthy at 36.
