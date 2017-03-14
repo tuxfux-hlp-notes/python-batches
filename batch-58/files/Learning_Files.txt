@@ -1,0 +1,211 @@
+Files - 
+why do we need files?
+Persistant storage of data.
+what are different types of files? .txt,.log,.html,.xml,.yaml
+
+# filehandler
+* read
+* write
+* append
+
+Not for modification.
+
+# modes
+r - read mode - you can read the file. You cannot modify in this mode.
+w - write mode - you can write the file.
+* if you dont have a filename, it will create the file.
+* if you have a filename,it will truncate the file to zero before writing.
+a - append mode - you can append lines to the file.
+b - binary mode - rb,wb,ab modes.
+r+ - read/append - you can simuntaneously read and write to the file.
+
+----
+In [1]: ls
+Learning_Files.txt  newfile.txt
+
+In [2]: f = open('newfile.txt')
+
+In [3]: f
+Out[3]: <open file 'newfile.txt', mode 'r' at 0x7fa8c44006f0>
+
+In [4]: # f.read
+
+In [5]: f.read?
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+Type:      builtin_function_or_method
+
+In [6]: f.read(2)
+Out[6]: 'Th'
+
+In [7]: f.read(2)
+Out[7]: 'is'
+
+In [8]: f.read()
+Out[8]: ' is my first line.\nThis is my second line.\nThis is my third line.\nThis is my fourth line.\nThis is my fifth line.'
+
+In [9]: f.read()
+Out[9]: ''
+
+In [10]: f.tell?
+Docstring: tell() -> current file position, an integer (may be a long integer).
+Type:      builtin_function_or_method
+
+In [11]: f.tell()
+Out[11]: 116
+
+In [12]: f.seek?
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+Type:      builtin_function_or_method
+
+In [13]: f.seek(0)
+
+In [14]: f.read()
+Out[14]: 'This is my first line.\nThis is my second line.\nThis is my third line.\nThis is my fourth line.\nThis is my fifth line.'
+
+In [15]: f.tell()
+Out[15]: 116
+
+In [17]: f.seek(0)
+
+In [18]: f.readline?
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+Type:      builtin_function_or_method
+
+In [19]: f.readline()
+Out[19]: 'This is my first line.\n'
+
+In [20]: f.readline()
+Out[20]: 'This is my second line.\n'
+
+In [21]: f.readline()
+Out[21]: 'This is my third line.\n'
+
+In [22]: f.readline()
+Out[22]: 'This is my fourth line.\n'
+
+In [23]: f.readline()
+Out[23]: 'This is my fifth line.'
+
+In [24]: f.readline()
+Out[24]: ''
+
+In [26]: f.seek(0)
+
+In [27]: f.readlines?
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+Type:      builtin_function_or_method
+
+In [28]: my_lines = f.readlines()
+
+In [29]: print my_lines
+['This is my first line.\n', 'This is my second line.\n', 'This is my third line.\n', 'This is my fourth line.\n', 'This is my fifth line.']
+
+# f.read -> string
+# f.readline -> line
+# f.readlines -> list
+# f.tell -> position of pointer in the file.
+# f.seek -> take to the position requested by seek.
+
+# write mode.
+
+In [31]: g = open("myfile.txt","wb")
+
+In [32]: g.write?
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+Type:      builtin_function_or_method
+
+In [33]: g.write("Today is tuesday.\nToday is my monday.\n")
+
+In [34]: # keyboard -> buffer -> cpu -> buffer -> console/disk
+
+In [35]: g.flush?
+Docstring: flush() -> None.  Flush the internal I/O buffer.
+Type:      builtin_function_or_method
+
+In [36]: g.flush()
+
+In [37]: # g.flush keeps your file open and lets you modify further.
+
+In [38]: g.write("\nThis is my third line.\n"
+    ...: )
+
+In [39]: g.close?
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+Type:      builtin_function_or_method
+
+In [40]: g.close()
+
+In [41]: g.write("\nThis is my fourth line.\n)
+  File "<ipython-input-41-8dcb17caaafe>", line 1
+    g.write("\nThis is my fourth line.\n)
+                                        ^
+SyntaxError: EOL while scanning string literal
+
+
+In [42]: g.write("\nThis is my fourth line.\n")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-42-4b3eba245879> in <module>()
+----> 1 g.write("\nThis is my fourth line.\n")
+
+ValueError: I/O operation on closed file
+
+In [44]: g.writelines?
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+Type:      builtin_function_or_method
+
+In [45]: g = open("myfile.txt","ab")
+
+In [46]: g
+Out[46]: <open file 'myfile.txt', mode 'ab' at 0x7fa8c4400d20>
+
+In [47]: my_lines
+Out[47]: 
+['This is my first line.\n',
+ 'This is my second line.\n',
+ 'This is my third line.\n',
+ 'This is my fourth line.\n',
+ 'This is my fifth line.']
+
+In [48]: g.writelines(my_lines)
+
+In [49]: g.flush()
