@@ -1,0 +1,5 @@
+03-19 10:56 root         INFO     Info message from logigng module.
+03-19 10:56 myapp.area1  DEBUG    Debug message from logger1.
+03-19 10:56 myapp.area1  INFO     Info message from logger1.
+03-19 10:56 myapp.area2  WARNING  warning message from logger2.
+03-19 10:56 myapp.area2  ERROR    Error message from logger2.

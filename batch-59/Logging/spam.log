@@ -1,0 +1,5 @@
+2017-03-19 10:43:16,264 - simple_example - DEBUG - debug message
+2017-03-19 10:43:16,265 - simple_example - INFO - info message
+2017-03-19 10:43:16,265 - simple_example - WARNING - warn message
+2017-03-19 10:43:16,266 - simple_example - ERROR - error message
+2017-03-19 10:43:16,266 - simple_example - CRITICAL - critical message

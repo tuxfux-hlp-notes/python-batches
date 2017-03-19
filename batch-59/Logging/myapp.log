@@ -1,0 +1,29 @@
+WARNING:root:This is an warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is an critical message
+--------------------------------------------
+WARNING:root:This is an warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is an critical message
+--------------------------------------------
+DEBUG:root:This is an debug message
+INFO:root:This is an info message
+WARNING:root:This is an warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is an critical message
+------------------------------------------------
+2017-03-16 09:47:34,866 - root - DEBUG - This is an debug message
+2017-03-16 09:47:34,867 - root - INFO - This is an info message
+2017-03-16 09:47:34,867 - root - WARNING - This is an warning message
+2017-03-16 09:47:34,867 - root - ERROR - This is an error message
+2017-03-16 09:47:34,867 - root - CRITICAL - This is an critical message
+Thu Mar 16 09:49:31 2017 - root - DEBUG - This is an debug message
+Thu Mar 16 09:49:31 2017 - root - INFO - This is an info message
+Thu Mar 16 09:49:31 2017 - root - WARNING - This is an warning message
+Thu Mar 16 09:49:31 2017 - root - ERROR - This is an error message
+Thu Mar 16 09:49:31 2017 - root - CRITICAL - This is an critical message
+--------------------------------------------------------------------------
+Thu Mar 16 09:55:16 2017 - root - INFO - The disk is health at 20
+Thu Mar 16 09:55:38 2017 - root - ERROR - The is disk is getting filled up 76
+Thu Mar 16 09:55:47 2017 - root - CRITICAL - The application has gone down  99
+Thu Mar 16 09:55:51 2017 - root - INFO - The disk is health at 12
