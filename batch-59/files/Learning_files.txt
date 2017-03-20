@@ -1,0 +1,355 @@
+basic way of storage of data is files.
+files - .txt,.html,.xls,.yaml
+
+
+In [1]: f = open("file1.txt")
+
+In [2]: f
+Out[2]: <open file 'file1.txt', mode 'r' at 0x7f37f5a2b5d0>
+
+In [3]: # modes
+
+In [4]: # r - read mode - for reading the file.
+
+In [5]: # w - write mode - writing into the file.
+
+In [6]: # Note: If the file is not existing if will create it. Else it will truncate the file to zer
+   ...: o.
+
+In [7]: # a -> append the contents to the files.
+
+In [8]: # b - binary mode.
+
+In [9]: # rb,wb,ab
+
+In [11]: f.read?
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+Type:      builtin_function_or_method
+
+In [12]: f.read(2)
+Out[12]: 'Th'
+
+In [13]: f.read(2)
+Out[13]: 'is'
+
+In [14]: f.read()
+Out[14]: ' is line1.\nThis is line2.\nThis is line3.\nThis is line4.\nThis is line5.'
+
+In [15]: f.read()
+Out[15]: ''
+
+In [16]: f.tell?
+Docstring: tell() -> current file position, an integer (may be a long integer).
+Type:      builtin_function_or_method
+
+In [17]: f.tell()
+Out[17]: 74
+
+In [18]: # f.seek
+
+In [19]: f.seek?
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+Type:      builtin_function_or_method
+
+In [20]: f.seek(0)
+
+In [21]: f.read()
+Out[21]: 'This is line1.\nThis is line2.\nThis is line3.\nThis is line4.\nThis is line5.'
+
+In [22]: f.tell()
+Out[22]: 74
+
+In [23]: f.read()
+Out[23]: ''
+
+In [24]: f.seek(0)
+
+In [25]: # f.readline
+
+In [26]: f.readline()
+Out[26]: 'This is line1.\n'
+
+In [27]: f.readline()
+Out[27]: 'This is line2.\n'
+
+In [28]: f.readline()
+Out[28]: 'This is line3.\n'
+
+In [29]: f.readline()
+Out[29]: 'This is line4.\n'
+
+In [30]: f.readline()
+Out[30]: 'This is line5.'
+
+In [31]: f.readline()
+Out[31]: ''
+
+In [32]: f.seek(0)
+
+In [33]: # f.readlines?
+
+In [34]: f.readlines?
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+Type:      builtin_function_or_method
+
+In [35]: my_lines = f.readlines()
+
+In [36]: print my_lines
+['This is line1.\n', 'This is line2.\n', 'This is line3.\n', 'This is line4.\n', 'This is line5.']
+
+In [37]: my_lines
+Out[37]: 
+['This is line1.\n',
+ 'This is line2.\n',
+ 'This is line3.\n',
+ 'This is line4.\n',
+ 'This is line5.']
+
+In [38]: # f.xreadlines
+
+In [39]: f.xreadline?
+Object `f.xreadline` not found.
+
+In [40]: f.xreadlines?
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+Type:      builtin_function_or_method
+
+In [41]: # f.readinot
+
+In [42]: f.readinto?
+Docstring: readinto() -> Undocumented.  Don't use this; it may go away.
+Type:      builtin_function_or_method
+
+In [43]: # f.write
+
+In [44]: g = open("new_file.txt","wb")
+
+In [45]: g.write?
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+Type:      builtin_function_or_method
+
+In [46]: g.write("hey this is one.\nThis is line two.\nThis is line3\n.This is line4.\nThis is line5
+    ...: .\n")
+
+In [47]: # flush
+
+In [48]: g.flush?
+Docstring: flush() -> None.  Flush the internal I/O buffer.
+Type:      builtin_function_or_method
+
+In [49]: # close
+
+In [50]: g.close?
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+Type:      builtin_function_or_method
+
+In [51]: # keyboard -> I/O buffers -> cpu -> I/O buffer -> monitor/disk
+
+In [52]: g.flush()
+
+In [53]: g
+Out[53]: <open file 'new_file.txt', mode 'wb' at 0x7f37f5a2bb70>
+
+In [54]: print my_lines
+['This is line1.\n', 'This is line2.\n', 'This is line3.\n', 'This is line4.\n', 'This is line5.']
+
+In [55]: # g.writelines
+
+In [56]: g.writelines(my_lines)
+
+In [57]: g.close()
+
+In [58]: g
+Out[58]: <closed file 'new_file.txt', mode 'wb' at 0x7f37f5a2bb70>
+
+In [59]: g.write("a new line")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-59-432ed59486ac> in <module>()
+----> 1 g.write("a new line")
+
+ValueError: I/O operation on closed file
+
+In [61]: g
+Out[61]: <closed file 'new_file.txt', mode 'wb' at 0x7f37f5a2bb70>
+
+In [62]: g.write("a new line")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-62-432ed59486ac> in <module>()
+----> 1 g.write("a new line")
+
+ValueError: I/O operation on closed file
+
+In [63]: g.closed
+Out[63]: True
+
+In [64]: f
+Out[64]: <open file 'file1.txt', mode 'r' at 0x7f37f5a2b5d0>
+
+In [65]: f.closed
+Out[65]: False
+
+In [66]: if g.closed:
+    ...:     print "the file {} is closed".format(g.name)
+    ...: else:
+    ...:     g.write("entering a new line.\n")
+    ...:     
+the file new_file.txt is closed
+
+In [71]: try:
+    ...:     g.write("entering a new line.\n")
+    ...: except:
+    ...:     print 'buddy!!!u cannot write to the file {} with mode {}'.format(g.name,g.mode)
+    ...: else:
+    ...:     print " you made an entry into the file"
+    ...: finally:
+    ...:     g.close()
+    ...:     
+buddy!!!u cannot write to the file new_file.txt with mode wb
+
+In [73]: # with
+
+In [74]: g
+Out[74]: <closed file 'new_file.txt', mode 'wb' at 0x7f37f5a2bb70>
+
+In [75]: with open("new_file.txt","ab") as g:
+    ...:     g.write("i am appending a new line")
+    ...:     
+
+In [76]: g
+Out[76]: <closed file 'new_file.txt', mode 'ab' at 0x7f37f4634ae0>
+
+
+In [76]: g
+Out[76]: <closed file 'new_file.txt', mode 'ab' at 0x7f37f4634ae0>
+
+In [77]: f
+Out[77]: <open file 'file1.txt', mode 'r' at 0x7f37f5a2b5d0>
+
+In [78]: f.seek(0)
+
+In [79]: # f is an iterator
+
+In [80]: f.next()
+Out[80]: 'This is line1.\n'
+
+In [81]: f.next()
+Out[81]: 'This is line2.\n'
+
+In [82]: f.next()
+Out[82]: 'This is line3.\n'
+
+In [83]: f.next()
+Out[83]: 'This is line4.\n'
+
+In [84]: f.next()
+Out[84]: 'This is line5.'
+
+In [85]: # isatty
+
+In [86]: h = open('/dev/pts/0','wb')
+
+In [87]: h.write("Hey guys time for some quick beak.\n")
+
+In [88]: h
+Out[88]: <open file '/dev/pts/0', mode 'wb' at 0x7f37f4634a50>
+
+In [89]: f
+Out[89]: <open file 'file1.txt', mode 'r' at 0x7f37f5a2b5d0>
+
+In [90]: h.isatty()
+Out[90]: True
+
+In [91]: f.isatty()
+Out[91]: False
+
+--- installation of excel models --
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ ls
+file1.txt  Learning_files.txt  names_db.xls  new_file.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ virtualenv myvenv
+New python executable in myvenv/bin/python
+Installing setuptools, pip...done.
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ source myvenv/bin/activate
+(myvenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ pip freeze
+argparse==1.2.1
+wsgiref==0.1.2
+(myvenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ pip install excel
+Downloading/unpacking excel
+  Downloading excel-1.0.0.tar.gz
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-59/files/myvenv/build/excel/setup.py) egg_info for package excel
+    
+Downloading/unpacking xlrd (from excel)
+  Downloading xlrd-1.0.0.tar.gz (2.6MB): 2.6MB downloaded
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-59/files/myvenv/build/xlrd/setup.py) egg_info for package xlrd
+    
+    warning: no files found matching 'README.html'
+Installing collected packages: excel, xlrd
+  Running setup.py install for excel
+    
+  Running setup.py install for xlrd
+    changing mode of build/scripts-2.7/runxlrd.py from 644 to 755
+    
+    warning: no files found matching 'README.html'
+    changing mode of /home/tcloudost/Documents/git_repositories/python-batches/batch-59/files/myvenv/bin/runxlrd.py to 755
+Successfully installed excel xlrd
+Cleaning up...
+(myvenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ python read_excel.py 
+[u'Names', u'Sridhar', u'sandeep', u'mahendra', u'naren', u'sam']
+[u'Gender', u'm', u'm', u'm', u'm', u'm']
+(myvenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ python read_excel.py 
+[u'Names', u'Sridhar', u'sandeep', u'mahendra', u'naren', u'sam']
+[u'Gender', u'm', u'm', u'm', u'm', u'm']
+mahendra is a m
+(myvenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ deactivate 
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ python read_excel.py 
+Traceback (most recent call last):
+  File "read_excel.py", line 2, in <module>
+    from excel import OpenExcel
+ImportError: No module named excel
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ source myvenv/bin/activate
+(myvenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ deactivate
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-59/files $ 
+
+
+# XML relative example
+https://www.tutorialspoint.com/python/python_xml_processing.htm
+
+
+
+
