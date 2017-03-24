@@ -1,0 +1,78 @@
+Proprietory and opensource
+
+Proprietory
+------------
+owned by an individual/organisation.
+ex: AIX,sol,windows
+
+Company A -> Product A ->  
+        Us -> customers -> requirments
+           -> Put a mail to the company -> we will get back to you.
+           -> internet -> question -> workgroups/support 
+                       -> no workaround/solutions
+
+opensource
+------------
+Company A(GPL) -> Product A -> publish source code in internet (github/gitbucket) 
+        Us -> customers -> requirments
+           -> Put a mail to the company -> we will get back to you.
+           -> internet -> question -> workgroups/support -> Product A.3
+                       -> no workaround/solutions
+                       
+Customers -> developers -> download Product A -> modify -> 
+          guyb/galb -> Product B(5)GPL -> source code should be published
+            -> published it in internet space.
+(java/.net/python/perl)  
+
+    reviews -> excellent/v.good/good/bad/v.bad/worse
+    
+Fast Forward 6 months
+---------------------
+modification
+* homogenous
+* hetrogenous
+
+Company A -> product A.3 ( 100 + 400) -> 500 modification 
+
+Benfits
+--------                    
+* retaining my customer base.
+* Marketing.
+* cost cutting. -> 8cr.
+
+Money?
+--------
+* training
+* support -> platinum/diamond/gold/silver/bronze
+
+License
+--------
+* GPL - GNU General Public License (1960)
+* any modification you do to the product should go to GPL 
+* OSF -> OPen source Foundation 
+
+Principles
+-----------
+* FREEdom to modify a product is called opensource.              
+* No piracy involved.
+* you can make modification and re-distribute it.
+* Community support.
+
+Programming: python/perl/c/java
+OS : redhat/ubuntu/centos/fedora
+web frameworks: .net/angularjs/ajax/django/flask/bottle/rails
+datbases: mariadb/mongodb/cassendra/cowchdb
+
+
+* YOu get the product for free. - PARTIALLY
+* we can take and source code and modify or make a new product. - TRUE
+* how do they make money? 
++ support - TRUE
+* License comes under support. - FALSE
+* No License  - FALSE
+* Funding from different other big vendors. - PARTIALLY
+* community contribution. - TRUE
+* Reputation. - FALSE
+
+
+
