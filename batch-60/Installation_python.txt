@@ -24,6 +24,12 @@ windows
 --------
 https://www.continuum.io/downloads
 
+# how to install jupyter
+--------------------------
+sudo apt-get install jupyter
+or
+sudo apt-get install ipython-notebook
+
 IDE for python
 ---------------
 http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
