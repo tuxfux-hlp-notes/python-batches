@@ -1,0 +1,75 @@
+Proprietory vs Opensource
+---------------------------
+
+company A -> Product A
+Us(Customers) -> requirements -> 
+              -> you put a mail to the company -> we will get back to you.
+              -> internet space ->  No solution/no workaround
+
+* customer retention.
+* customer satisfaction.
+
+ex: microsoft,ms office
+
+Opensource
+-------------
+
+company A -> Product A(GPL) -> publishing the source code in internet
+Us(Customers) -> requirements -> 
+              -> you put a mail to the company -> we will get back to you.
+              -> internet space ->  No solution/no workaround
+              
+Us(developers) guyb/galb-> product A + modification -> Product B(GPL) -> published
+              -> internet space
+              -> newsgroups/forms -> we have a new product B
+      reviews ->  bad/v.bad/good/v.good/excellent
+      
+Hetrogenous/homogenous
+
+6 months fastforward
+-----------------------
+Company A -> A.3 -> (100 + 400) modification
+
+
+Benefit
+--------
+* cost-cutting
+* Marketing.
+* Customer retention.
+
+Money
+------
+* support - bronze/silver/gold/diamon/platinum > 
+* Training
+
+License
+---------
+GPL - GNU General Public License.
+* rule 1: publish the source code in internet
+* rule 2: You need to register under GPL.
+OSF - open source Foundation - 1960
+
+Principles
+-------------
+* FREEdom to modify a product is called opensource.
+* You can modify and re-distribute.
+* you have huge community support.
+
+ex:
+Languages: java/python/ruby
+web frameworks : flask/django/nodejs/angularjs/.net
+databases : sqlite,postgre,cassandra,mongodb
+Operating system: centos,debian,ubuntu,linuxmint
+
+
+
+
+
+
+
+
+* Code is open for everyone.
+* Any on can modify the source code.
+* Free of cost,support is chargable.
+* No license.
+* support.

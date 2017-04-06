@@ -1,0 +1,91 @@
+Ubuntu/linuxmint/zorion
+-----------------------------
+# sudo apt-get install python   (2.x)
+# sudo apt-get install python3  (3.x)
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+# ipython notebook
+# sudo apt-get install ipython-notebook
+# jupyter
+# sudo apt-get install jupyter
+
+
+http://python.org/
+https://ipython.org/
+https://bpython-interpreter.org/
+
+
+
+Redhat/Fedora/centos
+-----------------------------
+# yum install python   (2.x)
+# yum install python3  (3.x)
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+# ipython notebook
+# yum install ipython-notebook
+# jupyter
+# yum install jupyter
+
+
+windows
+-----------------------------
+https://www.continuum.io/downloads
+
+IDE
+-----
+http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+
+
+# terminal run
+
+tcloudost@tcloudost-VirtualBox ~ $ python --version
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~ $ python3 --version
+Python 3.4.3
+tcloudost@tcloudost-VirtualBox ~ $ 
+
+tcloudost@tcloudost-VirtualBox ~ $ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print "hello world"
+hello world
+>>> quit()
+tcloudost@tcloudost-VirtualBox ~ $ python3
+Python 3.4.3 (default, Oct 14 2015, 20:28:29) 
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print ("hello world")
+hello world
+>>> quit()
+tcloudost@tcloudost-VirtualBox ~ $ 
+
+tcloudost@tcloudost-VirtualBox ~ $ ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: print "hello world"
+hello world
+
+In [2]: quit()
+tcloudost@tcloudost-VirtualBox ~ $ bpython
+>>> print "hello world"
+hello world
+>>> quit()
+
+tcloudost@tcloudost-VirtualBox ~ $ 
+
+
+
