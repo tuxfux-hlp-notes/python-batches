@@ -1,0 +1,6 @@
+* write a block of which is can take care of repetative stuff.
+* Function is a block . you can keep on calling it multiple times.
+
+
+# exerises
+https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
