@@ -1,0 +1,465 @@
+* What are modules ?
+Modules are nothing but python program where we can use the functions in another program.
+
+
+Modules :python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/local/lib/python2.7/dist-packages/IPython/kernel/__init__.py:13: ShimWarning: The `IPython.kernel` package has been deprecated. You should import from ipykernel or jupyter_client instead.
+  "You should import from ipykernel or jupyter_client instead.", ShimWarning)
+/usr/lib/python2.7/dist-packages/gobject/constants.py:24: Warning: g_boxed_type_register_static: assertion 'g_type_from_name (name) == 0' failed
+  import gobject._gobject
+No handlers could be found for logger "oneconf.distributor"
+/usr/lib/python2.7/dist-packages/gtk-2.0/gtk/__init__.py:127: RuntimeWarning: PyOS_InputHook is not available for interactive use of PyGTK
+  set_interactive(1)
+ANSI                apt                 gtkunixprint        requests
+AptUrl              apt_inst            gzip                resource
+BaseHTTPServer      apt_pkg             hashlib             rexec
+Bastion             aptdaemon           heapq               rfc822
+BeautifulSoup       aptsources          hmac                rlcompleter
+BeautifulSoupTests  argparse            hotshot             rmagic
+CDROM               array               html5lib            robotparser
+CGIHTTPServer       ast                 htmlentitydefs      runpy
+Canvas              asynchat            htmllib             samba
+CommandNotFound     asyncore            httplib             sched
+ConfigParser        atexit              httplib2            screen
+Cookie              atk                 idlelib             select
+Crypto              audiodev            ihooks              serial
+DLFCN               audioop             imaplib             sessioninstaller
+Dialog              autoreload          imghdr              sets
+DocXMLRPCServer     axi                 imp                 setuptools
+Exscript            backports           importlib           sexy
+Exscriptd           backports_abc       imputil             sgmllib
+FSM                 base64              inspect             sha
+FileDialog          bdb                 io                  shelve
+FixTk               binascii            ipykernel           shlex
+HTMLParser          binhex              ipython_genutils    shutil
+IN                  bisect              ipywidgets          shutil_backports
+IPython             bonobo              itertools           signal
+Image               bpdb                jinja2              simplegeneric
+ImageChops          bpython             json                singledispatch
+ImageColor          bsddb               jsonschema          singledispatch_helpers
+ImageCrackCode      bz2                 jupyter             sip
+ImageDraw           cPickle             jupyter_client      sipconfig
+ImageEnhance        cProfile            jupyter_console     sipconfig_nd
+ImageFile           cStringIO           jupyter_core        site
+ImageFileIO         cairo               keyword             sitecustomize
+ImageFilter         calendar            ldb                 six
+ImageFont           caribou             lib2to3             smbc
+ImageGL             certifi             libxml2             smtpd
+ImageGrab           cgi                 libxml2mod          smtplib
+ImageMath           cgitb               linecache           sndhdr
+ImageOps            chardet             linuxaudiodev       socket
+ImagePalette        chunk               locale              spwd
+ImagePath           cmath               lockfile            spyderlib
+ImageQt             cmd                 logging             spyderplugins
+ImageSequence       code                lsb_release         sqlite3
+ImageStat           codecs              lxml                sre
+ImageTk             codeop              macpath             sre_compile
+ImageWin            collections         macurl2path         sre_constants
+MimeWriter          colorama            mailbox             sre_parse
+MySQLdb             colorsys            mailcap             ssl
+ORBit               commands            mako                stat
+OpenSSL             compileall          markupbase          statvfs
+PAM                 compiler            markupsafe          storemagic
+PIL                 configglue          marshal             string
+PSDraw              configobj           math                stringold
+PngImagePlugin      configparser        md5                 stringprep
+PyQt4               contextlib          mhlib               strop
+Queue               cookielib           mimetools           struct
+ScrolledText        copy                mimetypes           subprocess
+SimpleDialog        copy_reg            mimify              sunau
+SimpleHTTPServer    crypt               mistune             sunaudio
+SimpleXMLRPCServer  csv                 mmap                symbol
+SocketServer        ctypes              modulefinder        sympyprinting
+StringIO            cups                multifile           symtable
+TYPES               cupshelpers         multiprocessing     sys
+Tix                 curl                mutex               sysconfig
+TkExscript          curses              mysql               syslog
+Tkconstants         cv                  nbconvert           tabnanny
+Tkdnd               cv2                 nbformat            talloc
+Tkinter             cythonmagic         netrc               tarfile
+UbuntuSystemService datetime            new                 tdb
+UserDict            dbhash              nis                 telnetlib
+UserList            dbm                 nntplib             tempfile
+UserString          dbus                notebook            terminado
+_LWPCookieJar       deb822              ntdb                termios
+_MozillaCookieJar   debconf             ntpath              test
+__builtin__         debian              nturl2path          tests
+__future__          debian_bundle       numbers             textwrap
+_abcoll             debtagshw           numpy               this
+_ast                decimal             oauthlib            thread
+_bisect             decorator           oneconf             threading
+_bsddb              defer               opcode              tidy
+_codecs             difflib             operator            time
+_codecs_cn          dircache            optparse            timeit
+_codecs_hk          dirspec             os                  tkColorChooser
+_codecs_iso2022     dis                 os2emxpath          tkCommonDialog
+_codecs_jp          distlib             ossaudiodev         tkFileDialog
+_codecs_kr          distutils           pango               tkFont
+_codecs_tw          django              pangocairo          tkMessageBox
+_collections        dns                 paramiko            tkSimpleDialog
+_csv                doctest             parser              toaiff
+_ctypes             drv_libxml2         parted              token
+_ctypes_test        dsextras            pathlib2            tokenize
+_curses             dumbdbm             pdb                 tornado
+_curses_panel       dummy_thread        pexpect             trace
+_dbus_bindings      dummy_threading     pickle              traceback
+_dbus_glib_bindings duplicity           pickleshare         traitlets
+_elementtree        easy_install        pickletools         ttk
+_functools          email               pip                 tty
+_hashlib            encodings           pipes               turtle
+_heapq              entrypoints         piston_mini_client  twisted
+_hotshot            errno               pkg_resources       types
+_io                 exceptions          pkgutil             ubuntu_sso
+_json               fabfile             platform            unicodedata
+_locale             fabric              plistlib            unittest
+_lsprof             fcntl               popen2              urllib
+_markerlib          fdpexpect           poplib              urllib2
+_md5                feedparser          posix               urllib3
+_multibytecodec     filecmp             posixfile           urlparse
+_multiprocessing    fileinput           posixpath           user
+_mysql              fnmatch             pprint              uu
+_mysql_exceptions   formatter           profile             uuid
+_osx_support        fpectl              prompt_toolkit      validate
+_ped                fpformat            pstats              virtualenv
+_pyio               fractions           pty                 vte
+_random             ftplib              ptyprocess          warnings
+_sha                functools           pwd                 wave
+_sha256             functools32         pxssh               wcwidth
+_sha512             future_builtins     py_compile          weakref
+_smbc               gc                  pyatspi             webbrowser
+_socket             gconf               pyclbr              webkit
+_sqlite3            gdbm                pycurl              whichdb
+_sre                genericpath         pydoc               widgetsnbextension
+_ssl                getopt              pydoc_data          wsgiref
+_strptime           getpass             pyexpat             xapian
+_struct             gettext             pygments            xdg
+_symtable           gi                  pygtk               xdrlib
+_sysconfigdata      gio                 pygtkcompat         xml
+_sysconfigdata_nd   glib                pyinotify           xmllib
+_testcapi           glob                pynotify            xmlrpclib
+_threading_local    gnome               pyodbc              xxsubtype
+_tkinter            gnomecanvas         pysqlite2           zipfile
+_warnings           gnomekeyring        qtconsole           zipimport
+_weakref            gnomevfs            quopri              zlib
+_weakrefset         gobject             random              zmq
+abc                 google              re                  zope
+aifc                grp                 readline            
+antigravity         gtk                 reportlab           
+anydbm              gtksourceview2      repr                
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> 
+
+---
+
+In [1]: import sys  # you imported the sys module.
+
+In [2]: import abc
+
+In [3]: import xyz  # xyz module is not present and it provide an error.
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-3-ee019ec63415> in <module>()
+----> 1 import xyz
+
+ImportError: No module named xyz
+
+In [4]: print dir(sys)
+['__displayhook__', '__doc__', '__excepthook__', '__name__', '__package__', '__stderr__', '__stdin__', '__stdout__', '_clear_type_cache', '_current_frames', '_getframe', '_mercurial', '_multiarch', 'api_version', 'argv', 'builtin_module_names', 'byteorder', 'call_tracing', 'callstats', 'copyright', 'displayhook', 'dont_write_bytecode', 'exc_clear', 'exc_info', 'exc_traceback', 'exc_type', 'exc_value', 'excepthook', 'exec_prefix', 'executable', 'exit', 'exitfunc', 'flags', 'float_info', 'float_repr_style', 'getcheckinterval', 'getdefaultencoding', 'getdlopenflags', 'getfilesystemencoding', 'getprofile', 'getrecursionlimit', 'getrefcount', 'getsizeof', 'gettrace', 'hexversion', 'last_traceback', 'last_type', 'last_value', 'long_info', 'maxint', 'maxsize', 'maxunicode', 'meta_path', 'modules', 'path', 'path_hooks', 'path_importer_cache', 'platform', 'prefix', 'ps1', 'ps2', 'ps3', 'py3kwarning', 'pydebug', 'setcheckinterval', 'setdlopenflags', 'setprofile', 'setrecursionlimit', 'settrace', 'stderr', 'stdin', 'stdout', 'subversion', 'version', 'version_info', 'warnoptions']
+
+In [5]: sys.                     
+             sys.api_version           sys.callstats             sys.exc_info                
+             sys.argv                  sys.copyright             sys.exc_type                
+             sys.builtin_module_names  sys.displayhook           sys.excepthook            > 
+             sys.byteorder             sys.dont_write_bytecode   sys.exec_prefix             
+             sys.call_tracing          sys.exc_clear             sys.executable              
+
+# type 1: 
+
+In [6]: import math
+
+In [7]: math.pi
+Out[7]: 3.141592653589793
+
+In [8]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [9]: math.pow(2,3)
+Out[9]: 8.0
+
+In [10]: math.
+        math.acos      math.ceil      math.erfc      math.frexp     math.lgamma    math.radians   
+        math.acosh     math.copysign  math.exp       math.fsum      math.log       math.sin       
+        math.asin      math.cos       math.expm1     math.gamma     math.log10     math.sinh      
+        math.asinh     math.cosh      math.fabs      math.hypot     math.log1p     math.sqrt      
+        math.atan      math.degrees   math.factorial math.isinf     math.modf      math.tan       
+        math.atan2     math.e         math.floor     math.isnan     math.pi        math.tanh      
+        math.atanh     math.erf       math.fmod      math.ldexp     math.pow       math.trunc     
+
+# type2 : using alias name.
+In [11]: import math as m
+
+In [12]: m.pi
+Out[12]: 3.141592653589793
+
+In [13]: m.pow(2,3)
+Out[13]: 8.0
+
+
+# type 3
+
+In [15]: # make the function/variable of modules a part of our local namespace
+
+In [16]: from math import pi,pow
+
+In [17]: pi
+Out[17]: 3.141592653589793
+
+In [18]: pow(2,3)
+Out[18]: 8.0
+
+# type 4: dont use it.
+
+In [19]: # NOTE: DONT TRY THIS AT HOME OR OFFICE
+
+In [20]: # from math import *
+
+In [21]: 
+
+
+--- creating our first module --- 
+please see the first.py program created under the modules directory.
+
+In [22]: ls
+first.py  Learning_modules.txt
+
+In [23]: pwd
+Out[23]: u'/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules'
+
+In [24]: import first as f
+
+In [25]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'my_version']
+
+In [26]: f.my_add?
+Signature: f.my_add(a, b)
+Docstring: This is for addition on number and string
+File:      ~/Documents/git_repositories/python-batches/batch-60/modules/first.py
+Type:      function
+
+In [27]: f.my_sub?
+Signature: f.my_sub(a, b)
+Docstring: This if for substraction of numbers 
+File:      ~/Documents/git_repositories/python-batches/batch-60/modules/first.py
+Type:      function
+
+
+In [31]: f.my_version
+Out[31]: 1
+
+In [32]: f.my_add("python"," linux")
+Out[32]: 'python linux'
+
+In [33]: f.my_add(21,22)
+Out[33]: 43
+
+In [34]: # i made my_version=2 in my program first.py
+
+In [35]: f.my_version
+Out[35]: 1
+
+In [36]: f.my_version
+Out[36]: 1
+
+In [37]: import first as g
+
+In [38]: g.my_version
+Out[38]: 1
+
+In [39]: ls
+first.py  first.pyc  Learning_modules.txt
+
+In [40]: file first.pyc
+  File "<ipython-input-40-b6941b50c323>", line 1
+    file first.pyc
+             ^
+SyntaxError: invalid syntax
+
+
+In [41]: !file first.pyc
+first.pyc: python 2.7 byte-compiled
+
+In [42]: !file first.py
+first.py: Python script, ASCII text executable
+
+In [43]: !cat first.pyc
+
+a3�Xc@s.dZd�Zd�Zd�Zd�ZdS(icCs||}|S(s* This is for addition on number and string((tatbtresult((first.pytmy_adds
+cCs||}|S(s% This if for substraction of numbers ((RRR((first.pytmy_sub
+s
+cCs||}|S(s+ This is for multiplication of two numbers ((RRR((first.pymy_multis
+cCs||}|S(s% This is for division of two numbers ((RRR((first.pytmy_divs
+N(t
+my_versionRRRR(((first.py<module>			
+In [44]: 
+
+In [44]: 
+
+In [44]: reload(f)
+Out[44]: <module 'first' from 'first.py'>
+
+In [45]: f.my_version
+Out[45]: 2
+
+In [46]: 
+
+# Learning how to make a module.
+# understanding __name__ and __main__
+
+Modules :ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+Launching a missile.
+
+In [2]: def g():
+   ...:     pass
+   ...: 
+
+In [3]: print locals()
+{'_dh': [u'/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules'], '__': '', '__builtin__': <module '__builtin__' (built-in)>, 'quit': <IPython.core.autocall.ExitAutocall object at 0x7eff589c2c50>, '_i3': u'print locals()', '_i2': u'def g():\n    pass', '_i1': u'import first as f', '__package__': None, 'exit': <IPython.core.autocall.ExitAutocall object at 0x7eff589c2c50>, 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7eff58a0a950>>, '_i': u'def g():\n    pass', '__doc__': 'Automatically created module for IPython interactive environment', '__builtins__': <module '__builtin__' (built-in)>, '_ih': ['', u'import first as f', u'def g():\n    pass', u'print locals()'], '__name__': '__main__', '___': '', '_': '', '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>, 'g': <function g at 0x7eff52c1de60>, 'f': <module 'first' from 'first.py'>, '_iii': u'', '_ii': u'import first as f', 'In': ['', u'import first as f', u'def g():\n    pass', u'print locals()'], '_oh': {}, 'Out': {}}
+
+In [4]: g
+Out[4]: <function __main__.g>
+
+In [5]: g.__name__
+Out[5]: 'g'
+
+In [6]: f.my_add
+Out[6]: <function first.my_add>
+
+In [7]: quit()
+Modules :ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+
+In [2]: 
+
+# moving the module first.py to a new folder 'extra'
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ ls -l
+total 32
+-rw-r--r-- 1 tcloudost tcloudost   498 Apr  9 19:04 first.py
+-rw-r--r-- 1 tcloudost tcloudost  1276 Apr  9 19:09 first.pyc
+-rw-r--r-- 1 tcloudost tcloudost 18973 Apr  9 19:03 Learning_modules.txt
+-rw-r--r-- 1 tcloudost tcloudost   313 Apr  9 19:10 second.py
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ ls -l
+total 32
+drwxr-xr-x 2 tcloudost tcloudost  4096 Apr  9 19:11 extra
+-rw-r--r-- 1 tcloudost tcloudost  1276 Apr  9 19:09 first.pyc
+-rw-r--r-- 1 tcloudost tcloudost 18973 Apr  9 19:03 Learning_modules.txt
+-rw-r--r-- 1 tcloudost tcloudost   313 Apr  9 19:10 second.py
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ python second.py 
+addition of two numbers 32
+addition of two strings linuxrocks
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ rm -f first.pyc
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ python second.py 
+Traceback (most recent call last):
+  File "second.py", line 3, in <module>
+    import first
+ImportError: No module named first
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ 
+
+
+In [5]: import sys
+
+In [6]: sys.path
+Out[6]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/tcloudost/.ipython']
+
+In [7]: sys.path.insert(0,'/home/tcloudost/Documents/git_repositories/python-batches/batch-60/module
+   ...: s/extra')
+
+In [8]: sys.path
+Out[8]: 
+['/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/extra',
+ '',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/ubuntu-sso-client',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/tcloudost/.ipython']
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ python second.py 
+addition of two numbers 32
+addition of two strings linuxrocks
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $                       
+                                                                                             
+
