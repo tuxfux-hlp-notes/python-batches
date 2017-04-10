@@ -460,6 +460,299 @@ tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch
 tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ python second.py 
 addition of two numbers 32
 addition of two strings linuxrocks
-tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $                       
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $  
+
+
+# Installation of modules
+
+a)
+# pip install <modulename>
+# pip install xlrd
+or
+# pip install xlrd==.22 
+
+b)
+# easy_install <modulename>
+# easy_install xlrd
+
+c) setuptools
+
+d) operating system specific.
+# sudo apt-get install xlrd  (ubuntu)
+# yum install xlrd  (RHEL)
+
+# virtualenv
+http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ ls
+extra  Learning_modules.txt  second.py
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ virtualenv myenv
+New python executable in myenv/bin/python
+Installing setuptools, pip...done.
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ ls myenv/
+bin  include  lib  local
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ source myenv/bin/activate
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ 
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ pip freeze
+argparse==1.2.1
+wsgiref==0.1.2
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ pip install excel
+Downloading/unpacking excel
+  Downloading excel-1.0.0.tar.gz
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/myenv/build/excel/setup.py) egg_info for package excel
+    
+Downloading/unpacking xlrd (from excel)
+  Downloading xlrd-1.0.0.tar.gz (2.6MB): 2.6MB downloaded
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/myenv/build/xlrd/setup.py) egg_info for package xlrd
+    
+    warning: no files found matching 'README.html'
+Installing collected packages: excel, xlrd
+  Running setup.py install for excel
+    
+  Running setup.py install for xlrd
+    changing mode of build/scripts-2.7/runxlrd.py from 644 to 755
+    
+    warning: no files found matching 'README.html'
+    changing mode of /home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/myenv/bin/runxlrd.py to 755
+Successfully installed excel xlrd
+Cleaning up...
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ pip freeze
+argparse==1.2.1
+excel==1.0.0
+wsgiref==0.1.2
+xlrd==1.0.0
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ 
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ deactivate 
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ 
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-60/modules $ 
+
+# Packages
+
+a)
+Commands: pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules
+Commands: mkdir OS
+Commands: mkdir OS/{lin,sol,aix,hpux}
+Commands: 
+
+Tree :tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+`-- sol
+
+4 directories, 0 files
+Tree :
+
+b) create files under lin folder - first.py,second.py,third.py,fourth.py
+Tree :tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- fourth.py
+|   |-- second.py
+|   `-- third.py
+`-- sol
+
+4 directories, 4 files
+Tree :
+
+c)
+# lets go to the OS/lin folder.
+
+Output :pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules
+Output :cd OS
+Output :pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/OS
+Output :ls
+aix  hpux  lin  sol
+Output :ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+d) to make it work lets create __init__.py under the folder - lin
+
+Tree :tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- fourth.py
+|   |-- __init__.py
+|   |-- second.py
+|   `-- third.py
+`-- sol
+
+4 directories, 5 files
+
+e) now import the lin folder.
+
+In [2]: import lin
+
+In [3]: lin.first.my_first_lin1()
+Out[3]: 'this is my first lin1 function'
+
+In [4]: lin.first.my_second_lin1()
+Out[4]: 'this is my second lin1 function'
+
+Tree :tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+
+4 directories, 10 files
+
+f) now lets create similar files in sol folder - 
+Commands: cp OS/lin/*.py OS/sol/.
+Commands: 
+
+Tree :tree OS
+OS
+|-- aix
+|-- hpux
+|-- lin
+|   |-- first.py
+|   |-- first.pyc
+|   |-- fourth.py
+|   |-- fourth.pyc
+|   |-- __init__.py
+|   |-- __init__.pyc
+|   |-- second.py
+|   |-- second.pyc
+|   |-- third.py
+|   `-- third.pyc
+`-- sol
+    |-- first.py
+    |-- fourth.py
+    |-- __init__.py
+    |-- second.py
+    `-- third.py
+
+4 directories, 15 files
+
+In [5]: pwd
+Out[5]: u'/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/OS'
+
+In [6]: ls
+aix/  hpux/  lin/  sol/
+
+In [7]: import sol
+
+In [8]: sol.first.my_first_sol1()
+Out[8]: 'this is my first sol1 function'
+
+In [9]: sol.first.my_second_sol1()
+Out[9]: 'this is my second sol1 function'
+
+e) i have not fully completed my fourth.py. SO i remove the "import fourth" from __init__.py file.
+i have not delete the fourth.py from sol folder.
+
+
+Output :pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/OS/sol
+Output :cd ..
+Output :ipython
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: ls
+aix/  hpux/  lin/  sol/
+
+In [2]: import sol
+
+In [3]: print dir(sol)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', '__path__', 'first', 'second', 'third']
+
+In [4]: # implicitly loading first,second,third
+
+In [5]: from sol import fourth
+
+In [6]: sol.
+             sol.first  sol.second 
+             sol.fourth sol.third  
+
+ex:
+
+Commands: pwd
+/usr/lib/python2.7/xml
+Commands: ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+Commands: 
+
+
+# pydoc
+Output :pydoc sys
+
+Output :pwd
+/home/tcloudost/Documents/git_repositories/python-batches/batch-60/modules/OS
+Output :ls
+aix  hpux  lin  sol
+Output :cd ..
+Output :ls
+extra  Learning_modules.txt  myenv  OS  second.py
+Output :cd extra/
+Output :ls
+first.py  first.pyc
+Output :pydoc first
+
+Output :pydoc math
+
+Output :
+
+
+references:
+https://docs.python.org/2/tutorial/modules.html#packages
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/installing/index.html
+https://docs.python.org/2.7/distutils/  ( recommended )
+
+
                                                                                              
 
