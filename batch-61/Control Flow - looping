@@ -1,0 +1,119 @@
+# for,do..while,while..do,foreach,until
+# python - for,while
+# for - finite loop.
+# while - infinite loop. - condition.
+
+
+In [1]: # for loop always works on sequences
+
+In [2]: my_string="python"
+
+In [3]: for value in my_string:
+   ...:     print value
+   ...:     
+p
+y
+t
+h
+o
+n
+
+In [4]: for student in ('sudha','rahul','prakash','pradeep','keerthan'):
+   ...:     print student
+   ...:     
+sudha
+rahul
+prakash
+pradeep
+keerthan
+
+In [5]: 
+
+
+In [6]: range?
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+Type:      builtin_function_or_method
+
+In [7]: range(5)
+Out[7]: [0, 1, 2, 3, 4]
+
+In [8]: range(1,6)
+Out[8]: [1, 2, 3, 4, 5]
+
+In [9]: for value in range(1,6):
+   ...:     print value
+   ...:     
+1
+2
+3
+4
+5
+
+In [10]: 
+
+
+In [11]: # range(1,6)
+
+In [12]: range(1,6)
+Out[12]: [1, 2, 3, 4, 5]
+
+In [13]: range(1,6),type(range(1,6))
+Out[13]: ([1, 2, 3, 4, 5], list)
+
+In [14]: print range(1,6),type(range(1,6))
+[1, 2, 3, 4, 5] <type 'list'>
+
+In [15]: m = iter(range(1,6))
+
+In [16]: print m,type(m)
+<listiterator object at 0x7f543c95b450> <type 'listiterator'>
+
+In [17]: m.next()
+Out[17]: 1
+
+In [18]: m.next()
+Out[18]: 2
+
+In [19]: m.next()
+Out[19]: 3
+
+In [20]: m.next()
+Out[20]: 4
+
+In [21]: m.next()
+Out[21]: 5
+
+In [22]: m.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-22-e94cbac0601a> in <module>()
+----> 1 m.next()
+
+StopIteration: 
+
+In [23]: # iterator and generator
+
+In [24]: print range(1,6)
+[1, 2, 3, 4, 5]
+
+In [25]: print xrange(1,6)
+xrange(1, 6)
+
+In [26]: # iterator - range
+
+In [27]: # generator - xrange
+
+In [28]: # iterator , will run out of space.
+
+In [29]: # generator, we run out of time
+
+In [30]: # generator are more memory effecient than iterator.
+
