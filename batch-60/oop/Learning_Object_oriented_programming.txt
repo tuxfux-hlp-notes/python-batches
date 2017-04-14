@@ -1,0 +1,94 @@
+Programming
+	+ Functional based programming.
+	+ Object oriented based programming.
+
+A - Abstraction
+
+
+car           - class/class object
+ + accleation - method/function
+ + cluth
+ + break
+ - color      - variable/attributes
+ - brand
+ - type
+ - milage
+ - seating
+
+model car
+----------
+* Audi       - instance/objects
+* endeavour
+* bmw
+* honda
+* mahindra 
+* maruti
+
+ + -> functions
+ - -> variables
+
+ ex: 
+
+In [1]: a = "python"
+
+In [2]: b = "jython"
+
+In [3]: type(a)
+Out[3]: str
+
+In [4]: type(b)
+Out[4]: str
+
+In [5]: # a,b are instances of str class
+
+In [6]: b.
+       b.capitalize b.expandtabs b.isdigit    b.ljust      b.rindex     b.splitlines b.upper      
+       b.center     b.find       b.islower    b.lower      b.rjust      b.startswith b.zfill      
+       b.count      b.format     b.isspace    b.lstrip     b.rpartition b.strip                   
+       b.decode     b.index      b.istitle    b.partition  b.rsplit     b.swapcase                
+       b.encode     b.isalnum    b.isupper    b.replace    b.rstrip     b.title                   
+       b.endswith   b.isalpha    b.join       b.rfind      b.split      b.translate               
+
+
+P - Polymorphism
+
+bank: Interest
+
+n [13]: a = 1
+
+In [14]: b = 2
+
+In [15]: c = "apple"
+
+In [16]: d = " sweet"
+
+In [17]: print d + c
+ sweetapple
+
+In [18]: print a + b
+3
+
+In [19]: print a + d
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-19-3f4ef9577e41> in <module>()
+----> 1 print a + d
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+In [20]: 
+
+
+I - Inheritance
+
+taking features from parent.
+
+child - mother
+child - father
+
+E - Encapsulation
+- hiding the data.
+- taking care of a function as functionality.
+- binding mulitple features and using as function.
+
+ex: pen drive.
