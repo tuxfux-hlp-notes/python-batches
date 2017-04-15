@@ -92,3 +92,5 @@ E - Encapsulation
 - binding mulitple features and using as function.
 
 ex: pen drive.
+
+https://github.com/sambapython/python/blob/master/snow_man/Project2-CS61002.pdf
