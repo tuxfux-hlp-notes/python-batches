@@ -1,0 +1,5 @@
+04-19 18:52 root         INFO     This is info message from logging.
+04-19 18:52 myapp.area1  DEBUG    This is logger1 debug message.
+04-19 18:52 myapp.area1  INFO     This is logger1 info message.
+04-19 18:52 myapp.area2  WARNING  This is logger2 warning message.
+04-19 18:52 myapp.area2  ERROR    This is logger2 error message.
