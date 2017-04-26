@@ -1,0 +1,10 @@
+https://www.tutorialspoint.com/python/python_xml_processing.htm
+
+tcloudost@tcloudost-VirtualBox ~/anaconda2/lib/python2.7/xml $ ls
+dom  etree  __init__.py  __init__.pyc  __init__.pyo  parsers  sax
+tcloudost@tcloudost-VirtualBox ~/anaconda2/lib/python2.7/xml $ cd etree/
+tcloudost@tcloudost-VirtualBox ~/anaconda2/lib/python2.7/xml/etree $ ls
+cElementTree.py   ElementInclude.py   ElementPath.py   ElementTree.py   __init__.py
+cElementTree.pyc  ElementInclude.pyc  ElementPath.pyc  ElementTree.pyc  __init__.pyc
+cElementTree.pyo  ElementInclude.pyo  ElementPath.pyo  ElementTree.pyo  __init__.pyo
+tcloudost@tcloudost-VirtualBox ~/anaconda2/lib/python2.7/xml/etree $ 

@@ -1,0 +1,529 @@
+* store data persistently.
+
+
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ ls
+file1.txt  Learning_files
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ ipython
+Python 2.7.11 |Anaconda 2.5.0 (64-bit)| (default, Dec  6 2015, 18:08:32) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 4.0.3 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: f = open("file1.txt")
+
+In [2]: print type(f)
+<type 'file'>
+
+In [3]: print f
+<open file 'file1.txt', mode 'r' at 0x7ff8cb621d20>
+
+In [4]: 
+
+# modes
+
+r -> read mode -> you can only read the file.
+w -> write mode -> you can write into the file.
+	* if a file is not there you can create the file.
+	* if the file exists the data get truncated to zero.
+a  -> append mode -> you an append contents to the file.
+r+ -> read and append mode.
+rb -> read binary.
+wb -> write binary.
+ab -> append binary.
+
+
+In [4]: f = open("file1.txt","rb")
+
+In [5]: f
+Out[5]: <open file 'file1.txt', mode 'rb' at 0x7ff8cb621db0>
+
+In [6]: print dir(f)
+['__class__', '__delattr__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__hash__', '__init__', '__iter__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'close', 'closed', 'encoding', 'errors', 'fileno', 'flush', 'isatty', 'mode', 'name', 'newlines', 'next', 'read', 'readinto', 'readline', 'readlines', 'seek', 'softspace', 'tell', 'truncate', 'write', 'writelines', 'xreadlines']
+
+In [7]: f.name
+Out[7]: 'file1.txt'
+
+In [8]: f.mode
+Out[8]: 'rb'
+
+In [9]: f.read?
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+Type:      builtin_function_or_method
+
+In [10]: f.read(2)
+Out[10]: 'Th'
+
+In [11]: f.read(2)
+Out[11]: 'is'
+
+In [12]: f.read()
+Out[12]: ' is my line1.\nThis is my line2.\nThis is my line3.\nThis is my line4.\nThis is my line5.'
+
+In [13]: f.read()
+Out[13]: ''
+
+In [14]: f.tell?
+Docstring: tell() -> current file position, an integer (may be a long integer).
+Type:      builtin_function_or_method
+
+In [15]: f.tell()
+Out[15]: 89
+
+In [16]: f.seek?
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+Type:      builtin_function_or_method
+
+In [17]: f.seek(0)
+
+In [18]: f.tell()
+Out[18]: 0
+
+In [19]: f.read()
+Out[19]: 'This is my line1.\nThis is my line2.\nThis is my line3.\nThis is my line4.\nThis is my line5.'
+
+In [20]: f.read()
+Out[20]: ''
+
+In [21]: f.read()
+Out[21]: ''
+
+In [22]: f.tell()
+Out[22]: 89
+
+
+In [26]: f.readline?
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+Type:      builtin_function_or_method
+
+In [27]: f.readline()
+Out[27]: 'This is my line1.\n'
+
+In [28]: f.readline()
+Out[28]: 'This is my line2.\n'
+
+In [29]: f.readline()
+Out[29]: 'This is my line3.\n'
+
+In [30]: f.readline()
+Out[30]: 'This is my line4.\n'
+
+In [31]: f.readline()
+Out[31]: 'This is my line5.'
+
+In [32]: f.readline()
+Out[32]: ''
+
+In [34]: f.readlines?
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+Type:      builtin_function_or_method
+
+In [35]: f.tell()
+Out[35]: 89
+
+In [36]: f.seek(0)
+
+In [37]: my_lines = f.readlines()
+
+In [38]: print my_lines
+['This is my line1.\n', 'This is my line2.\n', 'This is my line3.\n', 'This is my line4.\n', 'This is my line5.']
+
+# ignore these functions
+In [40]: f.readinto?
+Docstring: readinto() -> Undocumented.  Don't use this; it may go away.
+Type:      builtin_function_or_method
+
+In [41]: f.xreadlines?
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+Type:      builtin_function_or_method
+
+In [42]: 
+
+-------
+
+In [42]: g = open("newfile.txt","w")
+
+In [43]: g
+Out[43]: <open file 'newfile.txt', mode 'w' at 0x7ff8cb621e40>
+
+In [44]: g.write?
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+Type:      builtin_function_or_method
+
+In [45]: g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+
+In [46]: # keyboard -> i/o buffers -> cpu -> i/o buffer ->  disk/monitor/printer
+
+In [47]: g.flush?
+Docstring: flush() -> None.  Flush the internal I/O buffer.
+Type:      builtin_function_or_method
+
+In [48]: g.flush()
+
+In [49]: g.close?
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+Type:      builtin_function_or_method
+
+In [50]: g
+Out[50]: <open file 'newfile.txt', mode 'w' at 0x7ff8cb621e40>
+
+In [51]: print my_lines
+['This is my line1.\n', 'This is my line2.\n', 'This is my line3.\n', 'This is my line4.\n', 'This is my line5.']
+
+In [52]: print g.writelines?
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+Type:      builtin_function_or_method
+
+In [53]: g.writelines(my_lines)
+
+In [54]: g.close()
+
+In [55]: g
+Out[55]: <closed file 'newfile.txt', mode 'w' at 0x7ff8cb621e40>
+
+In [56]: g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-56-6921877d1c97> in <module>()
+----> 1 g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+
+ValueError: I/O operation on closed file
+
+In [57]: g
+Out[57]: <closed file 'newfile.txt', mode 'w' at 0x7ff8cb621e40>
+
+In [58]: 
+
+In [59]: g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-59-6921877d1c97> in <module>()
+----> 1 g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+
+ValueError: I/O operation on closed file
+
+In [60]: g
+Out[60]: <closed file 'newfile.txt', mode 'w' at 0x7ff8cb621e40>
+
+In [61]: g.closed
+Out[61]: True
+
+In [62]: f
+Out[62]: <open file 'file1.txt', mode 'rb' at 0x7ff8cb621db0>
+
+In [63]: f.closed
+Out[63]: False
+
+In [64]: # dealing with exception error
+
+In [65]: if g.closed:
+   ....:     print "buddy!! the file is closed"
+   ....: else:
+   ....:     print "buddy!! the file is not closed"
+   ....:     
+buddy!! the file is closed
+
+In [66]: # exception handling
+
+In [67]: try:
+   ....:     g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+   ....: except ValueError:
+   ....:     print "buddy!! your files is closed"
+   ....: else:
+   ....:     print "i am able to write into the file"
+   ....: finally:
+   ....:     g.close()
+   ....:     
+buddy!! your files is closed
+
+In [68]: # with
+
+In [69]: g
+Out[69]: <closed file 'newfile.txt', mode 'w' at 0x7ff8cb621e40>
+
+
+In [72]: with open("newfile.txt","a") as g:
+            g.write("This is my newline1.\nThis is my newline2.\nThis is my newline3.\nThis is my newline4.\n")
+   ....:     
+
+In [73]: g
+Out[73]: <closed file 'newfile.txt', mode 'a' at 0x7ff8cb621ed0>
+
+In [74]: 
+
+In [75]: # isatty
+
+In [76]: h = open("/dev/pts/0","a")
+
+In [77]: h.write("Hey there how about lunch!!! \n")
+
+In [78]: # wall command in linux
+
+In [79]: h.isatty()
+Out[79]: True
+
+In [80]: f
+Out[80]: <open file 'file1.txt', mode 'rb' at 0x7ff8cb621db0>
+
+In [81]: f.isatty()
+Out[81]: False
+
+In [82]: # f.next
+
+In [83]: f.seek(0)
+
+In [84]: f.next()
+Out[84]: 'This is my line1.\n'
+
+In [85]: f.next()
+Out[85]: 'This is my line2.\n'
+
+In [86]: f.next()
+Out[86]: 'This is my line3.\n'
+
+In [87]: f.next()
+Out[87]: 'This is my line4.\n'
+
+In [88]: f.next()
+Out[88]: 'This is my line5.'
+
+In [89]: f.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-89-c3e65e5362fb> in <module>()
+----> 1 f.next()
+
+StopIteration: 
+
+In [91]: # truncate
+
+In [92]: f.truncate?
+Docstring:
+truncate([size]) -> None.  Truncate the file to at most size bytes.
+
+Size defaults to the current file position, as returned by tell().
+Type:      builtin_function_or_method
+
+In [93]: f.tell()
+Out[93]: 89
+
+In [94]: f.seek(10)
+
+In [95]: f.tell()
+Out[95]: 10
+
+In [96]: f.truncate()
+---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+<ipython-input-96-b30429046b50> in <module>()
+----> 1 f.truncate()
+
+IOError: File not open for writing
+
+In [97]: f = open("file1.txt","r+")
+
+In [98]: f
+Out[98]: <open file 'file1.txt', mode 'r+' at 0x7ff8c90fe300>
+
+In [99]: f.seek(10)
+
+In [100]: f.tell()
+Out[100]: 10
+
+In [101]: f.truncate()
+
+In [103]: f.
+f.close       f.fileno      f.name        f.readinto    f.softspace   f.writelines  
+f.closed      f.flush       f.newlines    f.readline    f.tell        f.xreadlines  
+f.encoding    f.isatty      f.next        f.readlines   f.truncate    
+f.errors      f.mode        f.read        f.seek        f.write       
+
+In [103]: # f.softspace,f.fileno,f.encoding  - tutorial point.
+
+In [104]: # unicode
+
+In [105]: # utf-8
+
+
+# other modules ##
+
+In [107]: # pickle
+
+In [108]: # pickling and unpickling
+
+In [109]: # json
+
+In [110]: my_students = ["khiri","sujani","rahul","ramya","kiran"]
+
+In [111]: import pickle as p
+
+In [112]: p.load?
+Signature: p.load(file)
+Docstring: <no docstring>
+File:      ~/anaconda2/lib/python2.7/pickle.py
+Type:      function
+
+In [113]: p.dump?
+Signature: p.dump(obj, file, protocol=None)
+Docstring: <no docstring>
+File:      ~/anaconda2/lib/python2.7/pickle.py
+Type:      function
+
+In [117]: # pickling
+
+In [114]: my_file = open("pickled_data.txt","w")
+
+In [115]: p.dump(my_students,my_file)
+
+In [116]: my_file.flush()
+
+
+
+In [118]: my_file.close()
+
+In [117]: # unpickling
+
+In [119]: # in other program file i want to use the data
+
+In [120]: my_file = open("pickled_data.txt","r")
+
+In [121]: my_names = p.load(my_file)
+
+In [122]: print my_names
+['khiri', 'sujani', 'rahul', 'ramya', 'kiran']
+
+In [123]: my_names1 = p.load(my_file)
+---------------------------------------------------------------------------
+EOFError                                  Traceback (most recent call last)
+<ipython-input-123-13e2b3c64bc1> in <module>()
+----> 1 my_names1 = p.load(my_file)
+
+/home/tcloudost/anaconda2/lib/python2.7/pickle.pyc in load(file)
+   1382 
+   1383 def load(file):
+-> 1384     return Unpickler(file).load()
+   1385 
+   1386 def loads(str):
+
+/home/tcloudost/anaconda2/lib/python2.7/pickle.pyc in load(self)
+    862             while 1:
+    863                 key = read(1)
+--> 864                 dispatch[key](self)
+    865         except _Stop, stopinst:
+    866             return stopinst.value
+
+/home/tcloudost/anaconda2/lib/python2.7/pickle.pyc in load_eof(self)
+    884 
+    885     def load_eof(self):
+--> 886         raise EOFError
+    887     dispatch[''] = load_eof
+    888 
+
+EOFError: 
+
+In [124]: my_file.tell()
+Out[124]: 72
+
+In [125]: my_file.seek(0)
+
+In [126]: my_names1 = p.load(my_file)
+
+In [127]: print my_names
+['khiri', 'sujani', 'rahul', 'ramya', 'kiran']
+
+In [128]: pirnt my_names1
+  File "<ipython-input-128-50e8f01b1610>", line 1
+    pirnt my_names1
+                  ^
+SyntaxError: invalid syntax
+
+
+In [129]: print my_names1
+['khiri', 'sujani', 'rahul', 'ramya', 'kiran']
+
+In [130]: 
+
+
+
+# excel modules
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ virtualenv  myenv
+New python executable in myenv/bin/python
+Installing setuptools, pip...done.
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ ls
+file1.txt  Learning_files  myenv  names.xls  newfile.txt  pickled_data.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ source myenv/bin/activate
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ pip freeze
+argparse==1.2.1
+wsgiref==0.1.2
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ pip install excel
+Downloading/unpacking excel
+  Downloading excel-1.0.0.tar.gz
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-60/files/myenv/build/excel/setup.py) egg_info for package excel
+    
+Downloading/unpacking xlrd (from excel)
+  Downloading xlrd-1.0.0.tar.gz (2.6MB): 2.6MB downloaded
+  Running setup.py (path:/home/tcloudost/Documents/git_repositories/python-batches/batch-60/files/myenv/build/xlrd/setup.py) egg_info for package xlrd
+    
+    warning: no files found matching 'README.html'
+Installing collected packages: excel, xlrd
+  Running setup.py install for excel
+    
+  Running setup.py install for xlrd
+    changing mode of build/scripts-2.7/runxlrd.py from 644 to 755
+    
+    warning: no files found matching 'README.html'
+    changing mode of /home/tcloudost/Documents/git_repositories/python-batches/batch-60/files/myenv/bin/runxlrd.py to 755
+Successfully installed excel xlrd
+Cleaning up...
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ pip freeze
+argparse==1.2.1
+excel==1.0.0
+wsgiref==0.1.2
+xlrd==1.0.0
+(myenv)tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-60/files $ 
