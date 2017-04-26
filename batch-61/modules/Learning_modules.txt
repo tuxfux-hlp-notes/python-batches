@@ -1,0 +1,333 @@
+In [1]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/home/tcloudost/anaconda2/lib/python2.7/site-packages/IPython/kernel/__init__.py:13: ShimWarning: The `IPython.kernel` package has been deprecated. You should import from ipykernel or jupyter_client instead.
+  "You should import from ipykernel or jupyter_client instead.", ShimWarning)
+/home/tcloudost/anaconda2/lib/python2.7/site-packages/astropy/analytic_functions/blackbody.py:30: RuntimeWarning: overflow encountered in expm1
+  _has_buggy_expm1 = np.isnan(np.expm1(1000))
+                            
+/home/tcloudost/anaconda2/lib/python2.7/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
+  warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')
+/home/tcloudost/anaconda2/lib/python2.7/site-packages/matplotlib/cbook.py:137: MatplotlibDeprecationWarning: The matplotlib.delaunay module was deprecated in version 1.4. Use matplotlib.tri.Triangulation instead.
+  warnings.warn(message, mplDeprecation, stacklevel=1)
+/home/tcloudost/anaconda2/lib/python2.7/site-packages/nltk/twitter/__init__.py:20: UserWarning: The twython library has not been installed. Some functionality from the twitter package will not be available.
+  warnings.warn("The twython library has not been installed. "
+/home/tcloudost/anaconda2/lib/python2.7/pkgutil.py:110: FutureWarning: The pandas.rpy module is deprecated and will be removed in a future version. We refer to external packages like rpy2. 
+See here for a guide on how to port your code to rpy2: http://pandas.pydata.org/pandas-docs/stable/r_interface.html
+  __import__(name)
+/home/tcloudost/anaconda2/lib/python2.7/site-packages/skimage/filter/__init__.py:6: skimage_deprecation: The `skimage.filter` module has been renamed to `skimage.filters`.  This placeholder module will be removed in v0.13.
+  warn(skimage_deprecation('The `skimage.filter` module has been renamed '
+ANSI                cProfile            linecache           sched
+BaseHTTPServer      cStringIO           linuxaudiodev       scipy
+Bastion             cairo               llvmlite            screen
+CDROM               calendar            locale              select
+CGIHTTPServer       cdecimal            logging             sets
+Canvas              cffi                lxml                setuptools
+ConfigParser        cgi                 macpath             sgmllib
+Cookie              cgitb               macurl2path         sha
+Crypto              chunk               mailbox             shelve
+Cython              cio_test            mailcap             shlex
+DLFCN               clyent              markupbase          shutil
+Dialog              cmath               markupsafe          signal
+DocXMLRPCServer     cmd                 marshal             simplegeneric
+FSM                 code                math                singledispatch
+FileDialog          codecs              matplotlib          singledispatch_helpers
+FixTk               codeop              md5                 sip
+HTMLParser          collections         mhlib               sipconfig
+IN                  colorama            mimetools           sipdistutils
+IPython             colorsys            mimetypes           site
+MimeWriter          command             mimify              six
+OpenSSL             commands            mistune             skimage
+PIL                 compileall          mkl                 sklearn
+PyQt4               compiler            mmap                smtpd
+Queue               concurrent          modulefinder        smtplib
+ScrolledText        conda               mpl_toolkits        sndhdr
+SimpleDialog        conda_build         multifile           snowballstemmer
+SimpleHTTPServer    conda_env           multipledispatch    socket
+SimpleXMLRPCServer  configobj           multiprocessing     sockjs
+SocketServer        contextlib          mutex               sphinx
+StringIO            cookielib           nbconvert           sphinx_rtd_theme
+TYPES               copy                nbformat            spwd
+Tix                 copy_reg            netrc               spyderlib
+Tkconstants         crypt               networkx            spyderplugins
+Tkdnd               cryptography        new                 sqlalchemy
+Tkinter             csv                 nis                 sqlite3
+UserDict            ctypes              nltk                sre
+UserList            curl                nntplib             sre_compile
+UserString          curses              nose                sre_constants
+_LWPCookieJar       cycler              notebook            sre_parse
+_MozillaCookieJar   cython              ntpath              ssl
+__builtin__         cythonmagic         nturl2path          stat
+__future__          cytoolz             numba               statsmodels
+_abcoll             datashape           numbers             statvfs
+_ast                datetime            numexpr             storemagic
+_bisect             dateutil            numpy               string
+_cffi_backend       dbhash              odo                 stringold
+_codecs             decimal             opcode              stringprep
+_codecs_cn          decorator           openpyxl            strop
+_codecs_hk          difflib             operator            struct
+_codecs_iso2022     dircache            optparse            subprocess
+_codecs_jp          dis                 os                  sunau
+_codecs_kr          distutils           os2emxpath          sunaudio
+_codecs_tw          doctest             ossaudiodev         symbol
+_collections        docutils            pandas              sympy
+_csv                dumbdbm             parser              sympyprinting
+_ctypes             dummy_thread        path                symtable
+_ctypes_test        dummy_threading     patsy               sys
+_curses             dynd                pdb                 sysconfig
+_curses_panel       easy_install        pep8                syslog
+_elementtree        email               pexpect             tables
+_functools          encodings           pickle              tabnanny
+_hashlib            enum                pickleshare         tarfile
+_heapq              errno               pickletools         telnetlib
+_hotshot            et_xmlfile          pip                 tempfile
+_io                 exceptions          pipes               terminado
+_json               extern              pkg_resources       termios
+_locale             fastcache           pkgutil             test_path
+_lsprof             fcntl               platform            test_pycosat
+_markerlib          fdpexpect           plistlib            tests
+_multibytecodec     filecmp             ply                 textwrap
+_multiprocessing    fileinput           popen2              this
+_osx_support        flask               poplib              thread
+_pyio               fnmatch             posix               threading
+_pytest             formatter           posixfile           time
+_random             fpformat            posixpath           timeit
+_socket             fractions           pprint              tkColorChooser
+_sqlite3            ftplib              profile             tkCommonDialog
+_sre                funcsigs            pstats              tkFileDialog
+_ssl                functools           psutil              tkFont
+_strptime           future_builtins     pty                 tkMessageBox
+_struct             gc                  ptyprocess          tkSimpleDialog
+_symtable           genericpath         pwd                 toaiff
+_sysconfigdata      getopt              pxssh               token
+_testcapi           getpass             py                  tokenize
+_threading_local    gettext             py_compile          toolz
+_tkinter            gevent              pyasn1              tornado
+_vendor             geventwebsocket     pyclbr              trace
+_version            glob                pycosat             traceback
+_warnings           greenlet            pycparser           traitlets
+_weakref            grin                pycurl              ttk
+_weakrefset         grp                 pydoc               tty
+_yaml               gzip                pydoc_data          turtle
+abc                 h5py                pyexpat             types
+abstract_rendering  hashlib             pyflakes            unicodecsv
+aifc                heapq               pygments            unicodedata
+alabaster           hmac                pylab               unittest
+antigravity         hotshot             pyparsing           urllib
+anydbm              htmlentitydefs      pytest              urllib2
+argcomplete         htmllib             pytz                urlparse
+argparse            httplib             pyximport           user
+array               idlelib             qtconsole           uu
+ast                 idna                quopri              uuid
+astropy             ihooks              random              validate
+asynchat            imaplib             re                  vba_extract
+asyncore            imghdr              readline            warnings
+atexit              imp                 redis               wave
+audiodev            importlib           repr                weakref
+audioop             imputil             requests            webbrowser
+autoreload          inspect             resource            werkzeug
+babel               io                  rexec               wheel
+backports           ipaddress           rfc822              whichdb
+backports_abc       ipykernel           rlcompleter         wsgiref
+base64              ipython_genutils    rmagic              xdrlib
+bdb                 ipywidgets          robotparser         xlrd
+binascii            itertools           rope                xlsxwriter
+binhex              itsdangerous        rst2html            xlwt
+binstar_client      jdcal               rst2latex           xml
+bisect              jedi                rst2man             xmllib
+bitarray            jinja2              rst2odt             xmlrpclib
+blaze               json                rst2odt_prepstyles  xxsubtype
+bokeh               jsonschema          rst2pseudoxml       yaml
+boto                jupyter             rst2s5              zipfile
+bottleneck          jupyter_client      rst2xetex           zipimport
+bs4                 jupyter_console     rst2xml             zlib
+bsddb               jupyter_core        rstpep2html         zmq
+bz2                 keyword             runpy               
+cPickle             lib2to3             runxlrd             
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose descriptions contain the word "spam".
+
+help> 
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+
+# import modules
+
+In [3]: import math
+
+In [4]: print dir(math)
+['__doc__', '__file__', '__name__', '__package__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign', 'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'hypot', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'trunc']
+
+In [5]: math.
+math.acos       math.ceil       math.erfc       math.frexp      math.lgamma     math.radians
+math.acosh      math.copysign   math.exp        math.fsum       math.log        math.sin
+math.asin       math.cos        math.expm1      math.gamma      math.log10      math.sinh
+math.asinh      math.cosh       math.fabs       math.hypot      math.log1p      math.sqrt
+math.atan       math.degrees    math.factorial  math.isinf      math.modf       math.tan
+math.atan2      math.e          math.floor      math.isnan      math.pi         math.tanh
+math.atanh      math.erf        math.fmod       math.ldexp      math.pow        math.trunc
+
+In [5]: math.pi
+Out[5]: 3.141592653589793
+
+In [6]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [7]: math.pow(2,3)
+Out[7]: 8.0
+
+In [8]: 
+
+# importing using alias name
+
+In [9]: import math as m
+
+In [10]: m.
+m.acos       m.atanh      m.e          m.factorial  m.hypot      m.log10      m.sin
+m.acosh      m.ceil       m.erf        m.floor      m.isinf      m.log1p      m.sinh
+m.asin       m.copysign   m.erfc       m.fmod       m.isnan      m.modf       m.sqrt
+m.asinh      m.cos        m.exp        m.frexp      m.ldexp      m.pi         m.tan
+m.atan       m.cosh       m.expm1      m.fsum       m.lgamma     m.pow        m.tanh
+m.atan2      m.degrees    m.fabs       m.gamma      m.log        m.radians    m.trunc
+
+In [10]: m.pi
+Out[10]: 3.141592653589793
+
+In [11]: m.pow(2,3)
+Out[11]: 8.0
+
+# importing only the required functions.
+
+In [13]: from math import pi,pow
+
+In [14]: print pi
+3.14159265359
+
+In [15]: print pow(2,3)
+8.0
+
+In [16]: 
+
+In [19]: # DONT TRY THIS AT OFFICE AND HOME.
+
+In [20]: # from math import *
+
+# module
+# module - program
+program1 -> f1,f2,f3,f4
+program2 -> f1,f2,f3,progam1.f1
++ import program1
++ program1.f1
+
+
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-61/modules $ ls
+first.py  Learning_modules.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/python-batches/python-batches/batch-61/modules $ ipython
+Python 2.7.11 |Anaconda 2.5.0 (64-bit)| (default, Dec  6 2015, 18:08:32) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 4.0.3 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: pwd
+Out[1]: u'/home/tcloudost/Documents/git_repositories/python-batches/batch-61/modules'
+
+In [2]: ls
+first.py  Learning_modules.txt
+
+In [3]: import first as f
+
+In [4]: f.
+f.my_add    f.my_div    f.my_multi  f.my_sub    f.version   
+
+In [4]: f.version
+Out[4]: 1.0
+
+In [5]: f.my_add?
+Signature: f.my_add(a, b)
+Docstring: This is for addition of two numbers or strings.
+File:      ~/Documents/git_repositories/python-batches/batch-61/modules/first.py
+Type:      function
+
+In [6]: my_string="python"
+
+In [7]: my_string.upper?
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [8]: 
+
+
+--- what is .pyc file -- 
+
+In [9]: f.version
+Out[9]: 1.0
+
+In [10]: f.version
+Out[10]: 1.0
+
+In [11]: import first as f
+
+In [12]: f.version
+Out[12]: 1.0
+
+In [13]: ls
+first.py  first.pyc  Learning_modules.txt
+
+In [14]: reload(f)
+Out[14]: <module 'first' from 'first.py'>
+
+In [15]: f.version
+Out[15]: 2.0
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-61/modules $ file first.py
+first.py: Python script, ASCII text executable
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-61/modules $ file first.pyc
+first.pyc: python 2.7 byte-compiled
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-61/modules $ cat first.pyc
+
+Yc@s.dZd�Zd�Zd�Zd�ZdS(g�?cC||S(s5
+		This is for addition of two numbers or strings. 
+	((tatb((first.pytmy_addscCs ||kr||S||SdS(s-
+		This is for substraction of two numbers.
+	N((RR((first.pytmy_sub
+                                 s
+                                    cC||S(s)
+		This is for division of two numbers.
+	((RR((first.pytmy_divscC||S(s/
+		This is for multiplication of two numbers.
+	((RR((first.pymy_multisN(tversionRRRR(((first.py<module>				tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-61/modules $ 
+
+* .pyc is platform independent.
+
