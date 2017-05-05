@@ -9,15 +9,18 @@ if answer == 'n':
     sys.exit()
 
 number = 7   # hiding it in my palm
+count = 0
 #test=True
 
 #while test:
-while True:
+while count<3:
     guess_number = int(raw_input("please guess the number:"))
     if guess_number > number:
         print "buddy!! you guessed the number slighly larger"
+        count=count+1
     elif guess_number < number:
         print "buddy!! you guessed the number slighly smaller"
+        count = count+1
     elif guess_number == number:
         print "congo!! you guessed the right number"
         #test=False
