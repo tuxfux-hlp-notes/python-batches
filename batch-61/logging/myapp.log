@@ -1,0 +1,5 @@
+05-07 09:46 root         INFO     This is from logging module.
+05-07 09:46 myapp.area1  DEBUG    Debug message from logger1.
+05-07 09:46 myapp.area1  INFO     Info message from logger1.
+05-07 09:46 myapp.area2  WARNING  Warning message from logger2.
+05-07 09:46 myapp.area2  ERROR    Error message from logger2.

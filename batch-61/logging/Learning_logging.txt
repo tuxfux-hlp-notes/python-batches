@@ -1,0 +1,58 @@
+# Introduction : https://docs.python.org/2/howto/logging.html
+			   : https://docs.python.org/2/howto/logging-cookbook.html
+
+Logging :tailf /var/log/syslog
+May  4 08:17:01 tcloudost-VirtualBox CRON[3268]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May  4 08:17:01 tcloudost-VirtualBox CRON[3269]: (tcloudost) CMD (/home/tcloudost/Documents/git_repositories/python-batches/batch-56/first.py)
+May  4 08:17:01 tcloudost-VirtualBox postfix/pickup[2078]: CB3481611F0: uid=1000 from=<tcloudost>
+May  4 08:17:01 tcloudost-VirtualBox postfix/cleanup[3274]: CB3481611F0: message-id=<20170504024701.CB3481611F0@tcloudost-VirtualBox>
+May  4 08:17:01 tcloudost-VirtualBox postfix/qmgr[2079]: CB3481611F0: from=<tcloudost@tcloudost-VirtualBox>, size=633, nrcpt=1 (queue active)
+May  4 08:17:02 tcloudost-VirtualBox postfix/local[3276]: CB3481611F0: to=<tcloudost@tcloudost-VirtualBox>, orig_to=<tcloudost>, relay=local, delay=0.47, delays=0.21/0.19/0/0.07, dsn=2.0.0, status=sent (delivered to mailbox)
+May  4 08:17:02 tcloudost-VirtualBox postfix/qmgr[2079]: CB3481611F0: removed
+May  4 08:17:07 tcloudost-VirtualBox anacron[1044]: Job `cron.daily' terminated
+May  4 08:17:07 tcloudost-VirtualBox anacron[1044]: Normal exit (1 job run)
+May  4 08:28:18 tcloudost-VirtualBox kernel: [ 1062.007313] atkbd serio0: Spurious NAK on isa0060/serio0. Some program might be trying to access hardware directly.
+^C
+
+
+In [1]: import logging as l
+
+In [2]: l.
+           l.addLevelName       l.ERROR              l.Logger             l.setLoggerClass     
+           l.atexit             l.exception          l.LoggerAdapter      l.shutdown           
+           l.BASIC_FORMAT       l.FATAL              l.logMultiprocessing l.StreamHandler      
+           l.basicConfig        l.fatal              l.logProcesses       l.sys                
+           l.BufferingFormatter l.FileHandler        l.LogRecord          l.thread             
+           l.captureWarnings    l.Filter             l.logThreads         l.threading          
+           l.codecs             l.Filterer           l.makeLogRecord      l.time               
+           l.CRITICAL           l.Formatter          l.Manager            l.traceback          
+           l.critical           l.getLevelName       l.NOTSET             l.warn               
+           l.cStringIO          l.getLogger          l.NullHandler        l.WARN               
+           l.currentframe       l.getLoggerClass     l.os                 l.WARNING            
+           l.DEBUG              l.Handler            l.PlaceHolder        l.warning            
+           l.debug              l.info               l.raiseExceptions    l.warnings           
+           l.disable            l.INFO               l.root               l.weakref            
+           l.error              l.log                l.RootLogger                              
+
+
+In [4]: import logging.handlers as lh
+
+In [5]: lh.
+           lh.BaseRotatingHandler       lh.HTTPHandler               lh.ST_DEV                    
+           lh.BufferingHandler          lh.logging                   lh.ST_INO                    
+           lh.codecs                    lh.MemoryHandler             lh.ST_MTIME                  
+           lh.cPickle                   lh.NTEventLogHandler         lh.struct                    
+           lh.DatagramHandler           lh.os                        lh.SYSLOG_TCP_PORT           
+           lh.DEFAULT_HTTP_LOGGING_PORT lh.re                        lh.SYSLOG_UDP_PORT           
+           lh.DEFAULT_SOAP_LOGGING_PORT lh.RotatingFileHandler       lh.SysLogHandler             
+           lh.DEFAULT_TCP_LOGGING_PORT  lh.SMTPHandler               lh.time                      
+           lh.DEFAULT_UDP_LOGGING_PORT  lh.socket                    lh.TimedRotatingFileHandler  
+           lh.errno                     lh.SocketHandler             lh.WatchedFileHandler        
+
+
+
+
+# DEBUG
+ssh -v localhost
+ssh -vv localhost
+ssh -vvv localhost

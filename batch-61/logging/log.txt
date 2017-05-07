@@ -1,0 +1,21 @@
+WARNING:root:this is an warning message.
+ERROR:root:this is an error message.
+CRITICAL:root:this is an critical message.
+WARNING:root:this is an warning message.
+ERROR:root:this is an error message.
+CRITICAL:root:this is an critical message.
+DEBUG:root:This is a debug message.
+INFO:root:This is a info message.
+WARNING:root:this is an warning message.
+ERROR:root:this is an error message.
+CRITICAL:root:this is an critical message.
+2017-05-04 08:55:43,335 - root - DEBUG - This is a debug message. 
+2017-05-04 08:55:43,339 - root - INFO - This is a info message. 
+2017-05-04 08:55:43,340 - root - WARNING - this is an warning message. 
+2017-05-04 08:55:43,340 - root - ERROR - this is an error message. 
+2017-05-04 08:55:43,340 - root - CRITICAL - this is an critical message. 
+Thu May  4 08:58:03 2017 - root - DEBUG - This is a debug message. 
+Thu May  4 08:58:03 2017 - root - INFO - This is a info message. 
+Thu May  4 08:58:03 2017 - root - WARNING - this is an warning message. 
+Thu May  4 08:58:03 2017 - root - ERROR - this is an error message. 
+Thu May  4 08:58:03 2017 - root - CRITICAL - this is an critical message. 

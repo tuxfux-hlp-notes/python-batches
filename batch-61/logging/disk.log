@@ -1,0 +1,14 @@
+Thu May  4 09:04:51 2017 - root - INFO - Your disk looks health at 10. 
+Thu May  4 09:05:33 2017 - root - INFO - Your disk looks health at 46. 
+Thu May  4 09:05:56 2017 - root - ERROR - Your disk is puking errors at 79. 
+Thu May  4 09:06:19 2017 - root - CRITICAL - your disk is dead. Please clean the logs - 99. 
+Thu May  4 09:06:23 2017 - root - INFO - Your disk looks health at 12. 
+Thu May  4 09:20:21 2017 - root - INFO - Your disk looks health at 32. 
+Thu May  4 09:20:22 2017 - root - INFO - Your disk looks health at 32. 
+Thu May  4 09:20:22 2017 - root - INFO - Your disk looks health at 32. 
+Thu May  4 09:20:23 2017 - root - INFO - Your disk looks health at 32. 
+Thu May  4 09:20:23 2017 - root - INFO - Your disk looks health at 32. 
+-----------------------------------------------------------------------
+
+2017-05-07 09:08:26,359 - Disk Monitor - INFO - Your disk looks health at 32.
+2017-05-07 09:09:16,812 - Disk Monitor - INFO - Your disk looks health at 32.
