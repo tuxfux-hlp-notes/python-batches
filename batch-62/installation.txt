@@ -1,0 +1,157 @@
+python
++ 2.x -> 2.7
++ 3.x -> 3.6
+
+ubuntu/linuxmint/zorion
+-----------------------------
+# sudo apt-get install python (2.x)
+# sudo apt-get install python3 (3.x)
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+# sudo apt-get install ipython-notebook
+# sudo apt-get install jupyter
+
+fedora/centos/redhat
+----------------------
+# yum install install python (2.x)
+# yum install install python3 (3.x)
+# yum install install ipython
+# yum install install ipython3
+# yum install install bpython
+# yum install install bpython3
+# yum install install ipython-notebook
+# yum install install jupyter
+
+windows
+--------
+https://www.continuum.io/downloads 
+# ipython
+# bpython
+# ipython-notebook
+
+IDE
+----
+http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+references:
+https://ipython.org/
+https://bpython-interpreter.org/
+
+tcloudost@tcloudost-VirtualBox ~ $ python --version
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~ $ python3 --version
+Python 3.4.3
+tcloudost@tcloudost-VirtualBox ~ $ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world"
+hello world
+>>> 
+>>> quit()
+tcloudost@tcloudost-VirtualBox ~ $ 
+tcloudost@tcloudost-VirtualBox ~ $ python3
+Python 3.4.3 (default, Oct 14 2015, 20:28:29) 
+[GCC 4.8.4] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world"
+  File "<stdin>", line 1
+    print "hello world"
+                      ^
+SyntaxError: Missing parentheses in call to 'print'
+>>> print ("hello world")
+hello world
+>>> quit()
+
+
+tcloudost@tcloudost-VirtualBox ~ $ ls
+a                                e}                 Projects                  Untitled1.ipynb
+{a                               example.xlsx       Public                    Untitled2.ipynb
+Anaconda2-2.5.0-Linux-x86_64.sh  f2.txt             puppet-labs               Untitled.ipynb
+b                                file1.text         pycharm-edu-2.0           untitled.txt
+c                                folder1            pycharm-edu-2.tar.gz      Videos
+class3.ipynb                     helloworld.py      PycharmProjects           warmup1.py
+clinet.py                        local.py           python-examples           warmup2.py
+d                                mat.py             sambapython               warmup3.py
+Desktop                          Music              server.py                 while.py
+Django-examples                  nearpalindrome.py  tcloudpython-Home.tar.gz  workout2-1.py
+Documents                        newdir             Templates
+Downloads                        new.sh             Test
+e                                Pictures           Untitled0.ipynb
+tcloudost@tcloudost-VirtualBox ~ $ cd Documents/
+tcloudost@tcloudost-VirtualBox ~/Documents $ ls
+git_repositories  python-batches
+tcloudost@tcloudost-VirtualBox ~/Documents $ cd git_repositories/
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories $ ls
+python-batches  sv.python-batches
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories $ cd python-batches/
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ ls
+archieves  batch-61  batch-62  LICENSE  README.md  test
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ cd batch-62
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ls
+first.py  installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ python first.py 
+hello world !!!
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ perl first.py
+hello world !!!tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ 
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ 
+
+hello world !!!tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ 
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ls
+first.py  installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $
+
+e                                Pictures           Untitled0.ipynb
+tcloudost@tcloudost-VirtualBox ~ $ cd Documents/
+tcloudost@tcloudost-VirtualBox ~/Documents $ ls
+git_repositories  python-batches
+tcloudost@tcloudost-VirtualBox ~/Documents $ cd git_repositories/
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories $ ls
+python-batches  sv.python-batches
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories $ cd python-batches/
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ ls
+archieves  batch-61  batch-62  LICENSE  README.md  test
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ cd batch-62
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ls
+first.py  installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ python first.py 
+hello world !!!
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ perl first.py
+hello world !!!tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ 
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ls
+first.py  installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ clear
+
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ls
+first.py  installation.txt  opensource.txt
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ./first.py
+Warning: unknown mime-type for "hello world !!!" -- using "application/octet-stream"
+Error: no such file "hello world !!!"
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ python --version
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ echo $PATH
+/home/tcloudost/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ which python
+/usr/bin/python
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ /usr/bin/python --version
+Python 2.7.6
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ./first.pyhello world !!!
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ which python3
+/usr/bin/python3
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ./first.py
+  File "./first.py", line 2
+    print "hello world !!!"
+                          ^
+SyntaxError: Missing parentheses in call to 'print'
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ./first.py
+hello world !!!
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ ./first.py
+hello world !!!
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ 
+
+

@@ -1,0 +1,73 @@
+Propreitory vs opensource
+---------------------------
+
+Propreitory
+-------------
+
+company A -> product A
+Us(customers)  -> requirements -> post mail to company ( we will get back to you)
+                               -> post a query in intenet ( support/workaround)
+                               
+* customer retention.
+* frustrated customers.
+
+
+ex: microsoft
+
+Opensource
+------------
+
+company A -> product A(GPL) -> publish the source code.
+Us(customers)  -> requirements -> post mail to company ( we will get back to you)
+                               -> post a query in intenet ( support/workaround)
+                               
+guy/gal B -> download the code -> modification 
+          -> product B(GPL) -> published the source code.
+          
+user -> reviews ( good/bad/vbad/excellent)
+
+Fast forward 6 months
+----------------------
+company A -> A.3 -> (100 + 400) modification
+code -> homongenous/hetrogenous.
+
+Benfits
+---------
+* Retained my customers.
+* Marketing.
+* cost-cutting.
+
+Money?
+-------
+* support - bronze/silver/gold/diamond/platinum
+* Training
+
+License
+--------
+* GPL - GNU General Public License.
+ - any modification you make to the product should go back to the GPL license.
+* OSF - opensource foundation - 1960
+
+Principles
+-------------
+* FREEdom to modify a product is called opensource.
+* community support.
+* There is nothing like piracy. you can modify and re-distribute.
+
+Opensource products
+--------------------
+Languages: python,java,ruby
+database: mongodb,cassendra,mariadb
+web frameworks:django,flask,rails,angularjs,nodejs
+operating system:redhat/ubuntu/centos/fedora/linuxmint
+
+
+
+* code is accessible for everyone. - true
+* code can be customized. - true
+* Its a freeware. - false
+* platform independent. - partially true.
+* money - support. - true
+
+
+
