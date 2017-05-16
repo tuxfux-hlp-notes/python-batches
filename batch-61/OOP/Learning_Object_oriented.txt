@@ -1,0 +1,98 @@
+REference:
+https://github.com/tuxfux-hlp/Python-examples/blob/master/opps/Good_links.txt
+https://docs.python.org/2.7/tutorial/classes.html
+
+python
+ + functional based programming.
+ + Object oriented programming.
+
+A - Abstraction
+P - Polymorphism
+I - Inheritance
+E - Encapsulation
+
+
+A - Abstraction   : A defination of a real time entity.
+-----------------
+ex 1:
+car                    - blueprint/class
+ - wheels - four,alloy
+ - color
+ - model
+ - year
+ + break 
+ + clutch
+ + accleration
+
+ - -> variables
+ + -> functions
+ car -> variables(attributes) + function(method)
+
+various cars:
++ bmw          -> objects
++ nano
++ audi
++ honda
+
+ex 2:
+
+python course - class
+aditya -> object
+
+ex 3:
+
+bank account - class - blueprint
+ + account number
+ + deposit
+ + withdraw
+ + interest
+
+Object
++ chittarajan - 10000
++ pradeep - 2000
+
+
+P - Polymorphism : many-forms
+-------------------------------
+
+
+In [1]: 1 + 1
+Out[1]: 2
+
+In [2]: "linux" + "rocks"
+Out[2]: 'linuxrocks'
+
+Bank intrest
++ intrest
+ + saving bank interest
+ + educational loan interest
+ + home loan interest
+ 
+
+I - Inheritance - inheriting of parent object/class/super class
+----------------
+
+mother
+ + left handed,cooking,housewife
+father
+ + right handed,logical,doctor
+
+child 
+ + left handed,logical,actor
+
+
+Encapsulation  - giving more importance of functionality rather than data.
+---------------
+* hiding of data  - public,protected,private
+
+bank - account
+ - balance(variables/attribute/data)  - displays me the balance
+ + deposit - used for depositing the money.
+ + withdraw - used for withdrawing the money.
+
+deposit(100)
+ - balance = 100
+withdraw(10)
+ - balance = 90
+
+balance = 10000
