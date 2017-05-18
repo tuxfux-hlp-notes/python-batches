@@ -1,0 +1,9 @@
+
+1) Issue with the big.py logic. please sort it out.
+2) make modification to the program.
+guess_number.py
+# task1: reduce the number of chances/guesses to 3.
+# task2: rand function to generate random numbers for number variable.
+
+3) https://projecteuler.net/archives
+4) http://www.pythonchallenge.com/pc/def/map.html
