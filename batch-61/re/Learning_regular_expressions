@@ -393,7 +393,471 @@ In [112]: reg.match(my_string2).group()
 Out[112]: '<whatis>saturday<whatis>'
 
 
+In [1]: # Anchors
+
+In [2]: # {m} -> any character repeated m number of times.
+
+In [3]: # {m,} -> any character repeated m or more number of times.
+
+In [4]: # {m,n} -> any character repeated m or n number of times.
+
+In [5]: film1 = "ashique"
+
+In [6]: film2 = "aashique"
+
+In [7]: film3 = "aaashique"
+
+In [8]: film4 = "shique"
+
+In [9]: import re
+
+In [10]: reg = re.compile("a{2,}shique")
+
+In [11]: print reg.search(film1)
+None
+
+In [12]: print reg.search(film2)
+<_sre.SRE_Match object at 0x7f885b41c850>
+
+In [13]: print reg.search(film3)
+<_sre.SRE_Match object at 0x7f885b41c8b8>
+
+In [14]: print reg.search(film4)
+None
 
 
+In [16]: # character sets
+
+In [17]: # [a-z] -> any characters from a to z.
+
+In [18]: # [a-zA-Z] -> any characters both lower or upper case of a - z.
+
+In [19]: # [0-9] -> numbers from 0 to 9.
+
+In [20]: # [^a-z] -> beginning with a - z
+
+In [21]: # ^[a-z] -> not having a to z.
+
+In [22]: # [.+?*] -> These behave like symbol.. not as regular expressions.
+
+In [23]: my_sentence = "Today is a good Tuesday."
+
+In [24]: re.match?
+Type:        function
+String form: <function match at 0x7f885f1efcf8>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.match(pattern, string, flags=0)
+Docstring:
+Try to apply the pattern at the start of the string, returning
+a match object, or None if no match was found.
+
+In [25]: print re.match('[a-z]',my_sentence)
+None
+
+In [26]: print re.match('[a-z]',my_sentence,re.I)
+<_sre.SRE_Match object at 0x7f885b41c850>
+
+In [27]: print re.match('[a-z]',my_sentence,re.I).group()
+T
+
+In [28]: print re.match('[a-z]+',my_sentence,re.I).group()
+Today
+
+In [29]: print re.match('[a-z]+ ',my_sentence,re.I).group()
+Today 
+
+In [30]: print re.match('[a-z]+\s+',my_sentence,re.I).group()
+Today 
+
+In [31]: print re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+[.]',my_sentence,re.I).group()
+Today is a good Tuesday.
+
+In [32]: print re.match('([a-z]+\s+){4}[a-z]+[.]',my_sentence,re.I).group()
+Today is a good Tuesday.
+
+In [33]: print re.match('(\w+\s+){4}\w+[.]',my_sentence,re.I).group()
+Today is a good Tuesday.
+
+In [34]: # \w+ -> [a-zA-Z0-9_]
+
+In [35]: # \s+ -> space or tabs
+
+In [36]: ## VERBOSE
+
+In [37]: re.
+re.DEBUG        re.L            re.S            re.U            re.compile      re.findall      re.search       re.sub          
+re.DOTALL       re.LOCALE       re.Scanner      re.UNICODE      re.copy_reg     re.finditer     re.split        re.subn         
+re.I            re.M            re.T            re.VERBOSE      re.error        re.match        re.sre_compile  re.sys          
+re.IGNORECASE   re.MULTILINE    re.TEMPLATE     re.X            re.escape       re.purge        re.sre_parse    re.template     
+
+In [37]: re.match('''
+   ....: (\w+\s+)   # a word and a space
+   ....: {4}        # above word and space repeated 4 times
+   ....: \w+        # one more word
+   ....: [.]        # ending with a full stop
+   ....: ''',my_sentence,(re.I|re.VERBOSE)).group()
+Out[37]: 'Today is a good Tuesday.'
+
+In [39]: # grouping
+
+In [40]: print re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+[.]',my_sentence,re.I).group()
+Today is a good Tuesday.
+
+In [41]: print re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+[.]',my_sentence,re.I).group(0)
+Today is a good Tuesday.
+
+In [42]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).group()
+Today is a good Tuesday.
+
+In [43]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).group(0)
+Today is a good Tuesday.
+
+In [44]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).group(1)
+Today
+
+In [45]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).group(2)
+Tuesday
+
+In [46]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).groups()
+('Today', 'Tuesday')
+
+In [47]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).groups()[0]
+Today
+
+In [48]: print re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).groups()[1]
+Tuesday
+
+In [49]: # key based grouping
+
+In [52]: print re.match('(?P<to>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).groups()
+('Today', 'Tuesday')
+
+In [53]: print re.match('(?P<to>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence,re.I).group('to')
+Today
+
+In [54]: print re.match('(?P<to>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<tu>[a-z]+)[.]',my_sentence,re.I).group('tu')
+Tuesday
+
+In [55]: print re.match('(?P<to>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<tu>[a-z]+)[.]',my_sentence,re.I).groups()
+('Today', 'Tuesday')
+
+In [57]: # MULTILINE
+
+In [58]: my_sentence = "python is my first language.\npython is my first love.\npython is a very easy language to start with."
+
+In [59]: print my_sentence
+python is my first language.
+python is my first love.
+python is a very easy language to start with.
+
+In [60]: # re.match
+
+In [61]: re.match ?
+  File "<ipython-input-61-3fd9b8b95535>", line 1
+    re.match ?
+             ^
+SyntaxError: invalid syntax
+
+
+In [62]: re.match?
+Type:        function
+String form: <function match at 0x7f885f1efcf8>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.match(pattern, string, flags=0)
+Docstring:
+Try to apply the pattern at the start of the string, returning
+a match object, or None if no match was found.
+
+In [63]: re.search?
+Type:        function
+String form: <function search at 0x7f885f1efd70>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.search(pattern, string, flags=0)
+Docstring:
+Scan through string looking for a match to the pattern, returning
+a match object, or None if no match was found.
+
+In [64]: re.findall?
+Type:        function
+String form: <function findall at 0x7f885f1eff50>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.findall(pattern, string, flags=0)
+Docstring:
+Return a list of all non-overlapping matches in the string.
+
+If one or more groups are present in the pattern, return a
+list of groups; this will be a list of tuples if the pattern
+has more than one group.
+
+Empty matches are included in the result.
+
+In [65]: print my_sentence
+python is my first language.
+python is my first love.
+python is a very easy language to start with.
+
+In [66]: print re.match('python',my_sentence)
+<_sre.SRE_Match object at 0x7f885acefe00>
+
+In [67]: print re.match('python',my_sentence).group()
+python
+
+In [68]: print re.search('python',my_sentence)
+<_sre.SRE_Match object at 0x7f885acefe00>
+
+In [69]: print re.search('python',my_sentence).group()
+python
+
+In [70]: print re.findall('python',my_sentence)
+['python', 'python', 'python']
+
+In [71]: print my_sentence
+python is my first language.
+python is my first love.
+python is a very easy language to start with.
+
+In [72]: print re.findall('^python',my_sentence)
+['python']
+
+In [73]: my_sentence
+Out[73]: 'python is my first language.\npython is my first love.\npython is a very easy language to start with.'
+
+In [74]: print re.findall('^python',my_sentence,re.MULTILINE)
+['python', 'python', 'python']
+
+In [76]: emails = '''
+   ....: my valid email address is tuxfux.hlp@gmail.com
+   ....: my valid email address is tuxfux.hlp.all@yahoo.com
+   ....: my valid email address is tuxfux@gmail.com
+   ....: my valid email address is @yahoo.com
+   ....: my valid email address is tuxfux@
+   ....: my valid email address is tuxfux.hlp@yahoo.co.in
+   ....: '''
+
+In [77]: reg = re.compile('[a-z.]+@[a-z.]+')
+
+In [78]: reg.findall(emails)
+Out[78]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux.hlp.all@yahoo.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in']
+
+In [79]: emails = '''
+my valid email address is tuxfux.hlp@gmail.com
+my valid email address is tuxfux.hlp.all@yahoo.com
+my valid email address is tuxfux@gmail.com
+my valid email address is @yahoo.com
+my valid email address is tuxfux@
+my valid email address is tuxfux.hlp@yahoo.co.in
+my valid email addres is tuxfux123.hlp@yahoo.co.in
+   ....: '''
+
+In [80]: reg.findall(emails)
+Out[80]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux.hlp.all@yahoo.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ '.hlp@yahoo.co.in']
+
+In [81]: reg = re.compile('[a-z0-9.]+@[a-z.]+')
+
+In [82]: reg.findall(emails)
+Out[82]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux.hlp.all@yahoo.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ 'tuxfux123.hlp@yahoo.co.in']
+
+In [83]: emails = '''
+my valid email address is tuxfux.hlp@gmail.com
+my valid email address is tuxfux.hlp.all@yahoo.com
+my valid email address is tuxfux@gmail.com
+my valid email address is @yahoo.com
+my valid email address is tuxfux@
+my valid email address is tuxfux.hlp@yahoo.co.in
+my valid email addres is tuxfux123.hlp@yahoo.co.in
+my valid email address is 123ramesh@yahoo.co.in
+   ....: '''
+
+In [84]: reg.findall(emails)
+Out[84]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux.hlp.all@yahoo.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ 'tuxfux123.hlp@yahoo.co.in',
+ '123ramesh@yahoo.co.in']
+
+In [90]: print my_paragraph
+
+# this is a commented line.
+This is not a commented line. # hey this is my first comment.
+this is one more not commented line.
+this is second not commented line.
+# this is my first commented line.
+# this is my second commented line.
+
+
+In [91]: reg1 = re.compile('^#',(re.I|re.M))
+
+In [92]: reg1.findall(my_paragraph)
+Out[92]: ['#', '#', '#']
+
+In [93]: reg1.findall(my_paragraph)
+Out[93]: ['#', '#', '#']
+
+In [94]: reg1 = re.compile('^#\S+',(re.I|re.M))
+
+In [95]: reg1.findall(my_paragraph)
+Out[95]: []
+
+In [96]: reg1 = re.compile('^#.*',(re.I|re.M))
+
+In [97]: reg1.findall(my_paragraph)
+Out[97]: 
+['# this is a commented line.',
+ '# this is my first commented line.',
+ '# this is my second commented line.']
+
+In [98]: reg2 = re.compile('[^#].*',(re.I|re.M))
+
+In [99]: reg2.findall(my_paragraph)
+Out[99]: 
+['\n# this is a commented line.',
+ '\nThis is not a commented line. # hey this is my first comment.',
+ '\nthis is one more not commented line.',
+ '\nthis is second not commented line.',
+ '\n# this is my first commented line.',
+ '\n# this is my second commented line.',
+ '\n']
+
+In [100]: reg2 = re.compile('^[#].*',(re.I|re.M))
+
+In [101]: reg2.findall(my_paragraph)
+Out[101]: 
+['# this is a commented line.',
+ '# this is my first commented line.',
+ '# this is my second commented line.']
+
+In [102]: reg2.findall(my_paragraph)
+Out[102]: 
+['# this is a commented line.',
+ '# this is my first commented line.',
+ '# this is my second commented line.']
+
+In [103]: reg2 = re.compile('^\w+.*',(re.I|re.M))
+
+In [104]: reg2.findall(my_paragraph)
+Out[104]: 
+['This is not a commented line. # hey this is my first comment.',
+ 'this is one more not commented line.',
+ 'this is second not commented line.']
+
+In [107]: my_sentence = "today is sunday lets go to office."
+
+In [108]: re.sub?
+Type:        function
+String form: <function sub at 0x7f885f1efde8>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.sub(pattern, repl, string, count=0, flags=0)
+Docstring:
+Return the string obtained by replacing the leftmost
+non-overlapping occurrences of the pattern in string by the
+replacement repl.  repl can be either a string or a callable;
+if a string, backslash escapes in it are processed.  If it is
+a callable, it's passed the match object and must return
+a replacement string to be used.
+
+In [109]: print re.sub("sunday","tuesday",my_sentence)
+today is tuesday lets go to office.
+
+In [110]: my_sentence1 = """
+   .....: today is sunday lets go to office.
+   .....: tomorrow is sunday too.. i wont go to office.
+   .....: how about going to movie on a sunday.
+   .....: how about dozing on a sunday """
+
+In [111]: print re.sub("sunday","tuesday",my_sentence1)
+
+today is tuesday lets go to office.
+tomorrow is tuesday too.. i wont go to office.
+how about going to movie on a tuesday.
+how about dozing on a tuesday 
+
+In [112]: print re.sub("sunday","tuesday",count=1,my_sentence1)
+  File "<ipython-input-112-baafeaf8e0bb>", line 1
+    print re.sub("sunday","tuesday",count=1,my_sentence1)
+SyntaxError: non-keyword arg after keyword arg
+
+
+In [113]: print re.sub("sunday","tuesday",my_sentence1,count=1)
+
+today is tuesday lets go to office.
+tomorrow is sunday too.. i wont go to office.
+how about going to movie on a sunday.
+how about dozing on a sunday 
+
+In [114]: print re.sub("sunday","tuesday",my_sentence1,count=2)
+
+today is tuesday lets go to office.
+tomorrow is tuesday too.. i wont go to office.
+how about going to movie on a sunday.
+how about dozing on a sunday 
+
+In [115]: my_sentence='''
+   .....: count=12345
+   .....: '''
+
+In [116]: my_sentence='''
+count.id=12345
+'''
+
+In [117]: re.sub('count.id=.*','count.id=1245679',my_sentence)
+Out[117]: '\ncount.id=1245679\n'
+
+In [118]: print re.sub('count.id=.*','count.id=1245679',my_sentence)
+
+count.id=1245679
+
+
+In [119]: print my_sentence
+
+count.id=12345
+
+
+In [120]: print my_sentence1
+
+today is sunday lets go to office.
+tomorrow is sunday too.. i wont go to office.
+how about going to movie on a sunday.
+how about dozing on a sunday 
+
+In [121]: my_sentence='''                                     
+count.id=12345
+count.new=12345
+   .....: count.old=23456
+   .....: '''
+
+In [122]: print my_sentence
+
+count.id=12345
+count.new=12345
+count.old=23456
+
+
+In [123]: print re.sub('count.id=.*','count.id=1245679',my_sentence)
+
+count.id=1245679
+count.new=12345
+count.old=23456
+
+
+
+# references:
+https://docs.python.org/2/library/re.html
+https://docs.python.org/2/howto/regex.html
 
 
