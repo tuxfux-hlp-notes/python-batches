@@ -7,3 +7,32 @@ guess_number.py
 
 3) https://projecteuler.net/archives
 4) http://www.pythonchallenge.com/pc/def/map.html
+
+# Lists
+
+5) please print the values as show
+days = ['yesterday','today','tomorrow','dayafter']
+
+a) print in the following way
+yesterday 9
+today     5
+tomorrow  8
+dayafter  8
+
+hint: for,len
+
+b) print out the following way
+Yesterday
+TOday
+TOMorrow
+DAYAfter
+
+
+6) Do as follows:
+my_fruits = ['apple','banana','apple','banana','cherry']
+
+output:
+my_fruits = ['apple','banana','cherry']
+my_duplicate = ['apple','banana']
+
+hint: pop
