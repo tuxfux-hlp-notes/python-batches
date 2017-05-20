@@ -1,0 +1,330 @@
+# Persistent storage of data - databases
+# files are also persistant way of storage of data.
+# relationship - tables.
+
+# multiple databases
+python - oracle,mysql,mariabd
++ Relational Databases   - oracle,mysql,mariadb
++ Non Relational Databases - cassendra,cowchdb,nosql
+
+# Mysql server and client
+
+# sudo apt-get install mysql-server
+### mysql server and client tool set.
+### mysql workbench 
+https://dev.mysql.com/downloads/workbench/
+
+
+# we will try to install the mysqldb module for python
+
+# integration of databases and python
+
+
+mysql> help contents;
+You asked for help about help category: "Contents"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Account Management
+   Administration
+   Compound Statements
+   Data Definition
+   Data Manipulation
+   Data Types
+   Functions
+   Functions and Modifiers for Use with GROUP BY
+   Geographic Features
+   Help Metadata
+   Language Structure
+   Plugins
+   Procedures
+   Storage Engines
+   Table Maintenance
+   Transactions
+   User-Defined Functions
+   Utility
+
+mysql> help Functions;
+You asked for help about help category: "Functions"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Bit Functions
+   Comparison operators
+   Control flow functions
+   Date and Time Functions
+   Encryption Functions
+   Information Functions
+   Logical operators
+   Miscellaneous Functions
+   Numeric Functions
+   String Functions
+
+mysql> help  Information Functions;
+You asked for help about help category: "Information Functions"
+For more information, type 'help <item>', where <item> is one of the following
+topics:
+   BENCHMARK
+   CHARSET
+   COERCIBILITY
+   COLLATION
+   CONNECTION_ID
+   CURRENT_USER
+   DATABASE
+   FOUND_ROWS
+   LAST_INSERT_ID
+   ROW_COUNT
+   SCHEMA
+   SESSION_USER
+   SYSTEM_USER
+   USER
+   VERSION
+
+mysql> help version;
+Name: 'VERSION'
+Description:
+Syntax:
+VERSION()
+
+Returns a string that indicates the MySQL server version. The string
+uses the utf8 character set. The value might have a suffix in addition
+to the version number. See the description of the version system
+variable in
+http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html.
+
+URL: http://dev.mysql.com/doc/refman/5.6/en/information-functions.html
+
+Examples:
+mysql> SELECT VERSION();
+        -> '5.6.32-standard'
+
+mysql> select version();
++-------------------------+
+| version()               |
++-------------------------+
+| 5.7.17-0ubuntu0.16.04.2 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> help user;
+Name: 'USER'
+Description:
+Syntax:
+USER()
+
+Returns the current MySQL user name and host name as a string in the
+utf8 character set.
+
+URL: http://dev.mysql.com/doc/refman/5.6/en/information-functions.html
+
+Examples:
+mysql> SELECT USER();
+        -> 'davida@localhost'
+
+mysql> select user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.03 sec)
+
+mysql> help system_user;
+Name: 'SYSTEM_USER'
+Description:
+Syntax:
+SYSTEM_USER()
+
+SYSTEM_USER() is a synonym for USER().
+
+URL: http://dev.mysql.com/doc/refman/5.6/en/information-functions.html
+
+
+mysql> select system_user();
++----------------+
+| system_user()  |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+
+---
+a) creation of a user.
+
+mysql> help create;
+Many help items for your request exist.
+To make a more specific request, please type 'help <item>',
+where <item> is one of the following
+topics:
+   CREATE DATABASE
+   CREATE EVENT
+   CREATE FUNCTION
+   CREATE FUNCTION UDF
+   CREATE INDEX
+   CREATE LOGFILE GROUP
+   CREATE PROCEDURE
+   CREATE SERVER
+   CREATE TABLE
+   CREATE TABLESPACE
+   CREATE TRIGGER
+   CREATE USER
+   CREATE VIEW
+   SHOW
+   SHOW CREATE DATABASE
+   SHOW CREATE EVENT
+   SHOW CREATE FUNCTION
+   SHOW CREATE PROCEDURE
+   SHOW CREATE TABLE
+   SPATIAL
+
+mysql> help create user;
+
+mysql> create user user61;
+Query OK, 0 rows affected (0.00 sec)
+
+# creation of a schema/database
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| address_app        |
+| batch56            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.05 sec)
+
+mysql> create database batch61;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| address_app        |
+| batch56            |
+| batch61            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+7 rows in set (0.00 sec)
+
+
+mysql> drop database batch56;
+Query OK, 1 row affected (0.15 sec)
+
+mysql> 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| address_app        |
+| batch61            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+# we want to give access to the user61 on database - batch61
+
+mysql> help grant
+
+mysql> grant all on batch61.* to 'user61'@'localhost' identified by 'user61';
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+Database:
+1) installation of database.
+2) creates a user.
+3) creates a database.
+4) gives the user grant to the database.
+
+key2gyaan@key2gyaan:~$ mysql -u user61 -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.7.17-0ubuntu0.16.04.2 (Ubuntu)
+
+Copyright (c) 2000, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch61            |
++--------------------+
+2 rows in set (0.01 sec)
+
+mysql> select databases();
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases()' at line 1
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> use batch61;
+Database changed
+mysql> 
+mysql> select database();
++------------+
+| database() |
++------------+
+| batch61    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+
+---
+we have to install the mysql module for python.
+
+# sudo apt-get install python-mysqldb
+
+
+# scenerio
+# CEO - oracle / mysql
+
+# 5 years.
++Application
++ python program
++database(oracle)
+
+# sqlalchemy
+- database tables as an object (string,float etc.)
+
+# select * from students; ( oracle)
+# may not work in mysql.
+
+# ORM - object relation mapper
+students.objects.all() # oracle/mysql
+
+# references:
+mysql : Learning mysql in 21 days.
+https://dev.mysql.com/doc/refman/5.7/en/tutorial.html
+https://www.sqlalchemy.org/
+https://www.youtube.com/watch?v=P141KRbxVKc
+
+
+
+
+
+
