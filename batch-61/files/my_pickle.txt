@@ -1,0 +1,10 @@
+(lp0
+S'python'
+p1
+aS'django'
+p2
+aS'fullstack'
+p3
+aS'devops'
+p4
+a.

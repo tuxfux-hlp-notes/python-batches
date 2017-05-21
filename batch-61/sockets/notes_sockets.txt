@@ -1,0 +1,86 @@
+OSI:https://s-media-cache-ak0.pinimg.com/originals/55/53/bd/5553bdf0a193142af2976db02c4bb920.gif
+
+request/reponse model
+--------------------------
+broswe(client) -> http://google.com -> request -> google.com -> response --> broswer
+
+resolving:
+------------
+name => IP  (Forward Looksup)
+IP => name  (Reverse Looksup)
+
+we try to resolve google.com
+
+key2gyaan@key2gyaan ~ $ nslookup google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 216.58.220.46
+
+key2gyaan@key2gyaan ~ $ nslookup 216.58.220.46
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+46.220.58.216.in-addr.arpa	name = maa03s18-in-f14.1e100.net.
+46.220.58.216.in-addr.arpa	name = maa03s18-in-f46.1e100.net.
+
+Authoritative answers can be found from:
+
+Connect to server
+-------------------
+server consists of some ports - services
+
+key2gyaan@key2gyaan ~ $ nmap localhost
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2016-10-03 08:09 IST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00024s latency).
+Not shown: 992 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+631/tcp  open  ipp
+902/tcp  open  iss-realsecure
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
+
+key2gyaan@key2gyaan ~ $ cat /etc/services|grep -i http
+# Updated from http://www.iana.org/assignments/port-numbers and other
+# sources like http://www.freebsd.org/cgi/cvsweb.cgi/src/etc/services .
+http		80/tcp		www		# WorldWideWeb HTTP
+http		80/udp				# HyperText Transfer Protocol
+https		443/tcp				# http protocol over TLS/SSL
+https		443/udp
+http-alt	8080/tcp	webcache	# WWW caching service
+http-alt	8080/udp
+hkp		11371/tcp			# OpenPGP HTTP Keyserver
+
+
+key2gyaan@key2gyaan ~ $ head /etc/services
+# Network services, Internet style
+#
+# Note that it is presently the policy of IANA to assign a single well-known
+# port number for both TCP and UDP; hence, officially ports have two entries
+# even if the protocol doesn't support UDP operations.
+#
+# Updated from http://www.iana.org/assignments/port-numbers and other
+# sources like http://www.freebsd.org/cgi/cvsweb.cgi/src/etc/services .
+# New ports will be added on request if they have been officially assigned
+# by IANA and used in the real-world or are needed by a debian package.
+
+port below < 1024 ( are operating system ports , we should not use them.)
+port above > 1024 ( are operating system ports , we can user them)
+
+https://en.wikipedia.org/wiki/OSI_model
+
+
+
+
+
