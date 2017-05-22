@@ -1,0 +1,117 @@
+broswer(www.google.com) -> request -> internet connection
+-> resolving -> www -> response
+
+
+Resolving:
+Forward Lookup
+ + name and ip
+Reverse Lookup
+ + ip and name
+
+ tcloudost@tcloudost-VirtualBox /var/www/html $ host www.google.com
+www.google.com has address 216.58.196.4
+www.google.com has IPv6 address 2404:6800:4001:80b::2004
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+tcloudost@tcloudost-VirtualBox /var/www/html $ host 216.58.196.4
+4.196.58.216.in-addr.arpa domain name pointer kul01s11-in-f4.1e100.net.
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+tcloudost@tcloudost-VirtualBox /var/www/html $ # dig
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+tcloudost@tcloudost-VirtualBox /var/www/html $ dig www.google.com
+
+; <<>> DiG 9.9.5-3ubuntu0.8-Ubuntu <<>> www.google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54884
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.google.com.			IN	A
+
+;; ANSWER SECTION:
+www.google.com.		52	IN	A	216.58.196.4
+
+;; Query time: 4 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Sat Mar 18 08:45:17 IST 2017
+;; MSG SIZE  rcvd: 48
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ dig -x 216.58.196.4
+
+; <<>> DiG 9.9.5-3ubuntu0.8-Ubuntu <<>> -x 216.58.196.4
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45655
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;4.196.58.216.in-addr.arpa.	IN	PTR
+
+;; ANSWER SECTION:
+4.196.58.216.in-addr.arpa. 47804 IN	PTR	kul01s11-in-f4.1e100.net.
+
+;; Query time: 13 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Sat Mar 18 08:45:30 IST 2017
+;; MSG SIZE  rcvd: 81
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ nslookup www.google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	www.google.com
+Address: 216.58.196.4
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ nslookup 216.58.196.4
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+4.196.58.216.in-addr.arpa	name = kul01s11-in-f4.1e100.net.
+
+Authoritative answers can be found from:
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+
+
+In [6]: socket.gethostbyname('www.google.com')
+Out[6]: '216.58.196.4'
+
+In [7]: socket.gethostbyaddr('216.58.196.4')
+Out[7]: ('kul01s11-in-f4.1e100.net', [], ['216.58.196.4'])
+
+# server
+# ip address
+# port
+
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ telnet www.google.com 80
+Trying 216.58.196.4...
+Connected to www.google.com.
+Escape character is '^]'.
+^]
+
+telnet> quit
+Connection closed.
+tcloudost@tcloudost-VirtualBox /var/www/html $ telnet www.google.com 22
+Trying 216.58.196.4...
+^]
+^C
+tcloudost@tcloudost-VirtualBox /var/www/html $ nmap www.google.com
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2017-03-18 08:50 IST
+Nmap scan report for www.google.com (216.58.196.4)
+Host is up (0.056s latency).
+rDNS record for 216.58.196.4: kul01s11-in-f4.1e100.net
+Not shown: 997 filtered ports
+PORT    STATE SERVICE
+25/tcp  open  smtp
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 5.60 seconds
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+
+
+

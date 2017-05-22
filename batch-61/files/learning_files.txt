@@ -361,3 +361,125 @@ In [85]: # pickle,xml,excel
 In [86]: # tuesday
 
 
+# excell
+
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files$ virtualenv myenv
+New python executable in /home/key2gyaan/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files$ ls
+file1.txt  learning_files.txt  myenv  newfile.txt  read_excel.py
+key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files$ source myenv/bin/activate
+(myenv) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files$ pip freeze
+appdirs==1.4.3
+packaging==16.8
+pyparsing==2.2.0
+six==1.10.0
+(myenv) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.0.0
+(myenv) key2gyaan@key2gyaan:~/Documents/git_repositories/tuxfux-hlp-notes/python-classes/batch-61/files$ pip freeze
+appdirs==1.4.3
+excel==1.0.0
+packaging==16.8
+pyparsing==2.2.0
+six==1.10.0
+xlrd==1.0.0
+
+
+# pickle/json
+saving your object as file ans using it later.
+
+In [1]: my_training = ['python','django','perl','shell']
+
+In [2]: # first.py,second.py,third.py and fourth.py
+
+In [3]: import pickle
+
+In [4]: pickle.load?
+Type:        function
+String form: <function load at 0x7fb7fe747848>
+File:        /usr/lib/python2.7/pickle.py
+Definition:  pickle.load(file)
+Docstring:   <no docstring>
+
+In [5]: pickle.dump?
+Type:        function
+String form: <function dump at 0x7fb7fe747758>
+File:        /usr/lib/python2.7/pickle.py
+Definition:  pickle.dump(obj, file, protocol=None)
+Docstring:   <no docstring>
+
+In [6]: # i want to dump my object my_training into a file for later usage.
+
+In [7]: f = open("my_pickle.txt","wb")
+
+In [8]: pickle.dump(my_training,f)
+
+In [9]: f.flush()
+
+In [10]: # unpickling
+
+In [11]: # first.py
+
+In [12]: g = open("my_pickle.txt","rb")
+
+In [13]: my_new = pickle.load(g)
+
+In [14]: print my_new,type(my_new)
+['python', 'django', 'perl', 'shell'] <type 'list'>
+
+In [15]: print my_new,type(my_new)
+['python', 'django', 'perl', 'shell'] <type 'list'>
+
+In [16]: my_new = pickle.load(g)
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-16-874e386d65b7> in <module>()
+----> 1 my_new = pickle.load(g)
+
+/usr/lib/python2.7/pickle.pyc in load(file)
+   1382 
+   1383 def load(file):
+-> 1384     return Unpickler(file).load()
+   1385 
+   1386 def loads(str):
+
+/usr/lib/python2.7/pickle.pyc in load(self)
+    862             while 1:
+    863                 key = read(1)
+--> 864                 dispatch[key](self)
+    865         except _Stop, stopinst:
+    866             return stopinst.value
+
+/usr/lib/python2.7/pickle.pyc in load_stop(self)
+   1259 
+   1260     def load_stop(self):
+-> 1261         value = self.stack.pop()
+   1262         raise _Stop(value)
+   1263     dispatch[STOP] = load_stop
+
+IndexError: pop from empty list
+
+In [17]: g.close()
+
+In [18]: with open("my_pickle.txt","rb") as g:
+   ....:     my_new = pickle.load(g)
+   ....:     print my_new,type(my_new)
+   ....:     
+['python', 'django', 'perl', 'devops'] <type 'list'>
+
+In [19]: with open("my_pickle.txt","rb") as g:
+    my_new = pickle.load(g)
+    print my_new,type(my_new)
+   ....:     
+['python', 'django', 'fullstack', 'devops'] <type 'list'>
+
+# web scrapping
+-----------------
+- see kohli_score.py
+
+# xml parsing : https://www.tutorialspoint.com/python/python_xml_processing.htm
+# json parsing
+# yaml parsing
