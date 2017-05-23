@@ -36,3 +36,7 @@ my_fruits = ['apple','banana','cherry']
 my_duplicate = ['apple','banana']
 
 hint: pop
+
+7) Family drama: https://drive.google.com/file/d/0Bxq4UvUJTuQPMWZKd2d5ZlBoY00/view
+8) https://github.com/sambapython/python/blob/master/Assignments.ipynb
+9) https://github.com/sambapython/python/blob/master/assignments.txt
