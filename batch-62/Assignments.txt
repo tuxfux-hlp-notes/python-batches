@@ -41,3 +41,4 @@ hint: pop
 8) https://github.com/sambapython/python/blob/master/Assignments.ipynb
 9) https://github.com/sambapython/python/blob/master/assignments.txt
 10) del,zip -> tutorialpoint
+11) https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
