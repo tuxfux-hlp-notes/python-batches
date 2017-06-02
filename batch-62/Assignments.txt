@@ -42,3 +42,21 @@ hint: pop
 9) https://github.com/sambapython/python/blob/master/assignments.txt
 10) del,zip -> tutorialpoint
 11) https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
+
+# todo
+In [21]: a = iter(x)
+
+In [22]: print a
+<listiterator object at 0x7fc1fc628e90>
+
+In [23]: izip(a,a)
+Out[23]: <itertools.izip at 0x7fc1fc779440>
+
+In [24]: for value in izip(a,a):
+    ...:     print value
+    ...:     
+(1, 2)
+(3, 4)
+(5, 6)
+(7, 8)
+(9, 10)
