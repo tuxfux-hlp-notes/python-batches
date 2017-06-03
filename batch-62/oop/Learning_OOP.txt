@@ -1,0 +1,63 @@
+Programming
+ * Modular programming
+ * Object oriented programming
+
+A -> Abstraction
+P -> Polymorphism
+I -> Inheritance
+E -> Encapsulation
+
+A -> Abstraction
+-----------------
+--- attributes
+- -> variables/data
++ -> fuctions/methods
+
+car  -> class/blueprint
+- wheels
+- gas(disel/petrol)
+- seating
+- body
++ break
++ clutch
++ steering
++ accleartion
+
+models: -> objects/instances
+- Jaguar
+- range rover
+- bmw
+- Audi
+- Mercedes
+- Maruti
+
+Polymorphism
+--------------
+
+In [3]: 1 + 1
+Out[3]: 2
+
+In [4]: 'linux' + ' rocks'
+Out[4]: 'linux rocks'
+
+In [5]: 
+
+
+I -> Inheritance
+------------------
+father - right handed,doctor
+mother - left handed,doctor
+
+you -> left handed.,actor
+
+E -> Encapsulation
+-------------------
+you are looking at a functionality.
+
+balance 
+ + deposit()
+ + withdraw()
+
+public
+private
+protected

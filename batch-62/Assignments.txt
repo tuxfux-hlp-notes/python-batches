@@ -42,6 +42,8 @@ hint: pop
 9) https://github.com/sambapython/python/blob/master/assignments.txt
 10) del,zip -> tutorialpoint
 11) https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
+12) https://drive.google.com/file/d/0Bxq4UvUJTuQPZ1RTZGc5Q3BMWFk/view
+13) https://github.com/sambapython/python/blob/master/snow_man/Project2-CS61002.pdf
 
 # todo
 In [21]: a = iter(x)
