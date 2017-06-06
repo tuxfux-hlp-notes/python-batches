@@ -1,0 +1,14 @@
+This is my first line.
+This is my second line.
+This is my third line.
+This is my fourth line.
+This is my fifth line.
+This is my line 1.
+This is my line 2.
+This is my line 3.
+This is my line 4.
+This is my line 5.
+This is my line 6.
+This is my line 7.
+HEY THERE I HAVE WRITTEN IT INTO THE FILE
+HEY THERE I HAVE WRITTEN SECOND TIME INTO THE FILE

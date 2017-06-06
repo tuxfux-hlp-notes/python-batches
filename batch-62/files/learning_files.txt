@@ -1,0 +1,450 @@
+Why files ?
+- saving data persitently.
+we have db.
+
+Files:
++ read
++ writing
++ append
+
+modes:
+
+r -> read a file.
+w -> write into a file -
+
+ DISCLAIMER: if you open a file in write mode 
+* if the file is not there, your create a new file.
+* if there is a file,you are going to truncate it.
+
+a -> append mode.
+you an always keep on appending to a file.
+b -> binary mode. ex: jpg
+ex: rb,wb,ab  ex: pickle,json
+
+r+ -> both read and append to a file.
+
+--- 
+
+In [1]: f = open("file1.txt")
+
+In [2]: f
+Out[2]: <open file 'file1.txt', mode 'r' at 0x7f0cbc1a84b0>
+
+In [3]: print type(f)
+<type 'file'>
+
+In [4]: f = open("file1.txt","r")
+
+In [5]: f
+Out[5]: <open file 'file1.txt', mode 'r' at 0x7f0cbc1a8540>
+
+In [6]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines  
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [7]: f.name
+Out[7]: 'file1.txt'
+
+In [8]: f.mode
+Out[8]: 'r'
+
+In [9]: # f.read?
+
+In [10]: f.read?
+Type:        builtin_function_or_method
+String form: <built-in method read of file object at 0x7f0cbc1a8540>
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+
+In [11]: f.read(2)
+Out[11]: 'Th'
+
+In [12]: f.read(2)
+Out[12]: 'is'
+
+In [13]: f.read()
+Out[13]: ' is my line 1.\nThis is my line 2.\nThis is my line 3.\nThis is my line 4.\nThis is my line 5.\nThis is my line 6.\nThis is my line 7.\n'
+
+In [14]: f.read()
+Out[14]: ''
+
+In [15]: 
+
+
+n [16]: f.read()
+Out[16]: ''
+
+In [17]: f.tell()
+Out[17]: 133
+
+In [18]: f.tell?
+Type:        builtin_function_or_method
+String form: <built-in method tell of file object at 0x7f0cbc1a8540>
+Docstring:   tell() -> current file position, an integer (may be a long integer).
+
+In [19]: # f.seek
+
+In [20]: f.seek?
+Type:        builtin_function_or_method
+String form: <built-in method seek of file object at 0x7f0cbc1a8540>
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+
+In [21]: f.seek(0)
+
+In [22]: f.tell?
+Type:        builtin_function_or_method
+String form: <built-in method tell of file object at 0x7f0cbc1a8540>
+Docstring:   tell() -> current file position, an integer (may be a long integer).
+
+In [23]: f.tell()
+Out[23]: 0
+
+In [24]: f.read()
+Out[24]: 'This is my line 1.\nThis is my line 2.\nThis is my line 3.\nThis is my line 4.\nThis is my line 5.\nThis is my line 6.\nThis is my line 7.\n'
+
+In [28]: f.tell()
+Out[28]: 0
+
+In [29]: # f.readline
+
+In [30]: f.readline?
+Type:        builtin_function_or_method
+String form: <built-in method readline of file object at 0x7f0cbc1a8540>
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+
+In [31]: f.readline()
+Out[31]: 'This is my line 1.\n'
+
+In [32]: f.readline()
+Out[32]: 'This is my line 2.\n'
+
+In [33]: f.readline()
+Out[33]: 'This is my line 3.\n'
+
+In [34]: f.readline()
+Out[34]: 'This is my line 4.\n'
+
+In [35]: f.readline()
+Out[35]: 'This is my line 5.\n'
+
+In [36]: f.readline()
+Out[36]: 'This is my line 6.\n'
+
+In [37]: f.readline()
+Out[37]: 'This is my line 7.\n'
+
+In [38]: f.readline()
+Out[38]: ''
+
+In [39]: f.tell()
+Out[39]: 133
+
+
+In [41]: # f.readlines
+
+In [42]: f.readlines?
+Type:        builtin_function_or_method
+String form: <built-in method readlines of file object at 0x7f0cbc1a8540>
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+
+In [43]: f.tell()
+Out[43]: 133
+
+In [44]: f.seek(0)
+
+In [45]: f.tell()
+Out[45]: 0
+
+In [46]: my_lines = f.readlines()
+
+In [47]: print my_lines
+['This is my line 1.\n', 'This is my line 2.\n', 'This is my line 3.\n', 'This is my line 4.\n', 'This is my line 5.\n', 'This is my line 6.\n', 'This is my line 7.\n']
+
+In [48]: # f.read -> string,f.readline -> lines of strings,f.readlines() -> list of strings
+
+In [49]: 
+
+n [50]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines  
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [50]: # f.xreadlines
+
+In [51]: f.xreadlines?
+Type:        builtin_function_or_method
+String form: <built-in method xreadlines of file object at 0x7f0cbc1a8540>
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+
+In [52]: # f.readinto
+
+In [53]: f.readinto?
+Type:        builtin_function_or_method
+String form: <built-in method readinto of file object at 0x7f0cbc1a8540>
+Docstring:   readinto() -> Undocumented.  Don't use this; it may go away.
+
+In [54]: 
+
+
+In [55]: g = open("file2.txt","w")
+
+In [56]: # g.write
+
+In [57]: print g.write?
+Type:        builtin_function_or_method
+String form: <built-in method write of file object at 0x7f0cbc1a85d0>
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+
+In [58]: g.write("This is my first line.\nThis is my second line.\nThis is my third line.\nThis is my fourth line.\nThis is my fifth line.\n"
+   ....: )
+
+In [59]: # input(keyboard) -> I/O buffers -> cpu -> I/O buffers -> output(disk/screen) 
+
+In [60]: g.flush?
+Type:        builtin_function_or_method
+String form: <built-in method flush of file object at 0x7f0cbc1a85d0>
+Docstring:   flush() -> None.  Flush the internal I/O buffer.
+
+In [61]: g.flush()
+
+In [62]: g.close?
+Type:        builtin_function_or_method
+String form: <built-in method close of file object at 0x7f0cbc1a85d0>
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+
+In [63]: g.closed
+Out[63]: False
+
+In [64]: f
+Out[64]: <open file 'file1.txt', mode 'r' at 0x7f0cbc1a8540>
+
+In [65]: g
+Out[65]: <open file 'file2.txt', mode 'w' at 0x7f0cbc1a85d0>
+
+In [66]: f.closed
+Out[66]: False
+
+In [67]: g.closed
+Out[67]: False
+
+In [69]: my_lines
+Out[69]: 
+['This is my line 1.\n',
+ 'This is my line 2.\n',
+ 'This is my line 3.\n',
+ 'This is my line 4.\n',
+ 'This is my line 5.\n',
+ 'This is my line 6.\n',
+ 'This is my line 7.\n']
+
+In [70]: # f.writelines?
+
+In [71]: g.writelines?
+Type:        builtin_function_or_method
+String form: <built-in method writelines of file object at 0x7f0cbc1a85d0>
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+
+In [72]: g.writelines(my_lines)
+
+In [73]: # g.flush or g.close
+
+In [74]: g.close()
+
+In [75]: f
+Out[75]: <open file 'file1.txt', mode 'r' at 0x7f0cbc1a8540>
+
+In [76]: g
+Out[76]: <closed file 'file2.txt', mode 'w' at 0x7f0cbc1a85d0>
+
+In [77]: g.write("i want to write")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-77-3c5557a09666> in <module>()
+----> 1 g.write("i want to write")
+
+ValueError: I/O operation on closed file
+
+In [79]: g
+Out[79]: <closed file 'file2.txt', mode 'w' at 0x7f0cbc1a85d0>
+
+In [80]: g.write("i want to write a novel!!!")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-80-0daaf38e3459> in <module>()
+----> 1 g.write("i want to write a novel!!!")
+
+ValueError: I/O operation on closed file
+
+In [81]: # g.closed
+
+In [82]: if g.closed:
+   ....:     print "our file is closed"
+   ....: else:
+   ....:     print "our file is not closed"
+   ....:     g.write("i want to write a novel!!!")
+   ....:     
+our file is closed
+
+In [83]: g.closed
+Out[83]: True
+
+In [84]: # exception handling
+
+In [85]: try:
+   ....:     g.write("i want to write a novel!!!")
+   ....: except:
+   ....:     print "the file is in a closed state"
+   ....: else:
+   ....:     print "Buddy!!! we can write into the file"
+   ....:     g.write("i want to write a novel!!!")
+   ....:     
+the file is in a closed state
+
+In [86]: 
+
+In [87]: # with
+
+In [88]: g
+Out[88]: <closed file 'file2.txt', mode 'w' at 0x7f0cbc1a85d0>
+
+In [89]: with open("file2.txt","ab") as g:
+   ....:     g.write("HEY THERE I HAVE WRITTEN IT INTO THE FILE")
+   ....:     g.close()
+   ....:     
+
+In [90]: g.
+  File "<ipython-input-90-c901b5827816>", line 1
+    g.
+      ^
+SyntaxError: invalid syntax
+
+
+In [91]: g
+Out[91]: <closed file 'file2.txt', mode 'ab' at 0x7f0cbc1a8660>
+
+In [92]: with open("file2.txt","ab") as g:
+    g.write("HEY THERE I HAVE WRITTEN SECOND TIME INTO THE FILE")
+   ....:     
+
+In [93]: g
+Out[93]: <closed file 'file2.txt', mode 'ab' at 0x7f0cbc1a88a0>
+
+In [94]: 
+
+In [95]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines  
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [95]: # f.softspace,f.newlines,f.fileno
+
+In [96]: # google -> tutorialpoint
+
+In [97]: f
+Out[97]: <open file 'file1.txt', mode 'r' at 0x7f0cbc1a8540>
+
+In [98]: f.isatty
+Out[98]: <function isatty>
+
+In [99]: f.isatty()
+Out[99]: False
+
+In [100]: h = open('/dev/pts/6',"ab")
+
+In [101]: h.write("hey guys lets go to dinner !!!")
+
+In [102]: h.flush()
+
+In [103]: h.isatty()
+Out[103]: True
+
+In [104]: f
+Out[104]: <open file 'file1.txt', mode 'r' at 0x7f0cbc1a8540>
+
+In [105]: f.seek(0)
+
+In [106]: f.next
+Out[106]: <method-wrapper 'next' of file object at 0x7f0cbc1a8540>
+
+In [107]: f.next()
+Out[107]: 'This is my line 1.\n'
+
+In [108]: f.next()
+Out[108]: 'This is my line 2.\n'
+
+In [109]: f.next()
+Out[109]: 'This is my line 3.\n'
+
+In [110]: f.next()
+Out[110]: 'This is my line 4.\n'
+
+In [111]: f.next()
+Out[111]: 'This is my line 5.\n'
+
+In [112]: f.next()
+Out[112]: 'This is my line 6.\n'
+
+In [113]: f.next()
+Out[113]: 'This is my line 7.\n'
+
+In [114]: f.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-114-c3e65e5362fb> in <module>()
+----> 1 f.next()
+
+StopIteration: 
+
+In [115]: f.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-115-c3e65e5362fb> in <module>()
+----> 1 f.next()
+
+StopIteration: 
+
+
+
