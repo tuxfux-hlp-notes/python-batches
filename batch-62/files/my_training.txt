@@ -1,0 +1,10 @@
+(lp0
+S'python'
+p1
+aS'django'
+p2
+aS'puppet'
+p3
+aS'flask'
+p4
+a.

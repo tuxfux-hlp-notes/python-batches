@@ -447,4 +447,73 @@ StopIteration                             Traceback (most recent call last)
 StopIteration: 
 
 
+# pickles
+* saving a object into a file.
+
+object - list - training = ['python','django','ansibel','flask']
+
+first.py
+second.py
+third.py
+fourth.py
+fifth.py
+
+pickling and unpickling
+
+In [1]: f = open("my_training.txt","w")
+
+In [2]: training = ['python','django','ansibel','flask']
+
+In [3]: import pickle as p
+
+In [4]: p.load?
+Type:        function
+String form: <function load at 0x7f9ce06a5848>
+File:        /usr/lib/python2.7/pickle.py
+Definition:  p.load(file)
+Docstring:   <no docstring>
+
+In [5]: p.dump?
+Type:        function
+String form: <function dump at 0x7f9ce06a5758>
+File:        /usr/lib/python2.7/pickle.py
+Definition:  p.dump(obj, file, protocol=None)
+Docstring:   <no docstring>
+
+In [6]: # pickled
+
+In [7]: p.dump(training,f)
+
+In [8]: f.flush()
+
+In [9]: # unpickling
+
+In [10]: f.close()
+
+In [11]: g = open('my_training.txt","r")
+  File "<ipython-input-11-b3ed43840633>", line 1
+    g = open('my_training.txt","r")
+                                  ^
+SyntaxError: EOL while scanning string literal
+
+
+In [12]: g = open('my_training.txt',"r")
+
+In [13]: my_new = p.load(g)
+
+In [14]: print my_new
+['python', 'django', 'ansibel', 'flask']
+
+
+In [16]: with open('my_training.txt',"r") as g:
+   ....:     my_new = p.load(g)
+   ....:     
+
+In [17]: print my_new
+['python', 'django', 'puppet', 'flask']
+
+# webscrapping
+# json
+# yaml
+
 
