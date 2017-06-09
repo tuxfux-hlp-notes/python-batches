@@ -1,0 +1,327 @@
+Python support all kinds of databases.
+
+learning mysql in 21 days - book
+
+Databases:
+* Relational databases - oracle,mysql,mariadb
+* Non-relational databases - nosql,cassendra,redis
+
+--- database administrator --- 
+# install mysql
+* sudo apt-get install mysql-server (server,client(mysql))
+* mysql workbench
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 41
+Server version: 5.5.47-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> help contents;
+You asked for help about help category: "Contents"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Account Management
+   Administration
+   Compound Statements
+   Data Definition
+   Data Manipulation
+   Data Types
+   Functions
+   Functions and Modifiers for Use with GROUP BY
+   Geographic Features
+   Help Metadata
+   Language Structure
+   Plugins
+   Procedures
+   Storage Engines
+   Table Maintenance
+   Transactions
+   User-Defined Functions
+   Utility
+
+mysql> 
+
+
+mysql> help  Functions;
+You asked for help about help category: "Functions"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Bit Functions
+   Comparison operators
+   Control flow functions
+   Date and Time Functions
+   Encryption Functions
+   Information Functions
+   Logical operators
+   Miscellaneous Functions
+   Numeric Functions
+   String Functions
+
+mysql> help Information Functions;
+You asked for help about help category: "Information Functions"
+For more information, type 'help <item>', where <item> is one of the following
+topics:
+   BENCHMARK
+   CHARSET
+   COERCIBILITY
+   COLLATION
+   CONNECTION_ID
+   CURRENT_USER
+   DATABASE
+   FOUND_ROWS
+   LAST_INSERT_ID
+   ROW_COUNT
+   SCHEMA
+   SESSION_USER
+   SYSTEM_USER
+   USER
+   VERSION
+
+mysql> help version;
+Name: 'VERSION'
+Description:
+Syntax:
+VERSION()
+
+Returns a string that indicates the MySQL server version. The string
+uses the utf8 character set. The value might have a suffix in addition
+to the version number. See the description of the version system
+variable in
+http://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html.
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/information-functions.html
+
+Examples:
+mysql> SELECT VERSION();
+        -> '5.5.47-standard'
+
+mysql> select version();
++-------------------------+
+| version()               |
++-------------------------+
+| 5.5.47-0ubuntu0.14.04.1 |
++-------------------------+
+1 row in set (0.00 sec)
+
+Examples:
+mysql> SELECT USER();
+        -> 'davida@localhost'
+
+mysql> select user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+mysql> help databases;
+Many help items for your request exist.
+To make a more specific request, please type 'help <item>',
+where <item> is one of the following
+topics:
+   SHOW
+   SHOW DATABASES
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch60            |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.04 sec)
+
+mysql> help schema;
+Name: 'SCHEMA'
+Description:
+Syntax:
+SCHEMA()
+
+This function is a synonym for DATABASE().
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/information-functions.html
+
+
+mysql> help database;
+Name: 'DATABASE'
+Description:
+Syntax:
+DATABASE()
+
+Returns the default (current) database name as a string in the utf8
+character set. If there is no default database, DATABASE() returns
+NULL. Within a stored routine, the default database is the database
+that the routine is associated with, which is not necessarily the same
+as the database that is the default in the calling context.
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/information-functions.html
+
+Examples:
+mysql> SELECT DATABASE();
+        -> 'test'
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch60            |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> help create database;
+Name: 'CREATE DATABASE'
+Description:
+Syntax:
+CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+    [create_specification] ...
+
+create_specification:
+    [DEFAULT] CHARACTER SET [=] charset_name
+  | [DEFAULT] COLLATE [=] collation_name
+
+CREATE DATABASE creates a database with the given name. To use this
+statement, you need the CREATE privilege for the database. CREATE
+SCHEMA is a synonym for CREATE DATABASE.
+
+URL: http://dev.mysql.com/doc/refman/5.5/en/create-database.html
+
+
+mysql> create database batch62;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch60            |
+| batch62            |
+| mysql              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> 
+
+mysql> create database batch62;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch60            |
+| batch62            |
+| mysql              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> drop database batch60;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch62            |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> help create user;
+Name: 'CREATE USER'
+Description:
+Syntax:
+CREATE USER user_specification [, user_specification] ...
+[... truncate ...]
+
+mysql> create user 'user62'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> help grant;
+
+mysql> grant all on batch62.* to 'user62'@'localhost' identified by 'user62';
+Query OK, 0 rows affected (0.00 sec)
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches/batch-62 $ mysql -u user62 -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 42
+Server version: 5.5.47-0ubuntu0.14.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch62            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> use batch62;
+Database changed
+mysql> 
+mysql> select database();
++------------+
+| database() |
++------------+
+| batch62    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+
+CTO/CEO - 3 months duration
+--- programming --- 
+
+sudo apt-get install python-mysqldb
+
+Project - 5years
+- APP(html/css) - client
+- python - middleware
+- mysql/sybase
+
+ORM - object relation mapper
+sqlalchemy
+select * from students
+students.object.all()
+
+https://image.slidesharecdn.com/sqlaintro-130921142257-phpapp02/95/michael-bayer-introduction-to-sqlalchemy-postgres-open-9-638.jpg?cb=1379773451
