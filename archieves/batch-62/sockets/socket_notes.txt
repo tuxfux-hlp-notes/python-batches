@@ -1,0 +1,178 @@
+broswer(www.google.com) -> request -> internet connection
+-> resolving -> www -> response
+
+. -> root
+|
+com in uk us org
+|
+google
+|
+www mail photos 
+
+http://www.escotal.com/Images/Network%20parts/osi.gif
+
+
+Resolving:
+Forward Lookup
+ + name and ip
+Reverse Lookup
+ + ip and name
+
+ tcloudost@tcloudost-VirtualBox /var/www/html $ host www.google.com
+www.google.com has address 216.58.196.4
+www.google.com has IPv6 address 2404:6800:4001:80b::2004
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+tcloudost@tcloudost-VirtualBox /var/www/html $ host 216.58.196.4
+4.196.58.216.in-addr.arpa domain name pointer kul01s11-in-f4.1e100.net.
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+tcloudost@tcloudost-VirtualBox /var/www/html $ # dig
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+tcloudost@tcloudost-VirtualBox /var/www/html $ dig www.google.com
+
+; <<>> DiG 9.9.5-3ubuntu0.8-Ubuntu <<>> www.google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 54884
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.google.com.			IN	A
+
+;; ANSWER SECTION:
+www.google.com.		52	IN	A	216.58.196.4
+
+;; Query time: 4 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Sat Mar 18 08:45:17 IST 2017
+;; MSG SIZE  rcvd: 48
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ dig -x 216.58.196.4
+
+; <<>> DiG 9.9.5-3ubuntu0.8-Ubuntu <<>> -x 216.58.196.4
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45655
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;4.196.58.216.in-addr.arpa.	IN	PTR
+
+;; ANSWER SECTION:
+4.196.58.216.in-addr.arpa. 47804 IN	PTR	kul01s11-in-f4.1e100.net.
+
+;; Query time: 13 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Sat Mar 18 08:45:30 IST 2017
+;; MSG SIZE  rcvd: 81
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ nslookup www.google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	www.google.com
+Address: 216.58.196.4
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ nslookup 216.58.196.4
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+4.196.58.216.in-addr.arpa	name = kul01s11-in-f4.1e100.net.
+
+Authoritative answers can be found from:
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+
+
+In [6]: socket.gethostbyname('www.google.com')
+Out[6]: '216.58.196.4'
+
+In [7]: socket.gethostbyaddr('216.58.196.4')
+Out[7]: ('kul01s11-in-f4.1e100.net', [], ['216.58.196.4'])
+
+# server
+# ip address
+# port
+
+Connect to server
+-------------------
+server consists of some ports - services
+
+key2gyaan@key2gyaan ~ $ nmap localhost
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2016-10-03 08:09 IST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00024s latency).
+Not shown: 992 closed ports
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+631/tcp  open  ipp
+902/tcp  open  iss-realsecure
+3306/tcp open  mysql
+
+Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
+
+
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ cat /etc/services|head
+# Network services, Internet style
+#
+# Note that it is presently the policy of IANA to assign a single well-known
+# port number for both TCP and UDP; hence, officially ports have two entries
+# even if the protocol doesn't support UDP operations.
+#
+# Updated from http://www.iana.org/assignments/port-numbers and other
+# sources like http://www.freebsd.org/cgi/cvsweb.cgi/src/etc/services .
+# New ports will be added on request if they have been officially assigned
+# by IANA and used in the real-world or are needed by a debian package.
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ cat /etc/services|grep -i http
+# Updated from http://www.iana.org/assignments/port-numbers and other
+# sources like http://www.freebsd.org/cgi/cvsweb.cgi/src/etc/services .
+http		80/tcp		www		# WorldWideWeb HTTP
+http		80/udp				# HyperText Transfer Protocol
+https		443/tcp				# http protocol over TLS/SSL
+https		443/udp
+http-alt	8080/tcp	webcache	# WWW caching service
+http-alt	8080/udp
+hkp		11371/tcp			# OpenPGP HTTP Keyserver
+tcloudost@tcloudost-VirtualBox ~/Documents/git_repositories/python-batches $ cat /etc/services|grep -i smtp
+smtp		25/tcp		mail
+urd		465/tcp		ssmtp smtps  # URL Rendesvous Directory for SSM
+
+
+
+
+
+tcloudost@tcloudost-VirtualBox /var/www/html $ telnet www.google.com 80
+Trying 216.58.196.4...
+Connected to www.google.com.
+Escape character is '^]'.
+^]
+
+telnet> quit
+Connection closed.
+tcloudost@tcloudost-VirtualBox /var/www/html $ telnet www.google.com 22
+Trying 216.58.196.4...
+^]
+^C
+tcloudost@tcloudost-VirtualBox /var/www/html $ nmap www.google.com
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2017-03-18 08:50 IST
+Nmap scan report for www.google.com (216.58.196.4)
+Host is up (0.056s latency).
+rDNS record for 216.58.196.4: kul01s11-in-f4.1e100.net
+Not shown: 997 filtered ports
+PORT    STATE SERVICE
+25/tcp  open  smtp
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 5.60 seconds
+tcloudost@tcloudost-VirtualBox /var/www/html $ 
+
+
+
