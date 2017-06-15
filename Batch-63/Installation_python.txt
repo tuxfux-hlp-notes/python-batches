@@ -1,0 +1,160 @@
+Redhat/centos/Fedora
+------------------------
+# yum install install python  (2.x)
+# yum install install python3 (3.x)
+# yum install install ipython (2.x)
+# yum install install ipython3
+# yum install install bpython (3.x)
+# yum install install bpython3
+# jupter or ipython notebook
+# yum install ipython-notebook
+
+
+ubuntu/zorion/linuxmint
+------------------------
+# sudo apt-get install python  (2.x)
+# sudo apt-get install python3 (3.x)
+# sudo apt-get install ipython (2.x)
+# sudo apt-get install ipython3
+# sudo apt-get install bpython (3.x)
+# sudo apt-get install bpython3
+# jupter or ipython notebook
+# sudo apt-get install ipython-notebook
+
+windows
+---------
+https://www.continuum.io/DOWNLOADS
+# python,scipy modules,ipython and bpython
+
+IDE
+----
+https://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+
+Notes:
+
+myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ python -V
+Python 2.7.12+
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ python3 -V
+Python 3.5.2+
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world !!!"
+hello world !!!
+>>> 
+>>> quit()
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ python3
+Python 3.5.2+ (default, Sep 22 2016, 12:18:14) 
+[GCC 6.2.0 20160927] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print ("hello world!!!")
+hello world!!!
+>>> 
+
+
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ ipython
+WARNING: Attempting to work in a virtualenv. If you encounter problems, please install IPython inside the virtualenv.
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: p
+%%perl      %%python    %page       %pdb        %pfile      %popd       %profile    %psource    %pycat      pow         
+%%prun      %%python2   %paste      %pdef       %pinfo      %pprint     %prun       %pushd      %pylab      print       
+%%pypy      %%python3   %pastebin   %pdoc       %pinfo2     %precision  %psearch    %pwd        pass        property    
+
+In [1]: print "hello world"
+hello world
+
+In [2]: 
+
+source control integration: ex: github,cvs,bitbucket
+
+RAD
++ waterfall model.
+client -> CTO -> manger -> lead -> you
+(1st months) 
+
+                    (6 months)
++ agile methodology
+client -> CTO -> manger -> lead -> you
++ weekly status
+client -> lead,you (6 months)
+
+PRODUCT - LIVE 
+bug 
+
+dockets,kubernates
+
+
+# why do you save your program as .py
+- your windows friends/cross platform.
+- convience - basically to understand that its a python program.
+- we can use our program as module in future.
+
+
+--- running my first program ---
+
+khyaathi@khyaathi-Technologies:~$ ls
+Desktop  Documents  Downloads  examples.desktop  Music  Pictures  Public  Templates  Videos
+khyaathi@khyaathi-Technologies:~$ cd Documents/
+khyaathi@khyaathi-Technologies:~/Documents$ ls
+tuxfux-hlp-notes
+khyaathi@khyaathi-Technologies:~/Documents$ cd tuxfux-hlp-notes/
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes$ ls
+Django-notes  python-notes
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes$ cd python-notes/
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ ls
+archieves  Batch-63  LICENSE  README.md  test
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes$ cd Batch-63/
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ ls
+first.py  helloguys.ipynb  Installation_python.txt
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ python first.py
+hello world!!!
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ perl first.py
+hello world!!!khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ cat first.py
+print "hello world!!!"khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ ls
+first.py  helloguys.ipynb  Installation_python.txt
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ ls -l
+total 12
+-rwxr-xr-x 1 khyaathi khyaathi   22 Jun 15 18:48 first.py
+-rw------- 1 khyaathi khyaathi  181 Jun 15 18:18 helloguys.ipynb
+-rw-r--r-- 1 khyaathi khyaathi 3387 Jun 15 18:48 Installation_python.txt
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ ./first.py 
+Error: no such file "hello world!!!"
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ ./first.py 
+Error: no such file "hello world!!!"
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ python first.py
+hello world!!!
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ python -V
+Python 2.7.12+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ /usr/bin/python -V
+Python 2.7.12+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ which python
+/usr/bin/python
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ echo $PATH
+/home/khyaathi/.local/share/umake/bin:/home/khyaathi/bin:/home/khyaathi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ 
+
+
+
