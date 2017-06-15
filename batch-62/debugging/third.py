@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#import pdb
+import pdb
 
 def first():
   second()
@@ -21,5 +21,5 @@ def fifth():
   return "hey i am fifth"
 
 # MAIN
-#pdb.set_trace()
+pdb.set_trace()
 first()
