@@ -1,0 +1,80 @@
+proprietory and opensource
+----------------------------
+
+proprietory
+------------
+the company/product is owned by a particular owner or an organization.
+
+Product A (1000)-> 
+ Us(customers) -> requirements
+               -> email to the company -> we will get back to you.
+	       -> internet -> newsgroups/blog/sites (no workaround/no support)
+
+ex: microsoft,amazon
+
+* Retention of customers.
+* we have some frustrated customers.
+
+Opensource
+------------
+
+Product A(GPL) (100)-> publish the source code in internet
+ Us(customers) -> requirements
+               -> email to the company -> we will get back to you.
+	       -> internet -> newsgroups/blog/sites (no workaround/no support)
+
+customers(B) guyb/galb -> download code -> modification -> product B(GPL)(5)
++ java/python/ruby -> published in newgroups/blog/sites
+		   -> publish the product
+                   -> review -> vgood/good/bad/vbad/excellent
+6 months - lots of such products
+
+homogenous  -> whole product is in specific language.
+hetrogenous -> whole product is in different languages.
+
+Fast forward 6 montsh
+-----------------------
+Company A -> A.3 -> (100 + 400 modification)
+100 -> company
+400 -> community
+
+* customer retention.
+* marketing.
+* cost cutting. - 8cr
+
+Money
+------
+* support - parent company comes in action to help you.
+bronze/silver/gold/diamond/platinum
+* trainings
+
+Licenses
+---------
+GPL - GNU General Public License
+Any modification you do around this product should go back to GPL
+OSF - 1960 - Open Source Foundation
+
+Principles
+-----------
+* FREEdom to modify a product is called opensource.
+* There is no piracy - you can modify and re-distribute.
+* community support.
+* source code is available to everyone.
+
+Opensource Products
+---------------------
+* Languages: Java/python/ruby/R/erlong/
+* web frameworks: django/rails/angularjs/nodesjs
+* databases: mariadb/mongodb/cassendra
+
+classes:
++ OS: Ubuntu/Linuxmint/zorion
++ virtual : oracle virtual box/vmplayer/vmware workstation
++ language: python
+
+
+* Opensource is Free.  - false
+* available to everyone. - true
+* Anyone can use it. - true
+* source code is available. - true
+* we can re-invent/re-deploy the code. - true
