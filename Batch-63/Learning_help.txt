@@ -398,6 +398,7 @@ pow(x, y)
 
 Return x**y (x to the power of y).
 
+<<<<<<< HEAD
 In [91]:
 
 # printing
@@ -539,5 +540,9 @@ In [47]: print type(age)
 
 
 
+=======
+In [91]: 
+    
+>>>>>>> b94de8099878e632df4aba13fabe9607ea6cd709
 
 
