@@ -1,0 +1,543 @@
+khyaathipython@khyaathipython:~/Documents/git_repos/python-batches$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> LISTS
+
+Related help topics: LISTLITERALS
+
+help> 
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> 
+
+
+help>  modules
+
+help>quit
+
+In [3]: my_string="python"
+
+In [4]: print my_string
+python
+
+In [5]: print type(my_string)
+<type 'str'>
+
+In [6]: my_num = 1
+
+In [7]: print my_num
+1
+
+In [8]: print type(my_num)
+<type 'int'>
+
+In [9]: my_num1 = 2.0
+
+In [10]: print my_num1
+2.0
+
+In [11]: print type(my_num1)
+<type 'float'>
+
+In [12]: 
+
+
+In [13]: my_string
+Out[13]: 'python'
+
+In [14]: my_string.
+my_string.capitalize  my_string.islower     my_string.rpartition
+my_string.center      my_string.isspace     my_string.rsplit
+my_string.count       my_string.istitle     my_string.rstrip
+my_string.decode      my_string.isupper     my_string.split
+my_string.encode      my_string.join        my_string.splitlines
+my_string.endswith    my_string.ljust       my_string.startswith
+my_string.expandtabs  my_string.lower       my_string.strip
+my_string.find        my_string.lstrip      my_string.swapcase
+my_string.format      my_string.partition   my_string.title
+my_string.index       my_string.replace     my_string.translate
+my_string.isalnum     my_string.rfind       my_string.upper
+my_string.isalpha     my_string.rindex      my_string.zfill
+my_string.isdigit     my_string.rjust       
+
+In [14]: my_string.upper?
+Type:        builtin_function_or_method
+String form: <built-in method upper of str object at 0x7fbe1296b0f0>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [15]: print my_string.upper()
+PYTHON
+
+In [16]: my_string.center?
+Type:        builtin_function_or_method
+String form: <built-in method center of str object at 0x7fbe1296b0f0>
+Docstring:
+S.center(width[, fillchar]) -> string
+
+Return S centered in a string of length width. Padding is
+done using the specified fill character (default is a space)
+
+In [17]: my_string.center(10,'*')
+Out[17]: '**python**'
+
+
+In [19]: my_num
+Out[19]: 1
+
+In [20]: my_num.
+my_num.bit_length   my_num.denominator  my_num.numerator
+my_num.conjugate    my_num.imag         my_num.real
+
+In [20]: my_num1
+Out[20]: 2.0
+
+In [21]: my_num1.
+my_num1.as_integer_ratio  my_num1.hex               my_num1.real
+my_num1.conjugate         my_num1.imag              
+my_num1.fromhex           my_num1.is_integer        
+
+In [21]:
+
+root@khyaathipython:~# python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> my_string="python"
+>>> print dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> 
+>>> help(my_string.upper)
+
+>>> 
+
+
+In [22]: # playing with string
+
+In [23]: print my_string
+python
+
+In [24]: # A string is a sequnece of characters
+
+In [25]: # p  y  t  h  o  n
+
+In [26]: # 0  1  2  3  4  5  # +ve indexing or left to right
+
+In [27]: # -6 -5 -4 -3 -2 -1 # -ve indexing or right to left
+
+In [28]: # indexing
+
+In [29]: print my_string[3]
+h
+
+In [30]: print my_string[-3]
+h
+
+In [31]: # you cannot modify a string
+
+In [32]: my_string[-3] = "H"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-32-ffbb2fbad6b7> in <module>()
+----> 1 my_string[-3] = "H"
+
+TypeError: 'str' object does not support item assignment
+
+In [34]: # slicing
+
+In [35]: # p  y  t  h  o  n
+
+In [36]: # 0  1  2  3  4  5  # +ve indexing or left to right
+
+In [37]: # -6 -5 -4 -3 -2 -1 # -ve indexing or right to left
+
+In [38]: # pyt -> 0 till 3 -> 3 not included
+
+In [39]: print my_string[0:3]
+pyt
+
+In [40]: print my_string[:3]
+pyt
+
+In [41]: print my_string[3:]
+hon
+
+In [42]: print my_string[3:6]
+hon
+
+
+
+In [44]: print my_string[0:3] + my_string[3:6]
+python
+
+In [45]: print my_string[:3] + my_string[3:]
+python
+
+In [46]: 
+
+In [47]: # task
+
+In [48]: # my_string="python"
+
+In [49]: #output => "Tython"
+
+In [50]: print my_string[2] + my_string[1:6]
+tython
+
+In [51]: print my_string[2].upper() + my_string[1:]
+Tython
+
+In [52]: print 'T' + my_string[1:]
+Tython
+
+In [53]: print my_string.replace?
+Type:        builtin_function_or_method
+String form: <built-in method replace of str object at 0x7fbe1296b0f0>
+Docstring:
+S.replace(old, new[, count]) -> string
+
+Return a copy of string S with all occurrences of substring
+old replaced by new.  If the optional argument count is
+given, only the first count occurrences are replaced.
+
+In [54]: my_string.replace('p','T')
+Out[54]: 'Tython'
+
+In [56]: my_string[0]="P"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-56-faca0e608639> in <module>()
+----> 1 my_string[0]="P"
+
+TypeError: 'str' object does not support item assignment
+
+In [57]: 
+
+In [58]: my_string
+Out[58]: 'python'
+
+In [59]: # p  y  t  h  o  n
+
+In [60]: # 0  1  2  3  4  5  # +ve indexing or left to right
+
+In [61]: # -6 -5 -4 -3 -2 -1 # -ve indexing or right to left
+
+In [62]: print my_string[1:6]
+ython
+
+In [63]: print my_string[0:6]
+python
+
+In [64]: print my_string[0:6:1]
+python
+
+In [65]: print my_string[0:6:2]
+pto
+
+In [66]: print my_string[1:6:2]
+yhn
+
+In [67]: print my_string[::1]
+python
+
+In [68]: print my_string[::-1]
+nohtyp
+
+In [69]: # for(i=10;i<1;i--)
+
+In [71]: # string also support multiplication
+
+In [72]: ' pawan ' * 10
+Out[72]: ' pawan  pawan  pawan  pawan  pawan  pawan  pawan  pawan  pawan  pawan '
+
+In [73]: '-' * 10
+Out[73]: '----------'
+
+In [74]: 
+
+Homework
+my_string.index?
+-----------
+In [74]: my_string.
+my_string.capitalize  my_string.islower     my_string.rpartition
+my_string.center      my_string.isspace     my_string.rsplit
+my_string.count       my_string.istitle     my_string.rstrip
+my_string.decode      my_string.isupper     my_string.split
+my_string.encode      my_string.join        my_string.splitlines
+my_string.endswith    my_string.ljust       my_string.startswith
+my_string.expandtabs  my_string.lower       my_string.strip
+my_string.find        my_string.lstrip      my_string.swapcase
+my_string.format      my_string.partition   my_string.title
+my_string.index       my_string.replace     my_string.translate
+my_string.isalnum     my_string.rfind       my_string.upper
+my_string.isalpha     my_string.rindex      my_string.zfill
+my_string.isdigit     my_string.rjust   
+
+
+
+In [75]: my_num1 = 1
+
+In [76]: my_num2 = 2
+
+In [77]: print my_num1 + my_num2
+3
+
+In [78]: print '1' + '1'
+11
+
+In [79]: print 5/2
+2
+
+In [80]: print 5/2.0
+2.5
+
+In [81]: print float(5)/2
+2.5
+
+In [82]: print 25 + 25/2
+37
+
+In [83]: print (25 + 25)/2
+25
+
+In [84]: # BODMAS
+
+In [86]: print 25 % 2
+1
+
+In [87]: print 25 / 2
+12
+
+In [88]: 
+
+
+In [89]: import math
+
+In [90]: math.
+math.acos       math.degrees    math.fsum       math.pi
+math.acosh      math.e          math.gamma      math.pow
+math.asin       math.erf        math.hypot      math.radians
+math.asinh      math.erfc       math.isinf      math.sin
+math.atan       math.exp        math.isnan      math.sinh
+math.atan2      math.expm1      math.ldexp      math.sqrt
+math.atanh      math.fabs       math.lgamma     math.tan
+math.ceil       math.factorial  math.log        math.tanh
+math.copysign   math.floor      math.log10      math.trunc
+math.cos        math.fmod       math.log1p      
+math.cosh       math.frexp      math.modf       
+
+In [90]: math.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [91]:
+
+# printing
+
+In [1]: my_school = "De Paul"
+
+In [2]: another_school = "st. xaviers"
+
+In [3]: town = "township"
+
+In [4]: beach = "blue"
+
+In [5]: commute = "bus"
+
+In [6]: print "my school name is my_school"
+my school name is my_school
+
+In [7]: print 'my school name is my_school'
+my school name is my_school
+
+In [8]: print "my school name is ",my_school
+my school name is  De Paul
+
+In [9]: print "my school name is ",my_school,'we have another school adjacent to us', another_school , "we lived in a small", town, 'we have a beach which has color', beach , "we used to commute on ", commute
+my school name is  De Paul we have another school adjacent to us st. xaviers we lived in a small township we have a beach which has color blue we used to commute on  bus
+
+In [11]: # typecasting
+
+In [12]: # %s ->string,%d-> integers,%f-> float,%r-> raw
+
+In [13]: print "my school name is %s.Adjancent to our school we had %s.We used to live in a small %s.we had a beach which has colour %s.We use to commute to home on %s" %(my_school,another_school,town,beach,commute)
+my school name is De Paul.Adjancent to our school we had st. xaviers.We used to live in a small township.we had a beach which has colour blue.We use to commute to home on bus
+
+In [14]: print "my school name is %s. I love my %s" %(my_school,another_school)
+my school name is De Paul. I love my st. xaviers
+
+In [15]: print "my school name is %s. I love my %s" %(my_school,my_school)
+my school name is De Paul. I love my De Paul
+
+In [16]: # format
+
+In [17]: print "my school name is {}.i love my {}".format(my_school,another_school)
+my school name is De Paul.i love my st. xaviers
+
+In [18]: print "my school name is {0}.i love my {0}".format(my_school,another_school)
+my school name is De Paul.i love my De Paul
+
+In [19]: print "my school name is {1}.i love my {1}".format(my_school,another_school)
+my school name is st. xaviers.i love my st. xaviers
+
+In [20]: print "my school name is {ms}.i love my {ms}".format(ms=my_school,ans=another_school)
+my school name is De Paul.i love my De Paul
+
+
+n [22]: print commute
+bus
+
+In [23]: print "i commute on commute"
+i commute on commute
+
+In [24]: print "i commute on" ,commute
+i commute on bus
+
+In [25]: print "i commute on %s" %(commute)
+i commute on bus
+
+In [26]: print "i commute on {}
+  File "<ipython-input-26-73c140a26816>", line 1
+    print "i commute on {}
+                         ^
+SyntaxError: EOL while scanning string literal
+
+
+In [27]: print "i commute on {}".format(commute)
+i commute on bus
+
+In [28]: 
+
+
+In [29]: # taking input 
+
+In [30]: # raw_input and input
+
+In [31]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [32]: print name
+kumar
+
+In [33]: print type(name)
+<type 'str'>
+
+In [34]: age = raw_input("please enter your age:")
+please enter your age:56
+
+In [35]: print age
+56
+
+In [36]: print type(age)
+<type 'str'>
+
+In [37]: age = int(raw_input("please enter your age:"))
+please enter your age:56
+
+In [38]: print age
+56
+
+In [39]: print type(age)
+<type 'int'>
+
+In [40]: age = int(raw_input("please enter your age:"))
+please enter your age:fifty six
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-40-1f06d18b8f6b> in <module>()
+----> 1 age = int(raw_input("please enter your age:"))
+
+ValueError: invalid literal for int() with base 10: 'fifty six'
+
+In [42]: name = input("please enter your name:")
+please enter your name:name
+
+In [43]: print name
+kumar
+
+In [44]: print type(name)
+<type 'str'>
+
+In [45]: age = input("please enter your age:")
+please enter your age:56
+
+In [46]: print age
+56
+
+In [47]: print type(age)
+<type 'int'>
+
+
+
+
+
+
+
