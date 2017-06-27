@@ -377,11 +377,107 @@ today      5
 tomorrow   8
 dayafter   8
 
+In [5]: for value in my_days:
+   ...:     print value,len(value)
+   ...:     
+yesterday 9
+today 5
+tomorrow 8
+dayafter 8
+
+
 subtask2:
 Yesterday
 TOday
 TOMorrow
 DAYAfter
+
+In [6]: for value in my_days:
+   ...:     print value,my_days.index(value)
+   ...:     
+yesterday 0
+today 1
+tomorrow 2
+dayafter 3
+
+In [7]: for value in my_days:
+    print value,my_days.index(value),value[my_days.index(value)]
+   ...:     
+yesterday 0 y
+today 1 o
+tomorrow 2 m
+dayafter 3 a
+
+In [8]: for value in my_days:
+    print value,my_days.index(value),value[my_days.index(value)],value[0:my_days.index(value)]
+   ...:     
+yesterday 0 y 
+today 1 o t
+tomorrow 2 m to
+dayafter 3 a day
+
+In [9]: for value in my_days:
+    print value,my_days.index(value),value[0:my_days.index(value)]
+   ...:     
+yesterday 0 
+today 1 t
+tomorrow 2 to
+dayafter 3 day
+
+In [11]: for value in my_days:
+    print value,my_days.index(value),value[0:my_days.index(value)]
+   ....:     
+yesterday 0 
+today 1 t
+tomorrow 2 to
+dayafter 3 day
+
+In [12]: for value in my_days:
+    print value,my_days.index(value),value[0:my_days.index(value) + 1]
+   ....:     
+yesterday 0 y
+today 1 to
+tomorrow 2 tom
+dayafter 3 daya
+
+In [13]: for value in my_days:
+    print value[0:my_days.index(value) + 1]
+   ....:     
+y
+to
+tom
+daya
+
+In [14]: for value in my_days:
+    print value[0:my_days.index(value) + 1].upper() + value[my_days.index(value) + 1:]
+   ....:     
+Yesterday
+TOday
+TOMorrow
+DAYAfter
+
+In [15]: my_string="python"
+
+In [16]: print my_string[0:3]
+pyt
+
+In [17]: print my_string[:3]
+pyt
+
+In [18]: print my_string[3:]
+hon
+
+In [19]: print my_string[3:] + my_string[:3]
+honpyt
+
+In [20]: print my_string[:3] + my_string[3]
+pyth
+
+In [21]: print my_string[:3] + my_string[3:]
+python
+
+
+
 
 ## task2
 input
@@ -390,6 +486,297 @@ my_fruits = ['apple','banana','apple','banana','cherry']
 output:
 duplicate = ['apple','banana']
 my_fruits = ['apple','banana','cherry']
+
+In [23]: my_fruits = ['apple','banana','apple','banana','cherry']
+
+In [24]: print my_fruits
+['apple', 'banana', 'apple', 'banana', 'cherry']
+
+In [25]: duplicate[]
+  File "<ipython-input-25-c9a68f36103d>", line 1
+    duplicate[]
+              ^
+SyntaxError: invalid syntax
+
+
+In [26]: duplicate=[]
+
+In [27]: for value in my_fruits:
+   ....:     if my_fruits.count(value) > 1:
+   ....:         duplicate.append(value)
+   ....:         my_fruits.remove(value)
+   ....:         
+
+In [28]: print my_fruits
+['apple', 'banana', 'cherry']
+
+In [29]: print duplicate
+['apple', 'banana']
+
+In [30]: 
+
+
+# aliasing/memory in lists
+
+##
+# Variables
+##
+
+In [31]: a = 1
+
+In [32]: id?
+Type:        builtin_function_or_method
+String form: <built-in function id>
+Namespace:   Python builtin
+Docstring:
+id(object) -> integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it's the object's memory address.)
+
+In [33]: print id(a)
+94701781193048
+
+In [34]: print id(1)
+94701781193048
+
+In [35]: b = 1
+
+In [36]: print id(b)
+94701781193048
+
+In [37]: print id(1)
+94701781193048
+
+In [38]: b = 2
+
+In [39]: print id(b)
+94701781193024
+
+In [40]: print id(2)
+94701781193024
+
+In [41]: print a
+1
+
+In [42]: print b
+2
+
+
+In [44]: a = ['one','two','three']
+
+In [45]: print id(a)
+140172163175632
+
+In [46]: b = a
+
+In [47]: print id(b)
+140172163175632
+
+In [48]: ## is
+
+In [49]: a is b
+Out[49]: True
+
+In [50]: print a
+['one', 'two', 'three']
+
+In [51]: print b
+['one', 'two', 'three']
+
+In [52]: c = ['one','two','three']
+
+In [53]: print id(c)
+140172163175920
+
+In [54]: a is c
+Out[54]: False
+
+# soft copy
+
+In [44]: a = ['one','two','three']
+
+In [45]: print id(a)
+140172163175632
+
+In [46]: b = a
+
+In [47]: print id(b)
+140172163175632
+
+In [48]: ## is
+
+In [49]: a is b
+Out[49]: True
+
+In [50]: print a
+['one', 'two', 'three']
+
+In [51]: print b
+['one', 'two', 'three']
+
+In [52]: c = ['one','two','three']
+
+In [53]: print id(c)
+140172163175920
+
+In [54]: a is c
+Out[54]: False
+
+In [55]: a[1]
+Out[55]: 'two'
+
+In [56]: a[1]="22"
+
+In [57]: print a
+['one', '22', 'three']
+
+In [58]: print b
+['one', '22', 'three']
+
+In [60]: print a
+['one', '22', 'three']
+
+In [61]: print b
+['one', '22', 'three']
+
+In [62]: id(a)
+Out[62]: 140172163175632
+
+In [63]: id(b)
+Out[63]: 140172163175632
+
+In [64]: a is b
+Out[64]: True
+
+In [65]: a = ["1","2","3"]
+
+In [66]: print a
+['1', '2', '3']
+
+In [67]: print b
+['one', '22', 'three']
+
+In [68]: print id(a)
+140172184937896
+
+In [69]: print id(b)
+140172163175632
+
+
+## deep copy
+
+In [71]: a = [11,22,33]
+
+In [72]: print a,id(a)
+[11, 22, 33] 140172163338536
+
+In [73]: b = a[:]
+
+In [74]: print b,id(b)
+[11, 22, 33] 140172163176928
+
+In [75]: a is b
+Out[75]: False
+
+In [76]: a[0]=111
+
+In [77]: print a
+[111, 22, 33]
+
+In [78]: print b
+[11, 22, 33]
+
+In [79]: import copy
+
+In [80]: copy.
+copy.Error           copy.copy            copy.dispatch_table  copy.name            copy.weakref         
+copy.PyStringMap     copy.deepcopy        copy.error           copy.t               
+
+In [80]: copy.deepcopy?
+Type:        function
+String form: <function deepcopy at 0x7f7c624a8aa0>
+File:        /usr/lib/python2.7/copy.py
+Definition:  copy.deepcopy(x, memo=None, _nil=[])
+Docstring:
+Deep copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+
+In [81]: c = copy.deepcopy(a)
+
+In [82]: print c,a,id(a),id(c)
+[111, 22, 33] [111, 22, 33] 140172163338536 140172163368072
+
+
+##
+# args
+##
+please see the program 05-add.py
+reference:
+https://docs.python.org/3/library/argparse.html
+
+##
+#  List comprehensions
+##
+
+https://github.com/tuxfux-hlp/Python-examples/blob/master/lists/list_comprehension.txt
+
+In [87]: num = raw_input("please enter a number:")
+please enter a number:1,2,3,4,5,6,7,8,9,10
+
+In [88]: print num,type(num)
+1,2,3,4,5,6,7,8,9,10 <type 'str'>
+
+In [89]: # output -> 2,4,6,8,10
+
+In [90]: num.split(',')
+Out[90]: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [91]: for value in  num.split(','):
+   ....:     
+KeyboardInterrupt
+
+In [91]: even=[]
+
+In [92]: for value in num.split(','):
+   ....:     if int(value) % 2 == 0:
+   ....:         even.append(value)
+   ....:         
+
+In [93]: print even
+['2', '4', '6', '8', '10']
+
+In [94]: ','.join(even)
+Out[94]: '2,4,6,8,10'
+
+
+In [95]: # List comprehensions
+
+In [96]: [ value for value in num.split(',') if int(value) % 2 == 0]
+Out[96]: ['2', '4', '6', '8', '10']
+
+In [97]: ','.join([ value for value in num.split(',') if int(value) % 2 == 0])
+Out[97]: '2,4,6,8,10'
+
+In [98]: 
+
+In [99]: my_sentence="today is tuesday"
+
+In [100]: [ print [value.upper(),value.lower(),value.capitalize()]for value in my_sentence.split() ]
+  File "<ipython-input-100-e83535e1aa23>", line 1
+    [ print [value.upper(),value.lower(),value.capitalize()]for value in my_sentence.split() ]
+          ^
+SyntaxError: invalid syntax
+
+
+In [101]: [[value.upper(),value.lower(),value.capitalize()]for value in my_sentence.split() ]
+Out[101]: 
+[['TODAY', 'today', 'Today'],
+ ['IS', 'is', 'Is'],
+ ['TUESDAY', 'tuesday', 'Tuesday']]
+
+In [102]: 
 
 
 
