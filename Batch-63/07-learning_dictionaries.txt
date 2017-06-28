@@ -1,0 +1,439 @@
+# Dictionaries
+# dict,hashes,key-value
+# key => value
+# adhar card
+
+In [81]: # dictionaries
+
+In [82]: my_fruits = {'a':'apple','b':'banana','c':'cherry','d':'dates'}
+
+In [83]: print my_fruits,type(my_fruits)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'} <type 'dict'>
+
+In [84]: # dictionary indexes,pprint
+
+In [85]: my_empty = {}
+
+In [86]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [87]: my_empty = dict()
+
+In [88]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [89]: # cheat sheet
+
+In [90]: # list => ['apple','banana'],[],list()
+
+In [91]: # tuples => ('apple','banana'),(),tuples()
+
+In [92]: # dict => {'a':'apple','b':'banana'},{},dict()
+
+In [93]: # getting the values for a key
+
+In [94]: my_fruits['a]
+  File "<ipython-input-94-a23d142e9321>", line 1
+    my_fruits['a]
+                ^
+SyntaxError: EOL while scanning string literal
+
+
+In [95]: my_fruits['a']
+Out[95]: 'apple'
+
+In [97]: my_fruits
+Out[97]: {'a': 'apple', 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [98]: my_fruits['a']
+Out[98]: 'apple'
+
+In [99]: # adding or appending a new key/value pair
+
+In [100]: my_fruits['g']='grapes'
+
+In [101]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes'}
+
+In [102]: my_fruits['g'] ='guava'
+
+In [103]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'guava'}
+
+In [104]: my_fruits['g'] ='guava','grapes'
+
+In [105]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes')}
+
+In [106]: # in operation
+
+In [107]: 'a' in my_fruits
+Out[107]: True
+
+In [108]: 'apple' in my_fruits
+Out[108]: False
+
+In [109]: # in works only on keys not on values
+
+In [110]: 
+
+In [111]: my_fruits
+Out[111]: 
+{'a': 'apple',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'dates',
+ 'g': ('guava', 'grapes')}
+
+In [112]: # looping
+
+In [113]: for key in my_fruits:
+   .....:     print key
+   .....:     
+a
+c
+b
+d
+g
+
+In [114]: for key in my_fruits:
+    print "{}=>{}".format(key,my_fruits[key])
+   .....:     
+a=>apple
+c=>cherry
+b=>banana
+d=>dates
+g=>('guava', 'grapes')
+
+In [115]: 
+
+In [116]: # functions
+
+In [117]: my_fruits.
+my_fruits.clear       my_fruits.get         my_fruits.iteritems   my_fruits.keys        my_fruits.setdefault  my_fruits.viewitems
+my_fruits.copy        my_fruits.has_key     my_fruits.iterkeys    my_fruits.pop         my_fruits.update      my_fruits.viewkeys
+my_fruits.fromkeys    my_fruits.items       my_fruits.itervalues  my_fruits.popitem     my_fruits.values      my_fruits.viewvalues
+
+In [117]: # my_fruits.keys
+
+In [118]: my_fruits.keys()
+Out[118]: ['a', 'c', 'b', 'd', 'g']
+
+In [119]: my_fruits.keys?
+Type:        builtin_function_or_method
+String form: <built-in method keys of dict object at 0x7f77918c9b40>
+Docstring:   D.keys() -> list of D's keys
+
+In [120]: # my_fruits.values
+
+In [121]: my_fruits.values?
+Type:        builtin_function_or_method
+String form: <built-in method values of dict object at 0x7f77918c9b40>
+Docstring:   D.values() -> list of D's values
+
+In [122]: my_fruits.values()
+Out[122]: ['apple', 'cherry', 'banana', 'dates', ('guava', 'grapes')]
+
+In [123]: # my_fruits.get
+
+In [124]: my_fruits.get?
+Type:        builtin_function_or_method
+String form: <built-in method get of dict object at 0x7f77918c9b40>
+Docstring:   D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
+
+In [125]: print my_fruits.get('a')
+apple
+
+In [126]: print my_fruits.get('A')
+None
+
+In [127]: print my_fruits['a']
+apple
+
+In [128]: print  my_fruits['A']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-128-d154a3217388> in <module>()
+----> 1 print  my_fruits['A']
+
+KeyError: 'A'
+
+In [130]: # my_fruits.has_key
+
+In [131]: 'a' in my_fruits
+Out[131]: True
+
+In [132]: 'A' in my_fruits
+Out[132]: False
+
+In [133]: my_fruits.has_key('a)
+  File "<ipython-input-133-8ff5d0192807>", line 1
+    my_fruits.has_key('a)
+                        ^
+SyntaxError: EOL while scanning string literal
+
+
+In [134]: my_fruits.has_key('a')
+Out[134]: True
+
+In [135]: my_fruits.has_key('A')
+Out[135]: False
+
+In [136]: 
+
+In [136]: # my_fruits.fromkeys
+
+In [137]: my_fruits.fromkeys?
+Type:        builtin_function_or_method
+String form: <built-in method fromkeys of type object at 0x55a5a5b9a5c0>
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+
+In [141]: a = {}
+
+In [142]: a.fromkeys(['1','2','3','4'])
+Out[142]: {'1': None, '2': None, '3': None, '4': None}
+
+In [143]: a.fromkeys?
+Type:        builtin_function_or_method
+String form: <built-in method fromkeys of type object at 0x55a5a5b9a5c0>
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+
+In [144]: a.fromkeys(['1','2','3','4'],"numbers")
+Out[144]: {'1': 'numbers', '2': 'numbers', '3': 'numbers', '4': 'numbers'}
+
+In [145]: 
+
+In [146]: my_fruits.
+my_fruits.clear       my_fruits.get         my_fruits.iteritems   my_fruits.keys        my_fruits.setdefault  my_fruits.viewitems
+my_fruits.copy        my_fruits.has_key     my_fruits.iterkeys    my_fruits.pop         my_fruits.update      my_fruits.viewkeys
+my_fruits.fromkeys    my_fruits.items       my_fruits.itervalues  my_fruits.popitem     my_fruits.values      my_fruits.viewvalues
+
+In [146]: # my_fruits.keys,my_fruits.viewkeys,my_fruits.iterkeys
+
+In [147]: print my_fruits.keys()
+['a', 'c', 'b', 'd', 'g']
+
+In [148]: my_fruits.viewkeys?
+Type:        builtin_function_or_method
+String form: <built-in method viewkeys of dict object at 0x7f77918c9b40>
+Docstring:   D.viewkeys() -> a set-like object providing a view on D's keys
+
+In [149]: my_fruits.viewkeys()
+Out[149]: dict_keys(['a', 'c', 'b', 'd', 'g'])
+
+In [150]: my_fruits.iterkeys?
+Type:        builtin_function_or_method
+String form: <built-in method iterkeys of dict object at 0x7f77918c9b40>
+Docstring:   D.iterkeys() -> an iterator over the keys of D
+
+In [151]: my_fruits.iterkeys()
+Out[151]: <dictionary-keyiterator at 0x7f77918a0730>
+
+In [152]: for value in my_fruits.iterkeys():
+   .....:     print value
+   .....:     
+a
+c
+b
+d
+g
+
+In [154]: # my_fruits.values,my_fruits.itervalues,my_fruits.viewvalues
+
+In [155]: my_fruits.values?
+Type:        builtin_function_or_method
+String form: <built-in method values of dict object at 0x7f77918c9b40>
+Docstring:   D.values() -> list of D's values
+
+In [156]: print my_fruits.values()
+['apple', 'cherry', 'banana', 'dates', ('guava', 'grapes')]
+
+In [157]: my_fruits.itevalues?
+Object `my_fruits.itevalues` not found.
+
+In [158]: my_fruits.itervalues?
+Type:        builtin_function_or_method
+String form: <built-in method itervalues of dict object at 0x7f77918c9b40>
+Docstring:   D.itervalues() -> an iterator over the values of D
+
+In [159]: print my_fruits.itervalues
+<built-in method itervalues of dict object at 0x7f77918c9b40>
+
+In [160]: print my_fruits.itervalues()
+<dictionary-valueiterator object at 0x7f77918a0d60>
+
+In [161]: for value in my_fruits.itervalues():
+   .....:     print value
+   .....:     
+apple
+cherry
+banana
+dates
+('guava', 'grapes')
+
+In [162]: my_fruits.viewvalues()
+Out[162]: dict_values(['apple', 'cherry', 'banana', 'dates', ('guava', 'grapes')])
+
+In [163]: 
+
+In [164]: # my_fruits.items,my_fruits.iteritems,my_fruits.viewitems
+
+In [165]: my_fruits.items?
+Type:        builtin_function_or_method
+String form: <built-in method items of dict object at 0x7f77918c9b40>
+Docstring:   D.items() -> list of D's (key, value) pairs, as 2-tuples
+
+In [166]: print my_fruits.items()
+[('a', 'apple'), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates'), ('g', ('guava', 'grapes'))]
+
+In [167]: my_fruits.iteritems()
+Out[167]: <dictionary-itemiterator at 0x7f77918a33c0>
+
+In [168]: my_fruits.iteritems?
+Type:        builtin_function_or_method
+String form: <built-in method iteritems of dict object at 0x7f77918c9b40>
+Docstring:   D.iteritems() -> an iterator over the (key, value) items of D
+
+In [169]: my_fruits.viewitems?
+Type:        builtin_function_or_method
+String form: <built-in method viewitems of dict object at 0x7f77918c9b40>
+Docstring:   D.viewitems() -> a set-like object providing a view on D's items
+
+In [170]: print my_fruits.viewitems()
+dict_items([('a', 'apple'), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates'), ('g', ('guava', 'grapes'))])
+
+In [171]: 
+
+In [172]: # my_fruits.setdefault
+
+In [173]: my_fruits.setdefault?
+Type:        builtin_function_or_method
+String form: <built-in method setdefault of dict object at 0x7f77918c9b40>
+Docstring:   D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+
+In [174]: my_fruits
+Out[174]: 
+{'a': 'apple',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'dates',
+ 'g': ('guava', 'grapes')}
+
+In [175]: my_fruits.setdefault('a','apricot')
+Out[175]: 'apple'
+
+In [176]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes')}
+
+In [177]: my_fruits.setdefault('aa','apricot')
+Out[177]: 'apricot'
+
+In [178]: print my_fruits
+{'a': 'apple', 'aa': 'apricot', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes')}
+
+In [179]: 
+
+In [180]: my_fruits.
+my_fruits.clear       my_fruits.get         my_fruits.iteritems   my_fruits.keys        my_fruits.setdefault  my_fruits.viewitems
+my_fruits.copy        my_fruits.has_key     my_fruits.iterkeys    my_fruits.pop         my_fruits.update      my_fruits.viewkeys
+my_fruits.fromkeys    my_fruits.items       my_fruits.itervalues  my_fruits.popitem     my_fruits.values      my_fruits.viewvalues
+
+In [180]: #my_fruits.update
+
+In [181]: my_fruits.update?
+Type:        builtin_function_or_method
+String form: <built-in method update of dict object at 0x7f77918c9b40>
+Docstring:
+D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]
+
+In [182]: my_fruits
+Out[182]: 
+{'a': 'apple',
+ 'aa': 'apricot',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'dates',
+ 'g': ('guava', 'grapes')}
+
+In [183]: new_fruits = {'j':'jackfruit','k':'kiwi'}
+
+In [184]: my_fruits.update(new_fruits)
+
+In [185]: print my_fruits
+{'a': 'apple', 'aa': 'apricot', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes'), 'k': 'kiwi', 'j': 'jackfruit'}
+
+In [186]: 
+
+
+In [187]: my_fruits.
+my_fruits.clear       my_fruits.get         my_fruits.iteritems   my_fruits.keys        my_fruits.setdefault  my_fruits.viewitems
+my_fruits.copy        my_fruits.has_key     my_fruits.iterkeys    my_fruits.pop         my_fruits.update      my_fruits.viewkeys
+my_fruits.fromkeys    my_fruits.items       my_fruits.itervalues  my_fruits.popitem     my_fruits.values      my_fruits.viewvalues
+
+In [187]: # my_fruits.pop
+
+In [188]: my_fruits.pop?
+Type:        builtin_function_or_method
+String form: <built-in method pop of dict object at 0x7f77918c9b40>
+Docstring:
+D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised
+
+In [189]: print my_fruits
+{'a': 'apple', 'aa': 'apricot', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes'), 'k': 'kiwi', 'j': 'jackfruit'}
+
+In [190]: my_fruits.pop('a')
+Out[190]: 'apple'
+
+In [191]: print my_fruits
+{'aa': 'apricot', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes'), 'k': 'kiwi', 'j': 'jackfruit'}
+
+In [192]: my_fruits.pop('a')
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-192-1d463f2a0655> in <module>()
+----> 1 my_fruits.pop('a')
+
+KeyError: 'a'
+
+In [193]: 
+
+In [194]: # my_fruits.popitems
+
+In [195]: my_fruits.popitem?
+Type:        builtin_function_or_method
+String form: <built-in method popitem of dict object at 0x7f77918c9b40>
+Docstring:
+D.popitem() -> (k, v), remove and return some (key, value) pair as a
+2-tuple; but raise KeyError if D is empty.
+
+In [196]: print my_fruits
+{'aa': 'apricot', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes'), 'k': 'kiwi', 'j': 'jackfruit'}
+
+In [197]: my_fruits.popitem()
+Out[197]: ('aa', 'apricot')
+
+In [198]: my_fruits.popitem()
+Out[198]: ('c', 'cherry')
+
+In [199]: print my_fruits
+{'b': 'banana', 'd': 'dates', 'g': ('guava', 'grapes'), 'k': 'kiwi', 'j': 'jackfruit'}
+
+In [200]: a = {}
+
+In [201]: a.popitem()
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-201-8f8793a5bd27> in <module>()
+----> 1 a.popitem()
+
+KeyError: 'popitem(): dictionary is empty'
+
+In [202]: 

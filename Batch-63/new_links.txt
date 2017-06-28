@@ -1,0 +1,3 @@
+https://github.com/sambapython/python/blob/master/assignments.txt
+http://www.pythonchallenge.com/pc/def/map.html
+https://projecteuler.net/archives

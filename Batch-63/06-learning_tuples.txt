@@ -1,0 +1,271 @@
+tuples - tuples are readonly lists
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: my_gender = ("male","female")
+
+In [2]: print my_gender,type(my_gender)
+('male', 'female') <type 'tuple'>
+
+In [3]: my_empty = ()
+
+In [4]: print type(my_empty),my_empty
+<type 'tuple'> ()
+
+In [5]: my_empty=tuple()
+
+In [6]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [7]: # indexing,slicing
+
+In [8]: my_gender[0]='Male'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-8-f4fb280e84e3> in <module>()
+----> 1 my_gender[0]='Male'
+
+TypeError: 'tuple' object does not support item assignment
+
+In [9]: print my_gender
+('male', 'female')
+
+In [11]: my_string = "male"
+
+In [12]: print my_string,type(my_string)
+male <type 'str'>
+
+In [13]: my_string="male","female"
+
+In [14]: print my_string,type(my_string)
+('male', 'female') <type 'tuple'>
+
+In [15]: my_string=("male")
+
+In [16]: print my_string,type(my_string)
+male <type 'str'>
+
+In [17]: my_string=("male",)
+
+In [18]: print my_string,type(my_string)
+('male',) <type 'tuple'>
+
+In [20]: # packing and unpacking
+
+In [21]: my_fruits = ['apple','banana','apple','banana','cherry']
+
+In [22]: my_fruits = ['apple','banana','cherry','dates','pineapple']
+
+In [23]: # i want to put value apple into variable called a
+
+In [24]: a = my_fruits[0]
+
+In [25]: print a
+apple
+
+In [26]: a,b,c,d,e = my_fruits
+
+In [27]: print a,b,c,d,e
+apple banana cherry dates pineapple
+
+In [28]: a,b,c = my_fruits
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-28-1459223ec3ba> in <module>()
+----> 1 a,b,c = my_fruits
+
+ValueError: too many values to unpack
+
+In [29]: a,b,c,d,e,f = my_fruits
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-29-bacf0736f588> in <module>()
+----> 1 a,b,c,d,e,f = my_fruits
+
+ValueError: need more than 5 values to unpack
+
+In [30]: # RHS = LHS
+
+
+In [32]: # tuples and lists
+
+In [33]: my_students = ["pavani","nikhil","koushik","law","mahesh","ravi"]
+
+In [34]: my_exams = ["python","pandas","django","ansibel","vagrant","salt"]
+
+In [35]: name="pavani"
+
+In [36]: name in my_students
+Out[36]: True
+
+In [37]: # roll nu
+
+In [38]: print my_students.index(name)
+0
+
+In [39]: # subject
+
+In [40]: print my_exams[my_students.index(name))
+  File "<ipython-input-40-f3de4a27aadb>", line 1
+    print my_exams[my_students.index(name))
+                                          ^
+SyntaxError: invalid syntax
+
+
+In [41]: print my_exams[my_students.index(name)]
+python
+
+In [42]: if name in my_students:
+   ....:     print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)]
+   ....:     
+   ....:     "
+   ....:     
+  File "<ipython-input-42-52a42d2fbe57>", line 4
+    "
+    ^
+SyntaxError: EOL while scanning string literal
+
+
+In [43]: if name in my_students:
+    print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+   ....:     
+pavani is going to give exam python
+
+In [44]: name = "mahesh"
+
+In [45]: if name in my_students:
+    print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+   ....:     
+mahesh is going to give exam vagrant
+
+In [47]: my_
+my_empty     my_exams     my_fruits    my_gender    my_string    my_students  
+
+In [47]: my_st
+my_string    my_students  
+
+In [47]: my_students = ["pavani","nikhil","koushik","law","mahesh","ravi"]
+
+In [48]: my_exams = ["python","pandas","django","ansibel","vagrant","salt"]
+
+In [49]: if name in my_students:
+    print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+   ....:     
+mahesh is going to give exam vagrant
+
+In [50]: # junior
+
+In [51]: my_students.sort()
+
+In [52]: print my_students
+['koushik', 'law', 'mahesh', 'nikhil', 'pavani', 'ravi']
+
+In [53]: if name in my_students:
+    print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+   ....:     
+mahesh is going to give exam django
+
+In [54]: name="pavani"
+
+In [55]: if name in my_students:
+    print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+   ....:     
+pavani is going to give exam vagrant
+
+In [56]: 
+
+In [57]: my_students = ["pavani","nikhil","koushik","law","mahesh","ravi"]
+
+In [58]: my_exams = ["python","pandas","django","ansibel","vagrant","salt"]
+
+In [59]: exams_day = [("pavani","python"),("nikhil","pandas"),("koushik","django"),("law","ansibel"),("mahesh","vagrant"),("ravi","salt")]
+
+In [60]: print exams_days
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-60-50ff9311ed98> in <module>()
+----> 1 print exams_days
+
+NameError: name 'exams_days' is not defined
+
+In [61]: print exams_day
+[('pavani', 'python'), ('nikhil', 'pandas'), ('koushik', 'django'), ('law', 'ansibel'), ('mahesh', 'vagrant'), ('ravi', 'salt')]
+
+In [62]: for value in exams_day:
+   ....:     print value
+   ....:     
+('pavani', 'python')
+('nikhil', 'pandas')
+('koushik', 'django')
+('law', 'ansibel')
+('mahesh', 'vagrant')
+('ravi', 'salt')
+
+In [63]: name='pavani'
+
+In [64]: for student,subject in exams_day:
+   ....:     if student == name:
+   ....:         print "{} is going to give the exam {}".format(name,subject)
+   ....:         
+pavani is going to give the exam python
+
+In [65]: 
+
+In [66]: for student,subject in exams_day:
+    if student == name:
+        print "{} is going to give the exam {}".format(name,subject)
+   ....:         
+koushik is going to give the exam django
+
+In [70]: exams_day
+Out[70]: 
+[('pavani', 'python'),
+ ('nikhil', 'pandas'),
+ ('koushik', 'django'),
+ ('law', 'ansibel'),
+ ('mahesh', 'vagrant'),
+ ('ravi', 'salt')]
+
+In [71]: exams_day[0]
+Out[71]: ('pavani', 'python')
+
+In [72]: exams_day[0][1]
+Out[72]: 'python'
+
+In [73]: exams_day[0][1] = "Python"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-73-e01325823625> in <module>()
+----> 1 exams_day[0][1] = "Python"
+
+TypeError: 'tuple' object does not support item assignment
+
+In [74]: exams_day[0]
+Out[74]: ('pavani', 'python')
+
+In [75]: exams_day[0]=("pavani","Django")
+
+In [76]: print exams_day
+[('pavani', 'Django'), ('nikhil', 'pandas'), ('koushik', 'django'), ('law', 'ansibel'), ('mahesh', 'vagrant'), ('ravi', 'salt')]
+
+In [77]: exams_day.sort()
+
+In [78]: exams_day
+Out[78]: 
+[('koushik', 'django'),
+ ('law', 'ansibel'),
+ ('mahesh', 'vagrant'),
+ ('nikhil', 'pandas'),
+ ('pavani', 'Django'),
+ ('ravi', 'salt')]
+
+In [79]: # groupby
+
