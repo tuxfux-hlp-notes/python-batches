@@ -2,6 +2,7 @@
 # guess the number in the palm of your friend.
 # break - break is way of coming out of the loop abruptly.
 # sys.exit - take your out of the program.
+# task: restrict the people to max tries for 3 times
 
 import sys
 

@@ -437,3 +437,158 @@ KeyError                                  Traceback (most recent call last)
 KeyError: 'popitem(): dictionary is empty'
 
 In [202]: 
+
+
+In [1]:  my_fruits = {'a':'apple','b':'banana','c':'cherry','d':'dates'}
+
+In [2]: my_fruits.
+my_fruits.clear       my_fruits.get         my_fruits.iteritems   my_fruits.keys        my_fruits.setdefault  my_fruits.viewitems
+my_fruits.copy        my_fruits.has_key     my_fruits.iterkeys    my_fruits.pop         my_fruits.update      my_fruits.viewkeys
+my_fruits.fromkeys    my_fruits.items       my_fruits.itervalues  my_fruits.popitem     my_fruits.values      my_fruits.viewvalues
+
+In [2]: # my_fruits.copy
+
+In [3]: print help(my_fruits.copy)
+
+None
+
+In [4]: my_fruits.copy?
+Type:        builtin_function_or_method
+String form: <built-in method copy of dict object at 0x7f29fd26ea28>
+Docstring:   D.copy() -> a shallow copy of D
+
+In [5]: # shallow copy - complex objects
+
+In [6]: my_a = [1,2,3]
+
+In [7]: my_b = [4,5,6]
+
+In [8]: my_Cc = [a,b]
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-8-b8a6b94010e1> in <module>()
+----> 1 my_Cc = [a,b]
+
+NameError: name 'a' is not defined
+
+In [9]: my_Cc = [my_a,my_b]
+
+
+In [11]: my_a
+Out[11]: [1, 2, 3]
+
+In [12]: my_b
+Out[12]: [4, 5, 6]
+
+In [13]: my_Cc
+Out[13]: [[1, 2, 3], [4, 5, 6]]
+
+In [14]: print id(my_a)
+139818317515736
+
+In [15]: print id(my_b)
+139818317633008
+
+In [16]: print id(my_Cc)
+139818317631784
+
+In [17]: print id(my_Cc[0])
+139818317515736
+
+In [18]: print id(my_Cc[1])
+139818317633008
+
+In [19]: # soft copy
+
+In [20]: my_Sc = my_Cc
+
+In [21]: print my_Sc
+[[1, 2, 3], [4, 5, 6]]
+
+In [22]: print my_Cc
+[[1, 2, 3], [4, 5, 6]]
+
+In [23]: print id(my_Cc[0]),id(my_Sc[0]),id(my_Cc[1]),id(my_Sc[1]),id(my_Cc),id(my_Sc)
+139818317515736 139818317515736 139818317633008 139818317633008 139818317631784 139818317631784
+
+In [24]: # deep copy
+
+In [29]: 
+
+In [29]: import copy
+
+In [30]: my_Dc = copy.deepcopy(my_Cc)
+
+In [31]: print my_Dc
+[[1, 2, 3], [4, 5, 6]]
+
+In [32]: print my_Cc
+[[1, 2, 3], [4, 5, 6]]
+
+In [33]: print id(my_Cc[0]),id(my_Dc[0]),id(my_Cc[1]),id(my_Dc[1]),id(my_Cc),id(my_Dc)
+139818317515736 139818317230520 139818317633008 139818316778168 139818317631784 139818336930920
+
+In [35]: # shallow copy
+
+In [36]: import copy
+
+In [37]: copy.copy?
+Type:        function
+String form: <function copy at 0x7f29ff6d87d0>
+File:        /usr/lib/python2.7/copy.py
+Definition:  copy.copy(x)
+Docstring:
+Shallow copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+
+In [38]: my_Shc = copy.copy(my_Cc)
+
+In [39]: print my_Shc
+[[1, 2, 3], [4, 5, 6]]
+
+In [40]: print my_Cc
+[[1, 2, 3], [4, 5, 6]]
+
+In [41]: my_Shc is my_Cc
+Out[41]: False
+
+In [42]: print id(my_Cc[0]),id(my_Shc[0]),id(my_Cc[1]),id(my_Shc[1]),id(my_Cc),id(my_Shc)
+139818317515736 139818317515736 139818317633008 139818317633008 139818317631784 139818317231384
+
+In [43]: # shallow copy - external objects are different and internal objects are similar
+
+In [44]: # deep copy - extrernal and internal objects have different memory blocks.
+
+In [45]: # soft copy - both internal and external links have similar memory addresses.
+
+
+In [47]: my_fruits
+Out[47]: {'a': 'apple', 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [48]: Dmy_fruits = my_fruits.copy()
+
+In [49]: print Dmy_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [50]: Dmy_fruits is my_fruits
+Out[50]: False
+
+In [51]: my_fruits.copy?
+Type:        builtin_function_or_method
+String form: <built-in method copy of dict object at 0x7f29fd26ea28>
+Docstring:   D.copy() -> a shallow copy of D
+
+In [52]: # clear
+
+In [53]: my_fruits.clear?
+Type:        builtin_function_or_method
+String form: <built-in method clear of dict object at 0x7f29fd26ea28>
+Docstring:   D.clear() -> None.  Remove all items from D.
+
+In [54]: Dmy_fruits.clear()
+
+In [55]: print Dmy_fruits
+{}
+
+

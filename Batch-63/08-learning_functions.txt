@@ -1,0 +1,329 @@
+Function - block of code.
+function available in every other language.
+
+# defination of the function.
+# function have no positional parameters.
+
+In [57]: def my_func():
+   ....:     print "hello world"
+   ....:     
+
+# what is a function object.
+
+In [58]: print type(my_func)
+<type 'function'>
+
+In [59]: print my_func
+<function my_func at 0x7f29fe63cde8>
+
+In [64]: my_func
+Out[64]: <function __main__.my_func>
+
+
+In [60]: # call the function
+# every function has a return value.
+# if you dont provide a return value, you get None.
+
+In [61]: print my_func()
+hello world
+None
+
+In [62]: print my_func()
+hello world
+None
+
+In [63]: print my_func()
+hello world
+None
+
+In [64]:
+
+# function with a return value
+# return is not a print statement it marks the end of the function.
+# Return values can be used in our main program.
+# can i have more than one return value ? yes - if you are using condtions you can have multiple return value.
+
+In [66]: def my_func():
+   ....:     return "hello world"
+   ....: 
+
+In [67]: print my_func()
+hello world
+
+In [68]: print my_func()
+hello world
+
+In [70]: def my_func():
+   ....:     return "hello world"
+   ....:     print "my second line"
+   ....:     print "my third line"
+   ....:     print "my fourth line"
+   ....: 
+
+In [71]: print my_func()
+hello world
+
+In [72]: 
+
+##
+# namespaces or global/local variables.
+# Variables defined inside a function are available only during the run time of the function.
+# locals() - inbuild function to show namespace/variable inside a function.
+##
+
+In [73]: def my_new():
+   ....:     xy = 100
+   ....:     return xy
+   ....: 
+
+In [74]: print my_new()
+100
+
+In [75]: print xy
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-75-235c217e1277> in <module>()
+----> 1 print xy
+
+NameError: name 'xy' is not defined
+
+# case 2
+# the life time of a function is only during the runtime of function.
+# 
+
+In [76]: def my_new():
+   ....:     xy = 100
+   ....:     print locals()
+   ....:     return xy
+   ....: 
+
+In [77]: print my_new()
+{'xy': 100}
+100
+
+In [78]: print xy
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-78-235c217e1277> in <module>()
+----> 1 print xy
+
+NameError: name 'xy' is not defined
+
+In [1]: def my_new():
+    xy = 100
+    print locals()
+    return xy
+   ...: 
+
+In [2]: globals()
+Out[2]: 
+{'In': ['',
+  u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+  u'globals()'],
+ 'Out': {},
+ '_': '',
+ '__': '',
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '_dh': [u'/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/Batch-63'],
+ '_i': u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+ '_i1': u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+ '_i2': u'globals()',
+ '_ih': ['',
+  u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+  u'globals()'],
+ '_ii': u'',
+ '_iii': u'',
+ '_oh': {},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7fa78ba15590>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7fa78ccdde90>>,
+ 'my_new': <function __main__.my_new>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7fa78ba15590>}
+
+In [3]: print my_new()
+{'xy': 100}
+100
+
+
+###
+# global variables/namespaces are available to eveyone, that means also to the function.
+# When we lookup for a variable - local variable is given precedence over global variable.
+#  
+####
+
+In [6]: xy = 10
+
+
+In [8]: globals()
+Out[8]: 
+{'In': ['',
+  u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+  u'globals()',
+  u'print my_new()',
+  u"get_ipython().magic(u'clear ')",
+  u'def my_new():\n    print locals()\n    return xy',
+  u'xy = 10',
+  u'print globals()',
+  u'globals()'],
+ 'Out': {2: {...}},
+ '_': {...},
+ '_2': {...},
+ '__': '',
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '_dh': [u'/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/Batch-63'],
+ '_exit_code': 0,
+ '_i': u'print globals()',
+ '_i1': u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+ '_i2': u'globals()',
+ '_i3': u'print my_new()',
+ '_i4': u'clear',
+ '_i5': u'def my_new():\n    print locals()\n    return xy',
+ '_i6': u'xy = 10',
+ '_i7': u'print globals()',
+ '_i8': u'globals()',
+ '_ih': ['',
+  u'def my_new():\n    xy = 100\n    print locals()\n    return xy',
+  u'globals()',
+  u'print my_new()',
+  u"get_ipython().magic(u'clear ')",
+  u'def my_new():\n    print locals()\n    return xy',
+  u'xy = 10',
+  u'print globals()',
+  u'globals()'],
+ '_ii': u'xy = 10',
+ '_iii': u'def my_new():\n    print locals()\n    return xy',
+ '_oh': {2: {...}},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7fa78ba15590>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7fa78ccdde90>>,
+ 'my_new': <function __main__.my_new>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7fa78ba15590>,
+ 'xy': 10}
+
+In [9]: def my_new():
+    print locals()
+    return xy
+   ...: 
+
+In [10]: print my_new()
+{}
+10
+
+In [11]: print xy
+10
+
+###
+# so when you have local variables defined in you function, they get higher precednce than local variables.
+#
+####
+
+
+
+In [13]: xy = 10
+
+In [14]: def my_new():
+   ....:     xy = 2
+   ....:     return xy
+   ....: 
+
+In [15]: print my_new()
+2
+
+In [16]: print xy
+10
+
+# global keyword
+
+## using a global variable across multiple functions.
+
+In [18]: balance = 0
+
+In [19]: def my_deposit():
+   ....:     balance = balance + 3000
+   ....:     return balance
+   ....: 
+
+In [20]: print my_deposit()
+---------------------------------------------------------------------------
+UnboundLocalError                         Traceback (most recent call last)
+<ipython-input-20-0b47bf81b90e> in <module>()
+----> 1 print my_deposit()
+
+<ipython-input-19-a795ebb46994> in my_deposit()
+      1 def my_deposit():
+----> 2     balance = balance + 3000
+      3     return balance
+      4 
+
+UnboundLocalError: local variable 'balance' referenced before assignment
+
+In [21]: def my_deposit():
+   ....:     balance = 0
+   ....:     balance = balance + 3000
+   ....:     return balance
+   ....: 
+
+In [22]: print my_deposit()
+3000
+
+In [23]: print balance
+0
+
+In [24]: def my_withdraw():
+   ....:     balance = 0
+   ....:     balance = balance - 1000
+   ....:     return balance
+   ....: 
+
+In [25]: print my_withdraw()
+-1000
+
+
+In [34]: balance = 0
+
+In [35]: def my_withdraw():
+    global balance
+    print locals()
+    balance = balance - 1000
+    return balance
+   ....: 
+
+In [36]: def my_deposit():
+    global balance
+    print locals()
+    balance = balance + 3000
+    return balance
+   ....: 
+
+In [37]: print balance
+0
+
+In [38]: print my_deposit()
+{}
+3000
+
+In [39]: print balance
+3000
+
+In [40]: print my_withdraw()
+{}
+2000
+
+In [41]: print balance
+2000
+
+
+
+
+
+
+
+
