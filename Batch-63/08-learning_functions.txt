@@ -2,7 +2,7 @@ Function - block of code.
 function available in every other language.
 
 # defination of the function.
-# function have no positional parameters.
+# function have optional functional parameters.
 
 In [57]: def my_func():
    ....:     print "hello world"
@@ -66,7 +66,7 @@ hello world
 In [72]: 
 
 ##
-# namespaces or global/local variables.
+# namespaces or global and local variables.
 # Variables defined inside a function are available only during the run time of the function.
 # locals() - inbuild function to show namespace/variable inside a function.
 ##
@@ -88,7 +88,7 @@ NameError                                 Traceback (most recent call last)
 NameError: name 'xy' is not defined
 
 # case 2
-# the life time of a function is only during the runtime of function.
+# the life time of a variable is only during the runtime of function.
 # 
 
 In [76]: def my_new():
@@ -221,7 +221,7 @@ In [11]: print xy
 10
 
 ###
-# so when you have local variables defined in you function, they get higher precednce than local variables.
+# so when you have local variables defined in you function, they get higher presedence than local variables.
 #
 ####
 
@@ -286,6 +286,7 @@ In [24]: def my_withdraw():
 In [25]: print my_withdraw()
 -1000
 
+# global key word
 
 In [34]: balance = 0
 
@@ -320,6 +321,352 @@ In [40]: print my_withdraw()
 In [41]: print balance
 2000
 
+# passing parameters to your function.
+* positional function arguments
+* keyword based function arguments
++ *,**,*args,**kwargs
+
+# positional arguments
+
+In [103]: def my_add(a,b):
+   .....:     return a + b
+   .....: 
+
+In [104]: print my_add("linux"," rocks")
+linux rocks
+
+In [105]: print my_add(" rocks","linux")
+ rockslinux
+
+In [106]: def my_add(a,b):
+   .....:     print locals()
+   .....:     return a + b
+   .....: 
+
+In [107]: print my_add("linux"," rocks")
+{'a': 'linux', 'b': ' rocks'}
+linux rocks
+
+In [108]: print my_add(" rocks","linux")
+{'a': ' rocks', 'b': 'linux'}
+ rockslinux
+
+In [109]: 
+
+# Keybased arguments
+
+In [109]: # key based arguments
+
+In [110]: print my_add(a="linux",b=" rocks")
+{'a': 'linux', 'b': ' rocks'}
+linux rocks
+
+In [111]: print my_add(b=" rocks",a="linux")
+{'a': 'linux', 'b': ' rocks'}
+linux rocks
+
+In [113]: # default
+
+In [114]: def my_multi(num,default=10):
+   .....:     for value in range(1,num+1):
+   .....:         print "{} * {} = {}".format(num,value,num*value)
+   .....:         
+
+In [115]: my_multi(2)
+2 * 1 = 2
+2 * 2 = 4
+
+In [116]: def my_multi(num,default=10):
+    for value in range(1,default+1):
+        print "{} * {} = {}".format(num,value,num*value)
+   .....:         
+
+In [117]: my_multi(2)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+
+In [118]: my_multi(2,5)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+
+# http://cache.filehippo.com/img/ex/1125__putty1.png
+
+def putty(ip,port="22"):
+  pass
+
+# putty(ip) # port 22
+# putty(ip,port=23) # port 23
+
+In [120]: # *
+
+In [121]: def my_add(a,b):
+    print locals()
+    return a + b
+   .....: 
+
+In [122]: my_values = [10,20]
+
+In [123]: print my_values,type(my_values)
+[10, 20] <type 'list'>
+
+In [124]: print my_add(my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-124-3d1b135de5ce> in <module>()
+----> 1 print my_add(my_values)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [125]: print my_add(*my_values)
+{'a': 10, 'b': 20}
+30
+
+In [126]: my_values = [10,20,30]
+
+In [127]: print my_add(*my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-127-30e812bcb6cb> in <module>()
+----> 1 print my_add(*my_values)
+
+TypeError: my_add() takes exactly 2 arguments (3 given)
+
+In [128]: my_values = [10]
+
+In [129]: print my_add(*my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-129-30e812bcb6cb> in <module>()
+----> 1 print my_add(*my_values)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [131]: # **
+
+In [132]: my_values = {'a':10,'b':20}
+
+In [133]: def my_add(a,b):
+    print locals()
+    return a + b
+   .....: 
+
+In [134]: print my_add(**my_values)
+{'a': 10, 'b': 20}
+30
+
+In [135]: my_values = {'a':10,'c':20}
+
+In [136]: print my_add(**my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-136-48ebd6bff0b3> in <module>()
+----> 1 print my_add(**my_values)
+
+TypeError: my_add() got an unexpected keyword argument 'c'
+
+In [137]: 
+
+In [138]: # *args
+
+In [139]: # ex: max
+
+In [140]: print max(3,5)
+5
+
+In [141]: print max(3,5,9,10,22,44,55,66)
+66
+
+In [142]: print max(-2,-4,-1,-5)
+-1
+
+In [143]: def gmax(*args):
+   .....:     return args,type(args)
+   .....: 
+
+In [144]: print gmax(3,5)
+((3, 5), <type 'tuple'>)
+
+In [145]: def gmax(*args):
+    return args
+   .....: 
+
+In [146]: print gmax(3,5)
+(3, 5)
+
+In [147]: print gmax(-2,-4,-1,-5)
+(-2, -4, -1, -5)
+
+In [148]: def gmax(*args):
+   .....:     big = -1
+   .....:     for value in args:
+   .....:         if value > big:
+   .....:             big = value
+   .....:     return big
+   .....: 
+
+In [149]: pring gmax(3,5)
+  File "<ipython-input-149-1a505f119b78>", line 1
+    pring gmax(3,5)
+             ^
+SyntaxError: invalid syntax
+
+
+In [150]: print gmax(3,5)
+5
+
+In [151]: print gmax(3,5,9,10,22,44,55,66)
+66
+
+In [152]: print gmax(-2,-4,-1,-5)
+-1
+
+In [154]: # **kwargs
+
+In [155]: def callme(**kwargs):
+   .....:     return kwargs
+   .....: 
+
+In [156]: print callme(name="kumar",phone=9898989898)
+{'phone': 9898989898, 'name': 'kumar'}
+
+In [157]: print callme(name="kumar",add="ameerpet")
+{'add': 'ameerpet', 'name': 'kumar'}
+
+In [158]: print callme(name="kumar",add="ameerpet",maiden="vijaya")
+{'add': 'ameerpet', 'name': 'kumar', 'maiden': 'vijaya'}
+
+In [159]: def callme(**kwargs):
+   .....:     if 'name' in kwargs:
+   .....:         print "my name is {}
+   .....: "
+KeyboardInterrupt
+
+In [159]: def callme(**kwargs):
+    if 'name' in kwargs:
+        print "my name is {}".format(kwargs['name'])
+   .....:         if 'phone' in kwargs:
+   .....:             print "my phone number is {}".format(kwargs['phone'])
+   .....:         if 'add' in kwargs:
+   .....:             print "my address is {}".format(kwargs['add'])
+   .....:         if 'maiden' in kwargs:
+   .....:             print "my mother name is {}".format(kwargs['maiden'])
+   .....:             
+
+In [160]: print callme(name="kumar",phone=9898989898)
+my name is kumar
+my phone number is 9898989898
+None
+
+In [161]: print callme(name="kumar",add="ameerpet",maiden="vijaya")
+my name is kumar
+my address is ameerpet
+my mother name is vijaya
+None
+
+In [162]: print callme(name="kumar",add="ameerpet")
+my name is kumar
+my address is ameerpet
+None
+
+In [164]: # function within a function
+
+In [165]: def my_outer():
+   .....:     x = 1
+   .....:     def inner():
+   .....:         return x
+   .....:     return inner()
+   .....: 
+
+In [166]: print my_outer() #1
+1
+
+In [167]: print inner() # error,
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-167-4f83e0c3d670> in <module>()
+----> 1 print inner() # error,
+
+NameError: name 'inner' is not defined
+
+In [168]: def my_outer():
+    x = 1
+    def inner():
+        return x
+    return inner()
+   .....: 
+
+In [169]: def my_outer():
+   .....:     x = 1
+   .....:     def inner():
+   .....:         return x
+   .....:     print locals()
+   .....:     return inner()
+   .....: 
+
+In [170]: print my_outer()
+{'x': 1, 'inner': <function inner at 0x7f7c611952a8>}
+1
+
+In [171]: globals()
+
+'my_outer': <function __main__.my_outer>,
+ 'my_sentence': 'today is tuesday',
+ 'my_string': 'python',
+ 'my_values': {'a': 10, 'c': 20},
+ 'num': '1,2,3,4,5,6,7,8,9,10',
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7f7c5ff945d0>,
+ 'sys': <module 'sys' (built-in)>,
+ 'value': 'tuesday'}
+
+In [173]: # function closures
+
+In [174]: def my_upper():
+   .....:     x = 1
+   .....:     def inner():
+   .....:         return x
+   .....:     return inner
+   .....: 
+
+In [175]: def foo():
+   .....:     pass
+   .....: 
+
+In [176]: foo
+Out[176]: <function __main__.foo>
+
+In [177]: print foo
+<function foo at 0x7f7c611951b8>
+
+In [178]: new = my_upper()
+
+In [179]: print new
+<function inner at 0x7f7c61195140>
+
+In [180]: print new()
+1
+
+In [181]: print x
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-181-2d264e11d975> in <module>()
+----> 1 print x
+
+NameError: name 'x' is not defined
+
+In [182]: # the variables available to the function during the defination of the function also available when i return the address of the function.
+
+In [183]: # decorators
 
 
 
