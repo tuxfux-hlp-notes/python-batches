@@ -1,0 +1,428 @@
+1) what are modules? reusable python programs.
+2) what are the various modules ?
+	https://pypi.python.org/pypi
+
+
+In [1]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> modules
+
+... truncated .... list of modules.
+
+3) how to start using modules.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import math
+
+In [2]: math.
+math.acos       math.atanh      math.e          math.factorial  math.hypot      math.log10      math.sin        
+math.acosh      math.ceil       math.erf        math.floor      math.isinf      math.log1p      math.sinh       
+math.asin       math.copysign   math.erfc       math.fmod       math.isnan      math.modf       math.sqrt       
+math.asinh      math.cos        math.exp        math.frexp      math.ldexp      math.pi         math.tan        
+math.atan       math.cosh       math.expm1      math.fsum       math.lgamma     math.pow        math.tanh       
+math.atan2      math.degrees    math.fabs       math.gamma      math.log        math.radians    math.trunc      
+
+In [2]: math.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [3]: math.pi
+Out[3]: 3.141592653589793
+
+In [4]: # using alias name for modules
+
+In [5]: import math as m
+
+In [6]: m.
+m.acos       m.atan2      m.cosh       m.exp        m.fmod       m.isinf      m.log10      m.radians    m.tanh       
+m.acosh      m.atanh      m.degrees    m.expm1      m.frexp      m.isnan      m.log1p      m.sin        m.trunc      
+m.asin       m.ceil       m.e          m.fabs       m.fsum       m.ldexp      m.modf       m.sinh       
+m.asinh      m.copysign   m.erf        m.factorial  m.gamma      m.lgamma     m.pi         m.sqrt       
+m.atan       m.cos        m.erfc       m.floor      m.hypot      m.log        m.pow        m.tan        
+
+In [6]: m.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [7]: m.pi
+Out[7]: 3.141592653589793
+
+In [8]: # making the module name space your local namespace
+
+In [9]: from math import pi,pow
+
+In [10]: pi
+Out[10]: 3.141592653589793
+
+In [11]: print pi
+3.14159265359
+
+In [12]: pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [13]: pow(2,3)
+Out[13]: 8.0
+
+In [15]: # DONT TRY THIS AT HOME OR OFFICE
+
+In [16]: # from math import *
+
+In [17]: 
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63$ ls
+00-opensource.txt                  02-second.py                                 04-results.py                 08-learning_functions.txt
+01-first.py                        03-big.py                                    05-add.py                     09-modules
+01-Installation_python.txt         03-Control Flow - Learning Conditions.ipynb  05-Learning_Lists.txt         new_links.txt
+02-helloguys.ipynb                 03-market.py                                 05-results.py
+02-Helping_ipython_notebook.ipynb  04-Control Flow - Looping.ipynb              06-learning_tuples.txt
+02-Learning_help.txt               04-guess_number.py                           07-learning_dictionaries.txt
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63$ cd 09-modules/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls
+09-Learning_modules.txt  first.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: 
+
+In [1]: import first as f
+
+In [2]: f.
+f.my_add    f.my_div    f.my_multi  f.my_sub    f.version   
+
+In [2]: f.my_add?
+Type:        function
+String form: <function my_add at 0x7f88b8d50de8>
+File:        /home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules/first.py
+Definition:  f.my_add(a, b)
+Docstring:
+This is for addition of numbers and strings
+syntax: my_add(a,b) 
+
+In [3]: f.my_sub?
+Type:        function
+String form: <function my_sub at 0x7f88b8d50ed8>
+File:        /home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules/first.py
+Definition:  f.my_sub(a, b)
+Docstring:
+This is for substration of two numbers.
+substracting a smaller number from a larger number.
+
+In [4]: f.my_multi?
+Type:        function
+String form: <function my_multi at 0x7f88b8d50f50>
+File:        /home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules/first.py
+Definition:  f.my_multi(a, b)
+Docstring:   <no docstring>
+
+In [5]: f.my_add(2,3)
+Out[5]: 5
+
+In [6]: f.my_add("python","rocks")
+Out[6]: 'pythonrocks'
+
+In [7]: f.my_sub(22,45)
+Out[7]: 23
+
+In [8]: f.my_sub(45,23)
+Out[8]: 22
+
+In [9]: f.version
+Out[9]: 1.0
+
+In [10]: # which means ever after modify the version=2.0 in my program first.py
+
+In [11]: # i am still seeing the f.version as 1.0
+
+In [12]: import first as f
+
+In [13]: f.version
+Out[13]: 1.0
+
+In [14]: # you can exit the ipython and reload again - NOT RECOMMENDED
+
+In [15]: reload(f)
+Out[15]: <module 'first' from 'first.py'>
+
+In [16]: f.version
+Out[16]: 2.0
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63$ cd 09-modules/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls
+09-Learning_modules.txt  first.py  first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ file first.py
+first.py: Python script, ASCII text executable
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ file first.pyc
+first.pyc: python 2.7 byte-compiled
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ cat first.pyc
+�
+p�\Yc@s1dZd�Zd�Zd�Zdd�ZdS(g�?cC||S(sG
+		This is for addition of numbers and strings
+		syntax: my_add(a,b) 
+	((tatb((first.pytmy_addscCs ||kr||S||SdS(sb
+		This is for substration of two numbers.
+		substracting a smaller number from a larger number.
+s	N((RR((first.pytmy_sub
+   cC||S(N((RR((first.pymy_multisicC||S(N((RR((first.pytmy_divsN(tversionRRRR(((first.py<module>		
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+### before doing this i just added a line to the first.py code
+
+In [1]: import first as f
+Launching a Missile
+
+In [2]: f.
+f.my_add    f.my_div    f.my_multi  f.my_sub    f.version   
+
+In [2]: def foo():
+   ...:     pass
+   ...: 
+
+In [3]: foo
+Out[3]: <function __main__.foo>
+
+In [4]: f.my_add
+Out[4]: <function first.my_add>
+
+
+In [6]: globals()
+Out[6]: 
+{'In': ['',
+  u'import first as f',
+  u'def foo():\n    pass',
+  u'foo',
+  u'f.my_add',
+  u'print globals()',
+  u'globals()'],
+ 'Out': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_': <function first.my_add>,
+ '_3': <function __main__.foo>,
+ '_4': <function first.my_add>,
+ '__': <function __main__.foo>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '__package__': None,
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules'],
+ '_i': u'print globals()',
+ '_i1': u'import first as f',
+ '_i2': u'def foo():\n    pass',
+ '_i3': u'foo',
+ '_i4': u'f.my_add',
+ '_i5': u'print globals()',
+ '_i6': u'globals()',
+ '_ih': ['',
+  u'import first as f',
+  u'def foo():\n    pass',
+  u'foo',
+  u'f.my_add',
+  u'print globals()',
+  u'globals()'],
+ '_ii': u'f.my_add',
+ '_iii': u'foo',
+ '_oh': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7fbcfcfed5d0>,
+ 'f': <module 'first' from 'first.py'>,
+ 'foo': <function __main__.foo>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7fbcfe2b9ed0>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7fbcfcfed5d0>}
+
+ khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls
+09-Learning_modules.txt  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ python second.py
+addition of two integers is 33
+addtion of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ python second.py 
+addition of two integers is 33
+addtion of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls
+09-Learning_modules.txt  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ python second.py
+addition of two integers is 33
+addtion of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls
+09-Learning_modules.txt  extra  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ mv first.py extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ python second.py 
+addition of two integers is 33
+addtion of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls -l
+total 24
+-rw-r--r-- 1 khyaathi khyaathi 10394 Jul  5 19:13 09-Learning_modules.txt
+drwxr-xr-x 2 khyaathi khyaathi  4096 Jul  5 19:14 extra
+-rw-r--r-- 1 khyaathi khyaathi   882 Jul  5 18:50 first.pyc
+-rw-r--r-- 1 khyaathi khyaathi   369 Jul  5 18:57 second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ rm -f first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ python second.py 
+Traceback (most recent call last):
+  File "second.py", line 4, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls -l
+total 20
+-rw-r--r-- 1 khyaathi khyaathi 10394 Jul  5 19:13 09-Learning_modules.txt
+drwxr-xr-x 2 khyaathi khyaathi  4096 Jul  5 19:14 extra
+-rw-r--r-- 1 khyaathi khyaathi   369 Jul  5 18:57 second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ 
+
+
+In [4]: import sys
+
+In [5]: sys.path
+Out[5]: 
+['',                               # it represents my current working directory.
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [6]: 
+
+n [6]: # never copy your code to anyof the folder as shown above.
+
+In [7]: # the above locations are managed by system administrator.
+
+In [8]: # the best way is to put our location in the sys.path areas.
+
+In [9]: # should i append or insert at beginning of sys.path
+
+In [10]: sys.path.insert(0,'/home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules')
+
+In [11]: sys.path
+Out[11]: 
+['/home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules',
+ '',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+
+ # INSTALLATION OF MODULES
+
+ # using your os modules or python tools
+
+ # ubuntu
+ >> sudo apt-get install <modulename>
+
+ # python tools
+ >> pip install <modulename>
+ >> easy_install <modulename>
+ >> setuptools
+
+ http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/
+
+ khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ ls
+09-Learning_modules.txt  extra  myenv  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ pip freeze
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ pip install excel
+Collecting excel
+  Downloading excel-1.0.0.tar.gz
+Collecting xlrd (from excel)
+  Downloading xlrd-1.0.0.tar.gz (2.6MB)
+    100% |████████████████████████████████| 2.6MB 95kB/s 
+Building wheels for collected packages: excel, xlrd
+  Running setup.py bdist_wheel for excel ... done
+  Stored in directory: /home/khyaathi/.cache/pip/wheels/4b/b6/1e/ebef7d7af6d3fa9c81e10a758d7b056cd4f06846109e2027d8
+  Running setup.py bdist_wheel for xlrd ... done
+  Stored in directory: /home/khyaathi/.cache/pip/wheels/40/d4/6c/df6603e86ef3183ba2ecc97c5c3f1bf92802d54aa939522235
+Successfully built excel xlrd
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.0.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ pip freeze
+excel==1.0.0
+xlrd==1.0.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ 
+
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ pip freeze
+excel==1.0.0
+xlrd==1.0.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ deactivate 
+
+
+                                                                                                                                        	khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ 
