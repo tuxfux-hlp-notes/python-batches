@@ -424,5 +424,227 @@ Use quit() or Ctrl-D (i.e. EOF) to exit
 >>> quit()
 (myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ deactivate 
 
+# packages
+references: 
+https://docs.python.org/2/tutorial/modules.html#packages
+https://docs.python.org/2/installing/index.html
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/distutils/
+
+OS
+ + windows
+         - ip.py    OS.windows.ip.find_ip
+ + linux
+         - ip.py    OS.linux.ip.find_ip
+ + aix
+         - ip.py    OS.aix.ip.find_ip
+ + hpux
+         - ip.py    OS.hpux.ip.find_ip
+
+
+1) create the folder structure.
+
+Commands :mkdir OS
+Commands :mkdir OS/{lin,sol,aix,hpux}
+Commands :
+
+2) so i created first.py,second.py and third.py under the lin folder.
+3) now lets try to import the lin folder.
+
+Testing :pwd
+/home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules
+Testing :cd OS
+Testing :ls
+aix  hpux  lin  sol
+Testing :ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+4)Lets make this folder importable.
+
+create a file __init__.py under the lin folder.
+import first
+import second
+import third
+
+
+In [2]: ls
+aix/  hpux/  lin/  sol/
+
+In [3]: ls lin
+first.py  __init__.py  second.py  third.py
+
+In [4]: import lin
+
+In [5]: ls lin
+first.py  first.pyc  __init__.py  __init__.pyc  second.py  second.pyc  third.py  third.pyc
+
+In [6]: lin.first.
+lin.first.my_first_lin1   lin.first.my_fourth_lin1  lin.first.my_second_lin1  lin.first.my_third_lin1   
+
+In [6]: lin.first.my_first_lin1()
+Out[6]: 'this is my first lin1 function'
+
+In [7]: lin.second.my_first_lin2()
+Out[7]: 'this is my first lin2 function'
+
+5) Lets now copy all the lin/*.py files to sol/*.py for one more example.
+
+Commands :cp OS/lin/*.py OS/sol/.
+Commands :
+
+since we could not complete all 10 modules of the third.py , so we just have the
+4 modules. we remove "import third" from __init__.py
+
+In [9]: pwd
+Out[9]: u'/home/khyaathi/Documents/git_repos/python-batches/Batch-63/09-modules/OS'
+
+In [10]: ls
+aix/  hpux/  lin/  sol/
+
+In [11]: ls sol
+first.py  __init__.py  second.py  third.py
+
+In [12]: import sol
+
+In [13]: ls sol
+first.py  first.pyc  __init__.py  __init__.pyc  second.py  second.pyc  third.py
+
+In [14]: sol.
+sol.first   sol.second  
+
+In [14]: # first,second are imported implicitly
+
+In [15]: # third is not imported
+
+In [16]: from sol import third
+
+In [17]: sol.
+sol.first   sol.second  sol.third   
+
+In [17]: # third got imported explictly for us
+
+In [18]: 
+
+
+## package example of a already existing module.
+
+In [19]: import xml
+
+In [20]: import sys
+
+In [21]: sys.path
+Out[21]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [22]: 
+
+
+Commands :cd '/usr/lib/python2.7'
+Commands :pwd
+/usr/lib/python2.7
+Commands :
+
+Commands :pwd
+/usr/lib/python2.7
+Commands :cd xml
+Commands :ls
+dom  etree  __init__.py  parsers  sax
+Commands :pwd
+/usr/lib/python2.7/xml
+Commands :cat __init__.py 
+"""Core XML support for Python.
+
+This package contains four sub-packages:
+
+dom -- The W3C Document Object Model.  This supports DOM Level 1 +
+       Namespaces.
+
+parsers -- Python wrappers for XML parsers (currently only supports Expat).
+
+sax -- The Simple API for XML, developed by XML-Dev, led by David
+       Megginson and ported to Python by Lars Marius Garshol.  This
+       supports the SAX 2 API.
+
+etree -- The ElementTree XML library.  This is a subset of the full
+       ElementTree XML release.
+
+"""
+
+
+__all__ = ["dom", "parsers", "sax", "etree"]
+
+_MINIMUM_XMLPLUS_VERSION = (0, 8, 4)
+
+
+try:
+    import _xmlplus
+except ImportError:
+    pass
+else:
+    try:
+        v = _xmlplus.version_info
+    except AttributeError:
+        # _xmlplus is too old; ignore it
+        pass
+    else:
+        if v >= _MINIMUM_XMLPLUS_VERSION:
+            import sys
+            _xmlplus.__path__.extend(__path__)
+            sys.modules[__name__] = _xmlplus
+        else:
+            del v
+Commands :
+
+
+Commands :ls
+dom  etree  __init__.py  parsers  sax
+Commands :
+Commands :ls sax
+_exceptions.py  expatreader.py  handler.py  __init__.py  saxutils.py  xmlreader.py
+Commands :
+Commands :ls dom
+domreg.py  expatbuilder.py  __init__.py  minicompat.py  minidom.py  NodeFilter.py  pulldom.py  xmlbuilder.py
+Commands :
+Commands :ls etree
+cElementTree.py  ElementInclude.py  ElementPath.py  ElementTree.py  __init__.py
+Commands :
+Commands :ls parsers
+expat.py  __init__.py
+Commands :
+Commands :
+
+
+
+
 
                                                                                                                                         	khyaathi@khyaathipython:~/Documents/git_repos/python-batches/Batch-63/09-modules$ 
