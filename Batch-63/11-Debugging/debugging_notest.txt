@@ -1,0 +1,1089 @@
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ ls
+buggy.py  debugging_notest.txt  first.py  second.py  third.py
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ python -m pdb buggy.py
+> /home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging/buggy.py(3)<module>()
+-> def divide_one_by(division):
+(Pdb) q
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ # python3 -m pdb -c continue buggy.py
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ # the above method is very specific to python3khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ ## postmortem mode
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ python -i buggy.py
+Traceback (most recent call last):
+  File "buggy.py", line 8, in <module>
+    divide_one_by(0)
+  File "buggy.py", line 4, in divide_one_by
+    return 1/division
+ZeroDivisionError: integer division or modulo by zero
+>>> import pdb
+>>> pdb.pm()
+> /home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging/buggy.py(4)divide_one_by()
+-> return 1/division
+(Pdb) q
+>>> q
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'q' is not defined
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ #
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ # run mode
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import buggy
+>>> import pdb
+>>> pdb.run('buggy.divide_one_by(0))
+  File "<stdin>", line 1
+    pdb.run('buggy.divide_one_by(0))
+                                   ^
+SyntaxError: EOL while scanning string literal
+>>> pdb.run(buggy.divide_one_by(0))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "buggy.py", line 4, in divide_one_by
+    return 1/division
+ZeroDivisionError: integer division or modulo by zero
+>>> pdb.run(buggy.divide_one_by(1))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python2.7/pdb.py", line 1238, in run
+    Pdb().run(statement, globals, locals)
+  File "/usr/lib/python2.7/bdb.py", line 398, in run
+    cmd = cmd+'\n'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+>>> quit()
+> /usr/lib/python2.7/site.py(371)__call__()
+-> try:
+(Pdb) quit
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/usr/lib/python2.7/site.py", line 371, in __call__
+    try:
+  File "/usr/lib/python2.7/site.py", line 371, in __call__
+    try:
+  File "/usr/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+>>> quit()
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/11-Debugging$ # trace mode
+
+
+tcloudpython@tcloudpython-G41MT-S2P ~/python-examples/batch-29/debugging $ python first.py 
+This is a example on understading debugging
+Congo, i learned to write a calculator
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(31)<module>()
+-> print "summation of two numbers- {}".format(my_add(1,2))
+(Pdb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF    bt         cont      enable  jump  pp       run      unt   
+a      c          continue  exit    l     q        s        until 
+alias  cl         d         h       list  quit     step     up    
+args   clear      debug     help    n     r        tbreak   w     
+b      commands   disable   ignore  next  restart  u        whatis
+break  condition  down      j       p     return   unalias  where 
+
+Miscellaneous help topics:
+==========================
+exec  pdb
+
+Undocumented commands:
+======================
+retval  rv
+
+(Pdb) help list
+l(ist) [first [,last]]
+List source code for the current file.
+Without arguments, list 11 lines around the current line
+or continue the previous listing.
+With one argument, list 11 lines starting at that line.
+With two arguments, list the given range;
+if the second argument is less than the first, it is a count.
+(Pdb) l
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  ->	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+ 36  	  
+(Pdb) l 1,10
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+(Pdb) l 10,5
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  ->	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) 
+ 36  	  
+ 37  		
+[EOF]
+(Pdb) 
+[EOF]
+(Pdb) 
+[EOF]
+(Pdb) help where
+w(here)
+Print a stack trace, with the most recent frame at the bottom.
+An arrow indicates the "current frame", which determines the
+context of most commands.  'bt' is an alias for this command.
+(Pdb) bt
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(31)<module>()
+-> print "summation of two numbers- {}".format(my_add(1,2))
+(Pdb) where
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(31)<module>()
+-> print "summation of two numbers- {}".format(my_add(1,2))
+(Pdb) w
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(31)<module>()
+-> print "summation of two numbers- {}".format(my_add(1,2))
+(Pdb) help step
+s(tep)
+Execute the current line, stop at the first possible occasion
+(either in a function that is called or in the current function).
+(Pdb) help next
+n(ext)
+Continue execution until the next line in the current function
+is reached or it returns.
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  ->	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(6)my_add()
+-> def my_add(a,b):
+(Pdb) where
+  /home/tcloudpython/python-examples/batch-29/debugging/first.py(31)<module>()
+-> print "summation of two numbers- {}".format(my_add(1,2))
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(6)my_add()
+-> def my_add(a,b):
+(Pdb) l
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  ->	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+(Pdb) help p
+p expression
+Print the value of the expression.
+(Pdb) help pp
+pp expression
+Pretty-print the value of the expression.
+
+(Pdb) p a
+1
+(Pdb) p b
+2
+(Pdb) pp a
+1
+(Pdb) pp b
+2
+(Pdb) import sys
+(Pdb) a = dir(sys)
+a = 1
+b = 2
+(Pdb) new_value = dir(sys)
+(Pdb) p a
+1
+(Pdb) p b
+2
+(Pdb) p new_value
+['__displayhook__', '__doc__', '__excepthook__', '__name__', '__package__', '__stderr__', '__stdin__', '__stdout__', '_clear_type_cache', '_current_frames', '_getframe', '_mercurial', '_multiarch', 'api_version', 'argv', 'builtin_module_names', 'byteorder', 'call_tracing', 'callstats', 'copyright', 'displayhook', 'dont_write_bytecode', 'exc_clear', 'exc_info', 'exc_traceback', 'exc_type', 'exc_value', 'excepthook', 'exec_prefix', 'executable', 'exit', 'flags', 'float_info', 'float_repr_style', 'getcheckinterval', 'getdefaultencoding', 'getdlopenflags', 'getfilesystemencoding', 'getprofile', 'getrecursionlimit', 'getrefcount', 'getsizeof', 'gettrace', 'hexversion', 'long_info', 'maxint', 'maxsize', 'maxunicode', 'meta_path', 'modules', 'path', 'path_hooks', 'path_importer_cache', 'platform', 'prefix', 'py3kwarning', 'pydebug', 'setcheckinterval', 'setdlopenflags', 'setprofile', 'setrecursionlimit', 'settrace', 'stderr', 'stdin', 'stdout', 'subversion', 'version', 'version_info', 'warnoptions']
+(Pdb) pp new_value
+['__displayhook__',
+ '__doc__',
+ '__excepthook__',
+ '__name__',
+ '__package__',
+ '__stderr__',
+ '__stdin__',
+ '__stdout__',
+ '_clear_type_cache',
+ '_current_frames',
+ '_getframe',
+ '_mercurial',
+ '_multiarch',
+ 'api_version',
+ 'argv',
+ 'builtin_module_names',
+ 'byteorder',
+ 'call_tracing',
+ 'callstats',
+ 'copyright',
+ 'displayhook',
+ 'dont_write_bytecode',
+ 'exc_clear',
+ 'exc_info',
+ 'exc_traceback',
+ 'exc_type',
+ 'exc_value',
+ 'excepthook',
+ 'exec_prefix',
+ 'executable',
+ 'exit',
+ 'flags',
+ 'float_info',
+ 'float_repr_style',
+ 'getcheckinterval',
+ 'getdefaultencoding',
+ 'getdlopenflags',
+ 'getfilesystemencoding',
+ 'getprofile',
+ 'getrecursionlimit',
+ 'getrefcount',
+ 'getsizeof',
+ 'gettrace',
+ 'hexversion',
+ 'long_info',
+ 'maxint',
+ 'maxsize',
+ 'maxunicode',
+ 'meta_path',
+ 'modules',
+ 'path',
+ 'path_hooks',
+ 'path_importer_cache',
+ 'platform',
+ 'prefix',
+ 'py3kwarning',
+ 'pydebug',
+ 'setcheckinterval',
+ 'setdlopenflags',
+ 'setprofile',
+ 'setrecursionlimit',
+ 'settrace',
+ 'stderr',
+ 'stdin',
+ 'stdout',
+ 'subversion',
+ 'version',
+ 'version_info',
+ 'warnoptions']
+(Pdb) pp a
+1
+(Pdb) pp b
+2
+(Pdb) l 6
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  ->	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+(Pdb) !a='python'
+(Pdb) !b='linux'
+(Pdb) pp a
+'python'
+(Pdb) pp b
+'linux'
+(Pdb) s
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(8)my_add()
+-> print "value of a is {}".format(a)
+(Pdb) s
+value of a is python
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(9)my_add()
+-> print "value of b is {}".format(b)
+(Pdb) s
+value of b is linux
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(10)my_add()
+-> return a+b
+(Pdb) s
+--Return--
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(10)my_add()->'pythonlinux'
+-> return a+b
+(Pdb) s
+summation of two numbers- pythonlinux
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(32)<module>()
+-> print "multiplication of two numbers- {}".format(my_mul(1,2))
+(Pdb) where
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(32)<module>()
+-> print "multiplication of two numbers- {}".format(my_mul(1,2))
+(Pdb) l 
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  ->	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+
+(Pdb) n
+multiplication of two numbers- 2
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(33)<module>()
+-> print "substartion of two numbers - {}".format(my_sub(1,2))
+(Pdb) 
+
+(Pdb) help return
+r(eturn)
+Continue execution until the current function returns.
+(Pdb) where
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(33)<module>()
+-> print "substartion of two numbers - {}".format(my_sub(1,2))
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(16)my_sub()
+-> def my_sub(a,b):
+(Pdb) l
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  ->	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  ->	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) r
+--Return--
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(21)my_sub()->1
+-> return b - a
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  ->	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) n
+substartion of two numbers - 1
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(34)<module>()
+-> print "division of two numbers - {}".format(my_div(4,2))
+
+tcloudpython@tcloudpython-G41MT-S2P ~/python-examples/batch-29/debugging $ python first.py 
+This is a example on understading debugging
+Congo, i learned to write a calculator
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(31)<module>()
+-> print "summation of two numbers- {}".format(my_add(1,2))
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  ->	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) help break
+b(reak) ([file:]lineno | function) [, condition]
+With a line number argument, set a break there in the current
+file.  With a function name, set a break at first executable line
+of that function.  Without argument, list all breaks.  If a second
+argument is present, it is a string specifying an expression
+which must evaluate to true before the breakpoint is honored.
+
+The line number may be prefixed with a filename and a colon,
+to specify a breakpoint in another file (probably one that
+hasn't been loaded yet).  The file is searched for on sys.path;
+the .py suffix may be omitted.
+(Pdb) b 32
+Breakpoint 1 at /home/tcloudpython/python-examples/batch-29/debugging/first.py:32
+(Pdb) b my_add
+Breakpoint 2 at /home/tcloudpython/python-examples/batch-29/debugging/first.py:6
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tcloudpython/python-examples/batch-29/debugging/first.py:32
+2   breakpoint   keep yes   at /home/tcloudpython/python-examples/batch-29/debugging/first.py:6
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6 B	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  ->	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32 B	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) c
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(8)my_add()
+-> print "value of a is {}".format(a)
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6 B	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  ->	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32 B	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) return
+value of a is 1
+value of b is 2
+--Return--
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(10)my_add()->3
+-> return a+b
+(Pdb) c
+summation of two numbers- 3
+> /home/tcloudpython/python-examples/batch-29/debugging/first.py(32)<module>()
+-> print "multiplication of two numbers- {}".format(my_mul(1,2))
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6 B	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32 B->	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tcloudpython/python-examples/batch-29/debugging/first.py:32
+	breakpoint already hit 1 time
+2   breakpoint   keep yes   at /home/tcloudpython/python-examples/batch-29/debugging/first.py:6
+	breakpoint already hit 1 time
+(Pdb) clear
+Clear all breaks? y
+(Pdb) l 1,35
+  1  	#!/usr/bin/python
+  2  	# usage: A debugging class
+  3  	import pdb
+  4  	
+  5  	version=2.0
+  6  	def my_add(a,b):
+  7  	  ''' This is the function for addition of numbers and strings '''
+  8  	  print "value of a is {}".format(a)
+  9  	  print "value of b is {}".format(b)
+ 10  	  return a+b
+ 11  	  
+ 12  	def my_div(a,b):
+ 13  	  ''' This is the function for division '''
+ 14  	  return a/b
+ 15  	  
+ 16  	def my_sub(a,b):
+ 17  	  ''' This is the function for substraction '''
+ 18  	  if a > b:
+ 19  	    return a - b
+ 20  	  elif b > a:
+ 21  	    return b - a
+ 22  	    
+ 23  	def my_mul(a,b):
+ 24  	  ''' This is the function for multiplication '''
+ 25  	  return a * b
+ 26  	  
+ 27  	if __name__ == '__main__':
+ 28  	  print "This is a example on understading debugging"
+ 29  	  print "Congo, i learned to write a calculator"
+ 30  	  pdb.set_trace()
+ 31  	  print "summation of two numbers- {}".format(my_add(1,2))
+ 32  ->	  print "multiplication of two numbers- {}".format(my_mul(1,2))
+ 33  	  print "substartion of two numbers - {}".format(my_sub(1,2))
+ 34  	  print "division of two numbers - {}".format(my_div(4,2))
+ 35  	
+(Pdb) help clear
+cl(ear) filename:lineno
+cl(ear) [bpnumber [bpnumber...]]
+With a space separated list of breakpoint numbers, clear
+those breakpoints.  Without argument, clear all breaks (but
+first ask confirmation).  With a filename:lineno argument,
+clear all breaks at that line in that file.
+
+Note that the argument is different from previous versions of
+the debugger (in python distributions 1.5.1 and before) where
+a linenumber was used instead of either filename:lineno or
+breakpoint numbers.
+
+
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(4)<module>()
+-> for value in range(1,11):
+(Pdb) l
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	pdb.set_trace()
+  4  ->	for value in range(1,11):
+  5  	  print value
+[EOF]
+(Pdb) b 5
+Breakpoint 1 at /home/tcloudpython/python-examples/batch-29/debugging/second.py:5
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tcloudpython/python-examples/batch-29/debugging/second.py:5
+(Pdb) c
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+1
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+2
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+3
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+4
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+5
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+6
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) exit
+Traceback (most recent call last):
+  File "second.py", line 5, in <module>
+    print value
+  File "second.py", line 5, in <module>
+    print value
+  File "/usr/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(4)<module>()
+-> for value in range(1,11):
+(Pdb) l
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	pdb.set_trace()
+  4  ->	for value in range(1,11):
+  5  	  print value
+[EOF]
+(Pdb) b 5
+Breakpoint 1 at /home/tcloudpython/python-examples/batch-29/debugging/second.py:5
+(Pdb) b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at /home/tcloudpython/python-examples/batch-29/debugging/second.py:5
+(Pdb) c
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+1
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+2
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+3
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+4
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+5
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) c
+6
+> /home/tcloudpython/python-examples/batch-29/debugging/second.py(5)<module>()
+-> print value
+(Pdb) exit
+Traceback (most recent call last):
+  File "second.py", line 5, in <module>
+    print value
+  File "second.py", line 5, in <module>
+    print value
+  File "/usr/lib/python2.7/bdb.py", line 49, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python2.7/bdb.py", line 68, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(24)<module>()
+-> first()
+(Pdb) l
+ 19  	
+ 20  	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  ->	first()
+[EOF]
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  return "hey i am first"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  return "hey i am second"
+ 11  	
+ 12  	def third():
+ 13  	  fourth()
+ 14  	  return "hey i am third"
+ 15  	
+ 16  	def fourth():
+ 17  	  fifth()
+ 18  	  return "hey i am fourth"
+ 19  	
+ 20  	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  ->	first()
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(4)first()
+-> def first():
+(Pdb) s
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(5)first()
+-> second()
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(8)second()
+-> def second():
+(Pdb) s
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(9)second()
+-> third()
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(12)third()
+-> def third():
+(Pdb) s
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(13)third()
+-> fourth()
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(16)fourth()
+-> def fourth():
+(Pdb) s
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(17)fourth()
+-> fifth()
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  return "hey i am first"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  return "hey i am second"
+ 11  	
+ 12  	def third():
+ 13  	  fourth()
+ 14  	  return "hey i am third"
+ 15  	
+ 16  	def fourth():
+ 17  ->	  fifth()
+ 18  	  return "hey i am fourth"
+ 19  	
+ 20  	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  	first()
+(Pdb) s
+--Call--
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(20)fifth()
+-> def fifth():
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  return "hey i am first"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  return "hey i am second"
+ 11  	
+ 12  	def third():
+ 13  	  fourth()
+ 14  	  return "hey i am third"
+ 15  	
+ 16  	def fourth():
+ 17  	  fifth()
+ 18  	  return "hey i am fourth"
+ 19  	
+ 20  ->	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  	first()
+(Pdb) where
+  /home/tcloudpython/python-examples/batch-29/debugging/third.py(24)<module>()
+-> first()
+  /home/tcloudpython/python-examples/batch-29/debugging/third.py(5)first()
+-> second()
+  /home/tcloudpython/python-examples/batch-29/debugging/third.py(9)second()
+-> third()
+  /home/tcloudpython/python-examples/batch-29/debugging/third.py(13)third()
+-> fourth()
+  /home/tcloudpython/python-examples/batch-29/debugging/third.py(17)fourth()
+-> fifth()
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(20)fifth()
+-> def fifth():
+(Pdb) help up
+u(p)
+Move the current frame one level up in the stack trace
+(to an older frame).
+(Pdb) help down
+d(own)
+Move the current frame one level down in the stack trace
+(to a newer frame).
+(Pdb) up
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(17)fourth()
+-> fifth()
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  return "hey i am first"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  return "hey i am second"
+ 11  	
+ 12  	def third():
+ 13  	  fourth()
+ 14  	  return "hey i am third"
+ 15  	
+ 16  	def fourth():
+ 17  ->	  fifth()
+ 18  	  return "hey i am fourth"
+ 19  	
+ 20  	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  	first()
+(Pdb) up
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(13)third()
+-> fourth()
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  return "hey i am first"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  return "hey i am second"
+ 11  	
+ 12  	def third():
+ 13  ->	  fourth()
+ 14  	  return "hey i am third"
+ 15  	
+ 16  	def fourth():
+ 17  	  fifth()
+ 18  	  return "hey i am fourth"
+ 19  	
+ 20  	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  	first()
+(Pdb) down
+> /home/tcloudpython/python-examples/batch-29/debugging/third.py(17)fourth()
+-> fifth()
+(Pdb) l 1,24
+  1  	#!/usr/bin/python
+  2  	import pdb
+  3  	
+  4  	def first():
+  5  	  second()
+  6  	  return "hey i am first"
+  7  	
+  8  	def second():
+  9  	  third()
+ 10  	  return "hey i am second"
+ 11  	
+ 12  	def third():
+ 13  	  fourth()
+ 14  	  return "hey i am third"
+ 15  	
+ 16  	def fourth():
+ 17  ->	  fifth()
+ 18  	  return "hey i am fourth"
+ 19  	
+ 20  	def fifth():
+ 21  	  return "hey i am fifth"
+ 22  	
+ 23  	pdb.set_trace()
+ 24  	first()
+
