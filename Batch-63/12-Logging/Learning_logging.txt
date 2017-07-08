@@ -1,0 +1,93 @@
+Logging
+
+root@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63# head /var/log/syslog
+Jul  8 18:20:11 khyaathi-Technologies rsyslogd: [origin software="rsyslogd" swVersion="8.16.0" x-pid="632" x-info="http://www.rsyslog.com"] rsyslogd was HUPed
+Jul  8 18:20:30 khyaathi-Technologies anacron[609]: Job `cron.daily' terminated
+Jul  8 18:23:22 khyaathi-Technologies sublime_text[3171]: Source ID 45081 was not found when attempting to remove it
+Jul  8 18:23:25 khyaathi-Technologies sublime_text[3171]: Source ID 46730 was not found when attempting to remove it
+Jul  8 18:23:26 khyaathi-Technologies sublime_text[3171]: Source ID 47379 was not found when attempting to remove it
+Jul  8 18:23:29 khyaathi-Technologies sublime_text[3171]: Source ID 49022 was not found when attempting to remove it
+Jul  8 18:23:32 khyaathi-Technologies sublime_text[3171]: Source ID 50370 was not found when attempting to remove it
+Jul  8 18:23:45 khyaathi-Technologies sublime_text[3171]: Source ID 55530 was not found when attempting to remove it
+Jul  8 18:25:01 khyaathi-Technologies CRON[4203]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul  8 18:25:10 khyaathi-Technologies anacron[609]: Job `cron.weekly' started
+
+Reference:
+https://docs.python.org/2/howto/logging.html
+https://docs.python.org/2/library/logging.html
+https://docs.python.org/2/howto/logging-cookbook.html
+
+log4j -> java/perl
+
+# debug level 
+
+root@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63# ssh localhost
+ssh: connect to host localhost port 22: Connection refused
+root@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63# ssh -v localhost
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host localhost port 22: Connection refused
+root@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63# ssh -vv localhost
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: resolving "localhost" port 22
+debug2: ssh_connect_direct: needpriv 0
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host localhost port 22: Connection refused
+root@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63# ssh -vvv localhost
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: resolving "localhost" port 22
+debug2: ssh_connect_direct: needpriv 0
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host localhost port 22: Connection refused
+root@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63# 
+
+# info level
+informational data.
+
+# warning level
+its giving a warning threshold.
+disk -> i am getting filled up.
+
+# error level
+Application ( running good)
+one of the disk went bad. - some issue is there but still things are working good.
+
+# critical level
+Application ( is not running)
+two disks gone bad.
+
+
+level/functions
+ - DEBUG/debug()
+ - INFO/info()
+ - WARNING/warning()
+ - ERROR/error()
+ - CRITICAL/critical()
+
+ In [1]: import logging
+
+In [2]: logging.
+logging.BASIC_FORMAT        logging.LogRecord           logging.atexit              logging.fatal               logging.root
+logging.BufferingFormatter  logging.Logger              logging.basicConfig         logging.getLevelName        logging.setLoggerClass
+logging.CRITICAL            logging.LoggerAdapter       logging.cStringIO           logging.getLogger           logging.shutdown
+logging.DEBUG               logging.Manager             logging.captureWarnings     logging.getLoggerClass      logging.sys
+logging.ERROR               logging.NOTSET              logging.codecs              logging.info                logging.thread
+logging.FATAL               logging.NullHandler         logging.collections         logging.log                 logging.threading
+logging.FileHandler         logging.PlaceHolder         logging.critical            logging.logMultiprocessing  logging.time
+logging.Filter              logging.RootLogger          logging.currentframe        logging.logProcesses        logging.traceback
+logging.Filterer            logging.StreamHandler       logging.debug               logging.logThreads          logging.warn
+logging.Formatter           logging.WARN                logging.disable             logging.makeLogRecord       logging.warning
+logging.Handler             logging.WARNING             logging.error               logging.os                  logging.warnings
+logging.INFO                logging.addLevelName        logging.exception           logging.raiseExceptions     logging.weakref
+
+In [2]: logging.
+
