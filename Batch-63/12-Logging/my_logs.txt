@@ -26,3 +26,14 @@ Sat Jul  8 19:17:45 2017 - root  - INFO - This is a info message.
 Sat Jul  8 19:17:45 2017 - root  - WARNING - This is a warning message.
 Sat Jul  8 19:17:45 2017 - root  - ERROR - This is an error message.
 Sat Jul  8 19:17:45 2017 - root  - CRITICAL - This is an critical message.
+----------------------------------------------------------------------------------------------------
+Mon Jul 10 18:22:53 2017 - root  - INFO - The disk looks health at 10
+Mon Jul 10 18:23:48 2017 - root  - WARNING - The disk is getting filled up 60
+Mon Jul 10 18:24:32 2017 - root  - CRITICAL - your application is not working 80
+Mon Jul 10 18:24:48 2017 - root  - INFO - The disk looks health at 10
+Mon Jul 10 18:39:59 2017 - root  - INFO - The disk looks health at 16
+Mon Jul 10 18:40:16 2017 - root  - INFO - The disk looks health at 16
+Mon Jul 10 18:40:16 2017 - root  - INFO - The disk looks health at 16
+Mon Jul 10 18:40:17 2017 - root  - INFO - The disk looks health at 16
+Mon Jul 10 18:40:18 2017 - root  - INFO - The disk looks health at 16
+Mon Jul 10 18:40:18 2017 - root  - INFO - The disk looks health at 16

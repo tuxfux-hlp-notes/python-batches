@@ -1,0 +1,1 @@
+# https://docs.python.org/2/howto/logging-cookbook.html#logging-to-multiple-destinations
