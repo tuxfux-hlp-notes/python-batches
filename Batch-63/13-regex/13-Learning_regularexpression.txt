@@ -421,7 +421,91 @@ In [158]: re.match('(?P<p>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<l>[a-z]+)',my
 Out[158]: 'language'
 
 
+# findall
+
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63$ ipython
+WARNING: Attempting to work in a virtualenv. If you encounter problems, please install IPython inside the virtualenv.
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: my_sentence = "python is a good language.\npython is my first language.\npython is very easy to learn."
+
+In [2]: print my_sentence
+python is a good language.
+python is my first language.
+python is very easy to learn.
+
+In [3]: import re
+
+In [4]: re.search?
+Type:        function
+String form: <function search at 0x7fc1f7c50cf8>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.search(pattern, string, flags=0)
+Docstring:
+Scan through string looking for a match to the pattern, returning
+a match object, or None if no match was found.
+
+In [5]: re.search("python",my_sentence)
+Out[5]: <_sre.SRE_Match at 0x7fc1f4410510>
+
+In [6]: re.search("python",my_sentence).group()
+Out[6]: 'python'
+
+In [7]: re.match?
+Type:        function
+String form: <function match at 0x7fc1f7c50c80>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.match(pattern, string, flags=0)
+Docstring:
+Try to apply the pattern at the start of the string, returning
+a match object, or None if no match was found.
+
+In [8]: re.match("python",my_sentence)
+Out[8]: <_sre.SRE_Match at 0x7fc1f44105e0>
+
+In [9]: re.match("python",my_sentence).group()
+Out[9]: 'python'
+
+In [10]: re.findall?
+Type:        function
+String form: <function findall at 0x7fc1f7c50ed8>
+File:        /usr/lib/python2.7/re.py
+Definition:  re.findall(pattern, string, flags=0)
+Docstring:
+Return a list of all non-overlapping matches in the string.
+
+If one or more groups are present in the pattern, return a
+list of groups; this will be a list of tuples if the pattern
+has more than one group.
+
+Empty matches are included in the result.
+
+In [11]: re.findall("python",my_sentence)
+Out[11]: ['python', 'python', 'python']
+
 # MULTILINE
+
+In [12]: print my_sentence
+python is a good language.
+python is my first language.
+python is very easy to learn.
+
+In [13]: re.findall("^python",my_sentence)
+Out[13]: ['python']
+
+In [14]: my_sentence
+Out[14]: 'python is a good language.\npython is my first language.\npython is very easy to learn.'
+
+In [15]: re.findall("^python",my_sentence,re.M)
+Out[15]: ['python', 'python', 'python']
+
 # EXAMPLES
 
 

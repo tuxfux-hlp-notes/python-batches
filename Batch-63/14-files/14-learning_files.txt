@@ -1,0 +1,389 @@
+File is a persistent way of storing data.
+files - .txt,.log,.doc,.xls,yaml,xml,json (100+)
+
+In [1]: ls
+14-learning_files.txt  file1.txt
+
+In [2]: f = open("file1.txt")
+
+In [3]: # f is a file handle.
+
+In [4]: # open is for opening the file,
+
+In [5]: print f
+<open file 'file1.txt', mode 'r' at 0x7fc1b775fb70>
+
+In [6]: print f,type(f)
+<open file 'file1.txt', mode 'r' at 0x7fc1b775fb70> <type 'file'>
+
+In [7]: # modes
+
+In [9]: # r -> read the file. All you can do is read the contents of the file.
+
+In [10]: # w -> write into the file. if you file is having content it will be truncated to zero, if file is not existing it will created.
+
+In [11]: # a -> appends contents to the end of the file.
+
+In [12]: # b -> binary -> rb,wb,ab -> these all make sure you have the binary set for read,write and append.
+
+In [13]: # r+ -> you can open a file in read and append mode.
+
+In [15]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines  
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [15]: f.read?
+Type:        builtin_function_or_method
+String form: <built-in method read of file object at 0x7fc1b775fb70>
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+
+In [16]: f.read(2)
+Out[16]: 'Th'
+
+In [17]: f.read(2)
+Out[17]: 'is'
+
+In [18]: f.read(2)
+Out[18]: ' i'
+
+In [19]: f.read(2)
+Out[19]: 's '
+
+In [20]: f.read()
+Out[20]: 'my first line.\nThis is my second line.\nThis is my third line.\nThis is my fourth line.\nThis is my fifth line.'
+
+In [21]: f.read()
+Out[21]: ''
+
+In [22]: f.tell?
+Type:        builtin_function_or_method
+String form: <built-in method tell of file object at 0x7fc1b775fb70>
+Docstring:   tell() -> current file position, an integer (may be a long integer).
+
+In [23]: f.tell()
+Out[23]: 116
+
+In [24]: f.seek?
+Type:        builtin_function_or_method
+String form: <built-in method seek of file object at 0x7fc1b775fb70>
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+
+In [25]: f.seek(0)
+
+In [26]: f.tell()
+Out[26]: 0
+
+In [27]: f.read()
+Out[27]: 'This is my first line.\nThis is my second line.\nThis is my third line.\nThis is my fourth line.\nThis is my fifth line.'
+
+In [33]: # f.readline?
+
+In [34]: f.readline?
+Type:        builtin_function_or_method
+String form: <built-in method readline of file object at 0x7fc1b775fb70>
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+
+In [35]: f.readline()
+Out[35]: 'This is my first line.\n'
+
+In [36]: f.readline()
+Out[36]: 'This is my second line.\n'
+
+In [37]: f.readline()
+Out[37]: 'This is my third line.\n'
+
+In [38]: f.readline()
+Out[38]: 'This is my fourth line.\n'
+
+In [39]: f.readline()
+Out[39]: 'This is my fifth line.'
+
+In [40]: f.readline()
+Out[40]: ''
+
+In [41]: f.readline()
+Out[41]: '\n'
+
+In [42]: f.readline()
+Out[42]: ''
+
+In [43]: f.readline()
+Out[43]: ''
+
+In [44]: f.tell()
+Out[44]: 117
+
+In [45]: f.seek(0)
+
+n [46]: # readlines
+
+In [47]: f.readlines?
+Type:        builtin_function_or_method
+String form: <built-in method readlines of file object at 0x7fc1b775fb70>
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+
+In [48]: my_lines = f.readlines()
+
+In [49]: print my_lines
+['This is my first line.\n', 'This is my second line.\n', 'This is my third line.\n', 'This is my fourth line.\n', 'This is my fifth line.\n']
+
+In [50]: 
+
+In [51]: f.xreadlines?
+Type:        builtin_function_or_method
+String form: <built-in method xreadlines of file object at 0x7fc1b775fb70>
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+
+In [52]: f.readinto?
+Type:        builtin_function_or_method
+String form: <built-in method readinto of file object at 0x7fc1b775fb70>
+Docstring:   readinto() -> Undocumented.  Don't use this; it may go away.
+
+In [53]: 
+
+In [54]: g = open("file2.txt","wb")
+
+In [55]: print g
+<open file 'file2.txt', mode 'wb' at 0x7fc1b775fc00>
+
+In [56]: pwd
+Out[56]: u'/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files'
+
+In [57]: # g.write
+
+In [58]: g.write?
+Type:        builtin_function_or_method
+String form: <built-in method write of file object at 0x7fc1b775fc00>
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+
+In [59]: g.write("Today is wednesday.\nTomorrow is thursday.\nDay after is friday.\nyipee we have a holiday on friday")
+
+In [60]: # input devices -> i/o buffers -> cpu -> i/o buffers -> output devices
+
+In [61]: # flush
+
+In [62]: g.flush?
+Type:        builtin_function_or_method
+String form: <built-in method flush of file object at 0x7fc1b775fc00>
+Docstring:   flush() -> None.  Flush the internal I/O buffer.
+
+In [63]: g.flush()
+
+In [64]: g
+Out[64]: <open file 'file2.txt', mode 'wb' at 0x7fc1b775fc00>
+
+In [65]: # g.writelines
+
+In [66]: g.writelines?
+Type:        builtin_function_or_method
+String form: <built-in method writelines of file object at 0x7fc1b775fc00>
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+
+In [67]: my_string
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-67-9638f55ae8ef> in <module>()
+----> 1 my_string
+
+NameError: name 'my_string' is not defined
+
+In [68]: my_strings
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-68-df48bf62f6f6> in <module>()
+----> 1 my_strings
+
+NameError: name 'my_strings' is not defined
+
+In [69]: my_lines
+Out[69]: 
+['This is my first line.\n',
+ 'This is my second line.\n',
+ 'This is my third line.\n',
+ 'This is my fourth line.\n',
+ 'This is my fifth line.\n']
+
+In [70]: g.writelines(my_lines)
+
+In [71]: g.close()
+
+In [72]: g
+Out[72]: <closed file 'file2.txt', mode 'wb' at 0x7fc1b775fc00>
+
+
+In [73]: g.close?
+Type:        builtin_function_or_method
+String form: <built-in method close of file object at 0x7fc1b775fc00>
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+
+In [75]: g
+Out[75]: <closed file 'file2.txt', mode 'wb' at 0x7fc1b775fc00>
+
+In [76]: g.write("i want to write a new line.\n")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-76-55cc0f14ce8e> in <module>()
+----> 1 g.write("i want to write a new line.\n")
+
+ValueError: I/O operation on closed file
+
+In [77]: g.closed
+Out[77]: True
+
+In [78]: g
+Out[78]: <closed file 'file2.txt', mode 'wb' at 0x7fc1b775fc00>
+
+In [79]: f
+Out[79]: <open file 'file1.txt', mode 'r' at 0x7fc1b775fb70>
+
+In [80]: f.closed
+Out[80]: False
+
+In [81]: # f.closed with be set to False, if f is open.
+
+In [82]: # g.close will be set to True, if g is closed.
+
+In [83]: if g.closed:
+   ....:     print "the file {} is closed".format(g.name)
+   ....: else:
+   ....:     g.write("i want to write a new line.\n")
+   ....:     
+the file file2.txt is closed
+
+In [84]: # exceptions
+
+In [85]: try:
+   ....:     g.write("i want to write a new line.\n")
+   ....: except ValueError:
+   ....:     print "the file you are trying to write is closed"
+   ....: else:
+   ....:     print "we can write into the file"
+   ....:     
+the file you are trying to write is closed
+
+In [87]: # with
+
+In [88]: g
+Out[88]: <closed file 'file2.txt', mode 'wb' at 0x7fc1b775fc00>
+
+In [89]: with open("file2.txt","a") as g:
+   ....:     g.write("This is a new line.\n")
+   ....:     
+
+In [90]: g
+Out[90]: <closed file 'file2.txt', mode 'a' at 0x7fc1b775fc90>
+
+In [91]: 
+
+In [92]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines  
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [92]: # f.truncate will truncate from a particular point
+
+In [93]: # f.seek() will set that point for you
+
+In [94]: # google -> f.softspace,f.encoding,f.errors,f.fileno
+
+In [95]: h = open("/dev/pts/6","ab")
+
+In [96]: h.write("hey there how are you doing?")
+
+In [97]: h.flush()
+
+In [98]: h
+Out[98]: <open file '/dev/pts/6', mode 'ab' at 0x7fc1b775fd20>
+
+In [99]: f
+Out[99]: <open file 'file1.txt', mode 'r' at 0x7fc1b775fb70>
+
+In [100]: h.isatty
+Out[100]: <function isatty>
+
+In [101]: h.isatty()
+Out[101]: True
+
+In [102]: h.isatty?
+Type:        builtin_function_or_method
+String form: <built-in method isatty of file object at 0x7fc1b775fd20>
+Docstring:   isatty() -> true or false.  True if the file is connected to a tty device.
+
+In [103]: f.isatty()
+Out[103]: False
+
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ ls
+14-learning_files.txt  file1.txt  file2.txt  myenv  namesdb.xls  read_excel.py
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ python read_excel.py 
+Lawrence
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ python read_excel.py 
+Lawrence
+m
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ python read_excel.py 
+Lawrence
+m
+[u'Name', u'Lawrence', u'pavani', u'nikhil', u'mahesh']
+[u'gender', u'm', u'f', u'm', u'm']
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ deactivate 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ python read_excel.py 
+Traceback (most recent call last):
+  File "read_excel.py", line 2, in <module>
+    from excel import OpenExcel
+ImportError: No module named excel
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/Batch-63/14-files$ 
+
+TODO for pupils:
+------------------
+https://www.tutorialspoint.com/python/python_xml_processing.htm
+json
+yaml
+kml - https://pythonhosted.org/pykml/tutorial.html
+shape - https://pypi.python.org/pypi/pyshp
+
+# tomorrow
+regular expression examples
+https://github.com/tuxfux-hlp/Python-examples/blob/master/re/kohli_page.py
