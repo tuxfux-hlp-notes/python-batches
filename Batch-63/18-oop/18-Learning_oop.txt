@@ -1,0 +1,89 @@
+oop - object oriented programming
+
+programming
++ functioncal based programming
++ object oriented programming - programming in a real world scenerio
+
+A - Abstraction
+Defination of object.
+
+car      - class/blueprint
+ - model 
+ - color
+ - wheels
+ + break
+ + clutch
+ + acclerator
+ + power windows
+
+ex: model,color,wheels as data/variables.
+ex: break,clutch,acclerator as method/functions.
+
+A combination of both the data and methods is called as attributes.
+
+Objects/instances:
+- Honda city.
+- skoda
+- audi
+
+ex 2:
+villa - class/superclass
+
+objects
+santosh - pink
+mahesh  - yellow
+kaushik - green
+
+P - Polymorphism
+
+Poly - Many
+morphism - Forms
+
+In [1]: "linux" + " rocks"
+Out[1]: 'linux rocks'
+
+In [2]: 1 + 1
+Out[2]: 2
+
+In [3]: 1.0 + 2.3
+Out[3]: 3.3
+
+ex: bank interest
+
+I - Inheritance
+Inheritance - inheriting form your parent
+
+Father:
+ left handed
+ doctor
+
+Mother:
+ right handed
+ doctor
+
+son:
+ left handed
+ film actor
+
+E - Encapsulation
+
+Encapsulation is more about dealing with function rather than internals.
+
+bank
+
+ACCOUNT
+balance - i am not touching this variable directly. I am using the function to touch this value.
+deposit()
+withdraw()
+viewbalance()
+
+ex: pen drive
+
+- hiding of the data(java/c/c++)  ex: we dont have this feature in python
+public
+protected
+private
+
+References:
+https://github.com/tuxfux-hlp/Python-examples/blob/master/opps/Good_links.txt
+https://docs.python.org/2.7/tutorial/classes.html

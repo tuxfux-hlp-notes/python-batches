@@ -1,0 +1,52 @@
+CGI - common gateway interface
+running you python program in web broswer.
+
+Linux/Fedora/centos
+----------------------
+Installation: yum install httpd*
+Document root: /var/www/html  ( html files)
+CGI location: /var/www/cgi-bin ( script file)
+configuation file: /etc/httpd/conf/httpd.conf
+service : service httpd start/stop/restart
+persistent: chkconfig httpd on
+
+
+ubuntu/linux mint/zorion
+--------------------------
+Installation : sudo apt-get install apache2
+Document root: /var/www/html ( html files)
+CGI location: /usr/lib/cgi-bin ( script file) 
+# switch to root - sudo -s ; 
+# mkdir -p /usr/lib/cgi-bin
+
+# make sure all your script have execuet permission
+ex: chmod +x <filename>
+
+To enable the CGI module run these two commands:
+ # sudo a2enmod cgi
+ # sudo service apache2 restart
+
+The above commands will create a new file under location /etc/apache2/conf-enabled/serve-cgi-bin.conf.
+
+configuration file:/etc/apache2/apache2.conf
+service : service apache2 start/stop/restart
+persistent: bum
+
+I want to become a web man/woman :)
+
+* html5 - https://www.w3schools.com/html/
+* css3
+* javascript
+* python and web
+-----
+Frameworks
+
+* Django
+* flask
+* bottle
+* rails - ruby
+* angularjs - javascript framework
+
+References: 
+https://docs.python.org/2/library/internet.html
+https://docs.python.org/2/library/cgi.html
