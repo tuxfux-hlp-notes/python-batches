@@ -65,7 +65,7 @@ son:
  left handed
  film actor
 
-E - Encapsulation
+E - Encapsulation - http://radek.io/2011/07/21/private-protected-and-public-in-python/
 
 Encapsulation is more about dealing with function rather than internals.
 
@@ -87,3 +87,4 @@ private
 References:
 https://github.com/tuxfux-hlp/Python-examples/blob/master/opps/Good_links.txt
 https://docs.python.org/2.7/tutorial/classes.html
+http://radek.io/2011/07/21/private-protected-and-public-in-python/
