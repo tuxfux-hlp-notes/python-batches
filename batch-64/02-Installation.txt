@@ -1,0 +1,59 @@
+
+ubuntu/linuxmint/zorion
+------------------------
+# sudo apt-get install python
+# sudo apt-get install python3
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+
+# jupyter
+# ipython-notebook
+
+redhat/fedora/centos
+----------------------
+# yum install python
+# yum install python3
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+
+windows
+---------
+https://www.continuum.io/downloads
+
+
+IDE
+-----
+
+https://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+
+References:
+https://bpython-interpreter.org/
+https://ipython.org/
+
+root@khyaathipython:~/Documents/git_repos/python-batches# python --version
+Python 2.7.12+
+root@khyaathipython:~/Documents/git_repos/python-batches# python3 --version
+Python 3.5.2+
+root@khyaathipython:~/Documents/git_repos/python-batches# python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print "hello world"
+hello world
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+root@khyaathipython:~/Documents/git_repos/python-batches# python3
+Python 3.5.2+ (default, Sep 22 2016, 12:18:14) 
+[GCC 6.2.0 20160927] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print ("hello world")
+hello world
+>>> quit()
+root@khyaathipython:~/Documents/git_repos/python-batches# 
+

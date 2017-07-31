@@ -1,0 +1,80 @@
+Proprietory vs Opensource
+--------------------------
+
+proprietory - product belongs to a vendor.
+
+ex: microsoft
+  : cisco
+
+Product A -> company A
+ Us (customers) -> requirements 
+                -> email company -> thank you we will get back to you soon.
+		-> internet -> newgroups/workgroups -> support/workarounds
+
+* Customer satisfaction
+* Customer retention
+* unsatisfied customers
+
+Opensource
+------------
+
+Product A.1(GPL) -> company A -> publishes it source code in internet
+ Us (customers) -> requirements 
+                -> email company -> thank you we will get back to you soon.
+		-> internet -> newgroups/workgroups -> support/workarounds. + hey there my product B is online
+		-> we launched A.3 -> all feautres of b,c,d,e,f
+
+users - developer (java/python/perl) 
+      - wrappers ( small codes)
+      - product B -> publishes the product
+
+guyB/galB -> product B(GPL) -> reviews
+          -> excellent/v.good/bad/v.bad
+
++ homogeneous code
++ hetrogeneous code
+
+Fast forward 6 months
+-----------------------
+company A - A.3 ( 100 + 400) modifications
+
+* customer retention
+* marketing
+* cost cutting
+
+1 modification - 1 developer + 1 qa engineer -> 1lac + 1lac = 2lac * 400 => 800lacs -> 8cr
+
+money
+-------
+* support - bronze/silver/gold/diamond/platinum
+* training 
+
+license
+----------
+GPL - GNU General Public License.
+* publish your source code in internet -> GPL
+OSF - open source foundation - 1960
+
+Principles
+-----------
+* FREEdom to modify a product is called opensource.
+* you can modify and redistribute.
+* community support
+
+Training:
++ oracle virtual box.
++ ubuntu
++ python
+
+programming: java/python/perl/R/erlong
+web frameworks: django/bottle/flask/rails/angularjs
+database: mariadb/mongodb/cassendra
+operting : redhat/centos/ubuntu/debian
+
+
+* Its a free code. - yes
+* We can modify and customize and contribute. yes
+* Funded by companies. - partially
+* download - partially
+* money?
+* license?
