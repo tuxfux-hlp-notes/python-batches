@@ -1,0 +1,234 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> LISTS
+
+Related help topics: LISTLITERALS
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+/usr/lib/python2.7/dist-packages/matplotlib/cbook.py:137: MatplotlibDeprecationWarning: The matplotlib.delaunay module was deprecated in version 1.4. Use matplotlib.tri.Triangulation instead.
+
+.. truncated ...
+
+help> quit()
+
+
+In [1]: my_name = "kumar"
+
+In [2]: print my_name,type(my_name)
+kumar <type 'str'>
+
+In [3]: my_name = 'san'
+
+In [4]: print my_name,type(my_name)
+san <type 'str'>
+
+In [5]: my_num = 1
+
+In [6]: print my_num,type(my_num)
+1 <type 'int'>
+
+In [7]: my_num1 = 10
+
+In [8]: print my_num1,type(my_num1)
+10 <type 'int'>
+
+In [9]: my_num1 = 10.0
+
+In [10]: print my_num1,type(my_num1)
+10.0 <type 'float'>
+
+In [11]: 
+
+In [14]: print my_name
+san
+
+In [15]: my_name.
+my_name.capitalize  my_name.find        my_name.isspace     my_name.partition   my_name.rstrip      my_name.translate
+my_name.center      my_name.format      my_name.istitle     my_name.replace     my_name.split       my_name.upper
+my_name.count       my_name.index       my_name.isupper     my_name.rfind       my_name.splitlines  my_name.zfill
+my_name.decode      my_name.isalnum     my_name.join        my_name.rindex      my_name.startswith  
+my_name.encode      my_name.isalpha     my_name.ljust       my_name.rjust       my_name.strip       
+my_name.endswith    my_name.isdigit     my_name.lower       my_name.rpartition  my_name.swapcase    
+my_name.expandtabs  my_name.islower     my_name.lstrip      my_name.rsplit      my_name.title       
+
+In [15]: print my_num
+1
+
+In [16]: my_num.
+my_num.bit_length   my_num.conjugate    my_num.denominator  my_num.imag         my_num.numerator    my_num.real
+
+In [16]: print my_num1
+10.0
+
+In [17]: my_num1.
+my_num1.as_integer_ratio  my_num1.fromhex           my_num1.imag              my_num1.real
+my_num1.conjugate         my_num1.hex               my_num1.is_integer        
+
+In [17]: my_name.upper?
+Type:        builtin_function_or_method
+String form: <built-in method upper of str object at 0x7f5b26cab3c8>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [18]: my_name.upper()
+Out[18]: 'SAN'
+
+In [19]: my_name.center?
+Type:        builtin_function_or_method
+String form: <built-in method center of str object at 0x7f5b26cab3c8>
+Docstring:
+S.center(width[, fillchar]) -> string
+
+Return S centered in a string of length width. Padding is
+done using the specified fill character (default is a space)
+
+In [20]: my_name.center(10,"*")
+Out[20]: '***san****'
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_name="kumar"
+>>> 
+>>> print dir(my_name)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> help(my_name.upper)
+
+>>> 
+
+
+In [1]: my_name="python"
+
+In [2]: print my_name
+python
+
+In [3]: # strings are sequence of characters
+
+In [4]: # p  y  t  h  o  n 
+
+In [6]: # 0  1  2  3  4  5 # +ve indexing or left to right
+
+In [7]: # -6 -5 -4 -3 -2 -1# -ve indexing or right to left
+
+In [8]: # indexing
+
+In [9]: my_name[2]
+Out[9]: 't'
+
+In [10]: my_name[-4]
+Out[10]: 't'
+
+In [11]: my_name[5]
+Out[11]: 'n'
+
+In [12]: my_name[-1]
+Out[12]: 'n'
+
+
+In [14]: my_name[0]
+Out[14]: 'p'
+
+In [15]: my_name[0] = "T"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-15-812fc49645a4> in <module>()
+----> 1 my_name[0] = "T"
+
+TypeError: 'str' object does not support item assignment
+
+In [16]: # p  y  t  h  o  n
+
+In [17]: # 0  1  2  3  4  5 # +ve indexing or left to right
+
+In [18]: # -6 -5 -4 -3 -2 -1# -ve indexing or right to left
+
+In [19]: # slicing
+
+In [20]: my_name[0:3] # 0 till 3 , where 3 is not included
+Out[20]: 'pyt'
+
+In [21]: my_name[3:6] # 3 till 6 , where 6 is not included
+Out[21]: 'hon'
+
+In [22]: my_name[:3] # 0 till 3 , where 3 is not included
+Out[22]: 'pyt'
+
+In [23]: my_name[3:] # 3 till 6 , where 6 is not included
+Out[23]: 'hon'
+
+In [24]: print my_name[:3] + my_name[3:]
+python
+
+# task1
+
+In [25]: # my_name = "python"
+
+In [26]: # output -> Tython
+
+In [27]: 
+
+reference: https://docs.python.org/2.7/c-api/memory.html?highlight=memory
