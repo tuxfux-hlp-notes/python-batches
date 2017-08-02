@@ -231,4 +231,332 @@ In [26]: # output -> Tython
 
 In [27]: 
 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: my_name="python"
+
+In [2]: # slicing
+
+In [3]: my_name[0:3]
+Out[3]: 'pyt'
+
+In [4]: my_name[3:6]
+Out[4]: 'hon'
+
+In [5]: # step
+
+In [6]: my_name[0:6]
+Out[6]: 'python'
+
+In [7]: my_name[0:6:1]
+Out[7]: 'python'
+
+In [8]: my_name[::1]
+Out[8]: 'python'
+
+In [9]: # i=0;i<end;i++
+
+In [10]: my_name[::-1]
+Out[10]: 'nohtyp'
+
+In [11]: my_name[0:6:2]
+Out[11]: 'pto'
+
+In [12]: my_name[1:6:2]
+Out[12]: 'yhn'
+
+
+In [14]: # string support concatination
+
+In [15]: 'pyt' + 'hon'
+Out[15]: 'python'
+
+In [16]: '*' * 10
+Out[16]: '**********'
+
+In [17]: "'-'" * 100
+Out[17]: "'-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-''-'"
+
+In [18]: "'-'" * 10
+Out[18]: "'-''-''-''-''-''-''-''-''-''-'"
+
+
+In [20]: # printing
+
+In [21]: my_school = "De Paul"
+
+In [22]: another_school = "st. Xaviers"
+
+In [23]: town = "township"
+
+In [24]: beach = "blue"
+
+In [25]: commute="bus"
+
+In [26]: # basic
+
+In [27]: print "my school name is {}
+  File "<ipython-input-27-2e4f45db07c1>", line 1
+    print "my school name is {}
+                              ^
+SyntaxError: EOL while scanning string literal
+
+
+In [28]: print "my school name is my_school"
+my school name is my_school
+
+In [29]: print 'my school name is my_school'
+my school name is my_school
+
+In [30]: print "my school name is ", my_school
+my school name is  De Paul
+
+In [31]: print "my school name is ", my_school ,"we had another school adjacent to us", another_school , ' we used to live in a small township' , town, 'we have a beach which is', beach, 'in color', 'we used to commute on',commute
+my school name is  De Paul we had another school adjacent to us st. Xaviers  we used to live in a small township township we have a beach which is blue in color we used to commute on bus
+
+In [32]: print "my school name is " +  my_school
+my school name is De Paul
+
+In [33]: print my_school , "this is my school name."
+De Paul this is my school name.
+
+In [35]: # type casting
+
+In [36]: # %s,%f,%d,%r
+
+In [37]: print "my school name is %s.We had another school adjancent to us %s.We used to live in a small %s.We have a beach which is %s in color.We used to commute on %s." %(my_school,another_school,town,beach,commute)
+my school name is De Paul.We had another school adjancent to us st. Xaviers.We used to live in a small township.We have a beach which is blue in color.We used to commute on bus.
+
+In [38]: print "my school name is %s.I love my %s" %(my_school,my_school)
+my school name is De Paul.I love my De Paul
+
+In [39]: print "my school name is %s.I love my %s" %(another_school,another_school)
+my school name is st. Xaviers.I love my st. Xaviers
+
+In [40]: # format
+
+In [41]: print "my school name is {}".format(my_school)
+my school name is De Paul
+
+In [42]: print "my school name is {}.I love my school {}".format(my_school,another_school)
+my school name is De Paul.I love my school st. Xaviers
+
+In [43]: print "my school name is {0}.I love my school {0}".format(my_school,another_school)
+my school name is De Paul.I love my school De Paul
+
+In [44]: print "my school name is {1}.I love my school {1}".format(my_school,another_school)
+my school name is st. Xaviers.I love my school st. Xaviers
+
+In [45]: print "my school name is {'ms'}.I love my school {'ans'}".format(ms=my_school,ans=another_school)
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-45-42eb11554312> in <module>()
+----> 1 print "my school name is {'ms'}.I love my school {'ans'}".format(ms=my_school,ans=another_school)
+
+KeyError: "'ms'"
+
+In [46]: print "my school name is {ms}.I love my school {ans}".format(ms=my_school,ans=another_school)
+my school name is De Paul.I love my school st. Xaviers
+
+In [47]: print "my school name is {ms}.I love my school {ans}".format(ms=my_school,as=another_school)
+  File "<ipython-input-47-52855ade5003>", line 1
+    print "my school name is {ms}.I love my school {ans}".format(ms=my_school,as=another_school)
+                                                                               ^
+SyntaxError: invalid syntax
+
+
+In [48]: 
+
+
+In [49]: # %r - raw
+
+In [50]: weeks="sun\nmon\ntue\nwed\nthu\nfri\nsat"
+
+In [51]: print "%s" %(weeks)
+sun
+mon
+tue
+wed
+thu
+fri
+sat
+
+In [52]: print "%r" %(weeks)
+'sun\nmon\ntue\nwed\nthu\nfri\nsat'
+
+In [53]: print "my roll number is %s" %(20)
+my roll number is 20
+
+In [54]: print "my roll number is %d" %(20)
+my roll number is 20
+
+In [55]: print "my roll number is %d" %('20')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-55-cd5902a3c0c8> in <module>()
+----> 1 print "my roll number is %d" %('20')
+
+TypeError: %d format: a number is required, not str
+
+In [56]: print "my roll number is %r" %('20')
+my roll number is '20'
+
+In [57]: print "my roll number is %r" %(20)
+my roll number is 20
+
+
+
+In [59]: # taking input
+
+In [60]: # raw_input
+
+In [61]: # input
+
+In [62]: # 2.x - raw_input
+
+In [63]: # 3.x - input
+
+In [64]: # 2.x - raw_inpu,input
+
+In [65]: name = raw_input("please enter your name:"
+   ....: )
+please enter your name:kumar
+
+In [66]: print name
+kumar
+
+In [67]: print type(name)
+<type 'str'>
+
+In [68]: roll = raw_input("please enter your roll number:")
+please enter your roll number:12
+
+In [69]: print roll
+12
+
+In [70]: print type(roll)
+<type 'str'>
+
+In [71]: # type casting
+
+In [72]: # str,int,float
+
+In [73]: roll = int(raw_input("please enter your roll number:"))
+please enter your roll number:20
+
+In [74]: print roll
+20
+
+In [75]: print type(roll)
+<type 'int'>
+
+In [76]: roll="ten"
+
+In [77]: print roll,type(roll)
+ten <type 'str'>
+
+In [78]: print int(roll)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-78-62a40097e07e> in <module>()
+----> 1 print int(roll)
+
+ValueError: invalid literal for int() with base 10: 'ten'
+
+In [79]: roll="10"
+
+In [80]: print roll,int(roll)
+10 10
+
+In [81]: # unicode
+
+In [83]: num = input("please enter your roll number:")
+please enter your roll number:10
+
+In [84]: print num
+10
+
+In [85]: print type(num)
+<type 'int'>
+
+In [86]: name = input("please enter your name:")
+please enter your name:name
+
+In [87]: print name,type(name)
+kumar <type 'str'>
+
+In [88]: # raw_input by default always takes a string.
+
+In [89]: # input always takes an integer.
+
+In [90]: 
+
+In [91]: # playing with numbers
+
+In [92]: 1 + 1
+Out[92]: 2
+
+In [93]: 25 * 25
+Out[93]: 625
+
+In [94]: 23 * 23
+Out[94]: 529
+
+In [95]: 12 / 2
+Out[95]: 6
+
+In [96]: 13 / 2
+Out[96]: 6
+
+In [97]: 13 / 2.0
+Out[97]: 6.5
+
+In [98]: 15 + 15 / 2
+Out[98]: 22
+
+In [99]: ( 15 + 15 )/ 2
+Out[99]: 15
+
+In [100]: # BODMAS
+
+In [102]: 2 ** 38
+Out[102]: 274877906944
+
+
+# task1
+
+In [103]: import math
+
+In [104]: math.
+math.acos       math.atanh      math.e          math.factorial  math.hypot      math.log10      math.sin
+math.acosh      math.ceil       math.erf        math.floor      math.isinf      math.log1p      math.sinh
+math.asin       math.copysign   math.erfc       math.fmod       math.isnan      math.modf       math.sqrt
+math.asinh      math.cos        math.exp        math.frexp      math.ldexp      math.pi         math.tan
+math.atan       math.cosh       math.expm1      math.fsum       math.lgamma     math.pow        math.tanh
+math.atan2      math.degrees    math.fabs       math.gamma      math.log        math.radians    math.trunc
+
+In [104]: math.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [105]: math.pow(2,38)
+Out[105]: 274877906944.0
+
+
+# task 2: http://www.pythonchallenge.com/pc/def/map.html
+# task 3 : https://www.coursera.org/specializations/python
+# task 4 : learning python the hardway
+
 reference: https://docs.python.org/2.7/c-api/memory.html?highlight=memory
