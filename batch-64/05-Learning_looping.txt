@@ -1,0 +1,200 @@
+other languages: do..while,while..do,until,for,foreach
+python language: for,while
+
+In [1]: # for,while
+
+In [2]: # looping works on sequences
+
+In [3]: my_string="python"
+
+In [4]: for item in my_string:
+   ...:     print item
+   ...:     
+p
+y
+t
+h
+o
+n
+
+In [5]: # items
+
+In [6]: # list,tuples
+
+In [7]: for student in ('santosh','venkat','ujwal','vinay'):
+   ...:     print student
+   ...:     
+santosh
+venkat
+ujwal
+vinay
+
+In [8]: # numbers
+
+In [9]: range?
+Type:        builtin_function_or_method
+String form: <built-in function range>
+Namespace:   Python builtin
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+
+In [10]: range(5)
+Out[10]: [0, 1, 2, 3, 4]
+
+In [11]: range(1,5) # 1 till 5 -> 5 not included
+Out[11]: [1, 2, 3, 4]
+
+In [12]: for value in range(1,5):
+   ....:     print value
+   ....:     
+1
+2
+3
+4
+
+In [13]: for value in range(1,11,2):
+    print value
+   ....:     
+1
+3
+5
+7
+9
+
+In [15]: # looping or iteration works
+
+In [16]: m = iter(range(1,6))
+
+In [17]: iter?
+Type:        builtin_function_or_method
+String form: <built-in function iter>
+Namespace:   Python builtin
+Docstring:
+iter(collection) -> iterator
+iter(callable, sentinel) -> iterator
+
+Get an iterator from an object.  In the first form, the argument must
+supply its own iterator, or be a sequence.
+In the second form, the callable is called until it returns the sentinel.
+
+In [18]: m.next()
+Out[18]: 1
+
+In [19]: m.next()
+Out[19]: 2
+
+In [20]: m.next()
+Out[20]: 3
+
+In [21]: m.next()
+Out[21]: 4
+
+In [22]: m.next()
+Out[22]: 5
+
+In [23]: m.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-23-e94cbac0601a> in <module>()
+----> 1 m.next()
+
+StopIteration: 
+
+In [28]: # iterator and generator
+
+In [29]: # oops
+
+In [30]: range?
+Type:        builtin_function_or_method
+String form: <built-in function range>
+Namespace:   Python builtin
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+
+In [31]: xrange?
+Type:        type
+String form: <type 'xrange'>
+Namespace:   Python builtin
+Docstring:
+xrange(stop) -> xrange object
+xrange(start, stop[, step]) -> xrange object
+
+Like range(), but instead of returning a list, returns an object that
+generates the numbers in the range on demand.  For looping, this is 
+slightly faster than range() and more memory efficient.
+
+In [32]: range(10)
+Out[32]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+In [33]: xrange(10)
+Out[33]: xrange(10)
+
+In [34]: for value in xrange(10):
+   ....:     print value
+   ....:     
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+In [35]: xrange(10),type(xrange(10))
+Out[35]: (xrange(10), xrange)
+
+In [36]: # range(1billon) => you will run out memory
+
+In [37]: # xrange(1billion) => you will run out of time
+
+
+In [1]: import sys
+
+In [2]: sys.
+sys.api_version            sys.exit                   sys.long_info              sys.pydebug
+sys.argv                   sys.exitfunc               sys.maxint                 sys.setcheckinterval
+sys.builtin_module_names   sys.flags                  sys.maxsize                sys.setdlopenflags
+sys.byteorder              sys.float_info             sys.maxunicode             sys.setprofile
+sys.call_tracing           sys.float_repr_style       sys.meta_path              sys.setrecursionlimit
+sys.callstats              sys.getcheckinterval       sys.modules                sys.settrace
+sys.copyright              sys.getdefaultencoding     sys.path                   sys.stderr
+sys.displayhook            sys.getdlopenflags         sys.path_hooks             sys.stdin
+sys.dont_write_bytecode    sys.getfilesystemencoding  sys.path_importer_cache    sys.stdout
+sys.exc_clear              sys.getprofile             sys.platform               sys.subversion
+sys.exc_info               sys.getrecursionlimit      sys.prefix                 sys.version
+sys.exc_type               sys.getrefcount            sys.ps1                    sys.version_info
+sys.excepthook             sys.getsizeof              sys.ps2                    sys.warnoptions
+sys.exec_prefix            sys.gettrace               sys.ps3                    
+sys.executable             sys.hexversion             sys.py3kwarning            
+
+In [2]: sys.exit?
+Type:        builtin_function_or_method
+String form: <built-in function exit>
+Docstring:
+exit([status])
+
+Exit the interpreter by raising SystemExit(status).
+If the status is omitted or None, it defaults to zero (i.e., success).
+If the status is an integer, it will be used as the system exit status.
+If it is another kind of object, it will be printed and the system
+exit status will be one (i.e., failure).
+
+
+

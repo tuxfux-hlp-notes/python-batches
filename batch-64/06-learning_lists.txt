@@ -1,0 +1,75 @@
+In [4]: # lists
+
+In [5]: # list is a sequence of values/items.
+
+In [7]: my_fruits = ['apple','banana','custard apple','dates']
+
+In [8]: print my_fruits,type(my_fruits)
+['apple', 'banana', 'custard apple', 'dates'] <type 'list'>
+
+In [9]: my_empty = []
+
+In [10]: print my_empty,type(my_empty)
+[] <type 'list'>
+
+In [11]: my_empty = list()
+
+In [12]: print my_empty,type(my_empty)
+[] <type 'list'>
+
+In [13]: # lists vs arrays
+
+In [14]: # indexing
+
+In [15]: # ['apple','banana','custard apple','dates']
+
+In [16]: #   0         1         2             3      # +ve indexing or left to right
+
+In [17]: #   -4        -3        -2            -1     # -ve indexing or right to left
+
+In [18]: print my_fruits[-2]
+custard apple
+
+In [19]: print my_fruits[-2][-1]
+e
+
+In [20]: print my_fruits[0]
+apple
+
+In [21]: # slicing
+
+In [22]: print my_fruits[0:]
+['apple', 'banana', 'custard apple', 'dates']
+
+In [23]: print my_fruits[0:3]
+['apple', 'banana', 'custard apple']
+
+In [24]: print my_fruits[:3]
+['apple', 'banana', 'custard apple']
+
+In [25]: my_string = "python"
+
+In [26]: my_string[0] ="T"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-26-c938d89e3dcd> in <module>()
+----> 1 my_string[0] ="T"
+
+TypeError: 'str' object does not support item assignment
+
+In [28]: my_string[0] ="T"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-28-c938d89e3dcd> in <module>()
+----> 1 my_string[0] ="T"
+
+TypeError: 'str' object does not support item assignment
+
+In [29]: my_fruits[0]
+Out[29]: 'apple'
+
+In [30]: my_fruits[0]='Apple'
+
+In [31]: print my_fruits
+['Apple', 'banana', 'custard apple', 'dates']
+
