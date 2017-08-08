@@ -73,3 +73,365 @@ In [30]: my_fruits[0]='Apple'
 In [31]: print my_fruits
 ['Apple', 'banana', 'custard apple', 'dates']
 
+# day2 
+
+In [1]: my_fruits = ['apple','banana','custard apple','dates']
+
+In [2]: my_fruits.
+my_fruits.append   my_fruits.extend   my_fruits.insert   my_fruits.remove   my_fruits.sort     
+my_fruits.count    my_fruits.index    my_fruits.pop      my_fruits.reverse  
+
+In [2]: # append
+
+In [3]: my_fruits.append?
+Type:        builtin_function_or_method
+String form: <built-in method append of list object at 0x7f31529ef518>
+Docstring:   L.append(object) -- append object to end
+
+In [4]: my_fruits.append('fig')
+
+In [5]: print my_fruits
+['apple', 'banana', 'custard apple', 'dates', 'fig']
+
+In [6]: # extend
+
+In [7]: my_fruits.extend?
+Type:        builtin_function_or_method
+String form: <built-in method extend of list object at 0x7f31529ef518>
+Docstring:   L.extend(iterable) -- extend list by appending elements from the iterable
+
+In [8]: my_fruits.extend(['guava,'grapes'])
+  File "<ipython-input-8-951c7c5972fd>", line 1
+    my_fruits.extend(['guava,'grapes'])
+                                   ^
+SyntaxError: invalid syntax
+
+
+In [9]: my_fruits.extend(['guava','grapes'])
+
+In [10]: print my_fruits
+['apple', 'banana', 'custard apple', 'dates', 'fig', 'guava', 'grapes']
+
+In [11]: # insert
+
+In [12]: my_fruits.insert?
+Type:        builtin_function_or_method
+String form: <built-in method insert of list object at 0x7f31529ef518>
+Docstring:   L.insert(index, object) -- insert object before index
+
+In [13]: my_fruits.insert(1,'avacado')
+
+In [14]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'dates', 'fig', 'guava', 'grapes']
+
+In [15]: 
+
+In [16]: # index
+
+In [17]: my_fruit.index?
+Object `my_fruit.index` not found.
+
+In [18]: my_fruits.index?
+Type:        builtin_function_or_method
+String form: <built-in method index of list object at 0x7f31529ef518>
+Docstring:
+L.index(value, [start, [stop]]) -> integer -- return first index of value.
+Raises ValueError if the value is not present.
+
+In [19]: my_fruits.index('grapes')
+Out[19]: 7
+
+In [20]: my_fruits
+Out[20]: 
+['apple',
+ 'avacado',
+ 'banana',
+ 'custard apple',
+ 'dates',
+ 'fig',
+ 'guava',
+ 'grapes']
+
+In [21]: my_fruits.index('dates')
+Out[21]: 4
+
+In [22]: my_fruits.insert(4,'grapes')
+
+In [23]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'grapes', 'dates', 'fig', 'guava', 'grapes']
+
+In [24]: my_fruits.index('grapes')
+Out[24]: 4
+
+In [25]: my_fruits.index('grapes',5)
+Out[25]: 8
+
+In [26]: # count
+
+In [27]: my_fruits.count('grapes')
+Out[27]: 2
+
+In [28]: # sort
+
+In [29]: my_fruits.sort?
+Type:        builtin_function_or_method
+String form: <built-in method sort of list object at 0x7f31529ef518>
+Docstring:
+L.sort(cmp=None, key=None, reverse=False) -- stable sort *IN PLACE*;
+cmp(x, y) -> -1, 0, 1
+
+In [30]: my_fruits
+Out[30]: 
+['apple',
+ 'avacado',
+ 'banana',
+ 'custard apple',
+ 'grapes',
+ 'dates',
+ 'fig',
+ 'guava',
+ 'grapes']
+
+In [31]: my_fruits.sort()
+
+In [32]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'dates', 'fig', 'grapes', 'grapes', 'guava']
+
+In [33]: my_fruits.sort(reverse=True)
+
+In [34]: print my_fruits
+['guava', 'grapes', 'grapes', 'fig', 'dates', 'custard apple', 'banana', 'avacado', 'apple']
+
+In [35]: # reverse
+
+In [36]: my_fruits.reverse?
+Type:        builtin_function_or_method
+String form: <built-in method reverse of list object at 0x7f31529ef518>
+Docstring:   L.reverse() -- reverse *IN PLACE*
+
+In [37]: print my_fruits.reverse()
+None
+
+In [38]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'dates', 'fig', 'grapes', 'grapes', 'guava']
+
+In [40]: my_fruits.
+my_fruits.append   my_fruits.extend   my_fruits.insert   my_fruits.remove   my_fruits.sort     
+my_fruits.count    my_fruits.index    my_fruits.pop      my_fruits.reverse  
+
+In [40]: my_fruits
+Out[40]: 
+['apple',
+ 'avacado',
+ 'banana',
+ 'custard apple',
+ 'dates',
+ 'fig',
+ 'grapes',
+ 'grapes',
+ 'guava']
+
+In [41]: my_fruits.pop?
+Type:        builtin_function_or_method
+String form: <built-in method pop of list object at 0x7f31529ef518>
+Docstring:
+L.pop([index]) -> item -- remove and return item at index (default last).
+Raises IndexError if list is empty or index is out of range.
+
+In [42]: my_fruits.pop()
+Out[42]: 'guava'
+
+In [43]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'dates', 'fig', 'grapes', 'grapes']
+
+In [44]: my_fruits.pop(-2)
+Out[44]: 'grapes'
+
+In [45]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'dates', 'fig', 'grapes']
+
+In [46]: my_fruits.pop(100)
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-46-7d4322064b4c> in <module>()
+----> 1 my_fruits.pop(100)
+
+IndexError: pop index out of range
+
+In [47]: # remove
+
+In [48]: print my_fruits
+['apple', 'avacado', 'banana', 'custard apple', 'dates', 'fig', 'grapes']
+
+In [49]: my_fruits.remove('custard apple')
+
+In [50]: print my_fruits
+['apple', 'avacado', 'banana', 'dates', 'fig', 'grapes']
+
+# Assignments
+
+1) 
+my_days = ['yesterday','today','tomorrow','dayafter']
+
+task1: my output
+yesterday  9
+today      5
+tomorrow   8
+dayafter   8
+
+In [52]: my_days = ['yesterday','today','tomorrow','dayafter']
+
+In [53]: for value in my_days:
+   ....:     print value,len(value)
+   ....:     
+yesterday 9
+today 5
+tomorrow 8
+dayafter 8
+
+In [54]: print len(my_days)
+4
+
+task2:my output
+Yesterday
+TOday
+TOMorrow
+DAYAfter
+
+
+In [55]: for value in my_days:
+   ....:     print value,my_days.index(value)
+   ....:     
+yesterday 0
+today 1
+tomorrow 2
+dayafter 3
+
+In [56]: for value in my_days:
+    print value,my_days.index(value),value[my_days.index(value)]
+   ....:     
+yesterday 0 y
+today 1 o
+tomorrow 2 m
+dayafter 3 a
+
+In [57]: for value in my_days:
+    print value,value[my_days.index(value)]
+   ....:     
+yesterday y
+today o
+tomorrow m
+dayafter a
+
+In [58]: for value in my_days:
+    print value,value[my_days.index(value)],value[0:my_days.index(value)]
+   ....:     
+yesterday y 
+today o t
+tomorrow m to
+dayafter a day
+
+In [59]: for value in my_days:
+    print value,my_days.index(value),value[my_days.index(value)],value[0:my_days.index(value)]
+   ....:     
+yesterday 0 y 
+today 1 o t
+tomorrow 2 m to
+dayafter 3 a day
+
+In [60]: for value in my_days:
+    print value,my_days.index(value),value[0:my_days.index(value)]
+   ....:     
+yesterday 0 
+today 1 t
+tomorrow 2 to
+dayafter 3 day
+
+In [61]: for value in my_days:
+    print value,my_days.index(value),value[0:my_days.index(value) + 1]
+   ....:     
+yesterday 0 y
+today 1 to
+tomorrow 2 tom
+dayafter 3 daya
+
+In [62]: for value in my_days:
+    print value[0:my_days.index(value) + 1]
+   ....:     
+y
+to
+tom
+daya
+
+In [63]: my_string="python"
+
+In [64]: print my_string[0:3]
+pyt
+
+In [65]: print my_string[:3]
+pyt
+
+In [66]: print my_string[3:]
+hon
+
+In [67]: print my_string[3:] + my_string[:3]
+honpyt
+
+In [68]: print my_string[:3] + my_string[3:]
+python
+
+In [69]: 
+
+In [69]: for value in my_days:
+    print value[:my_days.index(value) + 1] + value[my_days.index(value) + 1:]
+   ....:     
+yesterday
+today
+tomorrow
+dayafter
+
+In [70]: for value in my_days:
+    print value[:my_days.index(value) + 1].upper() + value[my_days.index(value) + 1:]
+   ....:     
+Yesterday
+TOday
+TOMorrow
+DAYAfter
+
+In [72]: my_fruits = ['apple','apple','banana','banana','cherry']
+
+In [73]: # output
+
+In [74]: # my_fruits = ['apple','banana','cherry']
+
+In [75]: # my_dupli = ['apple','banana']
+
+
+
+In [76]: my_dupli=[]
+
+In [77]: for value in my_fruits:
+    if my_fruits.count(value) > 1:
+        my_dupli.append(value)
+        my_fruits.remove(value)
+
+
+In [78]: my_dupli
+Out[78]: ['apple', 'banana']
+
+In [79]: my_fruits
+Out[79]: ['apple', 'banana', 'cherry']
+
+
+## tasks
+https://github.com/sambapython/python
+https://github.com/sambapython/python/blob/master/assignments.txt
+https://github.com/sambapython/python/blob/master/assignments%20(1).txt%7E
+https://projecteuler.net/archives
+https://www.edx.org/course?search_query=python
+
+# day3
+- convertion of string to list and vice-versa
+- aliases
+- list comprehension
+
