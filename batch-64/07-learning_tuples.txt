@@ -1,0 +1,218 @@
+# what is tuples? Read only lists.
+
+n [1]: my_gender = ('male','female')
+
+In [2]: print my_gender
+('male', 'female')
+
+In [3]: print type(my_gender)
+<type 'tuple'>
+
+In [4]: my_empty = tuple()
+
+In [5]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [6]: my_empty = ()
+
+In [7]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [8]: my_string = "python"
+
+In [9]: print my_string,type(my_string)
+python <type 'str'>
+
+In [10]: my_string = ("python")
+
+In [11]: print my_string,type(my_string)
+python <type 'str'>
+
+In [12]: my_string = ("python",)
+
+In [13]: print my_string,type(my_string)
+('python',) <type 'tuple'>
+
+In [14]: my_string="python","django","puppet","shell"
+
+In [15]: print my_string,type(my_string)
+('python', 'django', 'puppet', 'shell') <type 'tuple'>
+
+In [17]: # indexing,slicing
+
+In [18]: my_gender
+Out[18]: ('male', 'female')
+
+In [19]: my_gender[0]
+Out[19]: 'male'
+
+In [20]: my_gender[0]="Male"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-20-83d0c3afc23c> in <module>()
+----> 1 my_gender[0]="Male"
+
+TypeError: 'tuple' object does not support item assignment
+
+In [21]: 
+
+
+In [22]: # packing and unpacking
+
+In [23]: my_fruits = ("apple","banana","grapes","cherry")
+
+In [24]: # any object - list or a tuple - packing
+
+In [25]: a,b,c,d = my_fruits
+
+In [26]: print a
+apple
+
+In [27]: print b
+banana
+
+In [28]: print c
+grapes
+
+In [29]: print d
+cherry
+
+In [30]: a,b,c = my_fruits
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-30-1459223ec3ba> in <module>()
+----> 1 a,b,c = my_fruits
+
+ValueError: too many values to unpack
+
+In [31]: a,b,c,e,f = my_fruits
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-31-17c8075e5774> in <module>()
+----> 1 a,b,c,e,f = my_fruits
+
+ValueError: need more than 4 values to unpack
+
+In [33]: # tuples and lists
+
+In [34]: my_students = ['ujwal','vinay','sai','san','asish']
+
+In [35]: my_subjects = ['python','django','devops','flask','kubernates']
+
+In [36]: name="sai"
+
+In [37]: 'sai' in my_students
+Out[37]: True
+
+In [38]: print my_students.index(name)
+2
+
+In [39]: print my_subjects[my_students.index(name)]
+devops
+
+In [40]: if name in my_students:
+   ....:     print "{} is going to give exam - {}".format(name,my_subjects[my_students.index(name)])
+   ....:     
+sai is going to give exam - devops
+
+In [41]: name="asish"
+
+In [42]: if name in my_students:
+    print "{} is going to give exam - {}".format(name,my_subjects[my_students.index(name)])
+   ....:     
+asish is going to give exam - kubernates
+
+In [43]: # anti-climax - principle
+
+In [44]: my_students.sort()
+
+In [45]: print my_students
+['asish', 'sai', 'san', 'ujwal', 'vinay']
+
+In [46]: name="asish"
+
+In [47]: if name in my_students:
+    print "{} is going to give exam - {}".format(name,my_subjects[my_students.index(name)])
+   ....:     
+asish is going to give exam - python
+
+In [48]: name="sai"
+
+In [49]: if name in my_students:
+    print "{} is going to give exam - {}".format(name,my_subjects[my_students.index(name)])
+   ....:     
+sai is going to give exam - django
+
+In [54]: # list and tuples
+
+In [55]: my_exams = [('ujwal','python'),('vinay','django'),('sai','devops'),('san','flask'),('asish','kubernates')]
+
+In [56]: for value in my_exams:
+   ....:     print value
+   ....:     
+('ujwal', 'python')
+('vinay', 'django')
+('sai', 'devops')
+('san', 'flask')
+('asish', 'kubernates')
+
+In [57]: for student,subject in my_exams:
+   ....:     if name == student:
+   ....:         print "{} is going to give exam - {}".format(student,subject)
+   ....:         
+sai is going to give exam - devops
+
+In [58]: name="vinay"
+
+In [59]: for student,subject in my_exams:
+    if name == student:
+        print "{} is going to give exam - {}".format(student,subject)
+   ....:         
+vinay is going to give exam - django
+
+In [60]: my_exams.sort()
+
+In [61]: for student,subject in my_exams:
+    if name == student:
+        print "{} is going to give exam - {}".format(student,subject)
+   ....:         
+vinay is going to give exam - django
+
+In [62]: print my_exams
+[('asish', 'kubernates'), ('sai', 'devops'), ('san', 'flask'), ('ujwal', 'python'), ('vinay', 'django')]
+
+In [64]: print my_exams
+[('asish', 'kubernates'), ('sai', 'devops'), ('san', 'flask'), ('ujwal', 'python'), ('vinay', 'django')]
+
+In [65]: my_exams[0]
+Out[65]: ('asish', 'kubernates')
+
+In [66]: my_exams[0][1] = "dockers"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-66-182899f4b043> in <module>()
+----> 1 my_exams[0][1] = "dockers"
+
+TypeError: 'tuple' object does not support item assignment
+
+In [67]: my_exams[0]=("asish","dockers")
+
+In [68]: print my_exams
+[('asish', 'dockers'), ('sai', 'devops'), ('san', 'flask'), ('ujwal', 'python'), ('vinay', 'django')]
+
+In [69]: my_gender.
+my_gender.count  my_gender.index  
+
+In [69]: my_gender.count?
+Type:        builtin_function_or_method
+String form: <built-in method count of tuple object at 0x7f5704ee6f80>
+Docstring:   T.count(value) -> integer -- return number of occurrences of value
+
+In [70]: my_gender.index?
+Type:        builtin_function_or_method
+String form: <built-in method index of tuple object at 0x7f5704ee6f80>
+Docstring:
+T.index(value, [start, [stop]]) -> integer -- return first index of value.
+Raises ValueError if the value is not present.
+
+In [71]: 

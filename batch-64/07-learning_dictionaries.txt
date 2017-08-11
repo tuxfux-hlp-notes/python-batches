@@ -1,0 +1,75 @@
+# Dictionaries
+# dict,hashes,hash
+# key => values pair
+ex: ssn,adhar,rollnumber,employee id
+
+In [73]: # dictionaries
+
+In [74]: my_exams = [('ujwal','python'),('vinay','django'),('sai','devops'),('san','flask'),('asish','kubernates')]
+
+In [75]: my_Dexams = {'ujwal':'python','vinay':'django','sai':'devops','san':'flask','asish':'kubernates'}
+
+In [76]: print my_Dexams,type(my_Dexams)
+{'vinay': 'django', 'ujwal': 'python', 'sai': 'devops', 'asish': 'kubernates', 'san': 'flask'} <type 'dict'>
+
+In [77]: print my_Dexams['vinay']
+django
+
+In [78]: print my_Dexams['asish']
+kubernates
+
+
+In [80]: # keys in dictionaries are unique
+
+In [81]: print my_Dexams
+{'vinay': 'django', 'ujwal': 'python', 'sai': 'devops', 'asish': 'kubernates', 'san': 'flask'}
+
+In [82]: my_Dexams['kumar']='puppet'
+
+In [83]: print my_Dexams
+{'kumar': 'puppet', 'ujwal': 'python', 'asish': 'kubernates', 'sai': 'devops', 'vinay': 'django', 'san': 'flask'}
+
+In [84]: my_Dexams['asish']='dockers'
+
+In [85]: print my_Dexams
+{'kumar': 'puppet', 'ujwal': 'python', 'asish': 'dockers', 'sai': 'devops', 'vinay': 'django', 'san': 'flask'}
+
+In [86]: my_Dexams['asish']=['dockers','kubernates']
+
+In [87]: print my_Dexams
+{'kumar': 'puppet', 'ujwal': 'python', 'asish': ['dockers', 'kubernates'], 'sai': 'devops', 'vinay': 'django', 'san': 'flask'}
+
+In [89]: # cheat sheet
+
+In [90]: # lists -> ['apple','orange'],list(),[]
+
+In [91]: # tuples -> ('apple','orange'),tuple(),()
+
+In [92]: # dict -> {'a':'apple','b':'banana'},dict(),{}
+
+# in operations
+
+In [94]: # in opertor
+
+In [95]: my_fruits = ("apple","banana","grapes","cherry")
+
+In [96]: 'apple' in my_fruits
+Out[96]: True
+
+In [97]: my_Dexams
+Out[97]: 
+{'asish': ['dockers', 'kubernates'],
+ 'kumar': 'puppet',
+ 'sai': 'devops',
+ 'san': 'flask',
+ 'ujwal': 'python',
+ 'vinay': 'django'}
+
+In [98]: 'vinay' in my_Dexams
+Out[98]: True
+
+In [99]: 'django' in my_Dexams
+Out[99]: False
+
+In [100]: # in operator only works on keys for dictionaries.
+
