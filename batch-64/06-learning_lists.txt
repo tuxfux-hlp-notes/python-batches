@@ -432,6 +432,378 @@ https://www.edx.org/course?search_query=python
 
 # day3
 - convertion of string to list and vice-versa
+
+In [1]: my_string="python"
+
+In [2]: # converting a string to a list
+
+In [3]: Lmy_string = list(my_string)
+
+In [4]: print Lmy_string
+['p', 'y', 't', 'h', 'o', 'n']
+
+In [5]: Lmy_string[0]="T"
+
+In [6]: print Lmy_string
+['T', 'y', 't', 'h', 'o', 'n']
+
+In [7]: # converting a list back to a string
+
+In [8]: delimiter=""
+
+In [9]: delimiter.join?
+Type:        builtin_function_or_method
+String form: <built-in method join of str object at 0x7f876f7b8508>
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+
+In [10]: delimiter.join(Lmy_string)
+Out[10]: 'Tython'
+
+In [11]: new_string=delimiter.join(Lmy_string)
+
+In [12]: print my_string
+python
+
+In [13]: print new_string
+Tython
+
+In [15]: my_sentence="today is thursday"
+
+In [16]: # list() function on a sentence
+
+In [17]: Lmy_sentence = list(my_sentence)
+
+In [18]: print Lmy_sentence
+['t', 'o', 'd', 'a', 'y', ' ', 'i', 's', ' ', 't', 'h', 'u', 'r', 's', 'd', 'a', 'y']
+
+In [19]: # converting a sentence to a series of words
+
+In [20]: my_sentence.split?
+Type:        builtin_function_or_method
+String form: <built-in method split of str object at 0x7f876d10db58>
+Docstring:
+S.split([sep [,maxsplit]]) -> list of strings
+
+Return a list of the words in the string S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are removed
+from the result.
+
+In [21]: my_sentence.split()
+Out[21]: ['today', 'is', 'thursday']
+
+In [22]: Lmy_sentence=my_sentence.split()
+
+In [23]: print Lmy_sentence
+['today', 'is', 'thursday']
+
+In [24]: Lmy_sentence[-1] = "wednesday
+  File "<ipython-input-24-e86e7b9f18b0>", line 1
+    Lmy_sentence[-1] = "wednesday
+                                ^
+SyntaxError: EOL while scanning string literal
+
+
+In [25]: Lmy_sentence[-1] = "wednesday"
+
+In [26]: print Lmy_sentence
+['today', 'is', 'wednesday']
+
+In [27]: # convert our string to a list
+
+In [29]: limiter=" "
+
+In [30]: limiter.join(Lmy_sentence)
+Out[30]: 'today is wednesday'
+
+In [31]: my_sentence=limiter.join(Lmy_sentence)
+
+In [32]: print my_sentence
+today is wednesday
+
 - aliases
+
+In [40]: # variables
+
+In [41]: a = 1
+
+In [42]: 
+
+In [42]: 
+
+In [42]: id?
+Type:        builtin_function_or_method
+String form: <built-in function id>
+Namespace:   Python builtin
+Docstring:
+id(object) -> integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it's the object's memory address.)
+
+In [43]: id(1)
+Out[43]: 94443446276440
+
+In [44]: id(a)
+Out[44]: 94443446276440
+
+In [45]: b = 1
+
+In [46]: id(b)
+Out[46]: 94443446276440
+
+In [47]: b = 10
+
+In [48]: print a,b
+1 10
+
+In [49]: id(a),id(b),id(1),id(10)
+Out[49]: (94443446276440, 94443446276224, 94443446276440, 94443446276224)
+
+In [50]: # is operator
+
+In [51]: c = 1
+
+In [52]: a is b
+Out[52]: False
+
+In [53]: a is c
+Out[53]: True
+
+In [54]: id(a)
+Out[54]: 94443446276440
+
+In [55]: id(c)
+Out[55]: 94443446276440
+
+In [57]: # in operator on lists
+
+In [58]: my_fruits = ['apple','banana','cherry','dates']
+
+In [59]: print my_fruits
+['apple', 'banana', 'cherry', 'dates']
+
+In [60]: 'apple' in my_fruits
+Out[60]: True
+
+In [61]: 'Apple' in my_fruits
+Out[61]: False
+
+In [62]: # in works on objects
+
+In [63]: # is works on memory values
+
+In [64]: 'apple' is my_fruits
+Out[64]: False
+
+In [65]: 'Apple' is my_fruits
+Out[65]: False
+
+In [67]: # lists
+
+In [68]: a = [1,2,3]
+
+In [69]: id(a)
+Out[69]: 140219627160640
+
+####
+# soft copy,deep copy,shallow copy
+###
+
+
+In [70]: # soft copy
+
+In [71]: a = b
+
+In [72]: a = [1,2,3]
+
+In [73]: b = a
+
+In [74]: print a,b
+[1, 2, 3] [1, 2, 3]
+
+In [75]: print id(a),id(b)
+140219627159776 140219627159776
+
+In [76]: a is b
+Out[76]: True
+
+In [77]: a[1]
+Out[77]: 2
+
+In [78]: a[1]="two"
+
+In [79]: print a
+[1, 'two', 3]
+
+In [80]: print b
+[1, 'two', 3]
+
+In [81]: # soft copy - two objects refer to similar memory blocks
+
+In [82]: b = ["22","33","44"]
+
+In [83]: print a,id(a),b,id(b)
+[1, 'two', 3] 140219627159776 ['22', '33', '44'] 140219627159992
+
+In [85]: # deep copy
+
+In [86]: a = ["one","two","three"]
+
+In [87]: id(a)
+Out[87]: 140219627028352
+
+In [88]: # deep copy can be created in two ways
+
+In [89]: b = a[:]
+
+In [90]: print b,id(b),a,id(a)
+['one', 'two', 'three'] 140219628196064 ['one', 'two', 'three'] 140219627028352
+
+In [91]: import copy
+
+In [92]: c = copy.deepcopy(a)
+
+In [93]: print c,id(c),a,id(a)
+['one', 'two', 'three'] 140219593342128 ['one', 'two', 'three'] 140219627028352
+
+In [94]: # query - ashish
+
+In [95]: f = [1,2,3]
+
+In [96]: g = [1,2,3]
+
+In [97]: print f,g
+[1, 2, 3] [1, 2, 3]
+
+In [98]: f is g
+Out[98]: False
+
+In [99]: id(f),id(g)
+Out[99]: (140219593342272, 140219593367704)
+
+In [100]: 
+
+
+# python oneliners
+https://wiki.python.org/moin/Powerful%20Python%20One-Liners
+http://book.pythontips.com/en/latest/one_liners.html
+
+
 - list comprehension
+
+https://github.com/tuxfux-hlp/Python-examples/blob/master/lists/list_comprehension.txt
+a) why list comprehension
+b) when to use?
+c) where to use?
+
+example 1 - normal way
+In [101]: my_string="1,2,3,4,5,6,7,8,9,10"
+
+In [102]: # my_even="2,4,6,8,10"
+
+In [103]: # []
+
+In [104]: print my_string
+1,2,3,4,5,6,7,8,9,10
+
+In [105]: Lmy_string=my_string.split(',')
+
+In [106]: print Lmy_string
+['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [107]: for value in Lmy_stringP
+  File "<ipython-input-107-1214e493faea>", line 1
+    for value in Lmy_stringP
+                            ^
+SyntaxError: invalid syntax
+
+
+In [108]: my_even=[]
+
+In [109]: for value in Lmy_string:
+   .....:     if int(value) % 2 == 0:
+   .....:         my_even.append(value)
+   .....:         
+
+In [110]: print my_even
+['2', '4', '6', '8', '10']
+
+In [111]: limiter=","
+
+In [112]: limiter.join(my_even)
+Out[112]: '2,4,6,8,10'
+
+In [113]: my_new=limiter.join(my_even)
+
+In [114]: print my_new
+2,4,6,8,10
+
+example1: list comprehesions
+
+In [116]: [ value for value in my_string.split(',') ]
+Out[116]: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [117]: [ value for value in my_string.split(',') if int(value) % 2 == 0]
+Out[117]: ['2', '4', '6', '8', '10']
+
+In [118]: ','.join([ value for value in my_string.split(',') if int(value) % 2 == 0])
+Out[118]: '2,4,6,8,10'
+
+In [119]: # [ <print> <loops> <conditional blocks>]
+
+In [120]: 
+
+In [121]: my_string = "today is wednesday"
+
+In [122]: 
+
+In [122]: [ value for value in my_string.split() ]
+Out[122]: ['today', 'is', 'wednesday']
+
+In [123]: [ [value.capitalize(),value.lower(),value.upper()] for value in my_string.split() ]
+Out[123]: 
+[['Today', 'today', 'TODAY'],
+ ['Is', 'is', 'IS'],
+ ['Wednesday', 'wednesday', 'WEDNESDAY']]
+
+In [124]: [ {value.capitalize(),value.lower(),value.upper()) for value in my_string.split() ]
+  File "<ipython-input-124-4efe1312d507>", line 1
+    [ {value.capitalize(),value.lower(),value.upper()) for value in my_string.split() ]
+                                                     ^
+SyntaxError: invalid syntax
+
+
+In [125]: [ (value.capitalize(),value.lower(),value.upper()) for value in my_string.split() ]
+Out[125]: 
+[('Today', 'today', 'TODAY'),
+ ('Is', 'is', 'IS'),
+ ('Wednesday', 'wednesday', 'WEDNESDAY')]
+
+In [126]: [ {value.capitalize():[value.lower(),value.upper()]} for value in my_string.split() ]
+Out[126]: 
+[{'Today': ['today', 'TODAY']},
+ {'Is': ['is', 'IS']},
+ {'Wednesday': ['wednesday', 'WEDNESDAY']}]
+
+
+references:
+http://www.sanfoundry.com/python-questions-answers-list-comprehension/
+https://stackoverflow.com/questions/tagged/list-comprehension
+https://www.datacamp.com/community/tutorials/18-most-common-python-list-questions-learn-python#question9
+http://www.secnetix.de/olli/Python/list_comprehensions.hawk
+https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+http://www.python-course.eu/list_comprehension.php
+
+
+# todo
+
+delimiter,join
+tuples
+
 
