@@ -73,3 +73,579 @@ Out[99]: False
 
 In [100]: # in operator only works on keys for dictionaries.
 
+# functionality associated with dictionary.
+
+In [2]: my_string={"a":'apple',"b":'banana'}
+
+In [3]: print my_string
+{'a': 'apple', 'b': 'banana'}
+
+In [4]: print my_string,type(my_string)
+{'a': 'apple', 'b': 'banana'} <type 'dict'>
+
+In [5]: my_string={"a":'apple',"b":'banana','c':'cherry','d':'donut'}
+
+In [6]: print my_string,type(my_string)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut'} <type 'dict'>
+
+In [7]: my_string.
+my_string.clear       my_string.get         my_string.iteritems   my_string.keys        my_string.setdefault  my_string.viewitems
+my_string.copy        my_string.has_key     my_string.iterkeys    my_string.pop         my_string.update      my_string.viewkeys
+my_string.fromkeys    my_string.items       my_string.itervalues  my_string.popitem     my_string.values      my_string.viewvalues
+
+In [7]: # has_key
+
+In [8]: my_string.has_key('a')
+Out[8]: True
+
+In [9]: 'a' in my_string
+Out[9]: True
+
+In [10]: # get
+
+In [11]: my_string.get('a')
+Out[11]: 'apple'
+
+In [12]: my_string['a']
+Out[12]: 'apple'
+
+In [13]: # keys,iterkeys,viewkeys
+
+In [14]: my_string.keys?
+Type:        builtin_function_or_method
+String form: <built-in method keys of dict object at 0x7fc77116aa28>
+Docstring:   D.keys() -> list of D's keys
+
+In [15]: my_string.keys()
+Out[15]: ['a', 'c', 'b', 'd']
+
+In [16]: my_string.iterkeys?
+Type:        builtin_function_or_method
+String form: <built-in method iterkeys of dict object at 0x7fc77116aa28>
+Docstring:   D.iterkeys() -> an iterator over the keys of D
+
+In [17]: my_string.iterkeys()
+Out[17]: <dictionary-keyiterator at 0x7fc76f1c5c58>
+
+In [18]: for key in my_string.iterkeys():
+   ....:     print key
+   ....:     
+a
+c
+b
+d
+
+In [19]: my_string.viewkeys()
+Out[19]: dict_keys(['a', 'c', 'b', 'd'])
+
+In [20]: my_string.viewkeys?
+Type:        builtin_function_or_method
+String form: <built-in method viewkeys of dict object at 0x7fc77116aa28>
+Docstring:   D.viewkeys() -> a set-like object providing a view on D's keys
+
+In [21]: print my_string.viewkeys()
+dict_keys(['a', 'c', 'b', 'd'])
+
+In [22]: print type(my_string.keys())
+<type 'list'>
+
+In [23]: print type(my_string.viewkeys())
+<type 'dict_keys'>
+
+
+In [25]: my_string.
+my_string.clear       my_string.get         my_string.iteritems   my_string.keys        my_string.setdefault  my_string.viewitems
+my_string.copy        my_string.has_key     my_string.iterkeys    my_string.pop         my_string.update      my_string.viewkeys
+my_string.fromkeys    my_string.items       my_string.itervalues  my_string.popitem     my_string.values      my_string.viewvalues
+
+In [25]: # values,viewvalues,itervalues
+
+In [26]: my_string.values()
+Out[26]: ['apple', 'cherry', 'banana', 'donut']
+
+In [27]: my_string.values?
+Type:        builtin_function_or_method
+String form: <built-in method values of dict object at 0x7fc77116aa28>
+Docstring:   D.values() -> list of D's values
+
+In [28]: my_string.viewvalues?
+Type:        builtin_function_or_method
+String form: <built-in method viewvalues of dict object at 0x7fc77116aa28>
+Docstring:   D.viewvalues() -> an object providing a view on D's values
+
+In [29]: my_string.viewvalues()
+Out[29]: dict_values(['apple', 'cherry', 'banana', 'donut'])
+
+In [30]: my_string.itervalues?
+Type:        builtin_function_or_method
+String form: <built-in method itervalues of dict object at 0x7fc77116aa28>
+Docstring:   D.itervalues() -> an iterator over the values of D
+
+In [31]: my_string.itervalues()
+Out[31]: <dictionary-valueiterator at 0x7fc76f1d2730>
+
+In [32]: for value in my_string.itervalues():
+   ....:     print value
+   ....:     
+apple
+cherry
+banana
+donut
+
+In [37]: # items,iteritems,viewitems
+
+In [38]: print my_string
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut'}
+
+In [39]: print my_string.items()
+[('a', 'apple'), ('c', 'cherry'), ('b', 'banana'), ('d', 'donut')]
+
+In [40]: print my_string.items?
+Type:        builtin_function_or_method
+String form: <built-in method items of dict object at 0x7fc77116aa28>
+Docstring:   D.items() -> list of D's (key, value) pairs, as 2-tuples
+
+In [41]: my_string.iteritems?
+Type:        builtin_function_or_method
+String form: <built-in method iteritems of dict object at 0x7fc77116aa28>
+Docstring:   D.iteritems() -> an iterator over the (key, value) items of D
+
+In [42]:  my_string.iteritems()
+Out[42]: <dictionary-itemiterator at 0x7fc76f18ccb0>
+
+In [43]: for item in  my_string.iteritems():
+   ....:     print item
+   ....:     
+('a', 'apple')
+('c', 'cherry')
+('b', 'banana')
+('d', 'donut')
+
+In [44]: my_string.viewitems?
+Type:        builtin_function_or_method
+String form: <built-in method viewitems of dict object at 0x7fc77116aa28>
+Docstring:   D.viewitems() -> a set-like object providing a view on D's items
+
+In [45]: my_string.viewitems()
+Out[45]: dict_items([('a', 'apple'), ('c', 'cherry'), ('b', 'banana'), ('d', 'donut')])
+
+In [46]: 
+
+In [47]: my_string.
+my_string.clear       my_string.get         my_string.iteritems   my_string.keys        my_string.setdefault  my_string.viewitems
+my_string.copy        my_string.has_key     my_string.iterkeys    my_string.pop         my_string.update      my_string.viewkeys
+my_string.fromkeys    my_string.items       my_string.itervalues  my_string.popitem     my_string.values      my_string.viewvalues
+
+In [47]: # my_string.update
+
+In [48]: my_string.update?
+Type:        builtin_function_or_method
+String form: <built-in method update of dict object at 0x7fc77116aa28>
+Docstring:
+D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]
+
+In [49]: my_string.update({'g':'guava','j':'jackfruit'})
+
+In [50]: print my_string
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'j': 'jackfruit'}
+
+In [51]: # my_string.setdefault
+
+In [52]: my_string.setdefault?
+Type:        builtin_function_or_method
+String form: <built-in method setdefault of dict object at 0x7fc77116aa28>
+Docstring:   D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+
+In [53]: print my_string.setdefault('a')
+apple
+
+In [54]: print my_string.setdefault('k')
+None
+
+In [55]: print my_string.setdefault('k','kiwi')
+None
+
+In [56]: 'k' in my_string
+Out[56]: True
+
+In [57]: print my_string
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit'}
+
+In [58]: print my_string.setdefault('k','kiwi')
+None
+
+In [59]: print my_string
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit'}
+
+In [60]: my_string.setdefault('l','leechi')
+Out[60]: 'leechi'
+
+In [61]: print my_string
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'}
+
+In [62]: my_string['m']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-62-3a6e5c0fbb66> in <module>()
+----> 1 my_string['m']
+
+KeyError: 'm'
+
+n [63]: print type(None)
+<type 'NoneType'>
+
+In [64]: print type('None')
+<type 'str'>
+
+In [65]: 
+
+
+In [66]: my_string.fromkeys?
+Type:        builtin_function_or_method
+String form: <built-in method fromkeys of type object at 0x5581d27995c0>
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+
+In [67]: my_string
+Out[67]: 
+{'a': 'apple',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'donut',
+ 'g': 'guava',
+ 'j': 'jackfruit',
+ 'k': None,
+ 'l': 'leechi'}
+
+
+In [71]: my_string.fromkeys(my_string,'alphabetes')
+Out[71]: 
+{'a': 'alphabetes',
+ 'b': 'alphabetes',
+ 'c': 'alphabetes',
+ 'd': 'alphabetes',
+ 'g': 'alphabetes',
+ 'j': 'alphabetes',
+ 'k': 'alphabetes',
+ 'l': 'alphabetes'}
+
+In [72]: alpha= my_string.fromkeys(my_string,'alphabetes')
+
+In [73]: print alpha
+{'a': 'alphabetes', 'c': 'alphabetes', 'b': 'alphabetes', 'd': 'alphabetes', 'g': 'alphabetes', 'k': 'alphabetes', 'j': 'alphabetes', 'l': 'alphabetes'}
+
+In [74]: print my_string
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'}
+
+
+In [80]: # my_string.copy 
+
+In [81]: # shallow copy
+
+In [82]: # soft copy,deep copy,shallow copy
+
+In [83]: a = [1,2,3]
+
+In [84]: b = [4,5,6]
+
+In [85]: c = [7,8,9]
+
+In [86]: print id(a),id(b),id(c)
+140494573068088 140494539220104 140494574153600
+
+In [87]: Cc = [a,b]
+
+In [88]: print Cc,id(Cc)
+[[1, 2, 3], [4, 5, 6]] 140494539220032
+
+In [89]: # soft copy
+
+In [90]: Soc = Cc
+
+In [91]: print Soc,Cc,id(Soc),id(Cc)
+[[1, 2, 3], [4, 5, 6]] [[1, 2, 3], [4, 5, 6]] 140494539220032 140494539220032
+
+In [92]: Soc is Cc
+Out[92]: True
+
+In [93]: print id(Cc[0]),id(Cc[1]),id(Cc[2]),id(Soc[0]),id(Soc[1]),id(Soc[2])
+140494573068088 140494539220104---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-93-606efe14ddad> in <module>()
+----> 1 print id(Cc[0]),id(Cc[1]),id(Cc[2]),id(Soc[0]),id(Soc[1]),id(Soc[2])
+
+IndexError: list index out of range
+
+In [94]: print id(Cc[0]),id(Cc[1]),id(Soc[0]),id(Soc[1])
+140494573068088 140494539220104 140494573068088 140494539220104
+
+In [96]: a
+Out[96]: [1, 2, 3]
+
+In [97]: b
+Out[97]: [4, 5, 6]
+
+In [98]: print id(a),id(b)
+140494573068088 140494539220104
+
+In [99]: import copy
+
+In [100]: Doc = copy.deepcopy(Cc)
+
+In [101]: print Cc,id(Cc),id(Cc[0]),id(Cc[1])
+[[1, 2, 3], [4, 5, 6]] 140494539220032 140494573068088 140494539220104
+
+In [102]: print Doc,id(Doc),id(Doc[0]),id(Doc[1])
+[[1, 2, 3], [4, 5, 6]] 140494575399856 140494539232464 140494539222624
+
+In [103]: # shallow copy
+
+In [104]: import copy
+
+In [105]: copy.copy?
+Type:        function
+String form: <function copy at 0x7fc7724e07d0>
+File:        /usr/lib/python2.7/copy.py
+Definition:  copy.copy(x)
+Docstring:
+Shallow copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+
+In [106]: Soc = copy.copy(Cc)
+
+In [107]: print Cc,id(Cc),id(Cc[0]),id(Cc[1])
+[[1, 2, 3], [4, 5, 6]] 140494539220032 140494573068088 140494539220104
+
+In [108]: print Soc,id(Soc),id(Soc[0]),id(Soc[1])
+[[1, 2, 3], [4, 5, 6]] 140494539233760 140494573068088 140494539220104
+
+In [109]: # soft copy - both the new object and internal object all share similar memory blocks
+
+In [110]: # deep copy - both the new object and the internal object all have different memory blocks.
+
+In [111]: # shallow copy - the new object will have a new memory location , but the internal objects will still share the same memory blocks.
+
+
+website:
+
+1st page - [course] [fee]   -> new object
+2nd page - [course] [time]  -> new object
+
+## Reference:
+
+http://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/
+http://www.python-course.eu/deep_copy.php
+https://docs.python.org/2/library/copy.html
+
+
+In [113]: my_string
+Out[113]: 
+{'a': 'apple',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'donut',
+ 'g': 'guava',
+ 'j': 'jackfruit',
+ 'k': None,
+ 'l': 'leechi'}
+
+In [114]: print my_string,id(my_string),type(my_string)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'} 140494572530216 <type 'dict'>
+
+In [115]: my_Dstring=my_string.copy()
+
+In [116]: print my_Dstring,id(my_Dstring),type(my_Dstring)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'} 140494539230856 <type 'dict'>
+
+In [117]: # clear
+
+In [118]: my_string[a]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-118-7b66fb5c96ac> in <module>()
+----> 1 my_string[a]
+
+TypeError: unhashable type: 'list'
+
+In [119]: my_string['a']
+Out[119]: 'apple'
+
+In [120]: my_Dstring['a']
+Out[120]: 'apple'
+
+In [121]: my_string['a']='Apricot'
+
+In [122]: my_Dstring
+Out[122]: 
+{'a': 'apple',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'donut',
+ 'g': 'guava',
+ 'j': 'jackfruit',
+ 'k': None,
+ 'l': 'leechi'}
+
+In [123]: print my_string
+{'a': 'Apricot', 'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'}
+
+In [124]: print id(my_string['b'])
+140494573191840
+
+In [125]: print id(my_Dstring['b'])
+140494573191840
+
+In [126]: id(my_Dstring['b']) is id(my_string['b'])
+Out[126]: False
+
+In [127]: my_Dstring['b'] is my_string['b']
+Out[127]: True
+
+In [128]: print Cc
+[[1, 2, 3], [4, 5, 6]]
+
+In [129]: print Soc
+[[1, 2, 3], [4, 5, 6]]
+
+In [130]: a
+Out[130]: [1, 2, 3]
+
+In [131]: b
+Out[131]: [4, 5, 6]
+
+In [132]: print id(a),id(Cc[0]),id(Soc[0])
+140494573068088 140494573068088 140494573068088
+
+In [133]: a[0]="one"
+
+In [134]: print a
+['one', 2, 3]
+
+In [135]: print Cc
+[['one', 2, 3], [4, 5, 6]]
+
+In [136]: print Soc
+[['one', 2, 3], [4, 5, 6]]
+
+### dictionaries work on complext objects better than normal object ###
+
+In [138]: a
+Out[138]: ['one', 2, 3]
+
+In [139]: b
+Out[139]: [4, 5, 6]
+
+In [140]: Dc = {'a':a,'b':b}
+
+In [141]: Sc = Dc.copy()
+
+In [142]: print Dc
+{'a': ['one', 2, 3], 'b': [4, 5, 6]}
+
+In [143]: print Sc
+{'a': ['one', 2, 3], 'b': [4, 5, 6]}
+
+In [144]: a[0]=1
+
+In [145]: print a
+[1, 2, 3]
+
+In [146]: print b
+[4, 5, 6]
+
+In [147]: print Dc
+{'a': [1, 2, 3], 'b': [4, 5, 6]}
+
+In [148]: print Sc
+{'a': [1, 2, 3], 'b': [4, 5, 6]}
+
+In [149]: 
+
+
+In [150]: # popitem,pop,clear
+
+In [151]: my_string
+Out[151]: 
+{'a': 'Apricot',
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'donut',
+ 'g': 'guava',
+ 'j': 'jackfruit',
+ 'k': None,
+ 'l': 'leechi'}
+
+In [152]: # pop
+
+In [153]: my_string.pop?
+Type:        builtin_function_or_method
+String form: <built-in method pop of dict object at 0x7fc77116aa28>
+Docstring:
+D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised
+
+In [154]: my_string.pop('a')
+Out[154]: 'Apricot'
+
+In [155]: print my_String
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-155-4a92c653e665> in <module>()
+----> 1 print my_String
+
+NameError: name 'my_String' is not defined
+
+In [156]: print my_string
+{'c': 'cherry', 'b': 'banana', 'd': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'}
+
+In [157]: my_string.pop('a')
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-157-640fd27bf9ce> in <module>()
+----> 1 my_string.pop('a')
+
+KeyError: 'a'
+
+In [158]: # del
+
+In [159]: # popitem
+
+In [160]: my_string.popitem?
+Type:        builtin_function_or_method
+String form: <built-in method popitem of dict object at 0x7fc77116aa28>
+Docstring:
+D.popitem() -> (k, v), remove and return some (key, value) pair as a
+2-tuple; but raise KeyError if D is empty.
+
+In [161]: my_string.popitem()
+Out[161]: ('c', 'cherry')
+
+In [162]: my_string.popitem()
+Out[162]: ('b', 'banana')
+
+In [163]: print my_string
+{'d': 'donut', 'g': 'guava', 'k': None, 'j': 'jackfruit', 'l': 'leechi'}
+
+In [164]: # clear
+
+In [165]: my_string.clear?
+Type:        builtin_function_or_method
+String form: <built-in method clear of dict object at 0x7fc77116aa28>
+Docstring:   D.clear() -> None.  Remove all items from D.
+
+In [166]: my_string.clear()
+
+In [167]: print my_string
+{}
+
+
+
+
+
+
+
