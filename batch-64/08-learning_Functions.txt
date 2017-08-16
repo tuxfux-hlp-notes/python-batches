@@ -1,0 +1,378 @@
+Functions - A block of code which you can use multiple times.
+
+In [1]: # function
+
+In [2]: def my_func():
+   ...:     print "hello world"
+   ...:     
+
+In [3]: print type(my_func),my_func
+<type 'function'> <function my_func at 0x7f8f83b32d70>
+
+In [4]: print my_func()
+hello world
+None
+
+In [5]: # every function has a return value
+
+In [6]: # if you dont provide a value.. you get return value as None.
+
+In [7]: # if you provide a return value,you get the return value
+
+In [8]: def my_func():
+    return "hello world"
+   ...: 
+
+In [9]: print my_func()
+hello world
+
+In [10]: # return is not a print statement
+
+In [11]: # return marks the end of the functions.
+
+In [12]: def my_func():
+   ....:     return "hello world"
+   ....:     print "line1"
+   ....:     print "line2"
+   ....:     print "line3"
+   ....: 
+
+In [13]: print my_func()
+hello world
+
+In [14]: # how many times we can use a return in our function
+
+a) 
+
+In [15]: # A program with two function with similar names will only load the latest function.
+
+In [16]: # you have to define the function at first and then call it
+
+In [16]: # you have to define the function at first and then call it
+
+In [17]: clear
+
+
+In [18]: # namespaces/variables
+
+In [19]: # variables/namespaces are basically local/global namespaces
+
+In [20]: # local variables
+
+In [21]: def my_new():
+   ....:     a = 10
+   ....:     return a
+   ....: 
+
+In [22]: print my_new()
+10
+
+In [23]: print a
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-23-9d7b17ad5387> in <module>()
+----> 1 print a
+
+NameError: name 'a' is not defined
+
+In [24]: print my_new,type(my_new)
+<function my_new at 0x7f8f83b32e60> <type 'function'>
+
+In [25]: my_new
+Out[25]: <function __main__.my_new>
+
+In [26]: # __main__ is called magic method
+
+In [27]: def my_new():
+   ....:     print locals()
+   ....:     return a
+   ....: 
+
+In [28]: print my_new()
+{}
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-28-50ddc713bacd> in <module>()
+----> 1 print my_new()
+
+<ipython-input-27-47dbb050b46d> in my_new()
+      1 def my_new():
+      2     print locals()
+----> 3     return a
+      4 
+
+NameError: global name 'a' is not defined
+
+In [29]: def my_new():
+   ....:     a = 10
+   ....:     print locals()
+   ....:     return a
+   ....: 
+
+In [30]: print my_new()
+{'a': 10}
+10
+
+In [6]: globals()
+Out[6]: 
+{'In': ['',
+  u'def my_new():\n    a = 10\n    print locals()\n    return a',
+  u'print my_new()',
+  u'# globals',
+  u'globals()',
+  u'a = 100',
+  u'globals()'],
+ 'Out': {4: {...}},
+ '_': {...},
+ '_4': {...},
+ '__': '',
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-64'],
+ '_i': u'a = 100',
+ '_i1': u'def my_new():\n    a = 10\n    print locals()\n    return a',
+ '_i2': u'print my_new()',
+ '_i3': u'# globals',
+ '_i4': u'globals()',
+ '_i5': u'a = 100',
+ '_i6': u'globals()',
+ '_ih': ['',
+  u'def my_new():\n    a = 10\n    print locals()\n    return a',
+  u'print my_new()',
+  u'# globals',
+  u'globals()',
+  u'a = 100',
+  u'globals()'],
+ '_ii': u'globals()',
+ '_iii': u'# globals',
+ '_oh': {4: {...}},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'a': 100,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7ffa411c8390>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7ffa41b0e850>>,
+ 'my_new': <function __main__.my_new>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7ffa411c8390>}
+
+In [7]: print my_new()
+{'a': 10}
+10
+
+In [8]: print a
+100
+
+In [10]: # locals() give us the local scope/namespace
+
+In [11]: # globals() give us the global scope/namespace
+
+In [12]: # inside a function the local variables are given higher priority than global variables.
+
+In [13]: # lifetime of variables inside a function are during the runtime of the function.
+
+In [10]: # locals() give us the local scope/namespace
+
+In [11]: # globals() give us the global scope/namespace
+
+In [12]: # inside a function the local variables are given higher priority than global variables.
+
+In [13]: # lifetime of variables inside a function are during the runtime of the function.
+
+In [14]: # scope resolution
+
+In [15]: # 1. inside a function the local variables are given higher priority than global variables.
+
+In [16]: print a
+100
+
+In [17]: def my_new():
+   ....:     return a
+   ....: 
+
+In [18]: print my_new()
+100
+
+In [19]: def my_new():
+   ....:     print locals()
+   ....:     return a
+   ....: 
+
+In [20]: print my_new()
+{}
+100
+
+In [21]: # 2. first it will look for variables within local scope, if not found then look into the global scope.
+
+In [22]: # banking
+
+In [23]: balance=0
+
+In [24]: def my_deposit():
+   ....:     balance = balance + 1000
+   ....:     return balance
+   ....: 
+
+In [25]: print my_deposit()
+---------------------------------------------------------------------------
+UnboundLocalError                         Traceback (most recent call last)
+<ipython-input-25-0b47bf81b90e> in <module>()
+----> 1 print my_deposit()
+
+<ipython-input-24-698fbcef6eff> in my_deposit()
+      1 def my_deposit():
+----> 2     balance = balance + 1000
+      3     return balance
+      4 
+
+UnboundLocalError: local variable 'balance' referenced before assignment
+
+In [26]: # solution - global keyword
+
+In [27]: balance = 0
+
+In [28]: def my_deposit():
+   ....:     global balance
+   ....:     print locals()
+   ....:     balance = balance + 1000
+   ....:     return balance
+   ....: 
+
+In [29]: def my_withdraw():
+   ....:     global balance
+   ....:     print locals()
+   ....:     balance = balance - 300
+   ....:     return balance
+   ....: 
+
+In [30]: print my_deposit()
+{}
+1000
+
+In [31]: print balance
+1000
+
+In [32]: print my_withdraw()
+{}
+700
+
+In [33]: print balance
+700
+
+In [39]: def my_new():
+   ....:     global x
+   ....:     x = 10
+   ....:     return x
+   ....: 
+
+In [40]: def my_new():
+   ....:     global y
+   ....:     print locals()
+   ....:     y = 10
+   ....:     print locals()
+   ....:     return y
+   ....: 
+
+In [41]: print my_new()
+{}
+{}
+10
+
+In [42]: print y
+10
+
+In [48]: # functional arguments
+
+In [49]: # positional parameters
+
+In [50]: def my_add(a,b):
+   ....:     print locals()
+   ....:     return a + b
+   ....: 
+
+In [51]: print my_add(10,20)
+{'a': 10, 'b': 20}
+30
+
+In [52]: print my_add("linux","rocks")
+{'a': 'linux', 'b': 'rocks'}
+linuxrocks
+
+In [53]: print my_add("rocks","linux")
+{'a': 'rocks', 'b': 'linux'}
+rockslinux
+
+In [54]: # arguments to functions are passed as objects , not as values or references
+
+In [55]: # key based parameters
+
+In [56]: print my_add(b="rocks",a="linux")
+{'a': 'linux', 'b': 'rocks'}
+linuxrocks
+
+In [57]: print my_add(x="rocks",y="linux")
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-57-9a7745d6c47d> in <module>()
+----> 1 print my_add(x="rocks",y="linux")
+
+TypeError: my_add() got an unexpec
+
+# reference:http://www.python-course.eu/passing_arguments.php
+
+n [59]: # passing default values
+
+In [60]: def my_multi(num,default=10):
+   ....:     for value in range(1,default+1):
+   ....:         print "{} * {} = {}".format(num,value,num*value)
+   ....:         
+
+In [61]: print my_multi(2)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+None
+
+In [62]: my_multi(2)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+
+In [63]: my_multi(2,5)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+
+# putty example
+def myputty(hostname,port=22):
+	pass
+
+# default connectivity
+myputty(hostname) # port 22
+myputty(hostname,23)
+
+##
+#  *,**,*args,**kwargs
+
+
+
+
+
+
+
