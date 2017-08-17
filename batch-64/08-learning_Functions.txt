@@ -370,6 +370,340 @@ myputty(hostname,23)
 ##
 #  *,**,*args,**kwargs
 
+# *
+In [1]: def my_add(a,b):
+    print locals()
+    return a + b
+   ...: 
+
+In [2]: my_values = ["linux","rocks"]
+
+In [3]: print my_add(my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-3-3d1b135de5ce> in <module>()
+----> 1 print my_add(my_values)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [4]: print my_add(*my_values)
+{'a': 'linux', 'b': 'rocks'}
+linuxrocks
+
+In [5]: my_values1=['python','rocks','me']
+
+In [6]: print my_add(*my_values1)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-6-4577b849e6fa> in <module>()
+----> 1 print my_add(*my_values1)
+
+TypeError: my_add() takes exactly 2 arguments (3 given)
+
+In [7]: # **
+
+In [8]: my_values2 = {'a':'python','b':'rocks'}
+
+In [9]: print my_add(my_values2)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-9-43238055c770> in <module>()
+----> 1 print my_add(my_values2)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [10]: print my_add(**my_values2)
+{'a': 'python', 'b': 'rocks'}
+pythonrocks
+
+
+In [12]: # *args
+
+In [13]: max?
+Type:        builtin_function_or_method
+String form: <built-in function max>
+Namespace:   Python builtin
+Docstring:
+max(iterable[, key=func]) -> value
+max(a, b, c, ...[, key=func]) -> value
+
+With a single iterable argument, return its largest item.
+With two or more arguments, return the largest argument.
+
+In [14]: print max(2,3)
+3
+
+In [15]: print max(-1,-3,-5,-55,-23)
+-1
+
+In [16]: def gmax(*args):
+   ....:     return args
+   ....: 
+
+In [17]: print gmax(2,3)
+(2, 3)
+
+In [18]: print gmax(-1,-3,-5,-55,-23)
+(-1, -3, -5, -55, -23)
+
+In [19]: # logic similar to max
+
+In [20]: def gmax(*args):
+   ....:     for value in args:
+   ....:         
+KeyboardInterrupt
+
+In [20]: def gmax(*args):
+   ....:     big=-1
+   ....:     for value in args:
+   ....:         if value > big:
+   ....:             big = value
+   ....:     return big
+   ....: 
+
+In [21]: print gmax(2,3)
+3
+
+In [22]: print gmax(-1,-3,-5,-55,-23)
+-1
+
+In [23]: 
+
+
+In [24]: # **kwargs
+
+In [25]: def callme(**kwargs):
+   ....:     return kwargs
+   ....: 
+
+In [26]: print callme(name='kumar',mother='vijaya')
+{'name': 'kumar', 'mother': 'vijaya'}
+
+In [27]: print callme(name='kumar',mother='vijaya',loc='hyd')
+{'loc': 'hyd', 'name': 'kumar', 'mother': 'vijaya'}
+
+In [28]: def callme(**kwargs):
+   ....:     if 'name' in kwargs:
+   ....:         print "my name is {}".format(kwargs['name'])
+   ....:     if 'mother' in kwargs:
+   ....:         print "my mother is {}".format(kwargs['mother'])
+   ....:     if 'loc' in kwargs:
+   ....:         print "my location is {}".format(kwargs['loc'])
+   ....:         
+
+In [29]: print callme(name='kumar',mother='vijaya')
+my name is kumar
+my mother is vijaya
+None
+
+In [30]: print callme(name='kumar',mother='vijaya',loc='hyd')
+my name is kumar
+my mother is vijaya
+my location is hyd
+None
+
+In [35]: # functions within functions
+
+In [36]: def outer():
+   ....:     x = 1
+   ....:     def inner():
+   ....:         print x
+   ....:     return inner()
+   ....: 
+
+In [37]: print outer() # 1
+1
+None
+
+In [38]: print inner() #  undefined,none
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-38-73860d310acc> in <module>()
+----> 1 print inner() #  undefined,none
+
+NameError: name 'inner' is not defined
+
+In [39]: 
+
+In [40]: def outer():
+   ....:     x = 1
+   ....:     def inner():
+   ....:         return x
+   ....:     return inner
+   ....: 
+
+In [41]: # 
+
+In [42]: def foo():
+   ....:     passs
+   ....:     
+
+In [43]: def foo():
+    pass
+   ....: 
+
+In [44]: print foo()
+None
+
+In [45]: foo
+Out[45]: <function __main__.foo>
+
+In [46]: pirnt foo
+  File "<ipython-input-46-9c228af3223c>", line 1
+    pirnt foo
+            ^
+SyntaxError: invalid syntax
+
+
+In [47]: print foo
+<function foo at 0x7f84c066bf50>
+
+In [48]: 
+
+In [49]: def outer():
+    x = 1
+    def inner():
+        return x
+    return inner
+   ....: 
+
+In [50]: foo = outer()
+
+In [51]: print foo,type(foo)
+<function inner at 0x7f84c066bb18> <type 'function'>
+
+In [52]: print foo()
+1
+
+In [53]: # the above function is called function closures - decorators
+
+In [54]: # when ever you define a function, the variables available to it during defination
+
+In [55]: # are available during the run time of the function.
+
+In [56]: 
+
+# function is a first class object
+
+In [63]: def my_extra(my_func,x,y):
+    return my_func(x,y)
+   ....: 
+
+In [64]: def my_sub(x,y):
+    return x - y
+   ....: 
+
+In [65]: def my_add(x,y):
+    return x + y
+   ....: 
+
+In [66]: print my_extra(my_add,10,2)
+12
+
+In [67]: print my_extra(my_sub,10,2)
+8
+
+In [68]: 
+
+In [69]: # map,filter,lambda
+
+In [70]: map?
+Type:        builtin_function_or_method
+String form: <built-in function map>
+Namespace:   Python builtin
+Docstring:
+map(function, sequence[, sequence, ...]) -> list
+
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+
+In [71]: def my_square(a):
+   ....:     return a * a
+   ....: 
+
+In [72]: print my_square(2)
+4
+
+In [73]: print my_square(22)
+484
+
+In [74]: map(my_square,[2,3,5,7,9,91,31,54,68])
+Out[74]: [4, 9, 25, 49, 81, 8281, 961, 2916, 4624]
+
+In [76]: filter?
+Type:        builtin_function_or_method
+String form: <built-in function filter>
+Namespace:   Python builtin
+Docstring:
+filter(function or None, sequence) -> list, tuple, or string
+
+Return those items of sequence for which function(item) is true.  If
+function is None, return the items that are true.  If sequence is a tuple
+or string, return the same type, else return a list.
+
+In [77]: # when is your function true
+
+In [78]: # when you function gives a return value its true.
+
+In [79]: # when your function give a none its false.
+
+In [80]: def my_even(a):
+   ....:     if a % 2 == 0:
+   ....:         return 'even'
+   ....:     
+
+In [81]: print my_even(2)
+even
+
+In [82]: print my_even(3)
+None
+
+In [83]: print filter(my_even,range(1,11))
+[2, 4, 6, 8, 10]
+
+In [84]: ## example
+
+In [85]: print map(my_even,range(1,11))
+[None, 'even', None, 'even', None, 'even', None, 'even', None, 'even']
+
+In [86]: map(my_square,[2,3,5,7,9,91,31,54,68])
+Out[86]: [4, 9, 25, 49, 81, 8281, 961, 2916, 4624]
+
+In [87]: print filter(my_square,[2,3,5,7,9,91,31,54,68])
+[2, 3, 5, 7, 9, 91, 31, 54, 68]
+
+In [88]: # lambda
+
+In [89]: # function as an expression
+
+In [90]: print map(my_square,[2,3,5,7,9,91,31,54,68])
+[4, 9, 25, 49, 81, 8281, 961, 2916, 4624]
+
+In [91]: print map(lambda a:a*a,[2,3,5,7,9,91,31,54,68])
+[4, 9, 25, 49, 81, 8281, 961, 2916, 4624]
+
+In [92]: print filter(my_even,range(1,11))
+[2, 4, 6, 8, 10]
+
+In [93]: print filter(lambda a:a%2==0,range(1,11))
+[2, 4, 6, 8, 10]
+
+# functions
+
+https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
+
+In [107]: print map(lambda a,b:a+b,[1,2,3,4,5],[1,2,3,4,5])
+[2, 4, 6, 8, 10]
+
+# todo: how to pass arguments on a single list or dictionary variabels.
+
+
+
+
 
 
 
