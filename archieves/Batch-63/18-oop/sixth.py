@@ -21,4 +21,4 @@ try:
 except InvalidAgeException as e:
 	print "Buddy!! you are still young to see the movies - {}".format(e.age)
 else:
-	print validate_age(age)
+print validate_age(age)

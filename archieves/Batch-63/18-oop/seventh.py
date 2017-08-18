@@ -5,7 +5,6 @@
 class RationalNumber:
     """
     Rational Numbers with support for arthmetic operations.
-
         >>> a = RationalNumber(1, 2)
         >>> b = RationalNumber(1, 3)
         >>> a + b
@@ -56,20 +55,14 @@ print a + b
 
 '''
 In [1]: a = 1
-
 In [2]: b = 2
-
 In [3]: type(a)
 Out[3]: int
-
 In [4]: type(b)
 Out[4]: int
-
 In [5]: # a,b are instance of class int
-
 In [6]: a.
 a.bit_length   a.conjugate    a.denominator  a.imag         a.numerator    a.real         
-
 In [6]: a.__
 a.__abs__           a.__doc__           a.__init__          a.__nonzero__       a.__reduce__        a.__rrshift__       a.__subclasshook__
 a.__add__           a.__float__         a.__int__           a.__oct__           a.__reduce_ex__     a.__rshift__        a.__truediv__
@@ -80,37 +73,23 @@ a.__coerce__        a.__getnewargs__    a.__mod__           a.__radd__          
 a.__delattr__       a.__hash__          a.__mul__           a.__rand__          a.__rmul__          a.__sizeof__        
 a.__div__           a.__hex__           a.__neg__           a.__rdiv__          a.__ror__           a.__str__           
 a.__divmod__        a.__index__         a.__new__           a.__rdivmod__       a.__rpow__          a.__sub__           
-
 In [6]: a + b
 Out[6]: 3
-
 In [7]: a.__add__(b)
 Out[7]: 3
-
 In [8]: a = "linux"
-
 In [9]: b = " rocks"
-
 In [10]: a.__add__(b)
 Out[10]: 'linux rocks'
-
 In [11]: c = 1
-
 In [12]: a
 Out[12]: 'linux'
-
 In [13]: c
 Out[13]: 1
-
 In [14]: a + c
 ---------------------------------------------------------------------------
 TypeError                                 Traceback (most recent call last)
 <ipython-input-14-ca57d551b7f3> in <module>()
 ----> 1 a + c
-
 TypeError: cannot concatenate 'str' and 'int' objects
-
 '''
-
-
-

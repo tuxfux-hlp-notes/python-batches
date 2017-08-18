@@ -7,13 +7,10 @@ class Cup:
     def __init__(self):
         self.color = None
         self.content = None
-
     def fill(self, beverage):
         self.content = beverage
-
     def empty(self):
         self.content = None
-
 redcup = Cup()
 print redcup.color
 print redcup.content
@@ -21,22 +18,15 @@ redcup.color = "red"
 redcup.content = "coffee"
 print redcup.color
 print redcup.content
-
-
 # protected
 class Cup:
     def __init__(self):
         self.color = None
         self._content = None
-
     def fill(self, beverage):
         self._content = beverage
-
     def empty(self):
         self._content = None
-
-
-
 # main
 bluecup = Cup()
 print bluecup.color
@@ -45,7 +35,6 @@ bluecup.color = "blue"
 bluecup._content = "coffee"
 print bluecup.color
 print bluecup._content
-
 # my expectation .
 bluecup.empty()
 print bluecup._content
