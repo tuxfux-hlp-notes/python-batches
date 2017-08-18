@@ -1,0 +1,251 @@
+Modules - python programs
+1) why to we save our program as .py ?
+* platform independent . Windows need to understand its python.
+* resuablity 
+
+In [1]: # help()
+
+In [2]:  # help> modules
+
+In [3]: # i want to use a module.
+
+In [4]: import math
+
+In [5]: math.
+math.acos       math.atanh      math.e          math.factorial  math.hypot      math.log10      math.sin
+math.acosh      math.ceil       math.erf        math.floor      math.isinf      math.log1p      math.sinh
+math.asin       math.copysign   math.erfc       math.fmod       math.isnan      math.modf       math.sqrt
+math.asinh      math.cos        math.exp        math.frexp      math.ldexp      math.pi         math.tan
+math.atan       math.cosh       math.expm1      math.fsum       math.lgamma     math.pow        math.tanh
+math.atan2      math.degrees    math.fabs       math.gamma      math.log        math.radians    math.trunc
+
+In [5]: math.pi
+Out[5]: 3.141592653589793
+
+In [6]: math.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [7]: # another way - shortcut
+
+In [8]: import math as m
+
+In [9]: m.
+m.acos       m.atan2      m.cosh       m.exp        m.fmod       m.isinf      m.log10      m.radians    m.tanh
+m.acosh      m.atanh      m.degrees    m.expm1      m.frexp      m.isnan      m.log1p      m.sin        m.trunc
+m.asin       m.ceil       m.e          m.fabs       m.fsum       m.ldexp      m.modf       m.sinh       
+m.asinh      m.copysign   m.erf        m.factorial  m.gamma      m.lgamma     m.pi         m.sqrt       
+m.atan       m.cos        m.erfc       m.floor      m.hypot      m.log        m.pow        m.tan        
+
+In [9]: m.pi
+Out[9]: 3.141592653589793
+
+In [10]: m.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [11]: # another way - importing the function or variables
+
+In [12]: # i want to make the function or variables part of my local namespace
+
+In [13]: from math import pi,pow
+
+In [14]: pi
+Out[14]: 3.141592653589793
+
+In [15]: pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [16]: ## DONT TRY IT AT HOME OR OFFICE
+
+In [17]: # from math import *
+
+--- created the first.py file ---
+
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules# ls -lrt
+total 8
+-rw-r--r-- 1 khyaathi khyaathi 2330 Aug 18 18:49 learning_modules.txt
+-rw-r--r-- 1 khyaathi khyaathi  373 Aug 18 18:53 first.py
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules# ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+
+In [2]: f.
+f.my_add    f.my_div    f.my_multi  f.my_sub    f.version   
+
+In [2]: f.version
+Out[2]: 1.0
+
+In [3]: f.my_add?
+Type:        function
+String form: <function my_add at 0x7f85beeddd70>
+File:        /home/khyaathi/Documents/git_repos/python-batches/batch-64/09-modules/first.py
+Definition:  f.my_add(a, b)
+Docstring:   Addition of two number or strings 
+
+In [4]: f.my_sub?
+Type:        function
+String form: <function my_sub at 0x7f85beedde60>
+File:        /home/khyaathi/Documents/git_repos/python-batches/batch-64/09-modules/first.py
+Definition:  f.my_sub(a, b)
+Docstring:   Sub smaller number to larger
+
+In [5]: f.my_add(22,33)
+Out[5]: 55
+
+In [6]: f.my_add("linux","  rocks")
+Out[6]: 'linux  rocks'
+
+In [7]: f.version
+Out[7]: 1.0
+
+In [8]: # exit out of interpreter and login again - you loose of hours of work
+
+In [9]: import first as f
+
+In [10]: f.version
+Out[10]: 1.0
+
+In [11]: ls
+first.py  first.pyc  learning_modules.txt
+
+In [12]: reload(f)
+Out[12]: <module 'first' from 'first.py'>
+
+In [13]: f.version
+Out[13]: 3.0
+
+In [14]: 
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ ls
+first.py  first.pyc  learning_modules.txt
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ cat first.pyc
+�
+���Yc@s1dZd�Zd�Zdd�Zd�ZdS(@cCs||}|S(s# Addition of two number or strings ((tatbtsum((first.pytmy_adds
+cCs'||kr||}n
+||}|S(s Sub smaller number to larger((RRtdiff((first.pytmy_sub
+
+
+icC||S(s divison of two numbers ((RR((first.pytmy_divscC||S(s multiplication of wto numbers ((RR(first.pymy_multisN(tversionRRRR(((first.py<module>		
+                                                                       khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ file first.pyc
+first.pyc: python 2.7 byte-compiled
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ file first.py
+first.py: Python script, ASCII text executable
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ 
+
+
+In [1]: import first as f
+launching a missile.
+
+In [2]: f.
+f.my_add    f.my_div    f.my_multi  f.my_sub    f.version   
+
+In [2]: def foo():
+   ...:     pass
+   ...: 
+
+In [3]: foo
+Out[3]: <function __main__.foo>
+
+In [4]: f.my_add
+Out[4]: <function first.my_add>
+
+In [5]: globals()
+Out[5]: 
+{'In': ['',
+  u'import first as f',
+  u'def foo():\n    pass',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ 'Out': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_': <function first.my_add>,
+ '_3': <function __main__.foo>,
+ '_4': <function first.my_add>,
+ '__': <function __main__.foo>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '__package__': None,
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-64/09-modules'],
+ '_i': u'f.my_add',
+ '_i1': u'import first as f',
+ '_i2': u'def foo():\n    pass',
+ '_i3': u'foo',
+ '_i4': u'f.my_add',
+ '_i5': u'globals()',
+ '_ih': ['',
+  u'import first as f',
+  u'def foo():\n    pass',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ '_ii': u'foo',
+ '_iii': u'def foo():\n    pass',
+ '_oh': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7f48224e2390>,
+ 'f': <module 'first' from 'first.py'>,
+ 'foo': <function __main__.foo>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7f4822e28850>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7f48224e2390>}
+
+# moving your program first.py to extra fails the second.py program
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ python second.py
+addition of two floats is 31.0
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ ls
+first.py  first.pyc  learning_modules.txt  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ mdkir extra
+No command 'mdkir' found, did you mean:
+ Command 'mdir' from package 'mtools' (main)
+ Command 'mkdir' from package 'coreutils' (main)
+mdkir: command not found
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ mkdir extra
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ mv first.py extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ tree extra
+The program 'tree' is currently not installed. You can install it by typing:
+sudo apt install tree
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ ls
+extra  first.pyc  learning_modules.txt  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ python second.py
+addition of two floats is 31.0
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ rm -f first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ ls
+extra  learning_modules.txt  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ python second.py
+Traceback (most recent call last):
+  File "second.py", line 2, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules$ 
+
+
+## sys.path variable for modules.
