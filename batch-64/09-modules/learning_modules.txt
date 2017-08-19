@@ -249,3 +249,445 @@ khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/09-modules
 
 
 ## sys.path variable for modules.
+
+In [2]: import sys
+
+In [3]: sys.path
+Out[3]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [4]: # if dump the extra folder in one of the above locations
+
+In [5]: # is it recommended
+
+In [6]: # it will work,but its not recommended.
+
+In [7]: # best way: include your full path into the sys.path locations
+
+In [8]: # insert or append
+
+In [9]: # i would insert the path of the location at the very top.
+
+In [10]: sys.path.insert(0,'/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules')
+
+In [11]: sys.path
+Out[11]: 
+['/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules',
+ '',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+
+ # Installation of module in python
+ module repository: https://pypi.python.org/pypi
+
+# how to choose yoru modules.
+1) check for number of contributers ?
+2) how many commits ?
+
+#  pip
+# pip install <modulename>
+# pip install django
+# pip install django==1.8
+
+# easy_install
+# easy_install <modulename>
+# easy_install django
+# easy_install django==1.8
+
+# os relative packages.
+ - apt-get
+ - yum
+ - exe
+# setuptools
+
+# can i install the packages directly into my system.
+# reference: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+# virtualenv
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls
+extra  learning_modules.txt  myenv  second.py
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ source myenv/bin/activate
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ pip freeze
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ pip install django==1.8
+Collecting django==1.8
+  Using cached Django-1.8-py2.py3-none-any.whl
+Installing collected packages: django
+Successfully installed django-1.8
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ pip freeze
+Django==1.8
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.0.0
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ pip freeze
+Django==1.8
+excel==1.0.0
+xlrd==1.0.0
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ipython
+WARNING: Attempting to work in a virtualenv. If you encounter problems, please install IPython inside the virtualenv.
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import excel
+
+In [2]: quit
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ deactivate 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls
+extra  learning_modules.txt  myenv  second.py
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls
+extra  learning_modules.txt  myenv  second.py
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls myenv/
+bin  include  lib  local  pip-selfcheck.json
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls myenv/lib
+python2.7
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls myenv/lib/python2.7/
+_abcoll.py   copy_reg.py   genericpath.py   locale.pyc                   posixpath.py   site.pyc           sre_parse.pyc  UserDict.py
+_abcoll.pyc  copy_reg.pyc  genericpath.pyc  no-global-site-packages.txt  posixpath.pyc  sre_compile.py     sre.py         UserDict.pyc
+abc.py       distutils     lib-dynload      ntpath.py                    re.py          sre_compile.pyc    stat.py        warnings.py
+abc.pyc      encodings     linecache.py     orig-prefix.txt              re.pyc         sre_constants.py   stat.pyc       warnings.pyc
+codecs.py    fnmatch.py    linecache.pyc    os.py                        site-packages  sre_constants.pyc  types.py       _weakrefset.py
+codecs.pyc   fnmatch.pyc   locale.py        os.pyc                       site.py        sre_parse.py       types.pyc      _weakrefset.pyc
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$
+
+###
+# packages.
+###
+
+reference: https://docs.python.org/2/tutorial/modules.html#packages
+ the use of dotted module names saves the authors of multi-module packages like NumPy or the Python Imaging Library from having to worry about each other’s module names.
+
+
+ex:
+
+OS
+ + lin
+  - first.py - f1,f2,f3,f4,f5(OS.lin.first.f4)
+  - second.py
+  - third.py
+  - fourth.py
+ + sol
+  - first.py - g1,g2,g3,g4,f5(OS.sol.first.g4)
+  - second.py
+  - third.py
+  - fourth.py
+ + aix
+ + hpux
+
+# in the below example, both f5 are different
+
+import OS
+OS.lin.first.f5
+OS.sol.first.f5
+
+# from OS.lin.first import f5 ( u are making your package  variable a local namespace)
+# from OS.sol.first import f5
+f5
+
+1) create the directory structures.
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ mkdir OS
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ mkdir OS/{lin,sol,aix,hpux}
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+└── sol
+
+4 directories, 0 files
+
+2) now create first.py,second.py,third.py and fourth.py under the directory.
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 4 files
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+
+3) now lets go ahead and try to import the modules under lin folder.
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ ls
+extra  learning_modules.txt  myenv  OS  second.py
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ cd OS
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules/OS$ ls
+aix  hpux  lin  sol
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules/OS$ pwd
+/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules/OS
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules/OS$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+4) to make sure your import your lin folder create the __init__.py under your lin folder.
+please look at the content of the __init__.py
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── __init__.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 5 files
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+
+4 directories, 10 files
+
+
+
+In [2]: import lin
+
+In [3]: lin.
+lin.first   lin.fourth  lin.second  lin.third   
+
+In [3]: lin.first.
+lin.first.my_first_lin1   lin.first.my_fourth_lin1  lin.first.my_second_lin1  lin.first.my_third_lin1   
+
+In [3]: lin.first.my_first_lin1()
+Out[3]: 'This is my first lin1() function.'
+
+In [4]: 
+
+
+5)a) create a structure for solaris, in my case i am creating it with a simple copy.
+  b) Make some minor modificaiton of converting lin to sol in all the four files - first.py,second.py,third.py
+     and fourth.py
+  c) Also please go over sol/__init__.py file.
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ cp OS/lin/*.py OS/sol/.
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ 
+
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+    ├── first.py
+    ├── fourth.py
+    ├── __init__.py
+    ├── second.py
+    └── third.py
+
+
+6) now if i import the sol module you can see the following
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+    ├── first.py
+    ├── first.pyc
+    ├── fourth.py
+    ├── __init__.py
+    ├── __init__.pyc
+    ├── second.py
+    ├── second.pyc
+    ├── third.py
+    └── third.pyc
+
+4 directories, 19 files
+
+
+In [4]: import sol
+
+In [5]: sol.
+sol.first   sol.second  sol.third   
+
+In [5]: sol.
+
+In [6]: sol.
+sol.first   sol.second  sol.third   
+
+In [6]: # if i want the fourth module - developer option example in android phones
+
+In [7]: # explicit import of the modules
+
+In [8]: from sol import fourth  # click click on version of your mobile to activate the developer options
+
+In [9]: sol.
+sol.first   sol.fourth  sol.second  sol.third   
+
+In [9]: # when next version release - they put the latest fourth.py and update the __init__.py under sol folder
+
+In [10]: 
+
+#####
+## real world example on how modules are build.
+#####
+
+In [11]: import sys
+
+In [12]: sys.path
+Out[12]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [13]: 
+
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules$ cd /usr/lib/python2.7
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7$ pwd
+/usr/lib/python2.7
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7$
+
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ pwd
+/usr/lib/python2.7/xml
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ 
+
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls 
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls dom/
+domreg.py  expatbuilder.py  __init__.py  minicompat.py  minidom.py  NodeFilter.py  pulldom.py  xmlbuilder.py
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls etree/
+cElementTree.py   ElementInclude.py  ElementPath.pyc  ElementTree.pyc  __init__.pyc
+cElementTree.pyc  ElementPath.py     ElementTree.py   __init__.py
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls parsers/
+expat.py  expat.pyc  __init__.py  __init__.pyc
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls sax
+_exceptions.py   expatreader.py  handler.pyc  __init__.pyc  saxutils.pyc  xmlreader.pyc
+_exceptions.pyc  handler.py      __init__.py  saxutils.py   xmlreader.py
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ 
+
+
+###
+# pydoc : seeing the documenation of your program.
+###
+
+# pydoc sys
+# pydoc first
+
+
+
+# references:
+https://docs.python.org/2/distutils/
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/installing/index.html
+
+
+
+
+
+
+

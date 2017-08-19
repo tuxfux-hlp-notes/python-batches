@@ -1,4 +1,6 @@
 #!/usr/bin/python
+import sys
+sys.path.insert(0,'/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-64/09-modules/extra')
 import first as f
 
 def my_add(a,b):
