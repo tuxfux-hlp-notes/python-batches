@@ -1,0 +1,7 @@
+Wed Aug 23 19:42:00 2017 - root - INFO - your disk looks health at 10 
+Wed Aug 23 19:42:20 2017 - root - WARNING - Your disk is getting fat at 60 
+Wed Aug 23 19:42:23 2017 - root - INFO - your disk looks health at 6 
+Wed Aug 23 19:42:26 2017 - root - WARNING - Your disk is getting fat at 66 
+Wed Aug 23 19:42:30 2017 - root - CRITICAL - your application has gone for a sleep 88 
+Wed Aug 23 19:42:33 2017 - root - CRITICAL - your application has gone for a sleep 99 
+Wed Aug 23 19:42:41 2017 - root - INFO - your disk looks health at 12 

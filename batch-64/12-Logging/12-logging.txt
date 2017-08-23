@@ -1,0 +1,30 @@
+
+In [1]: import logging
+
+In [2]: logging.
+logging.BASIC_FORMAT        logging.Manager             logging.critical            logging.makeLogRecord
+logging.BufferingFormatter  logging.NOTSET              logging.currentframe        logging.os
+logging.CRITICAL            logging.NullHandler         logging.debug               logging.raiseExceptions
+logging.DEBUG               logging.PlaceHolder         logging.disable             logging.root
+logging.ERROR               logging.RootLogger          logging.error               logging.setLoggerClass
+logging.FATAL               logging.StreamHandler       logging.exception           logging.shutdown
+logging.FileHandler         logging.WARN                logging.fatal               logging.sys
+logging.Filter              logging.WARNING             logging.getLevelName        logging.thread
+logging.Filterer            logging.addLevelName        logging.getLogger           logging.threading
+logging.Formatter           logging.atexit              logging.getLoggerClass      logging.time
+logging.Handler             logging.basicConfig         logging.info                logging.traceback
+logging.INFO                logging.cStringIO           logging.log                 logging.warn
+logging.LogRecord           logging.captureWarnings     logging.logMultiprocessing  logging.warning
+logging.Logger              logging.codecs              logging.logProcesses        logging.warnings
+logging.LoggerAdapter       logging.collections         logging.logThreads          logging.weakref
+
+In [2]: # DEBUG,INFO,WARNING,ERROR,CRITICAL
+
+
+
+
+References:
+
+https://docs.python.org/2/howto/logging.html
+https://docs.python.org/3/library/logging.html
+https://docs.python.org/2/library/logging.html
