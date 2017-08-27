@@ -1,0 +1,146 @@
+Programming
++ Functional based programming
++ class based programming - OOP(Object Oriented Programming)/classes
+
+A - Abstraction
+
+
+example 1:
+car ( class/blueprint )
+ - wheels
+ - model
+ - color
+ + clutch
+ + break
+ + Accleration
+
+ car consits of data/variables( - ) and method/function ( + )
+
+Objects/instances
+ - Honda 
+ - Jaguar
+ - skoda
+ - audi
+ - bmw
+ - mercedes
+ - nano
+
+
+example 2:
+
+BankAccount - class/blueprint
+- balance
+- account number
++ withdraw()
++ deposit()
++ interest()
+
+people
++ ujwal - instance/class object
++ vinay
++ venkat
++ ashish
+
+
+example 3:
+
++ villas
+
+example 4: 
+
+In [1]: a = "python"
+
+In [2]: print type(a)
+<type 'str'>
+
+In [3]: # a is an instance of class 'str'
+
+In [4]: b = 10
+
+In [5]: print type(b)
+<type 'int'>
+
+In [6]: # b is an instance of class 'int'
+
+In [7]: 
+
+P - Poly-morphism -> Many-Forms
+
+example 1:
+
+interest
+ - home loan interest
+ - education loan interest
+ - car loans
+ - fixed deposit
+ - saving deposit
+ - mutual funds
+
+example 2: 
+In [8]: a = 1
+
+In [9]: b = 2
+
+In [10]: a + b
+Out[10]: 3
+
+In [11]: c = 'linux'
+
+In [12]: d = ' rocks'
+
+In [13]: c + d
+Out[13]: 'linux rocks'
+
+In [14]: a + d
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-14-a7e39af9a194> in <module>()
+----> 1 a + d
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+In [15]: 
+
+I - Inheritance - super/subclass, parent/child 
+
+
+father
+ - left handed
+ - singing
+ - IAS
+
+mother
+ - right handed
+ - cooking
+ - Doctor
+
+son(father,mother)
+ - left handed
+ - cook
+ - Architect
+
+daughter(mother,father)
+ - right handed
+ - singer
+ - Actor
+
+
+E - Encapsulation - binding of data and functions
+  - you dont want to work on variables directly.s
+  - data hiding - public,protected,private. 
+
+
+ex:
+pendrive
+
+ex:
+
+BankAccount
+- balance    - data
++ deposit()  - methods/functions
++ withdraw() - methods/functions
+
+balance -> 1000
++ 1000  -> deposit()
+- 300   -> withdraw()
+
