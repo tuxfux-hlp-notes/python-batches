@@ -20,6 +20,48 @@ logging.LoggerAdapter       logging.collections         logging.logThreads      
 
 In [2]: # DEBUG,INFO,WARNING,ERROR,CRITICAL
 
+In [16]: import logging
+
+In [17]: logging.
+logging.BASIC_FORMAT        logging.LogRecord           logging.atexit              logging.fatal               logging.root
+logging.BufferingFormatter  logging.Logger              logging.basicConfig         logging.getLevelName        logging.setLoggerClass
+logging.CRITICAL            logging.LoggerAdapter       logging.cStringIO           logging.getLogger           logging.shutdown
+logging.DEBUG               logging.Manager             logging.captureWarnings     logging.getLoggerClass      logging.sys
+logging.ERROR               logging.NOTSET              logging.codecs              logging.info                logging.thread
+logging.FATAL               logging.NullHandler         logging.collections         logging.log                 logging.threading
+logging.FileHandler         logging.PlaceHolder         logging.critical            logging.logMultiprocessing  logging.time
+logging.Filter              logging.RootLogger          logging.currentframe        logging.logProcesses        logging.traceback
+logging.Filterer            logging.StreamHandler       logging.debug               logging.logThreads          logging.warn
+logging.Formatter           logging.WARN                logging.disable             logging.makeLogRecord       logging.warning
+logging.Handler             logging.WARNING             logging.error               logging.os                  logging.warnings
+logging.INFO                logging.addLevelName        logging.exception           logging.raiseExceptions     logging.weakref
+
+In [17]: logging.Fi
+logging.FileHandler  logging.Filter       logging.Filterer     
+
+In [17]: logging.FileHandler?
+Type:            type
+String form:     <class 'logging.FileHandler'>
+File:            /usr/lib/python2.7/logging/__init__.py
+Init definition: logging.FileHandler(self, filename, mode='a', encoding=None, delay=0)
+Docstring:       A handler class which writes formatted logging records to disk files.
+Init docstring:  Open the specified file and use it as the stream for logging.
+
+In [18]: 
+
+In [19]: import logging.handlers as lh
+
+In [20]: lh.
+lh.BaseRotatingHandler        lh.MemoryHandler              lh.SYSLOG_UDP_PORT            lh.logging
+lh.BufferingHandler           lh.NTEventLogHandler          lh.SocketHandler              lh.os
+lh.DEFAULT_HTTP_LOGGING_PORT  lh.RotatingFileHandler        lh.SysLogHandler              lh.re
+lh.DEFAULT_SOAP_LOGGING_PORT  lh.SMTPHandler                lh.TimedRotatingFileHandler   lh.socket
+lh.DEFAULT_TCP_LOGGING_PORT   lh.ST_DEV                     lh.WatchedFileHandler         lh.struct
+lh.DEFAULT_UDP_LOGGING_PORT   lh.ST_INO                     lh.cPickle                    lh.time
+lh.DatagramHandler            lh.ST_MTIME                   lh.codecs                     
+lh.HTTPHandler                lh.SYSLOG_TCP_PORT            lh.errno                      
+
+In [20]: lh.
 
 
 
@@ -28,3 +70,5 @@ References:
 https://docs.python.org/2/howto/logging.html
 https://docs.python.org/3/library/logging.html
 https://docs.python.org/2/library/logging.html
+https://docs.python.org/2/howto/logging-cookbook.html
+logging.config: https://docs.python.org/2/howto/logging.html#configuring-logging

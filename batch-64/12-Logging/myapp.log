@@ -1,20 +1,5 @@
-WARNING:root:hey this an warning message
-ERROR:root:hey this is an error message
-CRITICAL:root:hey this is a critical message
---------------------------------------------------
-WARNING:root:hey this an warning message
-ERROR:root:hey this is an error message
-CRITICAL:root:hey this is a critical message
---------------------------------------------------
-2017-08-23 19:07:10,134 - root - WARNING - hey this an warning message 
-2017-08-23 19:07:10,135 - root - ERROR - hey this is an error message 
-2017-08-23 19:07:10,136 - root - CRITICAL - hey this is a critical message 
-Wed Aug 23 19:08:57 2017 - root - WARNING - hey this an warning message 
-Wed Aug 23 19:08:57 2017 - root - ERROR - hey this is an error message 
-Wed Aug 23 19:08:57 2017 - root - CRITICAL - hey this is a critical message 
---------------------------------------------------
-Wed Aug 23 19:11:11 2017 - root - DEBUG - hey this is an debug message 
-Wed Aug 23 19:11:11 2017 - root - INFO - hey this is an informational message 
-Wed Aug 23 19:11:11 2017 - root - WARNING - hey this an warning message 
-Wed Aug 23 19:11:11 2017 - root - ERROR - hey this is an error message 
-Wed Aug 23 19:11:11 2017 - root - CRITICAL - hey this is a critical message 
+08-29 20:07 root         INFO     Info message from logging module.
+08-29 20:07 myapp.area1  DEBUG    debug message from logger1.
+08-29 20:07 myapp.area1  INFO     info message from logger1.
+08-29 20:07 myapp.area2  WARNING  warning message from logger2.
+08-29 20:07 myapp.area2  ERROR    error message from logger2.
