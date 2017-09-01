@@ -1,0 +1,392 @@
+In [1]: pwd
+Out[1]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-64/15-files'
+
+In [2]: ls
+15-Learning_files.txt  file1.txt
+
+In [3]: f = open('file1.txt')
+
+In [4]: print f
+<open file 'file1.txt', mode 'r' at 0x7f462a326e40>
+
+In [5]: print type(f)
+<type 'file'>
+
+In [6]: # modes
+
+In [7]: # r -> read -> read a file.
+
+In [8]: # w -> write -> write to a file.
+
+In [9]: # a -> append -> append to a file.
+
+In [10]: # note: write mode creates a new file.
+
+In [11]: # if content is there in 'w'mode the file will be truncated to zero.
+
+In [12]: # b -> binary -> (rb,wb,ab)
+
+In [13]: # r+ -> read and write mode
+
+In [14]: f = open('file1.txt','r')
+
+In [15]: print f
+<open file 'file1.txt', mode 'r' at 0x7f462a326f60>
+
+In [16]: print type(f)
+<type 'file'>
+
+In [17]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [17]: f.name
+Out[17]: 'file1.txt'
+
+In [18]: f.mode
+Out[18]: 'r'
+
+In [19]: f.read?
+Type:        builtin_function_or_method
+String form: <built-in method read of file object at 0x7f462a326f60>
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+
+In [20]: f.read(2)
+Out[20]: 'Th'
+
+In [21]: f.read(2)
+Out[21]: 'is'
+
+In [22]: f.read(2)
+Out[22]: ' i'
+
+In [23]: f.read()
+Out[23]: 's my line1.\nThis is my line2.\nThis is my line3.\nThis is my line4.\nThis is my line5.'
+
+In [24]: f.read()
+Out[24]: ''
+
+In [24]: f.read()
+Out[24]: ''
+
+In [25]: f.read()
+Out[25]: ''
+
+In [26]: # f.tell
+
+In [27]: f.tell()
+Out[27]: 89
+
+In [28]: f.tell?
+Type:        builtin_function_or_method
+String form: <built-in method tell of file object at 0x7f462a326f60>
+Docstring:   tell() -> current file position, an integer (may be a long integer).
+
+In [29]: # f.seek
+
+In [30]: f.seek?
+Type:        builtin_function_or_method
+String form: <built-in method seek of file object at 0x7f462a326f60>
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+
+In [31]: f.seek(0)
+
+In [32]: f.tell()
+Out[32]: 0
+
+In [33]: f.read()
+Out[33]: 'This is my line1.\nThis is my line2.\nThis is my line3.\nThis is my line4.\nThis is my line5.'
+
+In [34]: 
+
+In [36]: f.readline?
+Type:        builtin_function_or_method
+String form: <built-in method readline of file object at 0x7f462a326f60>
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+
+In [37]: f.tell()
+Out[37]: 89
+
+In [38]: f.seek(0)
+
+In [39]: f.tell()
+Out[39]: 0
+
+In [40]: f.readline()
+Out[40]: 'This is my line1.\n'
+
+In [41]: f.readline()
+Out[41]: 'This is my line2.\n'
+
+In [42]: f.readline()
+Out[42]: 'This is my line3.\n'
+
+In [43]: f.readline()
+Out[43]: 'This is my line4.\n'
+
+In [44]: f.readline()
+Out[44]: 'This is my line5.'
+
+In [45]: f.readline()
+Out[45]: ''
+
+In [47]: # f.readlines?
+
+In [48]: f.readlines?
+Type:        builtin_function_or_method
+String form: <built-in method readlines of file object at 0x7f462a326f60>
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+
+In [49]: my_lines = f.readlines()
+
+In [50]: print my_lines
+[]
+
+In [51]: f.tell()
+Out[51]: 89
+
+In [52]: f.seek(0)
+
+In [53]: my_lines = f.readlines()
+
+In [54]: print my_lines
+['This is my line1.\n', 'This is my line2.\n', 'This is my line3.\n', 'This is my line4.\n', 'This is my line5.']
+
+In [55]: # f.readinto?
+
+In [56]: f.readinto?
+Type:        builtin_function_or_method
+String form: <built-in method readinto of file object at 0x7f462a326f60>
+Docstring:   readinto() -> Undocumented.  Don't use this; it may go away.
+
+In [57]: f.xreadlines?
+Type:        builtin_function_or_method
+String form: <built-in method xreadlines of file object at 0x7f462a326f60>
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+
+In [58]: # f.xreadlines == f.readlines
+
+In [60]: # write
+
+In [61]: g = open("newfile.txt","w")
+
+In [62]: g.
+g.close       g.errors      g.isatty      g.newlines    g.readinto    g.seek        g.truncate    g.xreadlines
+g.closed      g.fileno      g.mode        g.next        g.readline    g.softspace   g.write       
+g.encoding    g.flush       g.name        g.read        g.readlines   g.tell        g.writelines  
+
+In [62]: g.write?
+Type:        builtin_function_or_method
+String form: <built-in method write of file object at 0x7f462a326e40>
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+
+In [63]: g.write("This is my line 1.\n This is my line2.\nThis is my line3.\n This is my line4.\n")
+
+In [64]: # input -> I/O buffers -> cpu -> I/O buffers -> output
+
+In [65]: # g.flush
+
+In [66]: g.flush?
+Type:        builtin_function_or_method
+String form: <built-in method flush of file object at 0x7f462a326e40>
+Docstring:   flush() -> None.  Flush the internal I/O buffer.
+
+In [67]: g.flush()
+
+In [68]: print g
+<open file 'newfile.txt', mode 'w' at 0x7f462a326e40>
+
+In [70]: # f.writelines
+
+In [71]: g.writelines?
+Type:        builtin_function_or_method
+String form: <built-in method writelines of file object at 0x7f462a326e40>
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+
+In [72]: print my_lines
+['This is my line1.\n', 'This is my line2.\n', 'This is my line3.\n', 'This is my line4.\n', 'This is my line5.']
+
+In [73]: g
+Out[73]: <open file 'newfile.txt', mode 'w' at 0x7f462a326e40>
+
+In [74]: g.writelines(my_lines)
+
+In [75]: # g.close
+
+In [76]: g.close?
+Type:        builtin_function_or_method
+String form: <built-in method close of file object at 0x7f462a326e40>
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+
+In [77]: g.close()
+
+In [78]: print g
+<closed file 'newfile.txt', mode 'w' at 0x7f462a326e40>
+
+In [79]: g.write("trying to write into the file")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-79-d203f064a3ad> in <module>()
+----> 1 g.write("trying to write into the file")
+
+ValueError: I/O operation on closed file
+
+In [80]: g.closed
+Out[80]: True
+
+In [81]: g
+Out[81]: <closed file 'newfile.txt', mode 'w' at 0x7f462a326e40>
+
+In [82]: f
+Out[82]: <open file 'file1.txt', mode 'r' at 0x7f462a326f60>
+
+In [83]: f.closed
+Out[83]: False
+
+In [87]: g.write("trying to write into the file")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-87-d203f064a3ad> in <module>()
+----> 1 g.write("trying to write into the file")
+
+ValueError: I/O operation on closed file
+
+In [88]: if g.closed:
+   ....:     print "buddy your file is closed"
+   ....: else:
+   ....:     print "your file is not closed"
+   ....:     g.write("trying to write into the file")
+   ....:     
+buddy your file is closed
+
+In [89]: # Exception handling
+
+In [90]: try:
+   ....:     g.write("tring to write intoa file")
+   ....: except ValueError:
+   ....:     print "buddy your file is not in open mode"
+   ....: else:
+   ....:     print "we wrote to your file"
+   ....:     
+buddy your file is not in open mode
+
+In [91]: # with
+
+In [92]: g
+Out[92]: <closed file 'newfile.txt', mode 'w' at 0x7f462a326e40>
+
+In [93]: with open("newfile.txt","a") as g:
+   ....:     g.write("Hey i just appened to the file")
+   ....:     
+
+In [94]: g
+Out[94]: <closed file 'newfile.txt', mode 'a' at 0x7f46293360c0>
+
+In [95]: f.
+f.close       f.errors      f.isatty      f.newlines    f.readinto    f.seek        f.truncate    f.xreadlines
+f.closed      f.fileno      f.mode        f.next        f.readline    f.softspace   f.write       
+f.encoding    f.flush       f.name        f.read        f.readlines   f.tell        f.writelines  
+
+In [95]: f.truncate?
+Type:        builtin_function_or_method
+String form: <built-in method truncate of file object at 0x7f462a326f60>
+Docstring:
+truncate([size]) -> None.  Truncate the file to at most size bytes.
+
+Size defaults to the current file position, as returned by tell().
+
+In [96]: # f.softspace,f.newlines,f.encoding,f.errors
+
+In [98]: g.isatty?
+Type:        builtin_function_or_method
+String form: <built-in method isatty of file object at 0x7f46293360c0>
+Docstring:   isatty() -> true or false.  True if the file is connected to a tty device.
+
+In [99]: g.isatty?
+Type:        builtin_function_or_method
+String form: <built-in method isatty of file object at 0x7f46293360c0>
+Docstring:   isatty() -> true or false.  True if the file is connected to a tty device.
+
+In [100]: f
+Out[100]: <open file 'file1.txt', mode 'r' at 0x7f462a326f60>
+
+In [101]: f.isatty()
+Out[101]: False
+
+In [102]: h = open("/dev/pts/10","wb")
+
+In [103]: h.write("hey lets have a break")
+
+In [104]: h.flush()
+
+In [105]: # wall in your linux os
+
+
+# READING excel sheet files.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/15-files$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-64/15-files/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/15-files$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/15-files$ pip freeze
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/15-files$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+  Downloading xlrd-1.1.0-py2.py3-none-any.whl (108kB)
+    100% |████████████████████████████████| 112kB 267kB/s 
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/15-files$ pip freeze
+excel==1.0.0
+xlrd==1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-64/15-files$ 
+
+
+
+
+
+
