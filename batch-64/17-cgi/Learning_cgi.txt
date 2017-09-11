@@ -1,0 +1,60 @@
+CGI - common gateway interface
+
+Linux/Fedora/centos
+----------------------
+Installation: yum install httpd*
+Document root: /var/www/html  ( html files)
+CGI location: /var/www/cgi-bin ( script file)
+configuation file: /etc/httpd/conf/httpd.conf
+service : service httpd start/stop/restart
+persistent: chkconfig httpd on
+
+
+ubuntu/linux mint/zorion
+--------------------------
+Installation : sudo apt-get install apache2
+Document root: /var/www/html ( html files)
+CGI location: /usr/lib/cgi-bin ( script file)
+* if you dont have the cgi-bin directory please create it.
+* sudo -s (switch to root)
+* mkdir /usr/lib/cgi-bin/
+
+To enable the CGI module run these two commands:
+ # sudo a2enmod cgi
+ # sudo service apache2 restart
+
+The above commands will create a new file under location /etc/apache2/conf-enabled/serve-cgi-bin.conf.
+configuration file:/etc/apache2/apache2.conf
+
+service : service apache2 start/stop/restart
+persistent: bum
+
+to swith to root - sudo -s (give your password on prompt)
+run CGI codes like this : http://127.0.0.1/cgi-bin/helloworld.py
+						  http://localhost/cgi-bin/helloworld.py
+
+I want to become a web man/woman :)
+
+
+Reference:
+https://www.w3schools.com/html/
+
+* html5
+* css3
+* javascript
+* python and web
+
+-----
+Frameworks
+
+* Django - python
+* flask - python
+* bottle - python
+* rails - ruby
+* angularjs - javascript framework
+
+References: 
+https://docs.python.org/2/library/internet.html
+https://docs.python.org/2/library/cgi.html
+
+browser <- API(python program) -> database
