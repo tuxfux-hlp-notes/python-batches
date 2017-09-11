@@ -1,0 +1,82 @@
+http://python.org
+download - 2.x or 3.x
+future - 2.x
+
+ubuntu/linuxmint/zorion
+-------------------------
+# sudo apt-get install python
+# sudo apt-get install python3
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+
+
+redhat/centos/fedora
+---------------------
+# yum install python
+# yum install python3
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+
+windows
+---------
+Anaconda installation of python - TODO
+
+
+Good IDE for linux
+--------------------
+
+
+root@khyaathipython:~/Documents/git_repos/python-batches# python --version
+Python 2.7.12+
+root@khyaathipython:~/Documents/git_repos/python-batches# python3 --version
+Python 3.5.2+
+root@khyaathipython:~/Documents/git_repos/python-batches# python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world!!!"
+hello world!!!
+>>> 
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+root@khyaathipython:~/Documents/git_repos/python-batches# python3
+Python 3.5.2+ (default, Sep 22 2016, 12:18:14) 
+[GCC 6.2.0 20160927] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print ("hello world!")
+hello world!
+>>> 
+
+root@khyaathipython:~/Documents/git_repos/python-batches# ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: pr
+%%prun      %precision  %profile    %prun       print       property    
+
+In [1]: print "hello world"
+hello world
+
+In [2]: quit()
+root@khyaathipython:~/Documents/git_repos/python-batches# bpython
+bpython version 0.15 on top of Python 2.7.12+ /usr/bin/python
+>>> quit()
+(None,)
+root@khyaathipython:~/Documents/git_repos/python-batches# 
+
+
+
+

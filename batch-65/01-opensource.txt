@@ -1,0 +1,88 @@
+proprietory and opensource
+
+
+Proprietory
+--------------
+
+Company A -> Product A
+us(customers) -> requirements
+              -> email -> we will get back to you.
+              -> internet -> groups/newsgroup/blog -> no workaround/solutions 
+
+- customer retention ( company)
+- Frustrated customer.
+
+* software owned by some company.
+ex: microsoft,redhat
+
+Opensource
+------------
+
+Company A -> Product A(GPL) -> publish the source code in internet - github/bitbucket
+us(customers) -> requirements
+              -> email -> we will get back to you.
+              -> internet -> groups/newsgroup/blog -> no workaround/solutions
+
+customer - guyB/galB(developer) ->
+         -> product A -> modification -> product B(GPL) -> published the source code.
+         -> intenet -> groups/newgroups/blog ( guys we have B try it)
+         -> guys we launced A.3 ( featurs of b,c,d,e)
+ reviews -> bad/vbad/good/vgood/excellent
+
+ Fast forward six months - 1000(community)
+ -------------------------
+ company A -> A.3 ( 100(company) + 400(community) modification)
+
+ * homogenous
+ * hetrogenous
+
+ Benefits:
+ * monetory - cost cutting - 8cr
+ * marketing
+ * retention of customers.
+
+ Money
+ -------
+ * training/support - sunos/aix/hpux
+ * Redhat -> bronze/silver/gold/diamond/platinum
+
+ Licence
+ ---------
+ GPL - GNU General Public License
+ * what ever you modify should go back to GPL.
+ * your code should be open
+OSF - Open Source Foundation - 1960
+
+Principles
+* FREEdom to modify the product.
+* There is nothing called piracy.
+* you can modify and re-distribute.
+* community support.
+
+
+Opensource
+-----------
+* Operation system: ubuntu/linuxmint/zorion
+* databases : mariabdb/mongo/cassendra/nosql
+* programming: python/kotnin/ruby/R/erlong
+* frameworks: ansible/puppet/chef/fabric/django/bottle/salt
+
+training:
+ubuntu
+python 2.7/3.x
+
+
+
+
+
+
+
+
+
+* free for all.
+* you can customize.( source/binary)
+* you can't sell a customized product.
+* platform independent.
+* support of code/software.
+* We do have license.
+* who managed opensource ?
