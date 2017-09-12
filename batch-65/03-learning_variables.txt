@@ -1,0 +1,167 @@
+In [23]: my_string="python"
+
+In [24]: print type(my_string)
+<type 'str'>
+
+In [25]: # a string is a series of characters
+
+In [26]: # p  y  t  h  o  n
+
+In [27]: # 0  1  2  3  4  5  # +ve indexing or left to right
+
+In [28]: # -6 -5 -4 -3 -2 -1 # -ve indexing or right to left
+
+In [29]: # indexing
+
+In [30]: my_string[0]
+Out[30]: 'p'
+
+In [31]: my_string[3]
+Out[31]: 'h'
+
+In [32]: my_string[-3]
+Out[32]: 'h'
+
+In [33]: my_string[-3]='H'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-33-51e46642daec> in <module>()
+----> 1 my_string[-3]='H'
+
+TypeError: 'str' object does not support item assignment
+
+In [34]: # slicing
+
+In [35]: my_string[0:3] # 3 not included
+Out[35]: 'pyt'
+
+In [36]: my_string[3:6]
+Out[36]: 'hon'
+
+In [37]: my_string[:3]
+Out[37]: 'pyt'
+
+In [38]: my_string[3:]
+Out[38]: 'hon'
+
+In [39]: # task1
+
+In [40]: print my_string
+python
+
+In [41]: # output => Tython
+
+In [42]: print my_string[2].upper() + my_string[1:]
+Tython
+
+In [43]: print 'T' + my_string[1:]
+Tython
+
+In [44]: my_string.
+my_string.capitalize  my_string.format      my_string.isupper     my_string.rindex      my_string.strip
+my_string.center      my_string.index       my_string.join        my_string.rjust       my_string.swapcase
+my_string.count       my_string.isalnum     my_string.ljust       my_string.rpartition  my_string.title
+my_string.decode      my_string.isalpha     my_string.lower       my_string.rsplit      my_string.translate
+my_string.encode      my_string.isdigit     my_string.lstrip      my_string.rstrip      my_string.upper
+my_string.endswith    my_string.islower     my_string.partition   my_string.split       my_string.zfill
+my_string.expandtabs  my_string.isspace     my_string.replace     my_string.splitlines  
+my_string.find        my_string.istitle     my_string.rfind       my_string.startswith  
+
+In [44]: my_string.
+
+In [45]: # concatination
+
+In [46]: my_string[:3] + my_string[3:]
+Out[46]: 'python'
+
+In [47]: # mulplication
+
+In [48]: '-' * 10
+Out[48]: '----------'
+
+In [49]: # step in slicing
+
+In [50]: my_string
+Out[50]: 'python'
+
+In [51]: my_string[0:6]
+Out[51]: 'python'
+
+In [52]: my_string[:]
+Out[52]: 'python'
+
+In [53]: my_string[::1]
+Out[53]: 'python'
+
+In [54]: my_string[::]
+Out[54]: 'python'
+
+In [55]: my_string[::2]
+Out[55]: 'pto'
+
+In [56]: my_string[1::2]
+Out[56]: 'yhn'
+
+In [57]: my_string[::-1]
+Out[57]: 'nohtyp'
+
+In [58]: my_string[0:4:]
+Out[58]: 'pyth'
+
+In [59]: my_string[0:4:-1]
+Out[59]: ''
+
+In [60]: my_string[0:4:-6]
+Out[60]: ''
+
+In [61]: my_string[::-2]
+Out[61]: 'nhy'
+
+
+Tasks:
+
+In [63]: # playing with numbers
+
+In [64]: 2 + 2
+Out[64]: 4
+
+In [65]: 25 * 25
+Out[65]: 625
+
+In [66]: 23 * 23
+Out[66]: 529
+
+In [67]: 2 + 3 * 6
+Out[67]: 20
+
+In [68]: (2 + 3) * 6
+Out[68]: 30
+
+In [69]: # BODMAS
+
+In [70]: 2 ** 38
+Out[70]: 274877906944
+
+In [71]: import math
+
+In [72]: math.
+math.acos       math.atanh      math.e          math.factorial  math.hypot      math.log10      math.sin
+math.acosh      math.ceil       math.erf        math.floor      math.isinf      math.log1p      math.sinh
+math.asin       math.copysign   math.erfc       math.fmod       math.isnan      math.modf       math.sqrt
+math.asinh      math.cos        math.exp        math.frexp      math.ldexp      math.pi         math.tan
+math.atan       math.cosh       math.expm1      math.fsum       math.lgamma     math.pow        math.tanh
+math.atan2      math.degrees    math.fabs       math.gamma      math.log        math.radians    math.trunc
+
+In [72]: math.pow?
+Type:        builtin_function_or_method
+String form: <built-in function pow>
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+
+In [73]: math.pow(2,38)
+Out[73]: 274877906944.0
+
+
+http://www.pythonchallenge.com/pc/def/map.html

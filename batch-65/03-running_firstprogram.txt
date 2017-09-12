@@ -1,0 +1,49 @@
+khyaathi@khyaathipython:~$ pwd
+/home/khyaathi
+khyaathi@khyaathipython:~$ cd Documents/
+khyaathi@khyaathipython:~/Documents$ ls
+git_repos
+khyaathi@khyaathipython:~/Documents$ cd git_repos/
+khyaathi@khyaathipython:~/Documents/git_repos$ ls
+old-python-batches  python-batches
+khyaathi@khyaathipython:~/Documents/git_repos$ cd python-batches/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches$ ls
+archieves  batch-64  batch-65  LICENSE  README.md
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches$ cd batch-65
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ls
+01-opensource.txt  first.py  Installation.txt  Myfirstnote.ipynb
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ python first.py
+hello world!!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ perl first.py
+hello world!!!khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ls
+01-opensource.txt  first.py  Installation.txt  Myfirstnote.ipynb
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ chmod +x first.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ./first.py
+Error: no such file "hello world!!!"
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ python --version
+Python 2.7.12+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ echo $PATH
+/home/khyaathi/bin:/home/khyaathi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ which python
+/usr/bin/python
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ /usr/bin/python --version
+Python 2.7.12+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ./first.py
+hello world!!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ which python3
+/usr/bin/python3
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ./first.py
+  File "./first.py", line 2
+    print "hello world!!!"
+                         ^
+SyntaxError: Missing parentheses in call to 'print'
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ./first.py
+hello world!!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ./first.py
+hello world!!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ 

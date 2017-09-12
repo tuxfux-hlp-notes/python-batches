@@ -1,0 +1,188 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: my_string="python"
+
+In [2]: print type(my_string)
+<type 'str'>
+
+In [3]: my_num1=1
+
+In [4]: print type(my_num1)
+<type 'int'>
+
+In [5]: my_num2=.0
+
+In [6]: my_num2=1.0
+
+In [7]: print type(my_num2)
+<type 'float'>
+
+In [8]: my_num3='1.0'
+
+In [9]: print type(my_num3)
+<type 'str'>
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> LISTS
+
+Related help topics: LISTLITERALS
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+.... truncated ....
+
+help> quit
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> promp
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_string="python"
+>>> print dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> print help(my_string.upper)
+
+None
+>>> 
+
+In [11]: my_string="python"
+
+In [12]: my_string.
+my_string.capitalize  my_string.format      my_string.isupper     my_string.rindex      my_string.strip
+my_string.center      my_string.index       my_string.join        my_string.rjust       my_string.swapcase
+my_string.count       my_string.isalnum     my_string.ljust       my_string.rpartition  my_string.title
+my_string.decode      my_string.isalpha     my_string.lower       my_string.rsplit      my_string.translate
+my_string.encode      my_string.isdigit     my_string.lstrip      my_string.rstrip      my_string.upper
+my_string.endswith    my_string.islower     my_string.partition   my_string.split       my_string.zfill
+my_string.expandtabs  my_string.isspace     my_string.replace     my_string.splitlines  
+my_string.find        my_string.istitle     my_string.rfind       my_string.startswith  
+
+In [12]: my_num=1
+
+In [13]: my_num.
+my_num.bit_length   my_num.conjugate    my_num.denominator  my_num.imag         my_num.numerator    my_num.real
+
+In [13]: my_num1=1.0
+
+In [14]: my_num1.
+my_num1.as_integer_ratio  my_num1.fromhex           my_num1.imag              my_num1.real
+my_num1.conjugate         my_num1.hex               my_num1.is_integer        
+
+In [14]: my_string.upper?
+Type:        builtin_function_or_method
+String form: <built-in method upper of str object at 0x7f1f66aaf0f0>
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+
+In [15]: my_string.upper()
+Out[15]: 'PYTHON'
+
+In [16]: my_string
+Out[16]: 'python'
+
+In [17]: my_string.zfill?
+Type:        builtin_function_or_method
+String form: <built-in method zfill of str object at 0x7f1f66aaf0f0>
+Docstring:
+S.zfill(width) -> string
+
+Pad a numeric string S with zeros on the left, to fill a field
+of the specified width.  The string S is never truncated.
+
+In [18]: my_string.zfill(10)
+Out[18]: '0000python'
+
+In [19]: my_string.zfill??
+Type:        builtin_function_or_method
+String form: <built-in method zfill of str object at 0x7f1f66aaf0f0>
+Docstring:
+S.zfill(width) -> string
+
+Pad a numeric string S with zeros on the left, to fill a field
+of the specified width.  The string S is never truncated.
+
+In [20]: my_string.zfill???
+  File "<ipython-input-20-30abf1c4a16a>", line 1
+    my_string.zfill???
+                   ^
+SyntaxError: invalid syntax
+
+
+In [21]: help(my_string.zfill)
+
+
