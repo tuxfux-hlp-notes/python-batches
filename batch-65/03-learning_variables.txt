@@ -163,5 +163,118 @@ Return x**y (x to the power of y).
 In [73]: math.pow(2,38)
 Out[73]: 274877906944.0
 
+In [1]: my_school="De paul"
+
+In [2]: another_school='st. xaviers'
+
+In [3]: town='township'
+
+In [4]: beach='blue'
+
+In [5]: commute='bus'
+
+In [6]: print "my school name is my_school"
+my school name is my_school
+
+In [7]: print 'my school name is my_school'
+my school name is my_school
+
+In [8]: print 'my school name is ' , my_school
+my school name is  De paul
+
+In [9]: print 'my school name is ', my_school , "we had another school adjancent to us" , another_school, 'we used to live in a town' , town , "we have a beach which is ", beach , ' we used to commute on ', commute
+my school name is  De paul we had another school adjancent to us st. xaviers we used to live in a town township we have a beach which is  blue  we used to commute on  bus
+
+In [10]: # typecasting - %s,%d,%f,%r
+
+In [11]: print "my school name is %s. We had another school adjancent to us %s. We used to live in a town %s. We have a beach which is %s. We used to commute on %s" %(my_school,another_school,town,beach,commute)
+my school name is De paul. We had another school adjancent to us st. xaviers. We used to live in a town township. We have a beach which is blue. We used to commute on bus
+
+In [12]: print "my school name is %s. I love my school %s" %(my_school,my_school)
+my school name is De paul. I love my school De paul
+
+In [13]: # format
+
+In [14]: print "my school name is {}.i love my school {}".format(my_school,my_school)
+my school name is De paul.i love my school De paul
+
+In [18]: print "my school name is {}.i love my school {}".format(my_school,another_school)
+my school name is De paul.i love my school st. xaviers
+
+In [19]: # indentation way of deleaing with variable
+
+In [20]: print "my school name is {0}.i love my school {0}".format(my_school,another_school)
+my school name is De paul.i love my school De paul
+
+In [21]: print "my school name is {1}.i love my school {1}".format(my_school,another_school)
+my school name is st. xaviers.i love my school st. xaviers
+
+In [22]: # dictionary methods
+
+In [23]: print "my school name is {ms}.i love my school {ans}".format(ms=my_school,ans=another_school)
+my school name is De paul.i love my school st. xaviers
+
+In [24]: print "my school name is {ms}.i love my school {ms}".format(ms=my_school,ans=another_school)
+my school name is De paul.i love my school De paul
+
+In [25]: 
+
+
+In [31]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [32]: print name,type(name)
+kumar <type 'str'>
+
+In [33]: num = raw_input("please enter your age:")
+please enter your age:22
+
+In [34]: print num,type(num)
+22 <type 'str'>
+
+In [35]: # str,int,float -> typecasting functions
+
+In [36]: num = int(raw_input("please enter your age:"))
+please enter your age:22
+
+In [37]: print num,type(num)
+22 <type 'int'>
+
+In [38]: '1' + '1'
+Out[38]: '11'
+
+In [39]: 1 + 1
+Out[39]: 2
+
+In [40]: num = int(raw_input("please enter your age:"))
+please enter your age:ten
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-40-8b3e7d86c7d4> in <module>()
+----> 1 num = int(raw_input("please enter your age:"))
+
+ValueError: invalid literal for int() with base 10: 'ten'
+
+In [42]: name = input("please enter your name:")
+please enter your name:name
+
+In [43]: print name,type(name)
+kumar <type 'str'>
+
+In [44]: age = input("please enter your age:")
+please enter your age:22
+
+In [45]: print age,type(age)
+22 <type 'int'>
+
+In [46]: age = input("please enter your age:")
+please enter your age:2.0
+
+In [47]: print age,type(age)
+2.0 <type 'float'>
+
+
+
+
 
 http://www.pythonchallenge.com/pc/def/map.html

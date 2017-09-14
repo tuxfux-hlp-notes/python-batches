@@ -1,0 +1,42 @@
+In [55]: # conditions
+
+In [56]: 5 > 2
+Out[56]: True
+
+In [57]: 2 > 5
+Out[57]: False
+
+In [58]: print type(True),type(False)
+<type 'bool'> <type 'bool'>
+
+In [59]: if 5 > 2:
+   ....:     print "5 is greater than 2"
+   ....:     
+5 is greater than 2
+
+In [60]: if 2 > 5:
+   ....:     print "2 is greater than 5"
+   ....:     
+
+In [61]: if 2 > 5:
+   ....:     print "2 is greater than 5"
+   ....: else:
+   ....:     print "5 is greter than 2"
+   ....:     
+5 is greter than 2
+
+For vim,create a .vimrc file in your home directory
+
+root@khyaathipython:~# cat .vimrc 
+set nu
+set tabstop=4
+set expandtab
+set autoindent
+syntax on
+root@khyaathipython:~# cd -
+
+
+Reference:
+pep8 : https://www.python.org/dev/peps/pep-0008/#introduction
+https://www.youtube.com/watch?v=wf-BqAjZb8M
+Questions: https://github.com/sambapython/python/blob/master/assignments.txt
