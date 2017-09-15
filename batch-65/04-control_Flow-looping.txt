@@ -1,0 +1,252 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: # looping or recursion
+
+In [2]: # looping works on sequences
+
+In [3]: my_string="python"
+
+In [4]: for value in my_string:
+   ...:     print value
+   ...:     
+p
+y
+t
+h
+o
+n
+
+In [5]: for value in ['apple','banana','cherry']:
+   ...:     print value
+   ...:     
+apple
+banana
+cherry
+
+In [6]: for value in ('apple','banana','cherry'):
+    print value
+   ...:     
+apple
+banana
+cherry
+
+In [7]: 
+
+In [7]: # garbage collector - python
+
+In [8]: range?
+Type:        builtin_function_or_method
+String form: <built-in function range>
+Namespace:   Python builtin
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+
+In [9]: range(5)
+Out[9]: [0, 1, 2, 3, 4]
+
+In [10]: range(1,6)
+Out[10]: [1, 2, 3, 4, 5]
+
+In [11]: range(2,10,2)
+Out[11]: [2, 4, 6, 8]
+
+In [12]: for value in range(1,11):
+   ....:     print value
+   ....:     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+In [14]: iter?
+Type:        builtin_function_or_method
+String form: <built-in function iter>
+Namespace:   Python builtin
+Docstring:
+iter(collection) -> iterator
+iter(callable, sentinel) -> iterator
+
+Get an iterator from an object.  In the first form, the argument must
+supply its own iterator, or be a sequence.
+In the second form, the callable is called until it returns the sentinel.
+
+In [15]: m = iter(range(1,6))
+
+In [16]: print m
+<listiterator object at 0x7feeb3300410>
+
+In [17]: type(range(1,6))
+Out[17]: list
+
+In [18]: m.next()
+Out[18]: 1
+
+In [19]: type(range(1,6))
+Out[19]: list
+
+In [20]: m.next()
+Out[20]: 2
+
+In [21]: m.next()
+Out[21]: 3
+
+In [22]: m.next()
+Out[22]: 4
+
+In [23]: m.next()
+Out[23]: 5
+
+In [24]: m.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-24-e94cbac0601a> in <module>()
+----> 1 m.next()
+
+StopIteration: 
+
+In [25]: # iterator and generator
+
+In [26]: range?
+Type:        builtin_function_or_method
+String form: <built-in function range>
+Namespace:   Python builtin
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+
+In [27]: xrange?
+Type:        type
+String form: <type 'xrange'>
+Namespace:   Python builtin
+Docstring:
+xrange(stop) -> xrange object
+xrange(start, stop[, step]) -> xrange object
+
+Like range(), but instead of returning a list, returns an object that
+generates the numbers in the range on demand.  For looping, this is 
+slightly faster than range() and more memory efficient.
+
+In [28]: xrange(1,11)
+Out[28]: xrange(1, 11)
+
+In [29]: range(1,11)
+Out[29]: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+In [30]: print type(xrange(1,11))
+<type 'xrange'>
+
+In [31]: xrange(1,11)
+Out[31]: xrange(1, 11)
+
+In [32]: for value in range(1,11):
+   ....:     print value
+   ....:     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+In [33]: for value in xrange(1,11):
+   ....:     print value
+   ....:     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+In [34]: # iterator you will run out of memory
+
+In [35]: # generator you will run out of time.
+
+
+In [37]: import sys
+
+In [38]: sys.
+sys.api_version            sys.exitfunc               sys.last_value             sys.pydebug
+sys.argv                   sys.flags                  sys.long_info              sys.setcheckinterval
+sys.builtin_module_names   sys.float_info             sys.maxint                 sys.setdlopenflags
+sys.byteorder              sys.float_repr_style       sys.maxsize                sys.setprofile
+sys.call_tracing           sys.getcheckinterval       sys.maxunicode             sys.setrecursionlimit
+sys.callstats              sys.getdefaultencoding     sys.meta_path              sys.settrace
+sys.copyright              sys.getdlopenflags         sys.modules                sys.stderr
+sys.displayhook            sys.getfilesystemencoding  sys.path                   sys.stdin
+sys.dont_write_bytecode    sys.getprofile             sys.path_hooks             sys.stdout
+sys.exc_clear              sys.getrecursionlimit      sys.path_importer_cache    sys.subversion
+sys.exc_info               sys.getrefcount            sys.platform               sys.version
+sys.exc_type               sys.getsizeof              sys.prefix                 sys.version_info
+sys.excepthook             sys.gettrace               sys.ps1                    sys.warnoptions
+sys.exec_prefix            sys.hexversion             sys.ps2                    
+sys.executable             sys.last_traceback         sys.ps3                    
+sys.exit                   sys.last_type              sys.py3kwarning            
+
+In [38]: sys.exit?
+Type:        builtin_function_or_method
+String form: <built-in function exit>
+Docstring:
+exit([status])
+
+Exit the interpreter by raising SystemExit(status).
+If the status is omitted or None, it defaults to zero (i.e., success).
+If the status is an integer, it will be used as the system exit status.
+If it is another kind of object, it will be printed and the system
+exit status will be one (i.e., failure).
+
+In [39]: 
+
+
+
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ls
+01-opensource.txt     03-learning_variables.txt       04-control_Flow-looping.txt  first.py         Myfirstnote.ipynb
+02-Installation.txt   03-running_firstprogram.txt     batch-65.txt                 guess_number.py  second.py
+03-learning_help.txt  04-control_Flow-Conditions.txt  big.py                       market.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ echo $?
+0
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ ld
+ld: no input files
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ echo $?
+1
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-65$ 
+
+
+
