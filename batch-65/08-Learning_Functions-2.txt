@@ -1,0 +1,409 @@
+# Functional arguments
+
+# my_add function defination
+def my_add(a,b):
+    return a + b
+
+# position based argument
+print my_add(10,11)
+print my_add("linux"," rocks")
+print my_add(" rocks","linux")
+
+
+# key based arguments
+print my_add(a=10,b=11)
+print my_add(a="linux",b=" rocks")
+print my_add(b=" rocks",a="linux")
+
+# default arguments
+
+In [2]: def my_multi(num,default=10):
+   ...:     for value in range(1,default+1):
+   ...:         print "{} * {} = {}".format(num,value,num*value)
+   ...:         
+
+In [3]: my_multi(5,5)
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+
+In [4]: my_multi(5)
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+In [5]: my_multi(default=5,num=5)
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+
+# example - http://cache.filehippo.com/img/ex/1125__putty1.png
+def putty(hostname,port=22):
+	pass
+
+In [7]: # *,**,*args,**kwargs
+
+In [8]: def my_add(a,b):
+   ...:     return a + b
+   ...: 
+
+In [11]: my_values=[1,2]
+
+In [12]: # a = my_value[0];b = my_value[1]
+
+In [14]: # a,b = my_values
+
+In [15]: print my_add(my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-15-3d1b135de5ce> in <module>()
+----> 1 print my_add(my_values)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [19]: my_values=[1,2,3]
+
+In [20]: print my_add(*my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-20-30e812bcb6cb> in <module>()
+----> 1 print my_add(*my_values)
+
+TypeError: my_add() takes exactly 2 arguments (3 given)
+
+In [21]: print my_add(*my_values[1:])
+5
+
+
+In [16]: print my_add(*my_values)
+3
+
+In [17]: my_values=['python',' rocks']
+
+In [18]: print my_add(*my_values)
+python rocks
+
+In [23]: # **
+
+In [24]: def my_add(a,b):
+    return a + b
+   ....: 
+
+In [25]: my_values = {'a':1,'b':2}
+
+In [26]: print my_values,type(my_values)
+{'a': 1, 'b': 2} <type 'dict'>
+
+In [27]: print my_add(**my_values)
+3
+
+In [28]: print my_add(my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-28-3d1b135de5ce> in <module>()
+----> 1 print my_add(my_values)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [29]: my_values = {'a':1,'c':20}
+
+In [30]: print my_add(**my_values)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-30-48ebd6bff0b3> in <module>()
+----> 1 print my_add(**my_values)
+
+TypeError: my_add() got an unexpected keyword argument 'c'
+
+In [31]: # passing arguments in python - values or references ? objects
+
+In [32]: 
+
+In [35]: # *args
+
+In [36]: max?
+Type:        builtin_function_or_method
+String form: <built-in function max>
+Namespace:   Python builtin
+Docstring:
+max(iterable[, key=func]) -> value
+max(a, b, c, ...[, key=func]) -> value
+
+With a single iterable argument, return its largest item.
+With two or more arguments, return the largest argument.
+
+In [37]: max(1,2)
+Out[37]: 2
+
+In [38]: max(-8,-7,-55,-1)
+Out[38]: -1
+
+In [39]: def gmax(*args):
+   ....:     return args
+   ....: 
+
+In [40]: print gmax(1,2)
+(1, 2)
+
+In [41]: print gmax(-8,-7,-55,-1)
+(-8, -7, -55, -1)
+
+In [42]: def gmax(*args):
+   ....:     big = -1
+   ....:     for value in args:
+   ....:         if value > big:
+   ....:             big = value
+   ....:     return big
+   ....: 
+
+In [43]: print gmax(1,2)
+2
+
+In [44]: print gmax(-8,-7,-55,-1)
+-1
+
+In [45]: 
+
+In [46]: # **kwargs
+
+In [47]: def callme(**kwargs):
+   ....:     return kwargs
+   ....: 
+
+In [48]: print callme(name="kumar",location="hyd")
+{'name': 'kumar', 'location': 'hyd'}
+
+In [49]: print callme(name="kumar",gender="m")
+{'gender': 'm', 'name': 'kumar'}
+
+In [50]: print callme(maiden="vijaya",gender="m")
+{'gender': 'm', 'maiden': 'vijaya'}
+
+In [51]: print callme(maiden="vijaya",gender="m",name='kumar')
+{'gender': 'm', 'name': 'kumar', 'maiden': 'vijaya'}
+
+In [52]: def callme(**kwargs):
+   ....:     if 'name' in kwargs:
+   ....:         print "your name is {}".format(kwargs['name'])
+   ....:     if 'location' in kwargs:
+   ....:         print "your location is {}".format(kwargs['location'])
+   ....:     if 'maiden' in kwargs:
+   ....:         print "your mother name is {}".format(kwargs['maiden'])
+   ....:         
+
+In [53]: print callme(name="kumar",location="hyd")
+your name is kumar
+your location is hyd
+None
+
+In [54]: print callme(maiden="vijaya",gender="m",name='kumar')
+your name is kumar
+your mother name is vijaya
+None
+
+In [55]: print callme(maiden="vijaya",gender="m")
+your mother name is vijaya
+None
+
+In [57]: # function are first class objects
+
+In [58]: def my_extra(my_func):
+   ....:     return my_func(x,y)
+   ....: 
+
+In [59]: def my_add(x,y):
+   ....:     return x + y
+   ....: 
+
+In [60]: def my_sub(x,y):
+   ....:     return x - y
+   ....: 
+
+In [61]: def my_extra(my_func,x,y):
+   ....:     return my_func(x,y)
+   ....: 
+
+In [62]: print my_extra(my_add,1,2)
+3
+
+In [63]: print my_extra(my_sub,11,2)
+9
+
+In [64]: 
+
+In [65]: # function within function
+
+In [66]: def upper():
+   ....:     x = 1
+   ....:     def inner():
+   ....:         return x
+   ....:     return inner()
+   ....: 
+
+In [67]: print upper()
+1
+
+In [68]: print inner()
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-68-faa62f522c3c> in <module>()
+----> 1 print inner()
+
+NameError: name 'inner' is not defined
+
+In [69]: 
+
+
+In [70]: def upper():
+   ....:     x = 1
+   ....:     def inner():
+   ....:         return x
+   ....:     return inner
+   ....: 
+
+In [71]: def new():
+   ....:     pass
+   ....: 
+
+In [72]: new
+Out[72]: <function __main__.new>
+
+In [73]: print new
+<function new at 0x7f6a2c26cf50>
+
+In [74]: print new()
+None
+
+In [75]: foo = upper()
+
+In [76]: print foo
+<function inner at 0x7f6a27ac8140>
+
+In [77]: print foo()
+1
+
+In [78]: # foo
+
+In [79]: # def inner()
+
+In [80]: #   return x
+
+In [81]: 
+
+In [81]: # function closure: variables available to us during the defincation of a function will be available if we return the address of the funciton.
+
+In [84]: def square(a):
+   ....:     return a * a
+   ....: 
+
+In [85]: map?
+Type:        builtin_function_or_method
+String form: <built-in function map>
+Namespace:   Python builtin
+Docstring:
+map(function, sequence[, sequence, ...]) -> list
+
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+
+In [86]: print square(3)
+9
+
+In [87]: print square(25)
+625
+
+In [88]: map(square,[11,22,33,44,55,66,77,88,99])
+Out[88]: [121, 484, 1089, 1936, 3025, 4356, 5929, 7744, 9801]
+
+In [89]: # filter
+
+In [90]: filter?
+Type:        builtin_function_or_method
+String form: <built-in function filter>
+Namespace:   Python builtin
+Docstring:
+filter(function or None, sequence) -> list, tuple, or string
+
+Return those items of sequence for which function(item) is true.  If
+function is None, return the items that are true.  If sequence is a tuple
+or string, return the same type, else return a list.
+
+In [91]: # your function is true when you have a return value
+
+In [92]: # your function is false when you have a return value None
+
+In [93]: def even(a):
+   ....:     if a % 2 == 0:
+   ....:         return a
+   ....:     
+
+In [94]: def even(a):
+    if a % 2 == 0:
+        return 'even'
+   ....:     
+
+In [95]: print even(2)
+even
+
+In [96]: print even(1)
+None
+
+In [97]: filter(even,[11,22,33,44,55,66,77,88,99])
+Out[97]: [22, 44, 66, 88]
+
+In [98]: # ex:
+
+In [99]: map(even,[11,22,33,44,55,66,77,88,99])
+Out[99]: [None, 'even', None, 'even', None, 'even', None, 'even', None]
+
+In [100]: # ex:
+
+In [101]: filter(square,[11,22,33,44,55,66,77,88,99])
+Out[101]: [11, 22, 33, 44, 55, 66, 77, 88, 99]
+
+In [102]: # lambda
+
+In [103]: map(even,[11,22,33,44,55,66,77,88,99])
+Out[103]: [None, 'even', None, 'even', None, 'even', None, 'even', None]
+
+In [104]: map(square,[11,22,33,44,55,66,77,88,99])
+Out[104]: [121, 484, 1089, 1936, 3025, 4356, 5929, 7744, 9801]
+
+In [105]: map(lambda a:a*a,[11,22,33,44,55,66,77,88,99])
+Out[105]: [121, 484, 1089, 1936, 3025, 4356, 5929, 7744, 9801]
+
+In [106]: filter(even,[11,22,33,44,55,66,77,88,99])
+Out[106]: [22, 44, 66, 88]
+
+In [107]: filter(lambda a:a%2==0[11,22,33,44,55,66,77,88,99])
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-107-bc57420276af> in <module>()
+----> 1 filter(lambda a:a%2==0[11,22,33,44,55,66,77,88,99])
+
+TypeError: filter expected 2 arguments, got 1
+
+In [108]: filter(lambda a:a%2==0,[11,22,33,44,55,66,77,88,99])
+Out[108]: [22, 44, 66, 88]
+
+
+###
+## tasks on functions
+###
+
+https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
