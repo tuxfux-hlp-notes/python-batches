@@ -291,6 +291,316 @@ The directory '/home/khyaathi/.cache/pip/http' or its parent directory is not ow
 root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/modules# 
 
 
+###
+# Packages
+###
 
++ (folder)
+- files
+= functions
+
++Os 
+ + Lin
+    - first.py
+       = first
+       = second
+       = third
+       = fourth
+    - second.py
+    - third.py
+    - fourth.py
+    - ip.py
+ + Aix
+     - ip.py
+ + Sol
+    - first.py
+       = first
+       = second
+       = third
+       = fourth
+    - second.py
+    - third.py
+    - fourth.py
+    - ip.py
+ + HPUX
+     - ip.py
+
+ex:
+Os.Lin.ip
+Os.Lin.first.first()
+Os.Sol.first.first()
+
+1) create the folders aix,hpux,sol,lin under Os folder.
+
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ mkdir Os
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ mkdir Os/{aix,hpux,sol,lin}
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ 
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ tree Os
+Os
+├── aix
+├── hpux
+├── lin
+└── sol
+
+4 directories, 0 files
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ 
+
+2) create the first.py,second.py,third.py and fourth.py under the lin folder.
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ tree Os
+Os
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 4 files
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ 
+
+3) try importing the lin folder.
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ ls
+09-Learning_modules.txt  extra  Os  second.py  second.pyc
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ cd Os
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules/Os$ ls
+aix  hpux  lin  sol
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules/Os$ pwd
+/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules/Os
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules/Os$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 2.4.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-e3ffd921b4a6> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+4) To make it work like a package create __init__.py under the location lin/__init__.py
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ tree Os
+Os
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── __init__.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 5 files
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ cat Os/lin/__init__.py 
+import first
+import second
+import third
+import fourthkhyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ 
+
+5) try importing the lin folder.
+
+In [2]: import lin
+
+In [3]: lin.
+lin.first   lin.fourth  lin.second  lin.third   
+
+In [3]: lin.first.
+lin.first.my_first_lin1   lin.first.my_fourth_lin1  lin.first.my_second_lin1  lin.first.my_third_lin1   
+
+In [3]: lin.first.my_first_lin1()
+Out[3]: 'This is my first lin1 function'
+
+In [4]: lin.first.my_second_lin1()
+Out[4]: 'This is my second lin1 function'
+
+In [5]: lin.first.my_third_lin1()
+Out[5]: 'This is my third lin1 function'
+
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ tree Os
+Os
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+
+4 directories, 10 files
+khyaathi@khyaathi-Technologies:~/D
+
+
+6) Now lets copy all the files lin/*.py to sol/*.py
+
+myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ cp Os/lin/*.py Os/sol/.
+(myenv) khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ 
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules$ tree Os
+Os
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── first.pyc
+│   ├── fourth.py
+│   ├── fourth.pyc
+│   ├── __init__.py
+│   ├── __init__.pyc
+│   ├── second.py
+│   ├── second.pyc
+│   ├── third.py
+│   └── third.pyc
+└── sol
+    ├── first.py
+    ├── fourth.py
+    ├── __init__.py
+    ├── second.py
+    └── third.py
+
+4 directories, 15 files
+
+7) Make necessary modification to you sol files and import it.
+
+In [7]: pwd
+Out[7]: u'/home/khyaathi/Documents/tuxfux-hlp-notes/python-notes/batch-65/modules/Os'
+
+In [8]: import sol
+
+In [9]: sol.
+sol.first   sol.second  sol.third   
+
+In [9]: # similar in terms of enabling mobile developer options
+
+In [10]: from sol import fourth
+
+In [11]: # fourth is imported explicity.
+
+In [12]: # first,second and third and imported implicitly.
+
+In [13]: sol.
+sol.first   sol.fourth  sol.second  sol.third   
+
+In [13]: sol.first.
+sol.first.my_first_sol1   sol.first.my_fourth_sol1  sol.first.my_second_sol1  sol.first.my_third_sol1   
+
+In [13]: sol.first.my_first_sol1()
+Out[13]: 'This is my first sol1 function'
+
+In [14]: sol.first.my_second_sol1()
+Out[14]: 'This is my second sol1 function'
+
+In [15]: 
+
+
+##
+# Use case of applying modules in real time.
+##
+
+In [1]: import sys
+
+In [2]: sys.path
+Out[2]: 
+['',
+ '/usr/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [3]: 
+
+
+
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7$ pwd
+/usr/lib/python2.7
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7$ cd xml/
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls dom
+domreg.py  expatbuilder.py  __init__.py  minicompat.py  minidom.py  NodeFilter.py  pulldom.py  xmlbuilder.py
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls etree
+cElementTree.py   ElementInclude.py  ElementPath.pyc  ElementTree.pyc  __init__.pyc
+cElementTree.pyc  ElementPath.py     ElementTree.py   __init__.py
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls parsers
+expat.py  expat.pyc  __init__.py  __init__.pyc
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ ls sax
+_exceptions.py   expatreader.py  handler.pyc  __init__.pyc  saxutils.pyc  xmlreader.pyc
+_exceptions.pyc  handler.py      __init__.py  saxutils.py   xmlreader.py
+khyaathi@khyaathi-Technologies:/usr/lib/python2.7/xml$ cat __init__.py
+"""Core XML support for Python.
+
+This package contains four sub-packages:
+
+dom -- The W3C Document Object Model.  This supports DOM Level 1 +
+       Namespaces.
+
+parsers -- Python wrappers for XML parsers (currently only supports Expat).
+
+sax -- The Simple API for XML, developed by XML-Dev, led by David
+       Megginson and ported to Python by Lars Marius Garshol.  This
+       supports the SAX 2 API.
+
+etree -- The ElementTree XML library.  This is a subset of the full
+       ElementTree XML release.
+
+"""
+
+
+__all__ = ["dom", "parsers", "sax", "etree"]
+
+---- truncated ---
+
+###
+## use of __init__.py file
+###
+
+* To make your folder or directory with lots of python files to act as a package.
+* Any pre requisites you need to do before you load a module inside a package can be achieved using __init__.py
+
+##
+# pydoc
+###
+
+# pydoc sys
+# pydoc math
+# pydoc first (ex: modules/extra/first.py)
+
+
+Reference:
+https://docs.python.org/2/tutorial/modules.html#packages
+Installing modules - https://docs.python.org/2/installing/index.html
+Distribute python modules - https://docs.python.org/2/distributing/index.html
+                          - https://docs.python.org/2/distutils/
 
 
