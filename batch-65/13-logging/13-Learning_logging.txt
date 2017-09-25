@@ -1,0 +1,25 @@
+References:
+
+
+In [1]: import logging as l
+
+In [2]: l.
+           l.addLevelName       l.DEBUG              l.getLevelName       l.logThreads         l.StreamHandler      
+           l.atexit             l.debug              l.getLogger          l.makeLogRecord      l.sys                
+           l.BASIC_FORMAT       l.disable            l.getLoggerClass     l.Manager            l.thread             
+           l.basicConfig        l.error              l.Handler            l.NOTSET             l.threading          
+           l.BufferingFormatter l.ERROR              l.info               l.NullHandler        l.time               
+           l.captureWarnings    l.exception          l.INFO               l.os                 l.traceback          
+           l.codecs             l.FATAL              l.log                l.PlaceHolder        l.warn               
+           l.collections        l.fatal              l.Logger             l.raiseExceptions    l.WARN               
+           l.CRITICAL           l.FileHandler        l.LoggerAdapter      l.root               l.WARNING            
+           l.critical           l.Filter             l.logMultiprocessing l.RootLogger         l.warning            
+           l.cStringIO          l.Filterer           l.logProcesses       l.setLoggerClass     l.warnings           
+           l.currentframe       l.Formatter          l.LogRecord          l.shutdown           l.weakref            
+
+
+
+
+https://docs.python.org/2/howto/logging.html
+https://docs.python.org/2/howto/logging-cookbook.html
+https://docs.python.org/2/library/logging.html
