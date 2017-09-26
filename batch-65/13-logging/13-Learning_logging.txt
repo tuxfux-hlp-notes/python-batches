@@ -18,6 +18,40 @@ In [2]: l.
            l.currentframe       l.Formatter          l.LogRecord          l.shutdown           l.weakref            
 
 
+In [8]: import logging
+
+In [9]: logging.FileHandler?
+Init signature: logging.FileHandler(self, filename, mode='a', encoding=None, delay=0)
+Docstring:      A handler class which writes formatted logging records to disk files.
+Init docstring: Open the specified file and use it as the stream for logging.
+File:           /usr/lib/python2.7/logging/__init__.py
+Type:           type
+
+In [10]: logging.StreamHandler?
+Init signature: logging.StreamHandler(self, stream=None)
+Docstring:     
+A handler class which writes logging records, appropriately formatted,
+to a stream. Note that this class does not close the stream, as
+sys.stdout or sys.stderr may be used.
+Init docstring:
+Initialize the handler.
+
+If stream is not specified, sys.stderr is used.
+File:           /usr/lib/python2.7/logging/__init__.py
+Type:           type
+
+In [12]: import logging.handlers as lh
+
+In [13]: lh.
+     lh.BaseRotatingHandler       lh.DEFAULT_UDP_LOGGING_PORT  lh.RotatingFileHandler       lh.SYSLOG_TCP_PORT           
+     lh.BufferingHandler          lh.errno                     lh.SMTPHandler               lh.SYSLOG_UDP_PORT           
+     lh.codecs                    lh.HTTPHandler               lh.socket                    lh.SysLogHandler             
+     lh.cPickle                   lh.logging                   lh.SocketHandler             lh.time                      
+     lh.DatagramHandler           lh.MemoryHandler             lh.ST_DEV                    lh.TimedRotatingFileHandler  
+     lh.DEFAULT_HTTP_LOGGING_PORT lh.NTEventLogHandler         lh.ST_INO                    lh.WatchedFileHandler        
+     lh.DEFAULT_SOAP_LOGGING_PORT lh.os                        lh.ST_MTIME                                               
+     lh.DEFAULT_TCP_LOGGING_PORT  lh.re                        lh.struct                                                 
+
 
 
 https://docs.python.org/2/howto/logging.html

@@ -1,0 +1,13 @@
+Tue Sep 26 18:53:50 2017 - root - INFO - The disk looks healthy 10
+Tue Sep 26 18:54:21 2017 - root - INFO - The disk looks healthy 25
+Tue Sep 26 18:54:24 2017 - root - WARNING - Your disk is gettting fat 56
+Tue Sep 26 18:54:26 2017 - root - CRITICAL - your application has gone into coma - 89
+Tue Sep 26 18:54:29 2017 - root - INFO - The disk looks healthy 10
+Tue Sep 26 18:55:07 2017 - root - INFO - The disk looks healthy 10
+Tue Sep 26 19:12:01 2017 - root - INFO - The disk looks healthy 19
+Tue Sep 26 19:12:02 2017 - root - INFO - The disk looks healthy 19
+Tue Sep 26 19:12:02 2017 - root - INFO - The disk looks healthy 19
+Tue Sep 26 19:12:03 2017 - root - INFO - The disk looks healthy 19
+Tue Sep 26 19:12:03 2017 - root - INFO - The disk looks healthy 19
+Tue Sep 26 19:12:04 2017 - root - INFO - The disk looks healthy 19
+2017-09-26 20:06:49,638 - Disk Monitor - INFO - The disk looks healthy 19
