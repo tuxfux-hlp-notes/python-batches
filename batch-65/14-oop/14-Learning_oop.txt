@@ -1,0 +1,88 @@
+oop - Object oriented programming
+References:
+https://github.com/tuxfux-hlp/Python-examples/blob/master/opps/Good_links.txt
+https://github.com/RafeKettler/magicmethods/blob/master/magicmethods.pdf
+
+python
+ + functional based programming
+ + object oriented based programming
+
+A - Abstration
+
+- Attributes
+car        - blueprint/class
++ break    - function/methods
++ clutch
++ accleration 
+- interiors - variable/data
+- brand
+- mileage
+- color
+
+ex: instances/objects
+- swift
+- figo
+- scorpio
+- audi
+
+
+ex1: row houses
+
+
+P - Polymorphism
+
+poly -many
+morphism - forms
+
+I - Inheritance
+
+parent -> child
+
+E - Encapsulation
+accessing the data using functions.
+encapsulationg data along with functions.
+
+1/2 + 1/3 = 5/6
+
+In [23]: a = 1
+
+In [24]: b = 2
+
+In [25]: a + b
+Out[25]: 3
+
+In [26]: c = "python"
+
+In [27]: d = "rocks"
+
+In [28]: c + d
+Out[28]: 'pythonrocks'
+
+In [29]: 1/2 + 1/3 
+Out[29]: 0
+
+In [30]: 1/2.0 + 1/3.0 
+Out[30]: 0.8333333333333333
+
+In [31]: 
+
+
+In [33]: my_string
+Out[33]: 'python'
+
+In [34]: print dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+In [35]: my_string.__
+             my_string.__add__          my_string.__getattribute__ my_string.__len__          my_string.__repr__         
+             my_string.__class__        my_string.__getitem__      my_string.__lt__           my_string.__rmod__         
+             my_string.__contains__     my_string.__getnewargs__   my_string.__mod__          my_string.__rmul__         
+             my_string.__delattr__      my_string.__getslice__     my_string.__mul__          my_string.__setattr__      
+             my_string.__doc__          my_string.__gt__           my_string.__ne__           my_string.__sizeof__       
+             my_string.__eq__           my_string.__hash__         my_string.__new__          my_string.__str__          
+             my_string.__format__       my_string.__init__         my_string.__reduce__       my_string.__subclasshook__ 
+             my_string.__ge__           my_string.__le__           my_string.__reduce_ex__                               
+
+
+home work
+1) __str__ vs __repr__
