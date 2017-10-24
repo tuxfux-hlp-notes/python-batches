@@ -1,0 +1,144 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> keyword
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> FILES
+
+help> 
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+--- truncated output --
+
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+>>> 
+>>> my_string="python"
+>>> print dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> print help(my_string.zfill)
+
+None
+>>> print help(my_string.upper)
+
+None
+>>> 
+
+
+
+In [1]: my_string="python"
+
+In [2]: print type(my_string)
+<type 'str'>
+
+In [3]: my_num = 2
+
+In [4]: print type(my_num)
+<type 'int'>
+
+In [5]: my_num1 = 2.0
+
+In [6]: print type(my_num1)
+<type 'float'>
+
+In [7]: my_string.
+                my_string.capitalize my_string.format     my_string.isupper    my_string.rindex     my_string.strip      
+                my_string.center     my_string.index      my_string.join       my_string.rjust      my_string.swapcase   
+                my_string.count      my_string.isalnum    my_string.ljust      my_string.rpartition my_string.title      
+                my_string.decode     my_string.isalpha    my_string.lower      my_string.rsplit     my_string.translate  
+                my_string.encode     my_string.isdigit    my_string.lstrip     my_string.rstrip     my_string.upper      
+                my_string.endswith   my_string.islower    my_string.partition  my_string.split      my_string.zfill      
+                my_string.expandtabs my_string.isspace    my_string.replace    my_string.splitlines                      
+                my_string.find       my_string.istitle    my_string.rfind      my_string.startswith                      
+
+
+In [7]: my_string.upper?
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [8]: my_string.upper??
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [9]: my_string.upper()
+Out[9]: 'PYTHON'
+
+In [10]: my_string
+Out[10]: 'python'
+
+In [11]: my_string.capitalize()
+Out[11]: 'Python'
+
+In [12]: # homework
+
+In [13]: # create a variable my_string and walk over all the methods
+
+               	

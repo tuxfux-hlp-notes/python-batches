@@ -448,3 +448,128 @@ In [164]: re.match('''
 Out[164]: 'python is a great language.'
 
 
+In [1]: import re
+
+In [2]: my_sentence = "python is a great language."
+
+In [3]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+[.]',my_sentence).group()
+Out[3]: 'python is a great language.'
+
+In [4]: # grouping
+
+In [5]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+[.]',my_sentence).group()
+Out[5]: 'python is a great language.'
+
+In [6]: re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+[.]',my_sentence).group(0)
+Out[6]: 'python is a great language.'
+
+In [7]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).group(0)
+Out[7]: 'python is a great language.'
+
+In [8]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).group(1)
+Out[8]: 'python'
+
+In [9]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).group(2)
+Out[9]: 'language'
+
+In [10]: # ?P<>
+
+
+In [12]: # ?P<>
+
+In [13]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).group(2)
+Out[13]: 'language'
+
+In [14]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).groups()
+Out[14]: ('python', 'language')
+
+In [15]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).group(0)
+Out[15]: 'python is a great language.'
+
+In [16]: re.match('([a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+([a-z]+)[.]',my_sentence).group(1)
+Out[16]: 'python'
+
+In [17]: re.match('(?P<py>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<lan>[a-z]+)[.]',my_sentence).group()
+Out[17]: 'python is a great language.'
+
+In [18]: re.match('(?P<py>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<lan>[a-z]+)[.]',my_sentence).group('py')
+Out[18]: 'python'
+
+In [19]: re.match('(?P<py>[a-z]+)\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+(?P<lan>[a-z]+)[.]',my_sentence).group('lan')
+Out[19]: 'language'
+
+In [20]: 
+
+In [21]: # MULTILINE
+
+In [22]: my_sentence = "Python is a great language.\nPython is my first language.\nPython is leading in infrastructure worl
+    ...: d"
+
+In [23]: print my_sentence
+Python is a great language.
+Python is my first language.
+Python is leading in infrastructure world
+
+In [24]: print re.search('python',my_sentence,re.I)
+<_sre.SRE_Match object at 0x7fd399c8be68>
+
+In [25]: print re.search('python',my_sentence,re.I).group()
+Python
+
+In [26]: print re.match('python',my_sentence,re.I)
+<_sre.SRE_Match object at 0x7fd399c8bf38>
+
+In [27]: print re.match('python',my_sentence,re.I).group()
+Python
+
+In [28]: re.findall?
+Signature: re.findall(pattern, string, flags=0)
+Docstring:
+Return a list of all non-overlapping matches in the string.
+
+If one or more groups are present in the pattern, return a
+list of groups; this will be a list of tuples if the pattern
+has more than one group.
+
+Empty matches are included in the result.
+File:      /usr/lib/python2.7/re.py
+Type:      function
+
+In [30]: my_sentence = "Python is a great language.\nPython is my first language.\nPython is leading in infrastructure worl
+    ...: d"
+
+In [31]: re.findall?
+Signature: re.findall(pattern, string, flags=0)
+Docstring:
+Return a list of all non-overlapping matches in the string.
+
+If one or more groups are present in the pattern, return a
+list of groups; this will be a list of tuples if the pattern
+has more than one group.
+
+Empty matches are included in the result.
+File:      /usr/lib/python2.7/re.py
+Type:      function
+
+In [32]: re.findall('python',my_sentence,re.I)
+Out[32]: ['Python', 'Python', 'Python']
+
+In [33]: my_sentence
+Out[33]: 'Python is a great language.\nPython is my first language.\nPython is leading in infrastructure world'
+
+In [34]: print "%s" %(my_sentence)
+Python is a great language.
+Python is my first language.
+Python is leading in infrastructure world
+
+In [35]: print "%r" %(my_sentence)
+'Python is a great language.\nPython is my first language.\nPython is leading in infrastructure world'
+
+In [36]: re.findall('^python',my_sentence,re.I)
+Out[36]: ['Python']
+
+In [37]: re.findall('^python',my_sentence,(re.I|re.M))
+Out[37]: ['Python', 'Python', 'Python']
+
+
+

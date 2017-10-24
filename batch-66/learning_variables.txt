@@ -1,0 +1,136 @@
+In [15]: # playing with strings
+
+In [16]: my_name = "khyaathi"
+
+In [17]: print type(my_name)
+<type 'str'>
+
+In [18]: # a string is a sequence of characters
+
+In [19]: # k h y a a t h i
+
+In [20]: # 0 1 2 3 4 5 6 7 => +ve indexing => left to right
+
+In [21]: # -8-7-6-5-4-3-2-1 => -ve indexing => right to left
+
+In [22]: my_name[2]
+Out[22]: 'y'
+
+In [23]: my_name[5]
+Out[23]: 't'
+
+In [24]: my_name[-3]
+Out[24]: 't'
+
+In [25]: my_name[1]
+Out[25]: 'h'
+
+In [26]: my_name[0]
+Out[26]: 'k'
+
+In [27]: my_name[0] = "J"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-27-43be1860edd0> in <module>()
+----> 1 my_name[0] = "J"
+
+TypeError: 'str' object does not support item assignment
+
+In [28]: # slicing
+
+In [29]: # khya => slice -> 0 till 4 (4 excluded)
+
+In [30]: my_name[0:4]
+Out[30]: 'khya'
+
+In [31]: my_name[:4]
+Out[31]: 'khya'
+
+In [32]: my_name[4:]
+Out[32]: 'athi'
+
+In [33]: my_name[4:8]
+Out[33]: 'athi'
+
+In [34]: my_name[4:9]
+Out[34]: 'athi'
+
+In [35]: my_name[:4] + my_name[4:]
+Out[35]: 'khyaathi'
+
+In [36]: # task1
+
+In [37]: # my_name => khyaathi => Jhyaathi(output)
+
+In [38]: 'J' + my_name[1:]
+Out[38]: 'Jhyaathi'
+
+In [39]: 'j'.upper() + my_name[1:]
+Out[39]: 'Jhyaathi'
+
+In [40]: my_name.replace?
+Docstring:
+S.replace(old, new[, count]) -> string
+
+Return a copy of string S with all occurrences of substring
+old replaced by new.  If the optional argument count is
+given, only the first count occurrences are replaced.
+Type:      builtin_function_or_method
+
+In [41]: my_name.replace('k','J')
+Out[41]: 'Jhyaathi'
+
+In [42]:
+
+In [42]: '1' + '1'
+Out[42]: '11'
+
+In [43]: 1 + 1
+Out[43]: 2
+
+In [44]: '1' + 1
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-44-cc892b1f57d5> in <module>()
+----> 1 '1' + 1
+
+TypeError: cannot concatenate 'str' and 'int' objects
+
+In [45]: print type('1')
+<type 'str'>
+
+In [47]: # slicking
+
+In [48]: my_name
+Out[48]: 'khyaathi'
+
+In [49]: my_name[0:9]
+Out[49]: 'khyaathi'
+
+In [50]: my_name[:]
+Out[50]: 'khyaathi'
+
+In [51]: my_name[::1]
+Out[51]: 'khyaathi'
+
+In [52]: my_name[::2]
+Out[52]: 'kyah'
+
+In [53]: my_name[1::2]
+Out[53]: 'hati'
+
+In [54]: my_name[::-1]
+Out[54]: 'ihtaayhk'
+
+In [55]: my_name[-8]
+Out[55]: 'k'
+
+In [56]: my_name[-8:3]
+Out[56]: 'khy'
+
+In [57]: my_name[-8:3:2]
+Out[57]: 'ky'
+
+In [58]: my_name[-8:3:-1]
+Out[58]: ''
+ 

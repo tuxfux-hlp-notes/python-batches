@@ -1,0 +1,443 @@
+- persistant storage of data.
+
+In [1]: f = open('file1.txt')
+
+In [2]: print f,type(f)
+<open file 'file1.txt', mode 'r' at 0x7fddcccba780> <type 'file'>
+
+In [3]: # modes
+
+In [4]: # r -> read mode -> you can read a file.
+
+In [5]: # w -> write mode -> you can write a file.
+
+In [6]: # a -> append mode -> you can append a file.
+
+In [7]: # note: w -> if a file is not there, it get created.
+
+In [8]: # note: w -> if a file exits with content,it will truncate to zero.
+
+In [9]: # r+ -> read and write mode.
+
+In [10]: # b -> binary mode.
+
+In [11]: # rb,wb,ab
+
+In [13]: f = open('file1.txt')
+
+In [14]: # f.read
+
+In [15]: f.read?
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+Type:      builtin_function_or_method
+
+In [16]: print f.read(2)
+Th
+
+In [17]: print f.read(2)
+is
+
+In [18]: print f.read()
+ is my line1.
+This is my line2.
+This is my line3.
+This is my line4.
+This is my line5.
+
+
+
+In [19]: print f.read()
+
+
+In [20]: # f.tell
+
+In [21]: f.tell?
+Docstring: tell() -> current file position, an integer (may be a long integer).
+Type:      builtin_function_or_method
+
+In [22]: f.tell()
+Out[22]: 91
+
+In [23]: # f.seek
+
+In [24]: f.seek?
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+Type:      builtin_function_or_method
+
+In [25]: f.seek(0)
+
+In [27]: # f.readline
+
+In [28]: f.readline?
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+Type:      builtin_function_or_method
+
+In [29]: f.seek(0)
+
+In [30]: f.readline()
+Out[30]: 'This is my line1.\n'
+
+In [31]: f.readline()
+Out[31]: 'This is my line2.\n'
+
+In [32]: f.readline()
+Out[32]: 'This is my line3.\n'
+
+In [33]: f.readline()
+Out[33]: 'This is my line4.\n'
+
+In [34]: f.readline()
+Out[34]: 'This is my line5.\n'
+
+In [35]: f.readline()
+Out[35]: '\n'
+
+In [36]: f.readline()
+Out[36]: ''
+
+In [39]: # f.readlines
+
+In [40]: f.readlines?
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+Type:      builtin_function_or_method
+
+In [41]: f.seek(0)
+
+In [42]: my_lines = f.readlines()
+
+In [43]: print my_lines
+['This is my line1.\n', 'This is my line2.\n', 'This is my line3.\n', 'This is my line4.\n', 'This is my line5.\n', '\n']
+
+In [44]: my_lines
+Out[44]: 
+['This is my line1.\n',
+ 'This is my line2.\n',
+ 'This is my line3.\n',
+ 'This is my line4.\n',
+ 'This is my line5.\n',
+ '\n']
+
+In [46]: # write
+
+In [47]: g = open("file2.txt","w")
+
+In [48]: # g.write
+
+In [49]: g.write?
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+Type:      builtin_function_or_method
+
+In [50]: g.write("This is my first line.\nThis is my second line.\nThis is my third line.\n")
+
+In [51]: # keyboard -> I/O buffers -> cpu -> I/O buffers -> disk/monitor
+
+In [52]: g.flush()
+
+In [53]: g.flush?
+Docstring: flush() -> None.  Flush the internal I/O buffer.
+Type:      builtin_function_or_method
+
+In [54]: g
+Out[54]: <open file 'file2.txt', mode 'w' at 0x7fddcc23b030>
+
+
+In [56]: g
+Out[56]: <open file 'file2.txt', mode 'w' at 0x7fddcc23b030>
+
+In [57]: # f.writelines
+
+In [58]: g.writelines?
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+Type:      builtin_function_or_method
+
+In [59]: print my_lines
+['This is my line1.\n', 'This is my line2.\n', 'This is my line3.\n', 'This is my line4.\n', 'This is my line5.\n', '\n']
+
+In [60]: g.writelines(my_lines)
+
+In [61]: # g.close?
+
+In [62]: g.close?
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+Type:      builtin_function_or_method
+
+In [63]: g.close()
+
+In [64]: g
+Out[64]: <closed file 'file2.txt', mode 'w' at 0x7fddcc23b030>
+
+In [65]: f
+Out[65]: <open file 'file1.txt', mode 'r' at 0x7fddcc23b4b0>
+
+In [66]: g.closed
+Out[66]: True
+
+In [67]: f.closed
+Out[67]: False
+
+In [69]: g
+Out[69]: <closed file 'file2.txt', mode 'w' at 0x7fddcc23b030>
+
+In [70]: g.write("hey its friday tomorrow!!")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-70-1222470e72bc> in <module>()
+----> 1 g.write("hey its friday tomorrow!!")
+
+ValueError: I/O operation on closed file
+
+In [71]: # closed
+
+In [72]: if g.closed:
+    ...:     print "the file is closed"
+    ...: else:
+    ...:     g.write("Hey its friday tomorrow")
+    ...:     
+the file is closed
+
+In [73]: # try..except..else..finally
+
+In [74]: try:
+    ...:     g.write("Hey its friday tomorrow")
+    ...: except:
+    ...:     print "the file is closed"
+    ...: else:
+    ...:     g.flush()
+    ...:     
+the file is closed
+
+In [75]: # with
+
+In [76]: with open("file2.txt","a") as g:
+    ...:     g.write("\n Hey its friday tomorrow \n")
+    ...:     
+
+In [77]: g
+Out[77]: <closed file 'file2.txt', mode 'a' at 0x7fddcc23bc00>
+
+In [82]: # xreadlines
+
+In [83]: g.xreadlines?
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+Type:      builtin_function_or_method
+
+In [84]: # truncate
+
+In [85]: g.truncate?
+Docstring:
+truncate([size]) -> None.  Truncate the file to at most size bytes.
+
+Size defaults to the current file position, as returned by tell().
+Type:      builtin_function_or_method
+
+In [86]: # readinto?
+
+In [87]: readinto?
+Object `readinto` not found.
+
+In [88]: g.readinto?
+Docstring: readinto() -> Undocumented.  Don't use this; it may go away.
+Type:      builtin_function_or_method
+
+In [89]: f
+Out[89]: <open file 'file1.txt', mode 'r' at 0x7fddcc23b4b0>
+
+In [90]: f.seek(0)
+
+In [91]: # next
+
+In [92]: f.next?
+Type:        method-wrapper
+String form: <method-wrapper 'next' of file object at 0x7fddcc23b4b0>
+Docstring:   x.next() -> the next value, or raise StopIteration
+
+In [93]: f.next()
+Out[93]: 'This is my line1.\n'
+
+In [94]: f.next()
+Out[94]: 'This is my line2.\n'
+
+In [95]: f.next()
+Out[95]: 'This is my line3.\n'
+
+In [96]: f.next()
+Out[96]: 'This is my line4.\n'
+
+In [97]: f.next()
+Out[97]: 'This is my line5.\n'
+
+In [98]: f.next()
+Out[98]: '\n'
+
+In [99]: f.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-99-297e922ec2d6> in <module>()
+----> 1 f.next()
+
+StopIteration: 
+
+
+In [103]: f.name
+Out[103]: 'file1.txt'
+
+In [104]: f.mode
+Out[104]: 'r'
+
+In [105]: # isatty
+
+In [106]: f.isatty?
+Docstring: isatty() -> true or false.  True if the file is connected to a tty device.
+Type:      builtin_function_or_method
+
+In [107]: f.isatty()
+Out[107]: False
+
+In [108]: f
+Out[108]: <open file 'file1.txt', mode 'r' at 0x7fddcc23b4b0>
+
+In [114]: h = open('/dev/pts/4','ab')
+
+In [115]: h.isatty()
+Out[115]: True
+
+In [116]: f.isatty()
+Out[116]: False
+
+In [117]: h.write("\n hey lets go for lunch \n")
+
+In [118]: h.flush()
+
+
+
+In [129]: ls
+16-Learning_files.txt  file1.txt  file2.txt  my_email.txt
+
+In [130]: email = open('my_email.txt','r')
+
+In [131]: my_emails = email.read()
+
+In [132]: email.close()
+
+In [133]: print my_emails
+my email is tuxfux.hlp@gmail.com
+my email is navya@hotmail.co.in
+my email is sridhar@yahoo.com
+my email is kumar@
+my email is @in.com
+
+
+In [134]: import re
+
+In [135]: reg1 = re.compile('[a-zA-Z.]+@[a-zA-Z.]+')
+
+In [136]: reg1.findall(my_emails)
+Out[136]: ['tuxfux.hlp@gmail.com', 'navya@hotmail.co.in', 'sridhar@yahoo.com']
+
+In [137]: email = open('my_email.txt','r')
+
+In [138]: my_emails = email.read()
+
+In [139]: email.close()
+
+In [140]: print my_emails
+my email is tuxfux.hlp@gmail.com
+my email is navya@hotmail.co.in
+my email is sridhar@yahoo.com
+my email is kumar@
+my email is @in.com
+my email address is kumar123@gmail.co.in
+
+
+In [141]: reg1.findall(my_emails)
+Out[141]: ['tuxfux.hlp@gmail.com', 'navya@hotmail.co.in', 'sridhar@yahoo.com']
+
+In [142]: reg2 = re.compile('[a-zA-Z.0-9]+@[a-zA-Z.]+')
+
+In [143]: reg2.findall(my_emails)
+Out[143]: 
+['tuxfux.hlp@gmail.com',
+ 'navya@hotmail.co.in',
+ 'sridhar@yahoo.com',
+ 'kumar123@gmail.co.in']
+
+---
+https://pypi.python.org/pypi/excel/1.0.0
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# virtualenv sheets
+Running virtualenv with interpreter /usr/bin/python2
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-65/16-files/sheets/bin/python2
+Also creating executable in /home/khyaathi/Documents/git_repos/python-batches/batch-65/16-files/sheets/bin/python
+Installing setuptools, pkg_resources, pip, wheel...done.
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# source sheets/bin/activate
+(sheets) root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# pip freeze
+pkg-resources==0.0.0
+The directory '/home/khyaathi/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+(sheets) root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# pip install excel
+The directory '/home/khyaathi/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/home/khyaathi/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Collecting excel
+Collecting xlrd (from excel)
+  Downloading xlrd-1.1.0-py2.py3-none-any.whl (108kB)
+    100% |████████████████████████████████| 112kB 931kB/s 
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(sheets) root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# pip freeze
+excel==1.0.0
+pkg-resources==0.0.0
+xlrd==1.1.0
+The directory '/home/khyaathi/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+(sheets) root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+(sheets) root@khyaathipython:~/Documents/git_repos/python-batches/batch-65/16-files# 
+
+## yaml,xml,json
+
