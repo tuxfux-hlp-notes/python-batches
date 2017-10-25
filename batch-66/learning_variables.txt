@@ -133,4 +133,207 @@ Out[57]: 'ky'
 
 In [58]: my_name[-8:3:-1]
 Out[58]: ''
- 
+
+In [1]: 1 + 1
+Out[1]: 2
+
+In [2]: 25 + 25 / 2
+Out[2]: 37
+
+In [3]: (25 + 25) / 2
+Out[3]: 25
+
+In [4]: 23 * 23
+Out[4]: 529
+
+In [5]: 2 ** 38
+Out[5]: 274877906944
+
+In [6]: import math
+
+In [7]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [8]: math.pow(2,38)
+Out[8]: 274877906944.0
+
+In [9]: 25/2
+Out[9]: 12
+
+In [10]: 25 % 2
+Out[10]: 1
+
+In [11]: 25/2.0
+Out[11]: 12.5
+
+In [12]: 25.0/2
+Out[12]: 12.5
+
+In [13]: # int,str,float
+
+In [14]: print int(2.0)
+2
+
+In [15]: print str(3)
+3
+
+In [16]: print float(3)
+3.0
+
+In [17]: print float(25)/2
+12.5
+
+In [18]: print int(a)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-18-06d6123515d7> in <module>()
+----> 1 print int(a)
+
+NameError: name 'a' is not defined
+
+In [19]: # unicode
+
+In [20]: # 3.x -> unicode compliant
+
+In [22]: # print
+
+In [23]: my_school = "De paul"
+
+In [24]: another_school = "st. xaviers"
+
+In [25]: town = "township"
+
+In [26]: beach="blue"
+
+In [27]: commute="bus"
+
+In [28]: # print
+
+In [29]: print "my school name is my_school"
+my school name is my_school
+
+In [30]: print 'my school name is my_school'
+my school name is my_school
+
+In [31]: print 'my school name is ' ,my_school
+my school name is  De paul
+
+In [32]: print 'my school name is ' ,my_school , "we had another school" , another_school , "we used to live in a small tow
+    ...: nship " , town, ' we have a beach which is ', beach ,'in colour' , "we used to commute in " , commute
+my school name is  De paul we had another school st. xaviers we used to live in a small township  township  we have a beach which is  blue in colour we used to commute in  bus
+
+In [33]: # type casting - %s,%d,%f,%r
+
+In [34]: print "my school name is %s. We had another school %s. we used to live in a small township %s. We have a beach whi
+    ...: ch is %s.We used to commute in %s." %(my_school,another_school,town,beach,commute)
+my school name is De paul. We had another school st. xaviers. we used to live in a small township township. We have a beach which is blue.We used to commute in bus.
+
+In [36]: weeks = "sun\nmon\ntue\nwed\nthu\nfri\nsat"
+
+In [37]: print "%s" %(weeks)
+sun
+mon
+tue
+wed
+thu
+fri
+sat
+
+In [38]: print "%r" %(weeks)
+'sun\nmon\ntue\nwed\nthu\nfri\nsat'
+
+In [39]: print "%d" %(weeks)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-39-fc0401d92fcd> in <module>()
+----> 1 print "%d" %(weeks)
+
+TypeError: %d format: a number is required, not str
+
+In [40]: 
+
+In [41]: # format
+
+In [42]: print "my school name is %s.I love my %s" %(my_school,my_school)
+my school name is De paul.I love my De paul
+
+In [43]: print "my school name is %s.I love my %s" %(my_school,another_school)
+my school name is De paul.I love my st. xaviers
+
+In [44]: print "my school name is {}.I love my {}".format(my_school,another_school)
+my school name is De paul.I love my st. xaviers
+
+In [45]: print "my school name is {0}.I love my {0}".format(my_school,another_school)
+my school name is De paul.I love my De paul
+
+In [46]: print "my school name is {1}.I love my {1}".format(my_school,another_school)
+my school name is st. xaviers.I love my st. xaviers
+
+In [47]: print "my school name is {ms}.I love my {ms}".format(ms=my_school,ans=another_school)
+my school name is De paul.I love my De paul
+
+In [48]: 
+
+In [49]: # input
+
+In [50]: # raw_input and input
+
+In [51]: # raw_input ( 2.x)
+
+In [52]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [53]: print name,type(name)
+kumar <type 'str'>
+
+In [54]: rollno = raw_input("please enter your rollno:")
+please enter your rollno:3
+
+In [55]: print rollno,type(rollno)
+3 <type 'str'>
+
+In [56]: rollno = int(raw_input("please enter your rollno:"))
+please enter your rollno:3
+
+In [57]: print rollno,type(rollno)
+3 <type 'int'>
+
+In [58]: rollno = int(raw_input("please enter your rollno:"))
+please enter your rollno:a
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-58-9b0518e6ae85> in <module>()
+----> 1 rollno = int(raw_input("please enter your rollno:"))
+
+ValueError: invalid literal for int() with base 10: 'a'
+
+
+In [60]: # input
+
+In [61]: name = input("please enter your name:")
+please enter your name:name
+
+In [62]: print name,type(name)
+kumar <type 'str'>
+
+In [63]: rollno = input("please enter your rollno:")
+please enter your rollno:3
+
+In [64]: print rollno,type(rollno)
+3 <type 'int'>
+
+In [65]: name = input("please enter your name:")
+please enter your name:"name"
+
+In [66]: print name
+name
+
+
+
+
+# reference
+http://www.pythonchallenge.com 
