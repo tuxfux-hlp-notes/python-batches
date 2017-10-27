@@ -120,4 +120,77 @@ StopIteration                             Traceback (most recent call last)
 StopIteration: 
 
 
+
+
+
+
+n [1]: import sys
+
+In [2]: sys.exit?
+Docstring:
+exit([status])
+
+Exit the interpreter by raising SystemExit(status).
+If the status is omitted or None, it defaults to zero (i.e., success).
+If the status is an integer, it will be used as the system exit status.
+If it is another kind of object, it will be printed and the system
+exit status will be one (i.e., failure).
+Type:      builtin_function_or_method
+
+In [3]: 
+
+
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66# ls
+big.py    guess_number.py   Learning_conditions.txt  Learning_Looping.txt    market.py      opensource.txt
+first.py  Installation.txt  learning_help.txt        learning_variables.txt  myfirst.ipynb  second.py
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66# echo $?
+0
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66# ld
+ld: no input files
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66# echo $?
+1
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66# 
+
 # iternator and generator
+
+In [5]: range?
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+Type:      builtin_function_or_method
+
+In [6]: xrange?
+Docstring:
+xrange(stop) -> xrange object
+xrange(start, stop[, step]) -> xrange object
+
+Like range(), but instead of returning a list, returns an object that
+generates the numbers in the range on demand.  For looping, this is 
+slightly faster than range() and more memory efficient.
+Type:      type
+
+In [7]: range(5)
+Out[7]: [0, 1, 2, 3, 4]
+
+In [8]: xrange(5)
+Out[8]: xrange(5)
+
+In [9]: for value in xrange(5):
+   ...:     print value
+   ...:     
+0
+1
+2
+3
+4
+
+In [10]: # iterator will run out of memory
+
+In [11]: # generator will run out of time.
+
