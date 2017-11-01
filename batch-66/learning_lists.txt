@@ -322,6 +322,253 @@ TOMorrow
 DAYAfter
 
 
+In [91]: # A string to a list
+
+In [92]: my_string="python"
+
+In [93]: Lmy_string=list(my_string)
+
+In [94]: print Lmy_string
+['p', 'y', 't', 'h', 'o', 'n']
+
+In [95]: Lmy_string[0]
+Out[95]: 'p'
+
+In [96]: Lmy_string[0]='T'
+
+In [97]: print Lmy_string
+['T', 'y', 't', 'h', 'o', 'n']
+
+In [98]: # list to a string
+
+In [99]: delimiter = ''
+
+In [100]: delimiter.join?
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+Type:      builtin_function_or_method
+
+In [102]: delimiter.join(Lmy_string)
+Out[102]: 'Tython'
+
+In [103]: new_string=delimiter.join(Lmy_string)
+
+In [104]: print my_string
+python
+
+In [105]: print new_string
+Tython
+
+In [109]: # A string to a list
+
+In [110]: my_sentence = "today is friday"
+
+In [111]: Lmy_sentence = list(my_sentence)
+
+In [112]: print Lmy_sentence
+['t', 'o', 'd', 'a', 'y', ' ', 'i', 's', ' ', 'f', 'r', 'i', 'd', 'a', 'y']
+
+In [113]: my_sentence.split?
+Docstring:
+S.split([sep [,maxsplit]]) -> list of strings
+
+Return a list of the words in the string S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are removed
+from the result.
+Type:      builtin_function_or_method
+
+In [114]: # tuxfux.hlp@gmail.com
+
+In [115]: my_sentence.split()
+Out[115]: ['today', 'is', 'friday']
+
+In [116]: Lmy_sentence=my_sentence.split()
+
+In [117]: print Lmy_sentence
+['today', 'is', 'friday']
+
+In [118]: Lmy_sentence[-1]="Friday"
+
+In [119]: print Lmy_sentence
+['today', 'is', 'Friday']
+
+In [120]: Lmy_sentence[-1]="Wednesday"
+
+In [121]: print Lmy_sentence
+['today', 'is', 'Wednesday']
+
+In [122]: # list to a string
+
+In [123]: my_limiter = ' '
+
+In [124]: my_limiter.join?
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+Type:      builtin_function_or_method
+
+In [125]: my_limiter.join(Lmy_sentence)
+Out[125]: 'today is Wednesday'
+
+In [126]: new_sentence=my_limiter.join(Lmy_sentence)
+
+In [127]: print new_sentence
+today is Wednesday
+
+# use case
+
+In [132]: my_limiter.join(Lmy_sentence)
+Out[132]: 'today is Wednesday'
+
+In [133]: my_limiter
+Out[133]: ' '
+
+In [134]: my_limiter=':'
+
+In [135]: my_limiter.join(Lmy_sentence)
+Out[135]: 'today:is:Wednesday'
+
+In [136]: #khyaathi:x:1000:1000:KHYAATHI,,,:/home/khyaathi:/bin/bash
+
+In [137]: #useradd khyaathi
+
+In [138]: my_user=['khyaathi','x','1000','1000','KHYAATHI is my home','/home/khyaathi','/bin/bash']
+
+In [139]: print my_user
+['khyaathi', 'x', '1000', '1000', 'KHYAATHI is my home', '/home/khyaathi', '/bin/bash']
+
+In [140]: delimiter=':'
+
+In [141]: delimiter.join(my_user)
+Out[141]: 'khyaathi:x:1000:1000:KHYAATHI is my home:/home/khyaathi:/bin/bash'
+
+In [142]: 
+
+# aliasing/memory in variables
+
+In [143]: # soft copy and deep copy
+
+In [144]: a = 1
+
+In [145]: id?
+Docstring:
+id(object) -> integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it's the object's memory address.)
+Type:      builtin_function_or_method
+
+In [146]: id(a)
+Out[146]: 94821547094360
+
+In [147]: id(1)
+Out[147]: 94821547094360
+
+In [148]: b = 1
+
+In [149]: id(b)
+Out[149]: 94821547094360
+
+In [150]: # is
+
+In [151]: a is b
+Out[151]: True
+
+In [152]: b = 10
+
+In [153]: print a
+1
+
+In [154]: print b
+10
+
+In [155]: a is b
+Out[155]: False
+
+In [156]: id(a)
+Out[156]: 94821547094360
+
+In [157]: id(b)
+Out[157]: 94821547094144
+
+# soft copy
+
+In [159]: a = [1,2,3]
+
+In [160]: id(a)
+Out[160]: 140388330500464
+
+In [161]: b = a
+
+In [162]: id(b)
+Out[162]: 140388330500464
+
+In [163]: b is a
+Out[163]: True
+
+In [164]: a[1]
+Out[164]: 2
+
+In [165]: a[1]="two"
+
+In [166]: print a # [1,"two",3]
+[1, 'two', 3]
+
+In [167]: print b # [1,2,3],[1,two,3]
+[1, 'two', 3]
+
+# deep copy
+
+In [168]: # os take your whole list as one big block of memory
+
+In [169]: # there is no soft copy in other programming languages
+
+In [170]: a = ["one","two","three"]
+
+In [171]: print a
+['one', 'two', 'three']
+
+In [172]: print b # ["one","two","three"],[1,"two",3]
+[1, 'two', 3]
+
+In [173]: id(a),id(b)
+Out[173]: (140388244044544, 140388330500464)
+
+In [174]: a is b
+Out[174]: False
+
+## why?why?why?
+
+In [182]: a = 300
+
+In [183]: b = 300
+
+In [184]: a is b
+Out[184]: False
+
+In [185]: id(a)
+Out[185]: 94821557040056
+
+In [186]: id(b)
+Out[186]: 94821557040128
+
+In [187]: a = 1
+
+In [188]: b = 1
+
+In [189]: a is b
+Out[189]: True
+
+
+
+
 References:
 https://scipy.org/
 https://github.com/tuxfux-hlp-notes/seminars
