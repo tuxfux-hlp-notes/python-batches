@@ -1,0 +1,154 @@
+# tuples
+# tuples are generally readonly lists.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: # tuples
+
+In [2]: my_weeks = ('mon','tue','wed','thu','fri','sat','sun')
+
+In [3]: print my_weeks,type(my_weeks)
+('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') <type 'tuple'>
+
+In [4]: my_empty = ()
+
+In [5]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [6]: my_empty=tuple()
+
+In [7]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [8]: # indexing,slicing - we have similar facilities in tuples
+
+In [9]: my_weeks[0]
+Out[9]: 'mon'
+
+In [10]: my_weeks[0]="monday"
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-10-121cc1913e75> in <module>()
+----> 1 my_weeks[0]="monday"
+
+TypeError: 'tuple' object does not support item assignment
+
+In [12]: # packing and unpacking
+
+In [13]: # lists,tuples fall under packing catogory
+
+In [14]: # unpacking is putting them back to strings
+
+In [15]: print my_weeks
+('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+
+In [16]: a,b,c,d,e,f,g = my_weeks()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-16-eed9141d1cd8> in <module>()
+----> 1 a,b,c,d,e,f,g = my_weeks()
+
+TypeError: 'tuple' object is not callable
+
+In [17]: a,b,c,d,e,f,g = my_weeks
+
+In [18]: print a
+mon
+
+In [19]: print g
+sun
+
+In [20]: a,b,c,d = my_weeks
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-20-57326b54ad62> in <module>()
+----> 1 a,b,c,d = my_weeks
+
+ValueError: too many values to unpack
+
+In [21]: a,b,c,d = my_weeks[3:]
+
+In [22]: a
+Out[22]: 'thu'
+
+In [23]: b
+Out[23]: 'fri'
+
+In [24]: c
+Out[24]: 'sat'
+
+In [25]: d
+Out[25]: 'sun'
+
+In [26]: a,b,c,d,e,f,g,h = my_weeks
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-26-d276a0d0548a> in <module>()
+----> 1 a,b,c,d,e,f,g,h = my_weeks
+
+ValueError: need more than 7 values to unpack
+
+# lists and values
+
+In [28]: my_student = ['priya','sowji','mayuri','reddy','salim','mahindra','navya']
+
+In [29]: my_subject = ['django','ansible','python','chef','puppet','nginx','linux']
+
+In [30]: name='mayuri'
+
+In [31]: name in my_student
+Out[31]: True
+
+In [32]: my_student.index(name)
+Out[32]: 2
+
+In [33]: my_subject[my_student.index(name)]
+Out[33]: 'python'
+
+In [34]: if name in my_student:
+    ...:     print "{} is going to give exam {}".format(name,my_subject[my_student.index(name)])
+    ...:     
+mayuri is going to give exam python
+
+In [35]: name="reddy"
+
+In [36]: if name in my_student:
+    ...:     print "{} is going to give exam {}".format(name,my_subject[my_student.index(name)])
+    ...:     
+reddy is going to give exam chef
+
+In [37]: 
+
+In [37]: # anti-climax - priciple comes
+
+In [38]: # junior
+
+In [39]: my_student.sort()
+
+In [40]: print my_student
+['mahindra', 'mayuri', 'navya', 'priya', 'reddy', 'salim', 'sowji']
+
+In [41]: print my_subject
+['django', 'ansible', 'python', 'chef', 'puppet', 'nginx', 'linux']
+
+In [42]: name="reddy"
+
+In [43]: if name in my_student:
+    ...:     print "{} is going to give exam {}".format(name,my_subject[my_student.index(name)])
+    ...:     
+reddy is going to give exam puppet
+
+In [44]: 
+
+In [44]: name="mayuri"
+
+In [45]: if name in my_student:
+    ...:     print "{} is going to give exam {}".format(name,my_subject[my_student.index(name)])
+    ...:     
+mayuri is going to give exam ansible
+
+In [46]: 
