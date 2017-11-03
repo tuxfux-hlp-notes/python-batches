@@ -1,0 +1,345 @@
+
+# Dictionaries
+# dict,hashes,hash
+
+apple => red color fruit
+cherry => red color fruit
+
+ex: adhar,ssn,employeeid
+	my adhar(unique) -> abc,hyd,121(value)
+parent adhar(unique) -> efg,hyd,121(value)
+
+key => value
+
+In [1]: my_fruits = {'a':'apple','b':'banana','c':'cherry','d':'dates'}
+
+In [2]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [3]: # dictionaries are key based not indexed.
+
+In [4]: print my_fruits,id(my_fruits)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'} 140077520068688
+
+In [5]: print my_fruits,type(my_fruits)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'} <type 'dict'>
+
+In [6]: my_empty={}
+
+In [7]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [8]: my_empty=dict()
+
+In [9]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [10]: 
+
+In [11]: # cheatsheet
+
+In [12]: # list => ['apple','banana'],list(),[]
+
+In [13]: # tuples => ('apple','banana'),tuple(),()
+
+In [14]: # dict => {'a':'apple','b':'banana'},dict(),{}
+
+In [15]: # how to access a variable
+
+In [16]: my_fruits
+Out[16]: {'a': 'apple', 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [17]: print my_fruits['a']
+apple
+
+In [18]: print my_fruits['c']
+cherry
+
+In [19]: # how to add a new element
+
+In [20]: my_fruits['f']='fig'
+
+In [21]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'f': 'fig'}
+
+# replace
+
+In [22]: my_fruits['a']='avacado'
+
+In [23]: print my_fruits
+{'a': 'avacado', 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'f': 'fig'}
+
+In [24]: 
+
+In [24]: my_fruits['a']=('apple','avacado')
+
+In [25]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'f': 'fig'}
+
+In [27]: # functions
+
+In [28]: # my_fruits.get
+
+In [29]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'f': 'fig'}
+
+In [30]: my_fruits['c']
+Out[30]: 'cherry'
+
+In [31]: my_fruits.get('c')
+Out[31]: 'cherry'
+
+In [32]: #my_fruits.has_key
+
+In [33]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'f': 'fig'}
+
+In [34]: 'a' in my_fruits
+Out[34]: True
+
+In [35]: 'cherry' in my_fruits
+Out[35]: False
+
+In [36]: my_fruits.has_key('a')
+Out[36]: True
+
+In [37]: my_fruits.has_key('cherry')
+Out[37]: False
+
+In [39]: #my_fruits.keys,my_fruits.viewkeys,my_fruits.iterkeys
+
+In [40]: my_fruits.keys?
+Docstring: D.keys() -> list of D's keys
+Type:      builtin_function_or_method
+
+In [41]: my_fruits.keys()
+Out[41]: ['a', 'c', 'b', 'd', 'f']
+
+In [42]: my_fruits.iterkeys?
+Docstring: D.iterkeys() -> an iterator over the keys of D
+Type:      builtin_function_or_method
+
+In [43]: my_fruits.iterkeys()
+Out[43]: <dictionary-keyiterator at 0x7f6654d7b0a8>
+
+In [44]: for key in my_fruits.iterkeys():
+    ...:     print key
+    ...:     
+a
+c
+b
+d
+f
+
+In [45]: my_fruits.viewkeys?
+Docstring: D.viewkeys() -> a set-like object providing a view on D's keys
+Type:      builtin_function_or_method
+
+In [46]: my_fruits.viewkeys()
+Out[46]: dict_keys(['a', 'c', 'b', 'd', 'f'])
+
+In [48]: # my_fruits.values,my_fruits.itervalues,my_fruits.viewvalues
+
+In [49]: print my_fruits.values()
+[('apple', 'avacado'), 'cherry', 'banana', 'dates', 'fig']
+
+In [50]: print my_fruits.itervalues()
+<dictionary-valueiterator object at 0x7f6656351ba8>
+
+In [51]: for value in my_fruits.itervalues():
+    ...:     print value
+    ...:     
+('apple', 'avacado')
+cherry
+banana
+dates
+fig
+
+In [52]: print my_fruits.viewvalues()
+dict_values([('apple', 'avacado'), 'cherry', 'banana', 'dates', 'fig'])
+
+In [53]: 
+
+In [54]: # my_fruits.items,my_fruits.iteritems,my_fruits.viewitems
+
+In [55]: print my_fruits.items?
+Docstring: D.items() -> list of D's (key, value) pairs, as 2-tuples
+Type:      builtin_function_or_method
+
+In [56]: print my_fruits.items()
+[('a', ('apple', 'avacado')), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates'), ('f', 'fig')]
+
+In [57]: print my_fruits.iteritems?
+Docstring: D.iteritems() -> an iterator over the (key, value) items of D
+Type:      builtin_function_or_method
+
+In [58]: print my_fruits.iteritems()
+<dictionary-itemiterator object at 0x7f665441f368>
+
+In [59]: print my_fruits.viewitems?
+Docstring: D.viewitems() -> a set-like object providing a view on D's items
+Type:      builtin_function_or_method
+
+In [60]: print my_fruits.viewitems()
+dict_items([('a', ('apple', 'avacado')), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates'), ('f', 'fig')])
+
+In [61]: 
+
+In [62]: #my_fruits.update
+
+In [63]: my_fruits.update?
+Docstring:
+D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]
+Type:      builtin_function_or_method
+
+In [64]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'f': 'fig'}
+
+In [65]: my_fruits.update({'g':'grapes','j':'jackfruits'})
+
+In [66]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'j': 'jackfruits'}
+
+In [67]: 
+
+
+In [68]: #my_fruits.setdefault
+
+In [69]: print my_fruits.setdefault?
+Docstring: D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+Type:      builtin_function_or_method
+
+In [70]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'j': 'jackfruits'}
+
+In [71]: my_fruits.setdefault('k',None)
+
+In [72]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'k': None, 'j': 'jackfruits'}
+
+In [73]: my_fruits.setdefault('k')
+
+In [74]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'k': None, 'j': 'jackfruits'}
+
+In [75]: my_fruits.setdefault('a')
+Out[75]: ('apple', 'avacado')
+
+In [76]: my_fruits.setdefault('b','beetroot')
+Out[76]: 'banana'
+
+In [77]: #  my_fruits['b']='beetroot'
+
+In [78]: my_fruits.setdefault('k','kiwi')
+
+In [79]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'k': None, 'j': 'jackfruits'}
+
+In [80]: my_fruits.setdefault('K','kiwi')
+Out[80]: 'kiwi'
+
+In [81]: print my_fruits
+{'a': ('apple', 'avacado'), 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'k': None, 'j': 'jackfruits', 'K': 'kiwi'}
+
+In [83]: #my_fruits.fromkeys
+
+In [84]: print my_fruits.fromkeys?
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+Type:      builtin_function_or_method
+
+In [85]: my_student = ['priya','sowji','mayuri','reddy','salim','mahindra','navya']
+
+In [86]: my_batch66=my_batch66.fromkeys(my_student)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-86-466dc7477289> in <module>()
+----> 1 my_batch66=my_batch66.fromkeys(my_student)
+
+NameError: name 'my_batch66' is not defined
+
+In [87]: my_batch66={}
+
+In [88]: my_batch66=my_batch66.fromkeys(my_student)
+
+In [89]: print my_batch66
+{'mayuri': None, 'salim': None, 'mahindra': None, 'navya': None, 'sowji': None, 'priya': None, 'reddy': None}
+
+In [90]: my_batch66=my_batch66.fromkeys(my_student,'batch66')
+
+In [91]: print my_batch66
+{'mayuri': 'batch66', 'salim': 'batch66', 'mahindra': 'batch66', 'navya': 'batch66', 'sowji': 'batch66', 'priya': 'batch66', 'reddy': 'batch66'}
+
+In [92]: 
+
+In [93]: # my_fruits.clear
+
+In [94]: print my_fruits.clear?
+Docstring: D.clear() -> None.  Remove all items from D.
+Type:      builtin_function_or_method
+
+In [95]: print my_batch66
+{'mayuri': 'batch66', 'salim': 'batch66', 'mahindra': 'batch66', 'navya': 'batch66', 'sowji': 'batch66', 'priya': 'batch66', 'reddy': 'batch66'}
+
+In [96]: my_batch66.clear()
+
+In [97]: print my_batch66
+{}
+
+In [99]: # my_fruits.pop
+
+In [100]: print my_fruits.pop?
+Docstring:
+D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised
+Type:      builtin_function_or_method
+
+In [101]: my_batch = {'mayuri': 'batch66', 'salim': 'batch66', 'mahindra': 'batch66', 'navya': 'batch66', 'sowji': 'batch66
+     ...: ', 'priya': 'batch66', 'reddy': 'batch66'}
+
+In [102]: my_batch.pop('salim')
+Out[102]: 'batch66'
+
+In [103]: print my_batch
+{'mayuri': 'batch66', 'mahindra': 'batch66', 'navya': 'batch66', 'sowji': 'batch66', 'priya': 'batch66', 'reddy': 'batch66'}
+
+In [104]: my_batch.pop('salim')
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-104-60256a4333ed> in <module>()
+----> 1 my_batch.pop('salim')
+
+KeyError: 'salim'
+
+In [106]: #my_fruits.popitems
+
+In [107]: my_fruits.popitem?
+Docstring:
+D.popitem() -> (k, v), remove and return some (key, value) pair as a
+2-tuple; but raise KeyError if D is empty.
+Type:      builtin_function_or_method
+
+In [108]: my_batch
+Out[108]: 
+{'mahindra': 'batch66',
+ 'mayuri': 'batch66',
+ 'navya': 'batch66',
+ 'priya': 'batch66',
+ 'reddy': 'batch66',
+ 'sowji': 'batch66'}
+
+In [109]: my_batch.popitem()
+Out[109]: ('mayuri', 'batch66')
+
+In [110]: my_batch.popitem()
+Out[110]: ('mahindra', 'batch66')
+
+
+References:
+https://www.w3resource.com/python-exercises/dictionary/
+https://github.com/tuxfux-hlp-notes/Projects/tree/master/python
+https://github.com/sambapython/python/blob/master/assignments.txt

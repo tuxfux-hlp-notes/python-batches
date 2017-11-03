@@ -152,3 +152,87 @@ In [45]: if name in my_student:
 mayuri is going to give exam ansible
 
 In [46]: 
+
+In [46]: # list and tuple
+
+In [47]: my_student = ['priya','sowji','mayuri','reddy','salim','mahindra','navya']
+
+In [48]: my_subject = ['django','ansible','python','chef','puppet','nginx','linux']
+
+In [49]: my_exams = [('priya','django'),('sowji','ansible'),('mayuri','python'),('reddy','chef'),('salim','puppet'),('mahin
+    ...: dra','nginx'),('navya','linux')]
+
+In [50]: print my_exams
+[('priya', 'django'), ('sowji', 'ansible'), ('mayuri', 'python'), ('reddy', 'chef'), ('salim', 'puppet'), ('mahindra', 'nginx'), ('navya', 'linux')]
+
+In [51]: # you can modify elements of a list.
+
+In [52]: # you cannot modify elements of a tuple.
+
+In [53]: for value in my_exams:
+    ...:     print value
+    ...:     
+('priya', 'django')
+('sowji', 'ansible')
+('mayuri', 'python')
+('reddy', 'chef')
+('salim', 'puppet')
+('mahindra', 'nginx')
+('navya', 'linux')
+
+In [54]: for student,subject in my_exams:
+    ...:     print student,subject
+    ...:     
+priya django
+sowji ansible
+mayuri python
+reddy chef
+salim puppet
+mahindra nginx
+navya linux
+
+In [55]: name="salim"
+
+In [56]: for student,subject in my_exams:
+    ...:     if name == student:
+    ...:         print "{} is going to write {} exam".format(student,subject)
+    ...:         
+salim is going to write puppet exam
+
+In [57]: name='priya'
+
+In [58]: for student,subject in my_exams:
+    ...:     if name == student:
+    ...:         print "{} is going to write {} exam".format(student,subject)
+    ...:         
+priya is going to write django exam
+
+In [59]: 
+
+In [59]: print my_exams:
+  File "<ipython-input-59-ac00c727b05e>", line 1
+    print my_exams:
+                  ^
+SyntaxError: invalid syntax
+
+
+In [60]: print my_exams
+[('priya', 'django'), ('sowji', 'ansible'), ('mayuri', 'python'), ('reddy', 'chef'), ('salim', 'puppet'), ('mahindra', 'nginx'), ('navya', 'linux')]
+
+In [61]: # principle
+
+In [62]: my_exams.sort()
+
+In [63]: print my_exams
+[('mahindra', 'nginx'), ('mayuri', 'python'), ('navya', 'linux'), ('priya', 'django'), ('reddy', 'chef'), ('salim', 'puppet'), ('sowji', 'ansible')]
+
+In [64]: name='priya'
+
+In [65]: for student,subject in my_exams:
+    ...:     if name == student:
+    ...:         print "{} is going to write {} exam".format(student,subject)
+    ...:         
+priya is going to write django exam
+
+In [66]: 
+
