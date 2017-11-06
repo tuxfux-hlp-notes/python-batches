@@ -338,6 +338,96 @@ Out[109]: ('mayuri', 'batch66')
 In [110]: my_batch.popitem()
 Out[110]: ('mahindra', 'batch66')
 
+In [1]: my_batch = {'mayuri': 'batch66', 'salim': 'batch66', 'mahindra': 'batch66', 'navya': 'batch66', 'sowji': 'batch66',
+   ...:  'priya': 'batch66', 'reddy': 'batch66'}
+
+In [2]: # copy
+
+In [3]: my_batch.copy?
+Docstring: D.copy() -> a shallow copy of D
+Type:      builtin_function_or_method
+
+In [4]: # define complex objects
+
+In [5]: a = ['a','b','c']
+
+In [6]: b = [1,2,3]
+
+In [7]: Cc = [a,b]
+
+In [8]: id(a),id(b),id(Cc),id(Cc[0]),id(Cc[1])
+Out[8]: 
+(139708031384032,
+ 139708021875200,
+ 139708021962944,
+ 139708031384032,
+ 139708021875200)
+
+In [9]: print Cc
+[['a', 'b', 'c'], [1, 2, 3]]
+
+In [10]: # soft copy
+
+In [11]: Sc = Cc
+
+In [12]: print id(Sc),id(Cc)
+139708021962944 139708021962944
+
+In [13]: print id(Sc[0]),id(Sc[1]),id(Cc[0]),id(Cc[1])
+139708031384032 139708021875200 139708031384032 139708021875200
+
+In [14]: # Deep copy
+
+In [15]: import copy
+
+In [16]: Dc = copy.deepcopy(Cc)
+
+In [17]: print id(Dc[0]),id(Dc[1]),id(Cc[0]),id(Cc[1])
+139708021958776 139708031405520 139708031384032 139708021875200
+
+In [18]: print id(Dc),id(Cc)
+139708013174440 139708021962944
+
+In [19]: # shallow copy
+
+In [20]: import copy
+
+In [21]: copy.copy?
+Signature: copy.copy(x)
+Docstring:
+Shallow copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+File:      /usr/lib/python2.7/copy.py
+Type:      function
+
+In [22]: Shc = copy.copy(Cc)
+
+In [23]: print id(Cc),id(Shc)
+139708021962944 139708013139440
+
+In [24]: print Cc is Shc
+False
+
+In [25]: print id(a),id(b)
+139708031384032 139708021875200
+
+In [26]: print id(Cc[0]),id(Cc[1])
+139708031384032 139708021875200
+
+In [27]: print id(Shc[0]),id(Shc[1])
+139708031384032 139708021875200
+
+In [28]: print my_batch
+{'mayuri': 'batch66', 'salim': 'batch66', 'mahindra': 'batch66', 'navya': 'batch66', 'sowji': 'batch66', 'priya': 'batch66', 'reddy': 'batch66'}
+
+In [29]: Smy_batch = my_batch.copy()
+
+In [30]: print id(Smy_batch),id(my_batch)
+139708022010776 139708021843120
+
+
+
 
 References:
 https://www.w3resource.com/python-exercises/dictionary/
