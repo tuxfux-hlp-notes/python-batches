@@ -427,8 +427,6 @@ In [30]: print id(Smy_batch),id(my_batch)
 139708022010776 139708021843120
 
 
-
-
 References:
 https://www.w3resource.com/python-exercises/dictionary/
 https://github.com/tuxfux-hlp-notes/Projects/tree/master/python

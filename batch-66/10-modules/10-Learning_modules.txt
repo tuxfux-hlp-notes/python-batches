@@ -1,0 +1,333 @@
+Modules
+
+Program1 - f1,f2,f3,f4
+Program2 - f1,f2,f3,Program.f1
+
+program2(f4) has similar code as program1(f1).
+
+python>help()
+help> modules
+--- list of all modules ---
+.. truncate output..
+
+# start using modules.
+
+In [3]: import math
+
+In [4]: math.
+ math.acos      math.atanh     math.e         math.factorial math.hypot     math.log10     math.sin       
+ math.acosh     math.ceil      math.erf       math.floor     math.isinf     math.log1p     math.sinh      
+ math.asin      math.copysign  math.erfc      math.fmod      math.isnan     math.modf      math.sqrt      
+ math.asinh     math.cos       math.exp       math.frexp     math.ldexp     math.pi        math.tan       
+ math.atan      math.cosh      math.expm1     math.fsum      math.lgamma    math.pow       math.tanh      
+ math.atan2     math.degrees   math.fabs      math.gamma     math.log       math.radians   math.trunc     
+
+
+In [3]: import math
+
+In [4]: math.pi
+Out[4]: 3.141592653589793
+
+In [5]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [6]: math.pow(2,3)
+Out[6]: 8.0
+
+In [7]: # case II
+
+In [8]: import math as m
+
+In [9]: m.pi
+Out[9]: 3.141592653589793
+
+In [10]: m.pow(2,3)
+Out[10]: 8.0
+
+In [11]: # case III
+
+In [12]: from math import pi,pow
+
+In [13]: pi
+Out[13]: 3.141592653589793
+
+In [14]: pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [15]: pow(2,3)
+Out[15]: 8.0
+
+In [16]: # we made pi,pow a part of our local namespace
+
+In [17]: # DONT TRY THIS AT HOME OR OFFICE
+
+In [18]: # from math import *
+
+
+###
+# Learnign modules indepth
+###
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  first.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+
+In [2]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'version']
+
+In [3]: f.version
+Out[3]: 1.0
+
+In [4]: f.my_add?
+Signature: f.my_add(a, b)
+Docstring: This is for addition of two numbers 
+File:      ~/Documents/git_repos/python-batches/batch-66/10-modules/first.py
+Type:      function
+
+In [5]: f.my_add(2,3)
+Out[5]: 5
+
+In [6]: f.my_multi(23,23)
+Out[6]: 529
+
+In [7]: f.my_div(4,2)
+Out[7]: 2
+
+In [8]: f.version
+Out[8]: 1.0
+
+In [9]: import first as f
+
+In [10]: f.version
+Out[10]: 1.0
+
+In [11]: ls
+10-Learning_modules.txt  first.py  first.pyc
+
+In [12]: import first as g
+
+In [13]: g.version
+Out[13]: 1.0
+
+In [14]: reload(f)
+Out[14]: <module 'first' from 'first.py'>
+
+In [15]: f.version
+Out[15]: 2.0
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  first.py  first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ file first.py
+first.py: Python script, ASCII text executable
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ file first.pyc
+first.pyc: python 2.7 byte-compiled
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ cat first.pyc
+
+... truncated outupt ...
+
+###
+## understanding __main__ 
+###
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+Launching the missile!!!
+
+In [2]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'version']
+
+In [3]: def foo():
+   ...:     pass
+   ...: 
+
+In [4]: print foo
+<function foo at 0x7fa22c0e4140>
+
+In [5]: foo
+Out[5]: <function __main__.foo>
+
+In [6]: print f.my_add
+<function my_add at 0x7fa22c07aa28>
+
+In [7]: f.my_add
+Out[7]: <function first.my_add>
+
+In [8]: print locals()
+{'_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules'], '__': <function foo at 0x7fa22c0e4140>, '__builtin__': <module '__builtin__' (built-in)>, 'quit': <IPython.core.autocall.ExitAutocall object at 0x7fa22cb5b7d0>, '_i8': u'print locals()', '_i7': u'f.my_add', '_i6': u'print f.my_add', '_i5': u'foo', '_i4': u'print foo', '_i3': u'def foo():\n    pass', '_i2': u'print dir(f)', '_i1': u'import first as f', '__package__': None, 'exit': <IPython.core.autocall.ExitAutocall object at 0x7fa22cb5b7d0>, 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7fa22cb6d050>>, '_i': u'f.my_add', 'foo': <function foo at 0x7fa22c0e4140>, '__doc__': 'Automatically created module for IPython interactive environment', '__builtins__': <module '__builtin__' (built-in)>, '_ih': ['', u'import first as f', u'print dir(f)', u'def foo():\n    pass', u'print foo', u'foo', u'print f.my_add', u'f.my_add', u'print locals()'], '__name__': '__main__', '___': '', '_': <function my_add at 0x7fa22c07aa28>, '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>, 'f': <module 'first' from 'first.py'>, '_7': <function my_add at 0x7fa22c07aa28>, '_5': <function foo at 0x7fa22c0e4140>, '_iii': u'foo', '_ii': u'print f.my_add', 'In': ['', u'import first as f', u'print dir(f)', u'def foo():\n    pass', u'print foo', u'foo', u'print f.my_add', u'f.my_add', u'print locals()'], '_oh': {5: <function foo at 0x7fa22c0e4140>, 7: <function my_add at 0x7fa22c07aa28>}, 'Out': {5: <function foo at 0x7fa22c0e4140>, 7: <function my_add at 0x7fa22c07aa28>}}
+
+In [9]: locals()
+Out[9]: 
+{'In': ['',
+  u'import first as f',
+  u'print dir(f)',
+  u'def foo():\n    pass',
+  u'print foo',
+  u'foo',
+  u'print f.my_add',
+  u'f.my_add',
+  u'print locals()',
+  u'locals()'],
+ 'Out': {5: <function __main__.foo>, 7: <function first.my_add>},
+ '_': <function first.my_add>,
+ '_5': <function __main__.foo>,
+ '_7': <function first.my_add>,
+ '__': <function __main__.foo>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '__package__': None,
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules'],
+ '_i': u'print locals()',
+ '_i1': u'import first as f',
+ '_i2': u'print dir(f)',
+ '_i3': u'def foo():\n    pass',
+ '_i4': u'print foo',
+ '_i5': u'foo',
+ '_i6': u'print f.my_add',
+ '_i7': u'f.my_add',
+ '_i8': u'print locals()',
+ '_i9': u'locals()',
+ '_ih': ['',
+  u'import first as f',
+  u'print dir(f)',
+  u'def foo():\n    pass',
+  u'print foo',
+  u'foo',
+  u'print f.my_add',
+  u'f.my_add',
+  u'print locals()',
+  u'locals()'],
+ '_ii': u'f.my_add',
+ '_iii': u'print f.my_add',
+ '_oh': {5: <function __main__.foo>, 7: <function first.my_add>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7fa22cb5b7d0>,
+ 'f': <module 'first' from 'first.py'>,
+ 'foo': <function __main__.foo>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7fa22cb6d050>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7fa22cb5b7d0>}
+
+hyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+
+In [2]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'version']
+
+In [3]: 
+
+###
+# how a module import works
+###
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ python second.py 
+addition of two numbers is 33
+addition of two strings is linux rocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ mkdir extra
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls -l
+total 28
+-rw-r--r-- 1 khyaathi khyaathi 8579 Nov  9 19:26 10-Learning_modules.txt
+drwxr-xr-x 2 khyaathi khyaathi 4096 Nov  9 19:40 extra
+-rw-r--r-- 1 khyaathi khyaathi  461 Nov  9 19:27 first.py
+-rw-r--r-- 1 khyaathi khyaathi 1233 Nov  9 19:29 first.pyc
+-rw-r--r-- 1 khyaathi khyaathi  371 Nov  9 19:29 second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ mv first.py extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ tree extra
+The program 'tree' is currently not installed. You can install it by typing:
+sudo apt install tree
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  extra  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ python second.py
+addition of two numbers is 33
+addition of two strings is linux rocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ rm -f first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ python second.py
+Traceback (most recent call last):
+  File "second.py", line 4, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+
+
+In [4]: import sys
+
+In [5]: sys.path
+Out[5]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [6]: #/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/extra
+
+In [7]: sys.path.insert(0,'/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/extra')
+
+In [8]: print sys.path
+['/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/extra', '', '/usr/local/bin', '/usr/lib/python2.7', '/usr/lib/python2.7/plat-x86_64-linux-gnu', '/usr/lib/python2.7/lib-tk', '/usr/lib/python2.7/lib-old', '/usr/lib/python2.7/lib-dynload', '/home/khyaathi/.local/lib/python2.7/site-packages', '/usr/local/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages', '/usr/lib/python2.7/dist-packages/PILcompat', '/usr/lib/python2.7/dist-packages/gtk-2.0', '/usr/local/lib/python2.7/dist-packages/IPython/extensions', '/home/khyaathi/.ipython']
+
+In [9]: 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ pwd
+/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ python second.py
+addition of two numbers is 33
+addition of two strings is linux rocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls extra
+first.py  first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+
