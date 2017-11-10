@@ -331,3 +331,237 @@ khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules
 first.py  first.pyc
 khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
 
+
+# PACKAGES
+
+Os
++ lin
+ - ip.py
+   *ifconfig  => Os.lin.ip.ifconfig()
++ aix
+ - ip.py
+   *ifconfig
++ hpux
+ - ip.py
+   *ifconfig
++ sol
+ - ip.py
+   *ifconfig
+
+
+1) create the directory structures
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ mkdir Os
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ mkdir Os/{lin,sol,aix,hpux}
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+
+2) now create two files first.py,second.py under the lin folder.
+3) go into the Os folder and using ipython try to import lin
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  extra  Os  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ cd Os
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules/Os$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: ls
+aix/  hpux/  lin/  sol/
+
+In [2]: pwd
+Out[2]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/Os'
+
+In [3]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-3-cb672e599c2e> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [4]: 
+
+4) how to make your folder a package or importable.
+
+create a file __init__.py under your folder lin.
+
+# cat __init__.py
+import first
+import second
+
+5) Lets now try to import the lin folder.
+
+In [4]: pwd
+Out[4]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/Os'
+
+In [5]: ls
+aix/  hpux/  lin/  sol/
+
+In [6]: import lin
+
+In [7]: print dir(lin)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', '__path__', 'first', 'second']
+
+In [8]: lin.first.my_lin1_first()
+Out[8]: 'This is my first lin1 function'
+
+In [9]: lin.first.my_lin1_second()
+Out[9]: 'This is my second lin1 function'
+
+In [10]: lin.first.my_lin1_third()
+Out[10]: 'This is my third lin1 function'
+
+In [11]: 
+
+we are able to import all the files inside the lin folder/dir.
+
+6) we are creating first.py and second.py inside the sol folder now. by copying over the files from lin. 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ cp Os/lin/*.py Os/sol/.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ pwd
+/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+
+7) i modified the first.py and second.py. Created some new files third.py and fourth.py
+Also i created __init__.py
+
+# cat __init__.py
+import first
+import second
+
+8) Load the sol package
+
+In [12]: pwd
+Out[12]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/Os'
+
+In [13]: ls
+aix/  hpux/  lin/  sol/
+
+In [14]: import sol
+
+In [15]: print dir(sol)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', '__path__', 'first', 'second']
+
+In [16]: # now lets enable third and fourth
+
+In [17]: # in our example developer options in mobile
+
+In [18]: from sol import third,fourth
+
+In [19]: print dir(sol)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', '__path__', 'first', 'fourth', 'second', 'third']
+
+In [20]: # first and second are getting loaded implicitly
+
+In [21]: # third and fourth are getting loaded explicitly
+
+In [22]: 
+
+# real time package.
+
+In [23]: sys.path
+Out[23]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [24]: 
+
+
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ pwd
+/usr/lib/python2.7/xml
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls dom
+domreg.py  expatbuilder.py  __init__.py  minicompat.py  minidom.py  NodeFilter.py  pulldom.py  xmlbuilder.py
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls etree
+cElementTree.py   ElementInclude.py  ElementPath.pyc  ElementTree.pyc  __init__.pyc
+cElementTree.pyc  ElementPath.py     ElementTree.py   __init__.py
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls parsers
+expat.py  expat.pyc  __init__.py  __init__.pyc
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls sax
+_exceptions.py   expatreader.py  handler.pyc  __init__.pyc  saxutils.pyc  xmlreader.pyc
+_exceptions.pyc  handler.py      __init__.py  saxutils.py   xmlreader.py
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ 
+
+# Installation of packages
+-- relative to os
+* sudo apt-get install <modulename>
+-- installation using pip
+* sudo pip install <pacakgename>
+ex: pip install xlrd
+-- installation using easy_install
+* sudo easy_install <packagename>
+ex: easy_install xlrd 
+-- installation usign the setuptools
+
+# virtualenv
+Installation:
+http://docs.python-guide.org/en/latest/dev/virtualenvs/#lower-level-virtualenv
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ ls
+10-Learning_modules.txt  extra  myenv  Os  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ pip freeze
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+  Using cached xlrd-1.1.0-py2.py3-none-any.whl
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ pip freeze
+excel==1.0.0
+xlrd==1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> quit()
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ deactivate 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ which python
+/usr/bin/python
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ which python
+/home/khyaathi/Documents/git_repos/python-batches/batch-66/10-modules/myenv/bin/python
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ deactivate 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/10-modules$ 
+
+# pydocs
+
+ex: pydoc sys
+  : pydoc math
+
+
+Reference:
+https://docs.python.org/2/tutorial/modules.html#packages
+https://docs.python.org/2/installing/index.html
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/distutils/index.html
+
+# fabric
+# ansible
+# salt
