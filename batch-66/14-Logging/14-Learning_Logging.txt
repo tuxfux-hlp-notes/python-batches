@@ -1,0 +1,43 @@
+irctc 
+
+9:30am -> website is down.
+10:00am
+11:00am
+
+Logging - event driven capturing of errors is called logging.
+
+log4j - logging module -> perl/java.
+
+References:
+https://docs.python.org/2/library/logging.html
+https://docs.python.org/2/howto/logging.html
+
+Functions  for logging:
+
+- debug(),info(),warning(),error(),critical()
+
+- print -> print is for printing on the screen/console.
+- debug() -> granular representation of events from the start to the event generation.
+- info() -> for every event we get a information.
+- warning() -> for generating the warning messages. ( my disk is gone bad. It wont stop the application.)
+- error() -> we have a issue with our application. ( not the whole application but part of application is down.)
+- critcal() -> our application is badly affected. (our whole application may be down.)
+
+# for every function we have a level.
+
+DEBUG,INFO,WARNING,ERROR,CRITICAL
+
+In [1]: import logging as l
+
+In [2]: l.
+l.BASIC_FORMAT        l.Handler             l.StreamHandler       l.critical            l.info                l.shutdown
+l.BufferingFormatter  l.INFO                l.WARN                l.currentframe        l.log                 l.sys
+l.CRITICAL            l.LogRecord           l.WARNING             l.debug               l.logMultiprocessing  l.thread
+l.DEBUG               l.Logger              l.addLevelName        l.disable             l.logProcesses        l.threading
+l.ERROR               l.LoggerAdapter       l.atexit              l.error               l.logThreads          l.time
+l.FATAL               l.Manager             l.basicConfig         l.exception           l.makeLogRecord       l.traceback
+l.FileHandler         l.NOTSET              l.cStringIO           l.fatal               l.os                  l.warn
+l.Filter              l.NullHandler         l.captureWarnings     l.getLevelName        l.raiseExceptions     l.warning
+l.Filterer            l.PlaceHolder         l.codecs              l.getLogger           l.root                l.warnings
+l.Formatter           l.RootLogger          l.collections         l.getLoggerClass      l.setLoggerClass      l.weakref
+
