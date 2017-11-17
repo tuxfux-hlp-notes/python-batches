@@ -1,0 +1,8 @@
+Fri Nov 17 19:09:05 2017 - root - INFO - The disk looks health at 10.
+Fri Nov 17 19:09:32 2017 - root - INFO - The disk looks health at 40.
+Fri Nov 17 19:10:01 2017 - root - ERROR - The disk is puking some errors 78
+Fri Nov 17 19:10:07 2017 - root - CRITICAL - The Application is sleeping now 89
+Fri Nov 17 19:10:12 2017 - root - INFO - The disk looks health at 10.
+Fri Nov 17 19:22:21 2017 - root - INFO - The disk looks health at 40.
+Fri Nov 17 19:22:22 2017 - root - INFO - The disk looks health at 40.
+Fri Nov 17 19:22:23 2017 - root - INFO - The disk looks health at 40.

@@ -41,3 +41,17 @@ l.Filter              l.NullHandler         l.captureWarnings     l.getLevelName
 l.Filterer            l.PlaceHolder         l.codecs              l.getLogger           l.root                l.warnings
 l.Formatter           l.RootLogger          l.collections         l.getLoggerClass      l.setLoggerClass      l.weakref
 
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-66/14-Logging$ tail /var/log/syslog
+Nov 17 18:51:10 khyaathi-Technologies sublime_text[4806]: Source ID 5198548 was not found when attempting to remove it
+Nov 17 18:51:13 khyaathi-Technologies sublime_text[4806]: Source ID 5200066 was not found when attempting to remove it
+Nov 17 18:51:16 khyaathi-Technologies sublime_text[4806]: Source ID 5201767 was not found when attempting to remove it
+Nov 17 18:51:31 khyaathi-Technologies sublime_text[4806]: Source ID 5209334 was not found when attempting to remove it
+Nov 17 18:51:45 khyaathi-Technologies sublime_text[4806]: Source ID 5217191 was not found when attempting to remove it
+Nov 17 18:51:50 khyaathi-Technologies sublime_text[4806]: Source ID 5219698 was not found when attempting to remove it
+Nov 17 18:52:14 khyaathi-Technologies sublime_text[4806]: Source ID 5232941 was not found when attempting to remove it
+Nov 17 18:52:19 khyaathi-Technologies sublime_text[4806]: Source ID 5235156 was not found when attempting to remove it
+Nov 17 18:52:26 khyaathi-Technologies gnome-terminal-[4671]: Allocating size to GtkBox 0x55855e898f90 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+Nov 17 18:52:50 khyaathi-Technologies gnome-terminal-[4671]: Allocating size to GtkBox 0x55855ea257b0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-66/14-Logging$
+
