@@ -22,3 +22,5 @@ Fri Nov 17 19:04:11 2017 - root - INFO - This is an information message.
 Fri Nov 17 19:04:11 2017 - root - WARNING - This is an warning message.
 Fri Nov 17 19:04:11 2017 - root - ERROR - This is an error message.
 Fri Nov 17 19:04:11 2017 - root - CRITICAL - This is an critical message
+
+---

@@ -55,3 +55,48 @@ Nov 17 18:52:26 khyaathi-Technologies gnome-terminal-[4671]: Allocating size to 
 Nov 17 18:52:50 khyaathi-Technologies gnome-terminal-[4671]: Allocating size to GtkBox 0x55855ea257b0 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
 khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-66/14-Logging$
 
+
+##
+# FileHandler and StreamHandler.
+###
+
+In [1]: import logging as l
+
+In [2]: l.
+      l.addLevelName       l.error              l.log                l.RootLogger         
+      l.atexit             l.ERROR              l.Logger             l.setLoggerClass     
+      l.BASIC_FORMAT       l.exception          l.LoggerAdapter      l.shutdown           
+      l.basicConfig        l.FATAL              l.logMultiprocessing l.StreamHandler      
+      l.BufferingFormatter l.fatal              l.logProcesses       l.sys                
+      l.captureWarnings    l.FileHandler        l.LogRecord          l.thread             
+      l.codecs             l.Filter             l.logThreads         l.threading          
+      l.collections        l.Filterer           l.makeLogRecord      l.time               
+      l.CRITICAL           l.Formatter          l.Manager            l.traceback          
+      l.critical           l.getLevelName       l.NOTSET             l.warn               
+      l.cStringIO          l.getLogger          l.NullHandler        l.WARN               
+      l.currentframe       l.getLoggerClass     l.os                 l.WARNING            
+      l.DEBUG              l.Handler            l.PlaceHolder        l.warning            
+      l.debug              l.info               l.raiseExceptions    l.warnings           
+      l.disable            l.INFO               l.root               l.weakref 
+
+
+In [5]: import logging.handlers as lh
+
+In [6]: lh.
+   lh.BaseRotatingHandler       lh.HTTPHandler               lh.ST_DEV                    
+   lh.BufferingHandler          lh.logging                   lh.ST_INO                    
+   lh.codecs                    lh.MemoryHandler             lh.ST_MTIME                  
+   lh.cPickle                   lh.NTEventLogHandler         lh.struct                    
+   lh.DatagramHandler           lh.os                        lh.SYSLOG_TCP_PORT           
+   lh.DEFAULT_HTTP_LOGGING_PORT lh.re                        lh.SYSLOG_UDP_PORT           
+   lh.DEFAULT_SOAP_LOGGING_PORT lh.RotatingFileHandler       lh.SysLogHandler             
+   lh.DEFAULT_TCP_LOGGING_PORT  lh.SMTPHandler               lh.time                      
+   lh.DEFAULT_UDP_LOGGING_PORT  lh.socket                    lh.TimedRotatingFileHandler  
+   lh.errno                     lh.SocketHandler             lh.WatchedFileHandler        
+
+           
+
+
+
+
+
