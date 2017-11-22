@@ -1,0 +1,161 @@
+files -> persistent storage of data.
+ex: .txt,.doc,.xls,.json,.yaml,.pdf
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ ls
+16-Learning_files.txt  first.txt
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: f = open("first.txt")
+
+In [2]: print f,type(f)
+<open file 'first.txt', mode 'r' at 0x7fa9bbc31ed0> <type 'file'>
+
+In [3]: # files
+
+In [4]: # r -> read -> we can read a file.
+
+In [5]: # w -> write -> we can only write a file.If file doesnt exist,it get created. If not
+   ...: it truncates the file to zero.
+
+In [6]: # a -> append -> append data to the file.
+
+In [7]: # r+ -> read and write mode.
+
+In [8]: # b -> binary mode.
+
+In [9]: # rb,wb,ab,r+b -> pickle
+
+In [11]: f = open("first.txt")
+
+In [12]: print f
+<open file 'first.txt', mode 'r' at 0x7fa9baa18270>
+
+In [13]: f = open("first.txt","r")
+
+In [14]: print f
+<open file 'first.txt', mode 'r' at 0x7fa9bbc31ed0>
+
+In [15]: # f.read
+
+In [16]: f.read?
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+Type:      builtin_function_or_method
+
+In [17]: f.read(2)
+Out[17]: 'Ma'
+
+In [18]: f.read(2)
+Out[18]: 'he'
+
+In [19]: f.read()
+Out[19]: 'ndar\nmarreddy\nmayuri\nnavya\nsaleem\nsowjanya\njagadeesh'
+
+In [20]: f.read()
+Out[20]: ''
+
+In [26]: # f.tell
+
+In [27]: f.tell()
+Out[27]: 56
+
+In [28]: f.tell?
+Docstring: tell() -> current file position, an integer (may be a long integer).
+Type:      builtin_function_or_method
+
+In [29]: # f.seek
+
+In [30]: f.seek?
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+Type:      builtin_function_or_method
+
+In [31]: f.seek(0)
+
+In [32]: f.read()
+Out[32]: 'Mahendar\nmarreddy\nmayuri\nnavya\nsaleem\nsowjanya\njagadeesh'
+
+In [37]: print f
+<open file 'first.txt', mode 'r' at 0x7fa9bbc31ed0>
+
+In [38]: f.seek(0)
+
+In [39]: # f.readline
+
+In [40]: f.readline?
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+Type:      builtin_function_or_method
+
+In [41]: f.readline()
+Out[41]: 'Mahendar\n'
+
+In [42]: f.readline()
+Out[42]: 'marreddy\n'
+
+In [43]: f.readline()
+Out[43]: 'mayuri\n'
+
+In [44]: f.readline()
+Out[44]: 'navya\n'
+
+In [45]: f.readline()
+Out[45]: 'saleem\n'
+
+In [46]: f.readline()
+Out[46]: 'sowjanya\n'
+
+In [47]: f.readline()
+Out[47]: 'jagadeesh'
+
+In [48]: f.readline()
+Out[48]: ''
+
+
+In [50]: # f.readlines
+
+In [51]: f
+Out[51]: <open file 'first.txt', mode 'r' at 0x7fa9bbc31ed0>
+
+In [52]: f.seek(0)
+
+In [53]: f.readlines?
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+Type:      builtin_function_or_method
+
+In [54]: my_lines = f.readlines()
+
+In [55]: print my_lines
+['Mahendar\n', 'marreddy\n', 'mayuri\n', 'navya\n', 'saleem\n', 'sowjanya\n', 'jagadeesh']
+
+In [56]: 

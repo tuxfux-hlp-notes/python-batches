@@ -435,3 +435,280 @@ Is python a good language?
 In [150]: # \w => [a-zA-Z0-9_]
 
 
+# VERBOSE or re.X
+
+In [8]: print re.match('(\w+\s+){4}\w+[?]+',my_sentence,re.I).group()
+Is python a good language?
+
+In [9]: print re.match('''
+   ...: (\w+\s+)  # a word and a space.
+   ...: {4}       # repeated 4 times.
+   ...: \w+       # one more word
+   ...: [?]      # a question mark
+   ...: ''',my_sentence,(re.I|re.M))
+None
+
+In [10]: print re.match('''
+    ...: (\w+\s+)  # a word and a space.
+    ...: {4}       # repeated 4 times.
+    ...: \w+       # one more word
+    ...: [?]      # a question mark
+    ...: ''',my_sentence,(re.I|re.X))
+<_sre.SRE_Match object at 0x7f9ecc1ed3f0>
+
+In [11]: print re.match('''
+    ...: (\w+\s+)  # a word and a space.
+    ...: {4}       # repeated 4 times.
+    ...: \w+       # one more word
+    ...: [?]      # a question mark
+    ...: ''',my_sentence,(re.I|re.X)).group()
+Is python a good language?
+
+In [12]: 
+
+
+In [13]: # grouping
+
+In [14]: print re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z?]+',my_sentence,re.I).grou
+    ...: p()
+Is python a good language?
+
+In [15]: print re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z?]+',my_sentence,re.I).grou
+    ...: p()
+Is python a good language?
+
+In [16]: print re.match('[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z]+\s+[a-z?]+',my_sentence,re.I).grou
+    ...: p(0)
+Is python a good language?
+
+In [17]: print re.match('[a-z]+\s+([a-z]+)\s+[a-z]+\s+[a-z]+\s+([a-z?]+)',my_sentence,re.I).
+    ...: group(0)
+Is python a good language?
+
+In [18]: print re.match('[a-z]+\s+([a-z]+)\s+[a-z]+\s+[a-z]+\s+([a-z?]+)',my_sentence,re.I).
+    ...: group(1)
+python
+
+In [19]: print re.match('[a-z]+\s+([a-z]+)\s+[a-z]+\s+[a-z]+\s+([a-z?]+)',my_sentence,re.I).
+    ...: group(2)
+language?
+
+In [20]: print re.match('[a-z]+\s+([a-z]+)\s+[a-z]+\s+[a-z]+\s+([a-z?]+)',my_sentence,re.I).
+    ...: groups()
+('python', 'language?')
+
+In [22]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).group()
+Is python a good language?
+
+In [23]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).group('abc')
+python
+
+In [24]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).group('def')
+language?
+
+In [25]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).groups()
+('python', 'language?')
+
+In [26]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).groups(0)
+('python', 'language?')
+
+In [27]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).group(0)
+Is python a good language?
+
+In [28]: print re.match('[a-z]+\s+(?P<abc>[a-z]+)\s+[a-z]+\s+[a-z]+\s+(?P<def>[a-z?]+)',my_s
+    ...: entence,re.I).group(1)
+python
+
+
+In [32]: # Multiline and findall
+
+In [33]: my_string="Python is a good language.\nPython is my first language.\nPython is one 
+    ...: of leading languages."
+
+In [34]: my_string
+Out[34]: 'Python is a good language.\nPython is my first language.\nPython is one of leading languages.'
+
+In [35]: print my_string
+Python is a good language.
+Python is my first language.
+Python is one of leading languages.
+
+In [36]: # re.match
+
+In [37]: print re.match('python',my_string,re.I)
+<_sre.SRE_Match object at 0x7f9ecc278238>
+
+In [38]: print re.match('python',my_string,re.I).group()
+Python
+
+In [39]: # re.search
+
+In [40]: print re.search('python',my_string,re.I)
+<_sre.SRE_Match object at 0x7f9ecc278238>
+
+In [41]: print re.search('python',my_string,re.I).group()
+Python
+
+In [43]: # re.findall
+
+In [44]: my_string="Python is a good language.\nPython is my first language.\nPython is one 
+    ...: of leading languages."
+
+In [45]: re.findall?
+Signature: re.findall(pattern, string, flags=0)
+Docstring:
+Return a list of all non-overlapping matches in the string.
+
+If one or more groups are present in the pattern, return a
+list of groups; this will be a list of tuples if the pattern
+has more than one group.
+
+Empty matches are included in the result.
+File:      /usr/lib/python2.7/re.py
+Type:      function
+
+In [46]: re.findall('python',my_string,re.I)
+Out[46]: ['Python', 'Python', 'Python']
+
+In [47]: re.findall('^python',my_string,re.I)
+Out[47]: ['Python']
+
+In [48]: print my_string
+Python is a good language.
+Python is my first language.
+Python is one of leading languages.
+
+In [49]: my_string
+Out[49]: 'Python is a good language.\nPython is my first language.\nPython is one of leading languages.'
+
+In [51]: re.findall('^python',my_string,re.I)
+Out[51]: ['Python']
+
+In [52]: my_string
+Out[52]: 'Python is a good language.\nPython is my first language.\nPython is one of leading languages.'
+
+In [53]: print my_string
+Python is a good language.
+Python is my first language.
+Python is one of leading languages.
+
+In [54]: re.findall('^python',my_string,(re.I|re.M))
+Out[54]: ['Python', 'Python', 'Python']
+
+
+# use case 1
+
+In [56]: my_email = '''
+    ...: my valid email id is tuxfux.hlp@gmail.com
+    ...: my valid email id is tuxfux@gmail.com
+    ...: my valid email id is tuxfux.hlp@yahoo.co.in
+    ...: my valid email id is tuxfux.hlp@google.co.in
+    ...: my valid email id is @gmail.com
+    ...: my valid email id is tuxfux.hlp@
+    ...: '''
+
+In [57]: import re
+
+In [58]: reg = re.compile('[a-zA-Z.]+@[a-zA-Z.]+',re.M)
+
+In [59]: reg.findall(my_email)
+Out[59]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ 'tuxfux.hlp@google.co.in']
+
+In [60]: my_email = '''
+    ...: my valid email id is tuxfux.hlp@gmail.com
+    ...: my valid email id is tuxfux@gmail.com
+    ...: my valid email id is tuxfux.hlp@yahoo.co.in
+    ...: my valid email id is tuxfux.hlp@google.co.in
+    ...: my valid email id is @gmail.com
+    ...: my valid email id is tuxfux.hlp@
+    ...: my valid email id is tuxfux.hlp.123@gmail.com
+    ...: '''
+
+In [61]: reg.findall(my_email)
+Out[61]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ 'tuxfux.hlp@google.co.in']
+
+In [62]: reg = re.compile('[a-zA-Z.0-9]+@[a-zA-Z.]+',re.M)
+
+In [63]: reg.findall(my_email)
+Out[63]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ 'tuxfux.hlp@google.co.in',
+ 'tuxfux.hlp.123@gmail.com']
+
+
+ In [68]: my_email = '''
+    ...: my valid email id is tuxfux.hlp@gmail.com
+    ...: my valid email id is tuxfux@gmail.com
+    ...: my valid email id is tuxfux.hlp@yahoo.co.in
+    ...: my valid email id is tuxfux.hlp@google.co.in
+    ...: my valid email id is @gmail.com
+    ...: my valid email id is tuxfux.hlp@
+    ...: my valid email id is tuxfux.hlp.123@gmail.com
+    ...: my valid email is is tuxfux_hlp_123@gmail.com
+    ...: my valid email id is tuxfux_hlp@gmail.co.in
+    ...: '''
+
+In [69]: reg.findall(my_email)
+Out[69]: 
+['tuxfux.hlp@gmail.com',
+ 'tuxfux@gmail.com',
+ 'tuxfux.hlp@yahoo.co.in',
+ 'tuxfux.hlp@google.co.in',
+ 'tuxfux.hlp.123@gmail.com',
+ '123@gmail.com',
+ 'hlp@gmail.co.in']
+
+TODO: tomorrow.
+
+In [7]: my_string="Nov 22 19:13:50 khyaathipython gnome-software[2517]: failed to load stock
+   ...:  icon preferences-system: Icon 'preferences-system' not present in theme (null)"
+
+In [8]: re.search('k.*n',my_string,re.I)
+Out[8]: <_sre.SRE_Match at 0x7f51112af1d0>
+
+In [9]: re.search('k.*n',my_string,re.I).group()
+Out[9]: "khyaathipython gnome-software[2517]: failed to load stock icon preferences-system: Icon 'preferences-system' not present in theme (n"
+
+In [10]: re.search('k.*?n',my_string,re.I).group()
+Out[10]: 'khyaathipython'
+
+In [11]: m = re.search('k.*?n',my_string,re.I)
+
+In [12]: print m,type(m)
+<_sre.SRE_Match object at 0x7f51112af168> <type '_sre.SRE_Match'>
+
+In [13]: m.start()
+Out[13]: 16
+
+In [14]: m.end()
+Out[14]: 30
+
+In [15]: print my_string[:16] + my_string[30:]
+Nov 22 19:13:50  gnome-software[2517]: failed to load stock icon preferences-system: Icon 'preferences-system' not present in theme (null)
+
+
+
+
+
+Reference:
+https://docs.python.org/2/library/re.html
+https://docs.python.org/2.7/howto/regex.html
+
+
+

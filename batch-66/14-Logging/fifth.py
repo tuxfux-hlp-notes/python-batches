@@ -9,6 +9,7 @@
 
 import logging
 from subprocess import Popen,PIPE
+import re
 
 # l.basicConfig(filename='my_disk.log',filemode='a',level=l.DEBUG,
 # 			  format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',datefmt='%c')
@@ -53,7 +54,10 @@ logger.addHandler(ch)       # logger and handler
 if __name__ == '__main__':
 	p1 = Popen(['df','-h','/'],stdout=PIPE)
 	p2 = Popen(['tail','-n','1'],stdin=p1.stdout,stdout=PIPE)
-	disk_size = int(p2.communicate()[0].split()[4].split('%')[0])
+	#disk_size = int(p2.communicate()[0].split()[4].split('%')[0])
+
+	disk_size = int(re.search('([0-9]+)[%]',p2.communicate()[0]).group(1))
+	#print disk_size
 
 	if disk_size < 50:
 		logger.info("The disk looks health at {}.".format(disk_size))
