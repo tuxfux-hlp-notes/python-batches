@@ -1,0 +1,12 @@
+(lp0
+S'python'
+p1
+aS'django'
+p2
+aS'devops'
+p3
+aS'aws'
+p4
+aS'openstack'
+p5
+a.

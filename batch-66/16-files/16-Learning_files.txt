@@ -159,3 +159,277 @@ In [55]: print my_lines
 ['Mahendar\n', 'marreddy\n', 'mayuri\n', 'navya\n', 'saleem\n', 'sowjanya\n', 'jagadeesh']
 
 In [56]: 
+
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files# ls
+16-Learning_files.txt  first.txt
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files# ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: f = open('first.txt','r')
+
+In [2]: f
+Out[2]: <open file 'first.txt', mode 'r' at 0x7fa6e6c66f60>
+
+In [3]: g = open('second.txt','w')
+
+In [4]: g.write?
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+Type:      builtin_function_or_method
+
+In [5]: g.write("This is my first line.\nThis is my second line.\nThis is my third line.\nTh
+   ...: is is my fourth line.\nThis is my fifth line.\nThis is my sixth line")
+
+In [6]: # input -> i/o buffer -> cpu -> i/o buffer -> output
+
+In [7]: g.flush?
+Docstring: flush() -> None.  Flush the internal I/O buffer.
+Type:      builtin_function_or_method
+
+In [8]: g.flush()
+
+In [9]: g
+Out[9]: <open file 'second.txt', mode 'w' at 0x7fa6e6c66810>
+
+In [10]: f
+Out[10]: <open file 'first.txt', mode 'r' at 0x7fa6e6c66f60>
+
+In [11]: my_lines = f.readlines()
+
+In [12]: print my_lines
+['Mahendar\n', 'marreddy\n', 'mayuri\n', 'navya\n', 'saleem\n', 'sowjanya\n', 'jagadeesh']
+
+In [13]: g.writelines?
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+Type:      builtin_function_or_method
+
+In [14]: g.writelines(my_lines)
+
+In [15]: g.close?
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+Type:      builtin_function_or_method
+
+In [16]: g.close()
+
+In [17]: g
+Out[17]: <closed file 'second.txt', mode 'w' at 0x7fa6e6c66810>
+
+In [18]: 
+
+In [19]: # g.write issues
+
+In [20]: g
+Out[20]: <closed file 'second.txt', mode 'w' at 0x7fa6e6c66810>
+
+In [21]: g.write("hey there i am hero")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-21-0d5ef4e0449e> in <module>()
+----> 1 g.write("hey there i am hero")
+
+ValueError: I/O operation on closed file
+
+In [22]: # g.closed
+
+In [23]: f
+Out[23]: <open file 'first.txt', mode 'r' at 0x7fa6e6c66f60>
+
+In [24]: f.closed
+Out[24]: False
+
+In [25]: g
+Out[25]: <closed file 'second.txt', mode 'w' at 0x7fa6e6c66810>
+
+In [26]: g.closed
+Out[26]: True
+
+In [27]: if g.closed:
+    ...:     print "your file is closed"
+    ...: else:
+    ...:     print "your file is not closed"
+    ...:     
+your file is closed
+
+In [29]: g.write("hey there i am hero")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-29-0d5ef4e0449e> in <module>()
+----> 1 g.write("hey there i am hero")
+
+ValueError: I/O operation on closed file
+
+In [30]: # try..except..else..finally
+
+In [31]: try:
+    ...:     g.write("hey there i am hero")
+    ...: except ValueError:
+    ...:     print "i am not able to write into the file"
+    ...: else:
+    ...:     print "we can write into the file"
+    ...: finally:
+    ...:     print "i am closing the file"
+    ...:     
+i am not able to write into the file
+i am closing the file
+
+In [32]: 
+
+In [33]: g
+Out[33]: <closed file 'second.txt', mode 'w' at 0x7fa6e6c66810>
+
+In [34]: # with
+
+In [35]: with open('second.txt','a') as g:
+    ...:     g.write("hey there i am a hero")
+    ...:     
+
+In [36]: f
+Out[36]: <open file 'first.txt', mode 'r' at 0x7fa6e6c66f60>
+
+In [37]: g
+Out[37]: <closed file 'second.txt', mode 'a' at 0x7fa6e5a57a50>
+
+In [38]: 
+
+n [39]: #f.xreadlines
+
+In [40]: f.xreadlines?
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+Type:      builtin_function_or_method
+
+In [41]: # f.readinto
+
+In [42]: f.readinto?
+Docstring: readinto() -> Undocumented.  Don't use this; it may go away.
+Type:      builtin_function_or_method
+
+In [43]: #f.truncate
+
+In [44]: #f.softspace,f.newlines
+
+In [45]: f.name
+Out[45]: 'first.txt'
+
+In [46]: f.mode
+Out[46]: 'r'
+
+In [47]: #f.isatty
+
+In [48]: f.isatty?
+Docstring: isatty() -> true or false.  True if the file is connected to a tty device.
+Type:      builtin_function_or_method
+
+In [49]: h = open('/dev/pts/5','wb')
+
+In [50]: h.write("time to eat dinner.\n")
+
+In [51]: h.isatty()
+Out[51]: True
+
+In [52]: f.isatty()
+Out[52]: False
+
+In [53]: g.isatty()
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-53-b18ff0b80000> in <module>()
+----> 1 g.isatty()
+
+ValueError: I/O operation on closed file
+
+In [55]: #f.filno,f.errors,f.encoding
+
+## playing with excel sheets.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ virtualenv yenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-66/16-files/yenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ source yenv/bin/activate
+(yenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ pip freeze
+(yenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+  Using cached xlrd-1.1.0-py2.py3-none-any.whl
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(yenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ pip freeze
+excel==1.0.0
+xlrd==1.1.0
+(yenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66/16-files$ clear 
+
+## pickle.
+
+In [57]: import pickle as p
+
+In [58]: p.load?
+Signature: p.load(file)
+Docstring: <no docstring>
+File:      /usr/lib/python2.7/pickle.py
+Type:      function
+
+In [59]: p.dump?
+Signature: p.dump(obj, file, protocol=None)
+Docstring: <no docstring>
+File:      /usr/lib/python2.7/pickle.py
+Type:      function
+
+In [60]: my_trainings=['python','django','devops','aws','java']
+
+## pickling
+
+In [61]: f = open("my_trainings.txt","ab")
+
+In [62]: p.dump(my_trainings,f)
+
+In [63]: f.close()
+
+In [64]: # unpickling
+
+In [65]: g = open("my_trainings.tx","rb")
+---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+<ipython-input-65-b81658d705ad> in <module>()
+----> 1 g = open("my_trainings.tx","rb")
+
+IOError: [Errno 2] No such file or directory: 'my_trainings.tx'
+
+In [66]: g = open("my_trainings.txt","rb")
+
+In [67]: training = p.load(g)
+
+In [68]: print training
+['python', 'django', 'devops', 'aws', 'openstack']
+
+
+###
+# xml
+###
+https://www.tutorialspoint.com/python/python_xml_processing.htm
+
+###
+# json : https://pydash.readthedocs.io/en/latest/
+###
