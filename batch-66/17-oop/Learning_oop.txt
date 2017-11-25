@@ -1,0 +1,146 @@
+oop - object oriented programming.
+
+programming 
++ Function based programming
++ object oriented way of writing a program.
+
+OOP
+- A - Abstraction
+- P - Polymorphism
+- I - Inheritance
+- E - Encapuslation
+
+
+Abstraction
+-------------
+
+car is a mix of variables(-) and function(+).
+
+variables(-)/data
+function(+)/methods
+
+ex1:
+
+car      -> class/classobject
+- color  -> data
+- model
+- build
+- wheels
++ break  -> method
++ acceleration
++ clutch
++ GPRS
+
+
+objects/Instances
+- audi
+- bmw
+- honda
+- hyundai
+- maruti
+- nano
+
+ex2:
+
+villa -> class/classobject/blueprint
+- bedrooms
+- dining
+- auditorium
+- kitchen
+
+Objects/Instances
+- Mahendra (yellow)
+- mayuri   (pink)
+
+ex3:
+
+banking
+- bal
++ deposit
++ withdraw
++ balance
++ interest
+
+Objects/Instances
+- soujanya
+- mreddy
+
+
+ Polymorphism
+ -----------------
+
+ Poly - many
+ morphism - forms
+
+ kumar ( Instance/object)
+ - trainer
+ - Founder
+ - employee
+ - son
+ - husband
+ - father
+
+ Intrest
+ - personal
+ - eductional
+ - car
+ - home
+
+ In [1]: a = 10
+
+In [2]: b = 20
+
+In [3]: a + b
+Out[3]: 30
+
+In [4]: c = "python"
+
+In [5]: d = "rocks"
+
+In [6]: c + d
+Out[6]: 'pythonrocks'
+
+In [7]: a.__add__(b)
+Out[7]: 30
+
+In [8]: c.__add__(d)
+Out[8]: 'pythonrocks'
+
+In [9]: a + c
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-9-e81e582b6fa9> in <module>()
+----> 1 a + c
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+In [10]: 
+
+
+Inheritance
+--------------
+
+Father
+Mother (left handed)
+- child1
+- child2(left handed)
+
+we can inherit some function or variables from parent class.
+we dont need to over code.
+
+
+Encapuslation
+----------------
+
+we are more concerned about the functionality rather than worry about data.
+
+* Data hiding
+- public,private,protected
+
+
+Banking
+- balance  ( i dont want to access the variable directly)
++ deposit
++ withdraw
+
+Storage device(pendrive)
