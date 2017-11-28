@@ -1,0 +1,354 @@
+Database is persistent way of storing data.
+python support most of the database.
+
++ Database
+ - relational     - oracle,mysql,mariadb
+ - non-relational - mongodb,cassendra
+
+Mysql
+------
+
+Learning mysql in 21 days - rev01
+
+References:
+https://www.liquidweb.com/kb/how-to-install-mariadb-5-5-on-ubuntu-14-04-lts/
+https://www.linode.com/docs/databases/mysql/install-and-configure-mysql-workbench-on-ubuntu
+
+# sudo apt-get install mysql-server (server,client(mysql))
+# mysql-workbench(GUI)
+
+-- help ---
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 5.7.18-0ubuntu0.16.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> help contents;
+You asked for help about help category: "Contents"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Account Management
+   Administration
+   Compound Statements
+   Data Definition
+   Data Manipulation
+   Data Types
+   Functions
+   Functions and Modifiers for Use with GROUP BY
+   Geographic Features
+   Help Metadata
+   Language Structure
+   Plugins
+   Procedures
+   Storage Engines
+   Table Maintenance
+   Transactions
+   User-Defined Functions
+   Utility
+
+mysql> help Functions;
+You asked for help about help category: "Functions"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Bit Functions
+   Comparison operators
+   Control flow functions
+   Date and Time Functions
+   Encryption Functions
+   Information Functions
+   Logical operators
+   Miscellaneous Functions
+   Numeric Functions
+   String Functions
+
+mysql> help Information Functions;
+You asked for help about help category: "Information Functions"
+For more information, type 'help <item>', where <item> is one of the following
+topics:
+   BENCHMARK
+   CHARSET
+   COERCIBILITY
+   COLLATION
+   CONNECTION_ID
+   CURRENT_USER
+   DATABASE
+   FOUND_ROWS
+   LAST_INSERT_ID
+   ROW_COUNT
+   SCHEMA
+   SESSION_USER
+   SYSTEM_USER
+   USER
+   VERSION
+
+mysql> help version;
+Name: 'VERSION'
+Description:
+Syntax:
+VERSION()
+
+Returns a string that indicates the MySQL server version. The string
+uses the utf8 character set. The value might have a suffix in addition
+to the version number. See the description of the version system
+variable in
+http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/information-functions.html
+
+Examples:
+mysql> SELECT VERSION();
+        -> '5.7.19-standard'
+
+mysql> select version();
++-------------------------+
+| version()               |
++-------------------------+
+| 5.7.18-0ubuntu0.16.10.1 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> help user;
+Name: 'USER'
+Description:
+Syntax:
+USER()
+
+Returns the current MySQL user name and host name as a string in the
+utf8 character set.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/information-functions.html
+
+Examples:
+mysql> SELECT USER();
+        -> 'davida@localhost'
+
+mysql> select user();
++----------------+
+| user()         |
++----------------+
+| root@localhost |
++----------------+
+1 row in set (0.02 sec)
+
+-- databases -- 
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch64            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.02 sec)
+
+mysql> 
+
+-- creation of database ---
+
+mysql> help create database;
+Name: 'CREATE DATABASE'
+Description:
+Syntax:
+CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+    [create_specification] ...
+
+create_specification:
+    [DEFAULT] CHARACTER SET [=] charset_name
+  | [DEFAULT] COLLATE [=] collation_name
+
+CREATE DATABASE creates a database with the given name. To use this
+statement, you need the CREATE privilege for the database. CREATE
+SCHEMA is a synonym for CREATE DATABASE.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/create-database.html
+
+
+mysql> create database batch66;
+Query OK, 1 row affected (0.00 sec)
+
+-- create a user --- 
+
+mysql> help create user;
+Name: 'CREATE USER'
+Description:
+--- truncated --- 
+
+mysql> create user 'user66'@'localhost' identified by 'user66';
+Query OK, 0 rows affected (0.01 sec)
+
+--- grant permission to the user ---
+mysql> help grant;
+Name: 'GRANT'
+Description:
+Syntax:
+
+
+mysql> grant all on batch66.* to 'user66'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> 
+
+--- test logging in as user66 ---
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-66$ mysql -u user66 -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 5.7.18-0ubuntu0.16.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select user();
++------------------+
+| user()           |
++------------------+
+| user66@localhost |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch66            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use batch66;
+Database changed
+mysql> 
+mysql> select database();
++------------+
+| database() |
++------------+
+| batch66    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> 
+
+As a database person:
+
+* installed the database.
+* created the schema.
+* created the user.
+* granted the previlidges.
+
+
+##
+#  python with databases
+###
+
+ubuntu:
+# sudo apt-get install python-mysqldb
+pip:
+# http://pymysql.readthedocs.io/en/latest/user/examples.html
+
+
+mysql> show tables;
++-------------------+
+| Tables_in_batch66 |
++-------------------+
+| student           |
++-------------------+
+1 row in set (0.01 sec)
+
+mysql> desc student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| name   | varchar(10) | YES  |     | NULL    |       |
+| gender | varchar(6)  | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+mysql> show create table student;
++---------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Table   | Create Table                                                                                                                          |
++---------+---------------------------------------------------------------------------------------------------------------------------------------+
+| student | CREATE TABLE `student` (
+  `name` varchar(10) DEFAULT NULL,
+  `gender` varchar(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
++---------+---------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> show engines;
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+| InnoDB             | DEFAULT | Supports transactions, row-level locking, and foreign keys     | YES          | YES  | YES        |
+| MRG_MYISAM         | YES     | Collection of identical MyISAM tables                          | NO           | NO   | NO         |
+| MEMORY             | YES     | Hash based, stored in memory, useful for temporary tables      | NO           | NO   | NO         |
+| BLACKHOLE          | YES     | /dev/null storage engine (anything you write to it disappears) | NO           | NO   | NO         |
+| MyISAM             | YES     | MyISAM storage engine                                          | NO           | NO   | NO         |
+| CSV                | YES     | CSV storage engine                                             | NO           | NO   | NO         |
+| ARCHIVE            | YES     | Archive storage engine                                         | NO           | NO   | NO         |
+| PERFORMANCE_SCHEMA | YES     | Performance Schema                                             | NO           | NO   | NO         |
+| FEDERATED          | NO      | Federated MySQL storage engine                                 | NULL         | NULL | NULL       |
++--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
+9 rows in set (0.00 sec)
+
+
+# use case
+# 5 years
+
+20 members
+10 senior put their papers
+
+CEO
+- 3 months
+- oracle/mariadb
+1- database ( installation/schemas/user/grant)
+- datapumping
+2 - middleware - python
+3 - testing/customers - app
+
+app
+|
+|
+python (middle ware)
+|
+|
+oracle
+
+# sqlalchemy - ORM
+# Object relational mapper.
+will treat your table as a python object.
+# select * from students;
+# students.objects.all()
+
+# reference:
+https://www.sqlalchemy.org/
+https://image.slidesharecdn.com/sqlaintro-130921142257-phpapp02/95/michael-bayer-introduction-to-sqlalchemy-postgres-open-9-638.jpg?cb=1379773451
+https://www.youtube.com/watch?v=P141KRbxVKc
