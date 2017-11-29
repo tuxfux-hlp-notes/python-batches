@@ -1,0 +1,73 @@
+sockets
+* basic things around any kind of network communication.
+
+browser -> request -> server(google.com) -> response -> broswer 
+
+https://fthmb.tqn.com/SD6sPfGnD0pdGHaPnTbBEb1rQpA=/400x400/Osi-model-jb.svg-57f7b9af3df78c690f6305e8.png
+
+udp/tcp
+
+udp -> unordered/unreliable/unconnected
+tcp -> ordered/reliable/connected
+
+whatapp
+
+sai(mobile)  -> communicate ->  sri(mobile)
+
+# name resolution
+
+name -> ip : forward lookup
+ip -> name : reverse lookup
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/18-sockets$ nslookup www.google.com
+Server:		127.0.1.1
+Address:	127.0.1.1#53
+
+Non-authoritative answer:
+Name:	www.google.com
+Address: 172.217.31.100
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/18-sockets$ dig www.google.com
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> www.google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 44477
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.google.com.			IN	A
+
+;; ANSWER SECTION:
+www.google.com.		155	IN	A	172.217.31.100
+
+;; Query time: 3 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Sun Oct 15 18:59:55 IST 2017
+;; MSG SIZE  rcvd: 48
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/18-sockets$ host www.google.com
+www.google.com has address 172.217.31.100
+www.google.com has IPv6 address 2404:6800:4001:80d::2004
+^Ckhyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/18-sockets$ 
+
+# server
+
+google.com
+
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/18-sockets$ nmap www.google.com
+
+Starting Nmap 7.12 ( https://nmap.org ) at 2017-10-15 19:04 IST
+Nmap scan report for www.google.com (172.217.31.100)
+Host is up (0.052s latency).
+rDNS record for 172.217.31.100: kul08s08-in-f4.1e100.net
+Not shown: 997 filtered ports
+PORT    STATE SERVICE
+25/tcp  open  smtp
+80/tcp  open  http
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 5.87 seconds
+khyaathi@khyaathi-Technologies:~/Documents/tuxfux-hlp-notes/python-notes/batch-65/18-sockets$ 
+
+

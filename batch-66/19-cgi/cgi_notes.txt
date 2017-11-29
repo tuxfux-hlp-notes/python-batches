@@ -1,0 +1,71 @@
+CGI - common gateway interface
+
+Linux/Fedora/centos
+----------------------
+Installation: yum install httpd*
+Document root: /var/www/html  ( html files)
+CGI location: /var/www/cgi-bin ( script file)
+configuation file: /etc/httpd/conf/httpd.conf
+service : service httpd start/stop/restart
+persistent: chkconfig httpd on
+
+
+ubuntu/linux mint/zorion
+--------------------------
+Installation : sudo apt-get install apache2
+Document root: /var/www/html ( html files)
+CGI location: /usr/lib/cgi-bin ( script file) 
+# switch to root -> sudo -s ; 
+# mkdir -p /usr/lib/cgi-bin
+
+# make sure all your script have execute permission
+ex: chmod +x <filename>
+
+To enable the CGI module run these two commands:
+ # sudo a2enmod cgi
+ # sudo service apache2 restart
+
+The above commands will create a new file under location /etc/apache2/conf-enabled/serve-cgi-bin.conf.
+
+configuration file:/etc/apache2/apache2.conf
+service : service apache2 start/stop/restart
+persistent: bum
+
+
+# webbrowser - python - database
+
+
+-- in case if you get following error---
+
+ured -- resuming normal operations
+[Wed Nov 29 19:10:14.535841 2017] [core:notice] [pid 21529:tid 140024841944576] AH00094: Command line: '/usr/sbin/apache2'
+Traceback (most recent call last):
+  File "/usr/lib/cgi-bin/get.py", line 8, in <module>
+    import MySQLdb as mdb
+ImportError: No module named MySQLdb
+
+solution:
+# apt-get install python-mysqldb
+
+
+
+I want to become a web man/woman :)
+
+* html5
+* css3
+* javascript
+* python and web
+-----
+Frameworks
+
+* Django
+* flask
+* bottle
+* rails - ruby
+* angularjs - javascript framework
+* nodejs
+
+References: 
+https://docs.python.org/2/library/internet.html
+https://docs.python.org/2/library/cgi.html
+https://www.w3schools.com/html/html_forms.asp
