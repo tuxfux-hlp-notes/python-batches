@@ -1,0 +1,465 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> TUPLES
+
+Related help topics: STRINGMETHODS, FORMATTING, xrange, LISTS
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+--- truncated output ---
+
+help> quit
+
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+
+
+In [1]: my_string = "python"
+
+In [2]: print my_string,type(my_string)
+python <type 'str'>
+
+In [3]: my_num = 1
+
+In [4]: print my_num,type(my_num)
+1 <type 'int'>
+
+In [5]: my_num1 = 1.0
+
+In [6]: print my_num1,type(my_num1)
+1.0 <type 'float'>
+
+In [7]: 
+
+In [7]: my_string.
+                my_string.capitalize my_string.format     my_string.isupper    my_string.rindex     my_string.strip      
+                my_string.center     my_string.index      my_string.join       my_string.rjust      my_string.swapcase   
+                my_string.count      my_string.isalnum    my_string.ljust      my_string.rpartition my_string.title      
+                my_string.decode     my_string.isalpha    my_string.lower      my_string.rsplit     my_string.translate  
+                my_string.encode     my_string.isdigit    my_string.lstrip     my_string.rstrip     my_string.upper      
+                my_string.endswith   my_string.islower    my_string.partition  my_string.split      my_string.zfill      
+                my_string.expandtabs my_string.isspace    my_string.replace    my_string.splitlines                      
+                my_string.find       my_string.istitle    my_string.rfind      my_string.startswith                      
+
+In [7]: my_string.upper?
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [8]: my_string.upper()
+Out[8]: 'PYTHON'
+
+In [9]: print my_string
+python
+
+In [10]: my_string.center?
+Docstring:
+S.center(width[, fillchar]) -> string
+
+Return S centered in a string of length width. Padding is
+done using the specified fill character (default is a space)
+Type:      builtin_function_or_method
+
+In [11]: my_string.center(21,'*')
+Out[11]: '********python*******'
+
+In [12]: my_num.
+                 my_num.bit_length  my_num.imag        
+                 my_num.conjugate   my_num.numerator   
+                 my_num.denominator my_num.real        
+
+In [12]: my_num1.
+                  my_num1.as_integer_ratio my_num1.hex              my_num1.real             
+                  my_num1.conjugate        my_num1.imag                                      
+                  my_num1.fromhex          my_num1.is_integer                                
+
+--- generic python interpreter ---
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> my_string="python"
+>>> print my_string,type(my_string)
+python <type 'str'>
+>>> 
+>>> print dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> help(my_string.upper)
+
+>>> 
+
+In [1]: my_string="python"
+
+In [2]: # A string is a sequence of characters
+
+In [3]: # p  y  t  h  o  n
+
+In [4]: #0   1  2  3  4  5 -> +ve indexing or left to right
+
+In [5]: #-6  -5 -4 -3 -2 -1 -> -ve indexing or right to left
+
+In [6]: # indexing
+
+In [7]: my_string[2]
+Out[7]: 't'
+
+In [8]: my_string[-2]
+Out[8]: 'o'
+
+In [9]: # slicing
+
+In [10]: my_string[0:3] # 0 till 3 ( 3 not included)
+Out[10]: 'pyt'
+
+In [11]: my_string[:3] # 0 till 3 ( 3 not included)
+Out[11]: 'pyt'
+
+In [12]: my_string[3:]
+Out[12]: 'hon'
+
+In [13]: my_string[3:9]
+Out[13]: 'hon'
+
+In [14]: # appending
+
+In [15]: my_string[:3] + my_string[3:]
+Out[15]: 'python'
+
+In [16]: my_string[3]
+Out[16]: 'h'
+
+In [17]: my_string[3]='H'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-17-58d43e49c9f3> in <module>()
+----> 1 my_string[3]='H'
+
+TypeError: 'str' object does not support item assignment
+
+In [18]: # task1:
+
+In [19]: # my_string="python"
+
+In [20]: # output = 'Python'
+
+In [21]: my_string
+Out[21]: 'python'
+
+In [22]: my_string[0].upper() + my_string[1:]
+Out[22]: 'Python'
+
+In [23]: 'P' + my_string[1:]
+Out[23]: 'Python'
+
+In [24]: my_string.replace?
+Docstring:
+S.replace(old, new[, count]) -> string
+
+Return a copy of string S with all occurrences of substring
+old replaced by new.  If the optional argument count is
+given, only the first count occurrences are replaced.
+Type:      builtin_function_or_method
+
+In [25]: my_string.replace('p','P')
+Out[25]: 'Python'
+
+In [29]: # slicing
+
+In [30]: my_string
+Out[30]: 'python'
+
+In [31]: my_string[:]
+Out[31]: 'python'
+
+In [32]: my_string[::1]
+Out[32]: 'python'
+
+In [33]: my_string[::2]
+Out[33]: 'pto'
+
+In [34]: my_string[1::2]
+Out[34]: 'yhn'
+
+In [35]: my_string[::-1]
+Out[35]: 'nohtyp'
+
+In [36]: # p  y  t  h  o  n
+
+In [37]:  #0   1  2  3  4  5 -> +ve indexing or left to right
+
+In [38]:  #-6  -5 -4 -3 -2 -1 -> -ve indexing or right to left
+
+In [39]: my_string[-3:]
+Out[39]: 'hon'
+
+In [40]: len?
+Docstring:
+len(object) -> integer
+
+Return the number of items of a sequence or collection.
+Type:      builtin_function_or_method
+
+In [41]: len(my_string)
+Out[41]: 6
+
+In [42]: my_string.count?
+Docstring:
+S.count(sub[, start[, end]]) -> int
+
+Return the number of non-overlapping occurrences of substring sub in
+string S[start:end].  Optional arguments start and end are interpreted
+as in slice notation.
+Type:      builtin_function_or_method
+
+In [43]: my_string
+Out[43]: 'python'
+
+In [44]: my_string.count('p')
+Out[44]: 1
+
+In [45]: my_string.count('p',1)
+Out[45]: 0
+
+In [46]: my_string.count('p',0,8)
+Out[46]: 1
+
+In [48]: # playing with numbers
+
+In [49]: 1 + 1
+Out[49]: 2
+
+In [50]: 25 * 25
+Out[50]: 625
+
+In [51]: 25 + 25 / 2
+Out[51]: 37
+
+In [52]: (25 + 25 ) /2 
+Out[52]: 25
+
+In [53]: 25 / 2
+Out[53]: 12
+
+In [54]: 25 / 2.0
+Out[54]: 12.5
+
+In [55]: 25 % 2 
+Out[55]: 1
+
+In [56]: # BODMAS
+
+In [57]: 2 ** 38
+Out[57]: 274877906944
+
+In [58]: import math
+
+In [59]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [60]: math.pow(2,38)
+Out[60]: 274877906944.0
+
+# typecasting
+
+In [67]: my_num = 1
+
+In [68]: print my_num
+1
+
+In [69]: print float(my_num)
+1.0
+
+In [70]: print str(my_num)
+1
+
+In [71]: '1' + '1' 
+Out[71]: '11'
+
+In [72]: 1 + 1
+Out[72]: 2
+
+In [73]: '1' + 1
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-73-cc892b1f57d5> in <module>()
+----> 1 '1' + 1
+
+TypeError: cannot concatenate 'str' and 'int' objects
+
+In [74]: '2' + '2'
+Out[74]: '22'
+
+In [75]: my_string='A'
+
+In [76]: int(my_string)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-76-883f3c773b96> in <module>()
+----> 1 int(my_string)
+
+ValueError: invalid literal for int() with base 10: 'A'
+
+In [77]: # unicode
+
+In [78]: # utf-8
+
+In [79]: 'pyt' + 'hon'
+Out[79]: 'python'
+
+In [81]: # raw_input and input
+
+In [82]: my_name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [83]: print my_name,type(my_name)
+kumar <type 'str'>
+
+In [84]: my_num = raw_input("please enter the number:")
+please enter the number:12
+
+In [85]: pritn my_num,type(my_num)
+  File "<ipython-input-85-4e29c73503c7>", line 1
+    pritn my_num,type(my_num)
+               ^
+SyntaxError: invalid syntax
+
+
+In [86]: print my_num,type(my_num)
+12 <type 'str'>
+
+In [87]: my_num = int(raw_input("please enter the number:"))
+please enter the number:12
+
+In [88]: print my_num,type(my_num)
+12 <type 'int'>
+
+In [89]: # raw_input is only availbale in 2.x
+
+In [90]: my_name = input("please enter your name:")
+please enter your name:my_name
+
+In [91]: print my_name
+kumar
+
+In [92]: my_name = input("please enter your name:")
+please enter your name:"ajay"
+
+In [93]: print my_name
+ajay
+
+In [94]: my_num = input("please enter your num:")
+please enter your num:1
+
+In [95]: print type(my_num),my_num
+<type 'int'> 1
+
+In [96]: 
+
+
+khyaathi@khyaathipython:/usr/lib/python2.7/dist-packages/docutils/utils/math$ python3
+Python 3.5.2+ (default, Sep 22 2016, 12:18:14) 
+[GCC 6.2.0 20160927] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = input("please enter your name")
+please enter your namekumar
+>>> print a,type(a)
+  File "<stdin>", line 1
+    print a,type(a)
+          ^
+SyntaxError: invalid syntax
+>>> 
+>>> print ("a")
+a
+>>> print ("{}".format(a))
+kumar
+>>> print ("{},{}".format(a,type(a)))
+kumar,<class 'str'>
+>>> 
+>>> b = input("please enter a num:")
+please enter a num:12
+>>> 
+>>> print ("{},{}".format(b,type(b)))
+12,<class 'str'>
+>>> 
+>>> help(print)
+
+>>> 
+
+
+
+References:
+http://www.pythonchallenge.com/pc/def/map.html
+
+
+
+

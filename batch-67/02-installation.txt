@@ -1,0 +1,125 @@
+Ubuntu/Linuxmint/zorion
+------------------------
+# sudo apt-get install python
+# sudo apt-get install python3
+# sudo apt-get install ipython
+# sudo atp-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+
+# jupyter
+# sudo apt-get install jupyter
+or
+# sudo apt-get install ipython-notebook
+
+
+Redhat/Fedora/Centos
+---------------------
+# yum install python
+# yum install python3
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+
+Windows
+---------
+https://www.anaconda.com/download/#windows
+
+IDE
+----
+https://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+* oracle virtualbox/vmware workstation
+* ubuntu/linuxmint
+* python
+
+
+khyaathi@khyaathipython:~$ python --version
+Python 2.7.12+
+khyaathi@khyaathipython:~$ python3 --version
+Python 3.5.2+
+khyaathi@khyaathipython:~$ 
+
+khyaathi@khyaathipython:~$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print "hello world"
+hello world
+>>> 
+>>> quit()
+khyaathi@khyaathipython:~$ python3
+Python 3.5.2+ (default, Sep 22 2016, 12:18:14) 
+[GCC 6.2.0 20160927] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> print ("hello world")
+hello world
+>>> 
+
+khyaathi@khyaathipython:~$ ipython
+
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: 
+
+In [1]: print "hello world"
+hello world
+
+In [2]: quit()
+khyaathi@khyaathipython:~$ bpython
+bpython version 0.15 on top of Python 2.7.12+ /usr/bin/python
+>>> print "hello world"
+hello world
+>>> quit()
+(None,)
+khyaathi@khyaathipython:~$ 
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ pwd
+/home/khyaathi/Documents/git_repos/python-batches/batch-67
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ls
+02-installation.txt  first.py  opensource.txt
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ python first.py
+hello world!!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ perl first.py
+hello world!!!khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ls -l
+total 12
+-rw-r--r-- 1 root root 1981 Dec  7 19:15 02-installation.txt
+-rw-r--r-- 1 root root   22 Dec  7 19:19 first.py
+-rw-r--r-- 1 root root 1535 Dec  6 19:14 opensource.txt
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ chmod +x first.py
+chmod: changing permissions of 'first.py': Operation not permitted
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ sudo chmod +x first.py
+[sudo] password for khyaathi: 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ls -l
+total 12
+-rw-r--r-- 1 root root 1981 Dec  7 19:15 02-installation.txt
+-rwxr-xr-x 1 root root   22 Dec  7 19:19 first.py
+-rw-r--r-- 1 root root 1535 Dec  6 19:14 opensource.txt
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ./first.py 
+Error: no such file "hello world!!!"
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ python --version
+Python 2.7.12+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ echo $PATH
+/home/khyaathi/bin:/home/khyaathi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ which python
+/usr/bin/python
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ /usr/bin/python --version
+Python 2.7.12+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ./first.py 
+hello world!!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ 
+
+

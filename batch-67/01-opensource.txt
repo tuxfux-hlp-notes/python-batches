@@ -1,0 +1,67 @@
+Python is an opensource language.
+
+Proprietory vs opensource
+--------------------------
+
+Propreitory
+------------
+owned by a company.
+
+Company A -> Product A
+Us        -> requirements -> internet/email
+						  -> we will get back to you.(weeks/months/years/decades)
+
+* customer retention.
+* frustrated customers.
+
+Opensource
+------------
+Company A -> Product A(GPL) -> publish the source code.
+Us        -> requirements -> internet/email
+						  -> we will get back to you.(weeks/months/years/decades)
+
+us(customer B) -> download/modifies/published -> product B (reviews)
+java/perl/python
+				-> reviews -> good/vgood/bad/worse
+
+Fast forward six months
+------------------------
+Company A ( A.3 (100 + 400 modification))
+
+Modification:
+* homogeneous
+* hetrogenous
+
+1 modification - 1 dev(1L) + 1 qa(1L) -> 2L * 400 -> 800L -> 8crs
+
+- customer retention.
+- cost cutting.
+- marketing.
+
+Money
+------
+* trainings
+* support-> platinum/diamond/gold/silver/bronze
+
+License
+---------
+GPL -> GNU General Public License.
+* any modification you make to a gpl should go back to GPL.
+* Any modificaton should be made public.
+OSF -> opensource foundation ( 1960)
+
+Principles
+-----------
+* FREEdom to modify the product is called opensource.
+* you can modify and redistribute.
+* opensource is about community support.
+
+
+opensource
+* anyone can use. - partially
+* source code is available to anyone to modify. - true
+* free to use. - partiallyt
+* opensource is free. - false
+* for services we need to pay. - true
+* license is there. - 
+ex: linux,ubuntu
