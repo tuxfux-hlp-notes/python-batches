@@ -1,0 +1,28 @@
+# conditions
+
+In [25]: 5 > 2
+Out[25]: True
+
+In [26]: 2 > 5
+Out[26]: False
+
+In [27]: print type(True)
+<type 'bool'>
+
+In [28]: print type(False)
+<type 'bool'>
+
+In [29]: if 5 > 2 :
+    ...:     print "5 is greater than 2"
+    ...:     
+5 is greater than 2
+
+In [30]: if 2 > 5:
+    ...:     print "2 is lesser than 5"
+    ...:     
+
+In [31]: 
+
+reference:
+https://www.python.org/dev/peps/pep-0008/#introduction
+https://www.youtube.com/watch?v=wf-BqAjZb8M
