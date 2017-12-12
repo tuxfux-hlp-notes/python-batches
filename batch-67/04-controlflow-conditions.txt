@@ -26,3 +26,14 @@ In [31]:
 reference:
 https://www.python.org/dev/peps/pep-0008/#introduction
 https://www.youtube.com/watch?v=wf-BqAjZb8M
+
+# linux
+khyaathi@khyaathipython:~$ pwd
+/home/khyaathi
+khyaathi@khyaathipython:~$ cat .vimrc 
+set nu
+set tabstop=4
+set expandtab
+set autoindent
+syntax on
+khyaathi@khyaathipython:~$ 

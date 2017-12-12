@@ -18,7 +18,7 @@ elif food_type == 'fish':
 	elif fish_type == 'solomon':
 		print "we have your {}".format(fish_type)
 		print "how much quantity of fish {} you need".format(fish_type)
-	elif fish_type == 'tofu':
+	elif fish_type == 'tofu' or fish_type == 'TOFU':
 		print "we have your {}".format(fish_type)
 		print "how much quantity of fish {} you need".format(fish_type)
 	else:
