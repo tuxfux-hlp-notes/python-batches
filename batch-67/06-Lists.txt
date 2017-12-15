@@ -1,0 +1,429 @@
+Lists - Datastructures
+List - A linear way of representing data.Lists can be homogenous or hetrogenous.
+
+Arrays vs lists
+-----------------
+Multi dimensional representation of data. Homogenous representation of data.
+https://scipy.org/
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: my_fruits = ['apple','banana','cherry','dates']
+
+In [2]: print my_fruits,type(my_fruits)
+['apple', 'banana', 'cherry', 'dates'] <type 'list'>
+
+In [3]: my_empty = []
+
+In [4]: print my_empty,type(my_empty)
+[] <type 'list'>
+
+In [5]: my_empty = list()
+
+In [6]: print my_empty,type(my_empty)
+[] <type 'list'>
+
+In [7]: # indexing
+
+In [8]: #  ['apple','banana','cherry','dates']
+
+In [9]: #    0        1        2        3     # +ve indexing or left to right
+
+In [10]: #   -4       -3      -2       -1    # -ve indexing or right to left
+
+In [11]: print my_fruits[2]
+cherry
+
+In [12]: print my_fruits[-2]
+cherry
+
+In [13]: # slicing
+
+In [14]: print my_fruits[1:3]
+['banana', 'cherry']
+
+In [15]: # we can modify the elements of a list
+
+In [16]: my_fruits[0]
+Out[16]: 'apple'
+
+In [17]: my_fruits[0]='Apple'
+
+In [18]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates']
+
+In [19]: my_string="python"
+
+In [20]: my_string[0]
+Out[20]: 'p'
+
+In [21]: my_string[0]='P'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-21-fa91f1c6e022> in <module>()
+----> 1 my_string[0]='P'
+
+TypeError: 'str' object does not support item assignment
+
+In [22]: # in
+
+In [23]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates']
+
+In [24]: 'banana' in my_fruits
+Out[24]: True
+
+In [25]: 'Apple' in my_fruits
+Out[25]: True
+
+In [26]: 'apple' in my_fruits
+Out[26]: False
+
+In [27]: pwd
+Out[27]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67'
+
+In [28]: run 06-results.py
+results of sridhar.
+results of komala.
+results of chetan.
+results of rajesh.
+results of balu.
+results of ravi.
+results of yaseen.
+
+In [29]: run 06-results.py
+results of komala.
+results of rajesh.
+results of ravi.
+
+In [30]: 
+
+In [31]: # string to a list and vice-versa
+
+In [32]: my_sentence = "Today is monday"
+
+In [33]: my_string="python"
+
+In [34]: # string to list
+
+In [35]: Lmy_string = list(my_string)
+
+In [36]: print Lmy_string
+['p', 'y', 't', 'h', 'o', 'n']
+
+In [37]: ## convert python to tython
+
+In [38]: Lmy_string[0]="T'
+  File "<ipython-input-38-d046c1c4589f>", line 1
+    Lmy_string[0]="T'
+                    ^
+SyntaxError: EOL while scanning string literal
+
+
+In [39]: Lmy_string[0]="T"
+
+In [40]: print Lmy_string
+['T', 'y', 't', 'h', 'o', 'n']
+
+In [41]: # List to string 
+
+In [42]: delimter=''
+
+In [43]: delimter.join?
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+Type:      builtin_function_or_method
+
+In [44]: delimter.join(Lmy_string)
+Out[44]: 'Tython'
+
+In [45]: new_string=delimter.join(Lmy_string)
+
+In [46]: print my_string
+python
+
+In [47]: print new_string
+Tython
+
+In [49]: my_sentence = "Today is monday"
+
+In [50]: # string to a list
+
+In [51]: Lmy_sentence = list(my_sentence)
+
+In [52]: print Lmy_sentence
+['T', 'o', 'd', 'a', 'y', ' ', 'i', 's', ' ', 'm', 'o', 'n', 'd', 'a', 'y']
+
+In [53]: my_sentence.split?
+Docstring:
+S.split([sep [,maxsplit]]) -> list of strings
+
+Return a list of the words in the string S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are removed
+from the result.
+Type:      builtin_function_or_method
+
+In [54]: Lmy_sentence=my_sentence.split()
+
+In [56]: print Lmy_sentence
+['Today', 'is', 'monday']
+
+In [57]: 
+
+In [58]: # list to a string
+
+In [59]: Lmy_sentence
+Out[59]: ['Today', 'is', 'monday']
+
+In [60]: limiter=' '
+
+In [61]: limiter.join?
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+Type:      builtin_function_or_method
+
+In [62]: limiter.join(Lmy_sentence)
+Out[62]: 'Today is monday'
+
+In [63]: Lmy_sentence[-1]='Friday'
+
+In [64]: limiter.join(Lmy_sentence)
+Out[64]: 'Today is Friday'
+
+In [65]: my_sentence.split('da')
+Out[65]: ['To', 'y is mon', 'y']
+
+In [66]: # usecase
+
+In [67]: # useradd phani
+
+In [68]: tailf /etc/passwd
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-68-8147cbe6a5e9> in <module>()
+----> 1 tailf /etc/passwd
+
+NameError: name 'tailf' is not defined
+
+In [69]: tail -f /etc/passwd
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-69-3c61b226d344> in <module>()
+----> 1 tail -f /etc/passwd
+
+NameError: name 'tail' is not defined
+
+In [70]: !tail /etc/passwd
+speech-dispatcher:x:117:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+nm-openvpn:x:118:124:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/bin/false
+clickpkg:x:119:125::/nonexistent:/bin/false
+avahi:x:120:126:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+pulse:x:121:127:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+colord:x:122:130:colord colour management daemon,,,:/var/lib/colord:/bin/false
+saned:x:123:131::/var/lib/saned:/bin/false
+hplip:x:124:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+khyaathi:x:1000:1000:KHYAATHI,,,:/home/khyaathi:/bin/bash
+mysql:x:125:133:MySQL Server,,,:/nonexistent:/bin/false
+
+In [71]: my_user=['phani','x','1000','1000','phani user','/home/phani','/bin/bash']
+
+In [72]: print my_user
+['phani', 'x', '1000', '1000', 'phani user', '/home/phani', '/bin/bash']
+
+In [73]: print ':'.join(my_user)
+phani:x:1000:1000:phani user:/home/phani:/bin/bash
+
+In [74]: print ','.join(my_user)
+phani,x,1000,1000,phani user,/home/phani,/bin/bash
+
+In [74]: print ','.join(my_user)
+phani,x,1000,1000,phani user,/home/phani,/bin/bash
+
+In [75]: clear
+
+
+In [76]: # function
+
+In [77]: my_fruits
+Out[77]: ['Apple', 'banana', 'cherry', 'dates']
+
+In [78]: # my_fruits.append
+
+In [79]: my_fruits.append?
+Docstring: L.append(object) -- append object to end
+Type:      builtin_function_or_method
+
+In [80]: my_fruits.append('fig')
+
+In [81]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig']
+
+In [82]: # my_fruits.extend
+
+In [83]: my_fruits.extend?
+Docstring: L.extend(iterable) -- extend list by appending elements from the iterable
+Type:      builtin_function_or_method
+
+In [84]: my_fruits.extend(['grapes','jackfruit','kiwi'])
+
+In [85]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'grapes', 'jackfruit', 'kiwi']
+
+In [86]: # my_fruits.insert
+
+In [87]: print my_fruits.insert?
+Docstring: L.insert(index, object) -- insert object before index
+Type:      builtin_function_or_method
+
+In [88]: my_fruits.insert(5,'gauva')
+
+In [89]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'gauva', 'grapes', 'jackfruit', 'kiwi']
+
+In [90]: # my_fruits.index
+
+In [91]: my_fruits.index?
+Docstring:
+L.index(value, [start, [stop]]) -> integer -- return first index of value.
+Raises ValueError if the value is not present.
+Type:      builtin_function_or_method
+
+In [92]: my_fruits.insert(5,'grapes')
+
+In [93]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'grapes', 'gauva', 'grapes', 'jackfruit', 'kiwi']
+
+In [94]: print my_fruits.index('grapes')
+5
+
+In [95]: print my_fruits.index('grapes',6)
+7
+
+In [96]: print my_fruits.index('grapes',9)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-96-62c73e17b9ed> in <module>()
+----> 1 print my_fruits.index('grapes',9)
+
+ValueError: 'grapes' is not in list
+
+In [97]: # my_fruits.count
+
+In [98]: my_fruits.count?
+Docstring: L.count(value) -> integer -- return number of occurrences of value
+Type:      builtin_function_or_method
+
+In [99]: my_fruits.count('grapes')
+Out[99]: 2
+
+In [100]: # my_fruits.pop
+
+In [101]: my_fruits.pop?
+Docstring:
+L.pop([index]) -> item -- remove and return item at index (default last).
+Raises IndexError if list is empty or index is out of range.
+Type:      builtin_function_or_method
+
+In [102]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'grapes', 'gauva', 'grapes', 'jackfruit', 'kiwi']
+
+In [103]: my_fruits.pop(7)
+Out[103]: 'grapes'
+
+In [104]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'grapes', 'gauva', 'jackfruit', 'kiwi']
+
+In [105]: my_fruits.pop(11)
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-105-a3560d2b74c5> in <module>()
+----> 1 my_fruits.pop(11)
+
+IndexError: pop index out of range
+
+In [106]: my_fruits.pop()
+Out[106]: 'kiwi'
+
+In [107]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'grapes', 'gauva', 'jackfruit']
+
+In [108]: # my_fruits.remove
+
+In [109]: print my_fruits.remove?
+Docstring:
+L.remove(value) -- remove first occurrence of value.
+Raises ValueError if the value is not present.
+Type:      builtin_function_or_method
+
+In [110]: my_fruits.remove('grapes')
+
+In [111]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'gauva', 'jackfruit']
+
+In [112]: my_fruits.remove('grapes')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-112-1d77928693a7> in <module>()
+----> 1 my_fruits.remove('grapes')
+
+ValueError: list.remove(x): x not in list
+
+In [113]: # my_fruits.sort
+
+In [114]: my_fruits.sort?
+Docstring:
+L.sort(cmp=None, key=None, reverse=False) -- stable sort *IN PLACE*;
+cmp(x, y) -> -1, 0, 1
+Type:      builtin_function_or_method
+
+In [115]: my_fruits.sort(reverse=True)
+
+In [116]: print my_fruits
+['jackfruit', 'gauva', 'fig', 'dates', 'cherry', 'banana', 'Apple']
+
+In [117]: # my_fruits.reverse
+
+In [118]: my_fruits.reverse?
+Docstring: L.reverse() -- reverse *IN PLACE*
+Type:      builtin_function_or_method
+
+In [119]: my_fruits.reverse()
+
+In [120]: print my_fruits
+['Apple', 'banana', 'cherry', 'dates', 'fig', 'gauva', 'jackfruit']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
