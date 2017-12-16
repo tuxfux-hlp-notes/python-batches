@@ -408,6 +408,214 @@ In [119]: my_fruits.reverse()
 In [120]: print my_fruits
 ['Apple', 'banana', 'cherry', 'dates', 'fig', 'gauva', 'jackfruit']
 
+# memory in python
+
+In [69]: # soft copy and deep copy
+
+In [70]: a = 1
+
+In [71]: id?
+Docstring:
+id(object) -> integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it's the object's memory address.)
+Type:      builtin_function_or_method
+
+In [72]: id(a)
+Out[72]: 94923752669528
+
+In [73]: b = 1
+
+In [74]: id(b)
+Out[74]: 94923752669528
+
+In [75]: # is
+
+In [76]: a is b
+Out[76]: True
+
+In [77]: id(1)
+Out[77]: 94923752669528
+
+In [78]: b = 2
+
+In [79]: id(a)
+Out[79]: 94923752669528
+
+In [80]: print a,id(a),b,id(b)
+1 94923752669528 2 94923752669504
+
+In [81]: c = 255
+
+In [82]: d = 255
+
+In [83]: c is d
+Out[83]: True
+
+In [84]: c = 300
+
+In [85]: d = 300
+
+In [86]: c is d
+Out[86]: False
+
+In [87]: # -5 to 255
+
+# lists
+
+
+# soft copy
+
+In [89]: a = [11,12,13]
+
+In [90]: b = a
+
+In [91]: print a,b
+[11, 12, 13] [11, 12, 13]
+
+In [92]: print id(a),id(b)
+140212217193464 140212217193464
+
+In [93]: a is b
+Out[93]: True
+
+In [94]: a[1]='two'
+
+In [95]: print a
+[11, 'two', 13]
+
+In [96]: print b
+[11, 'two', 13]
+
+In [97]: a = ['one','two','three']
+
+In [98]: print a
+['one', 'two', 'three']
+
+In [99]: print b
+[11, 'two', 13]
+
+In [100]: 
+
+In [101]: # deep copy
+
+In [102]: a = ['11','12','13']
+
+In [103]: print a,id(a)
+['11', '12', '13'] 140212226721408
+
+In [104]: import copy
+
+In [105]: copy.deepcopy?
+Signature: copy.deepcopy(x, memo=None, _nil=[])
+Docstring:
+Deep copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+File:      /usr/lib/python2.7/copy.py
+Type:      function
+
+In [106]: b = copy.deepcopy(a)
+
+In [107]: print b,id(b)
+['11', '12', '13'] 140212208171560
+
+In [108]: a is b
+Out[108]: False
+
+In [109]: c = a[:]
+
+In [110]: c is a
+Out[110]: False
+
+In [111]: a[1] = "two"
+
+In [112]: print a
+['11', 'two', '13']
+
+In [113]: print b
+['11', '12', '13']
+
+In [115]: # list comprehensions
+
+In [116]: # creating list on fly
+
+In [117]: a = raw_input("please enter a series of numbers:")
+please enter a series of numbers:1,2,3,4,5,6,7,8,9,10
+
+In [118]: # output = 2,4,6,8,10
+
+In [119]: print a,type(a)
+1,2,3,4,5,6,7,8,9,10 <type 'str'>
+
+In [120]: my_a = a.split(',')
+
+In [121]: my_a
+Out[121]: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [122]: my_output=[]
+
+In [123]: for value in my_a:
+     ...:     if int(value) % 2 == 0:
+     ...:         my_output.append(value)
+     ...:         
+
+In [124]: print my_output
+['2', '4', '6', '8', '10']
+
+In [125]: print ','.join(my_output)
+2,4,6,8,10
+
+In [126]: [ value for value in a.split(',')]
+Out[126]: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [127]: 
+
+In [127]: [ value for value in a.split(',') if int(value) % 2 == 0]
+Out[127]: ['2', '4', '6', '8', '10']
+
+In [128]: ','.join([ value for value in a.split(',') if int(value) % 2 == 0])
+Out[128]: '2,4,6,8,10'
+
+In [129]: # [ value;statments;conditions]
+
+In [130]: 
+
+In [131]: my_string = 'today is saturday'
+
+In [132]: [ [value,value.upper(),value.capitalize()] for value in my_string.split()]
+Out[132]: 
+[['today', 'TODAY', 'Today'],
+ ['is', 'IS', 'Is'],
+ ['saturday', 'SATURDAY', 'Saturday']]
+
+In [133]: # try to get this output without list comprehensions
+
+In [134]: 
+In [135]: my_empty = []
+
+In [136]: sys.getsizeof(my_empty)
+Out[136]: 72
+
+In [137]: sys.getsizeof?
+Docstring:
+getsizeof(object, default) -> int
+
+Return the size of object in bytes.
+Type:      builtin_function_or_method
+
+In [138]: a = 300.5
+
+In [139]: b = 300.5
+
+In [140]: a is b
+Out[140]: False
+
+
+
+# reference: https://github.com/tuxfux-hlp/Python-examples/blob/master/lists/list_comprehension.txt
+# tasks: https://github.com/sambapython/python/blob/master/assignments.txt
 
 
 
