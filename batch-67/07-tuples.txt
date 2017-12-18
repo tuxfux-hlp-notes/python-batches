@@ -1,0 +1,378 @@
+#tuple is a readonly list.
+
+
+In [1]: my_week = ('mon','tue','wed','thu','fri','sat','sun')
+
+In [2]: print my_week,type(my_week)
+('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') <type 'tuple'>
+
+In [3]: my_empty = ()
+
+In [4]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [5]: my_empty = tuple()
+
+In [6]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [7]: my_tuple = "python"
+
+In [8]: print my_tuple,type(my_tuple)
+python <type 'str'>
+
+In [9]: my_tuple = 'sun','mon','tue','wed','thu','fri','sat','sun'
+
+In [10]: print my_tuple,type(my_tuple)
+('sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun') <type 'tuple'>
+
+In [11]: my_tuple = ("python")
+
+In [12]: print my_tuple,type(my_tuple)
+python <type 'str'>
+
+In [13]: my_tuple = ("python",)
+
+In [14]: print my_tuple,type(my_tuple)
+('python',) <type 'tuple'>
+
+
+In [16]: # tuple support indexing and slicing
+
+In [17]: my_week
+Out[17]: ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+
+In [18]: my_week[0]
+Out[18]: 'mon'
+
+In [19]: my_week[0]='Mon'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-19-29575f4830e0> in <module>()
+----> 1 my_week[0]='Mon'
+
+TypeError: 'tuple' object does not support item assignment
+
+In [20]: my_string="python"
+
+In [21]: my_string[0]
+Out[21]: 'p'
+
+In [22]: my_string[0]='T'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-22-50967ec55ade> in <module>()
+----> 1 my_string[0]='T'
+
+TypeError: 'str' object does not support item assignment
+
+In [23]: # immutable objects
+
+In [24]: # list is a mutable object
+
+In [30]: # can we iterate tuples
+
+In [31]: for value in my_week:
+    ...:     print value
+    ...:     
+mon
+tue
+wed
+thu
+fri
+sat
+sun
+
+In [33]: # lists and tuples
+
+In [34]: # packing and unpacking
+
+In [35]: my_week
+Out[35]: ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+
+In [36]: # mo = 'mon'
+
+In [37]: # mo = my_week[0]
+
+In [38]: a,b,c,d,e,f,g = my_week
+
+In [39]: print a,b,c,d,e,f,g
+mon tue wed thu fri sat sun
+
+In [40]: a,b,c,d,e,f = my_week
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-40-df13026cebef> in <module>()
+----> 1 a,b,c,d,e,f = my_week
+
+ValueError: too many values to unpack
+
+In [41]: a,b,c,d,e,f,g,h = my_week
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-41-5eeaddff8ae0> in <module>()
+----> 1 a,b,c,d,e,f,g,h = my_week
+
+ValueError: need more than 7 values to unpack
+
+In [43]: # tuple and list
+
+In [44]: my_students = ['sri','komala','rajesh','ravi','balu','yaseen','phani']
+
+In [45]: my_exams = ['python','django','puppet','chef','ansible','dockers','kubernates']
+
+In [46]: name='phani'
+
+In [47]: name in my_students
+Out[47]: True
+
+In [48]: my_students.index(name)
+Out[48]: 6
+
+In [49]: my_exams[my_students.index(name)]
+Out[49]: 'kubernates'
+
+In [50]: name = raw_input("please enter the student name:")
+please enter the student name:phani
+
+In [51]: if name in my_students:
+    ...:     print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+    ...:     
+phani is going to give exam kubernates
+
+In [52]: name = raw_input("please enter the student name:")
+please enter the student name:ravi
+
+In [53]: if name in my_students:
+    ...:     print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+    ...:     
+ravi is going to give exam chef
+
+In [54]: 
+
+In [54]: edit 50:52
+IPython will make a temporary file named: /tmp/ipython_edit_RdxxlU/ipython_edit__YlDnK.py
+Editing... 
+[No write since last change]
+/home/khyaathi
+
+Press ENTER or type command to continue
+done. Executing edited code...
+please enter the student name:rajesh
+rajesh is going to give exam puppet
+Out[54]: '#!/usr/bin/python\nname = raw_input("please enter the student name:")\nif name in my_students:\n    print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])\n    \n'
+
+
+In [57]: # anti-climax
+
+In [58]: my_students.sort()
+
+In [59]: my_students
+Out[59]: ['balu', 'komala', 'phani', 'rajesh', 'ravi', 'sri', 'yaseen']
+
+In [60]: my_exams
+Out[60]: ['python', 'django', 'puppet', 'chef', 'ansible', 'dockers', 'kubernates']
+
+In [61]: name = raw_input("please enter the student name:")
+please enter the student name:komala
+
+In [62]: if name in my_students:
+    ...:     print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+    ...:     
+komala is going to give exam django
+
+In [63]: 
+
+In [63]: name = raw_input("please enter the student name:")
+please enter the student name:yaseen
+
+In [64]: if name in my_students:
+    ...:     print "{} is going to give exam {}".format(name,my_exams[my_students.index(name)])
+    ...:     
+yaseen is going to give exam kubernates
+
+In [65]: 
+
+In [66]: # list of tuples
+
+In [67]: my_exams = [('sri','python'),('komala','django'),('ravi','chef'),('rajesh','puppet'),('balu','ansible'),('yaseen',
+    ...: 'dockers'),('phani','kubarnates')]
+
+In [68]: name = raw_input("please enter the student name:")
+please enter the student name:sri
+
+In [69]: for value in my_exams:
+    ...:     print value
+    ...:     
+('sri', 'python')
+('komala', 'django')
+('ravi', 'chef')
+('rajesh', 'puppet')
+('balu', 'ansible')
+('yaseen', 'dockers')
+('phani', 'kubarnates')
+
+In [70]: for stu,sub in my_exams:
+    ...:     if name == stu:
+    ...:         print "{} is going to give exam {}".format(stu,sub)
+    ...:         
+sri is going to give exam python
+
+In [71]: # anti-climax
+
+In [72]: my_exams.sort()
+
+In [73]: print my_exams
+[('balu', 'ansible'), ('komala', 'django'), ('phani', 'kubarnates'), ('rajesh', 'puppet'), ('ravi', 'chef'), ('sri', 'python'), ('yaseen', 'dockers')]
+
+In [74]: name = raw_input("please enter the student name:")
+please enter the student name:rajesh
+
+In [75]: for stu,sub in my_exams:
+    ...:     if name == stu:
+    ...:         print "{} is going to give exam {}".format(stu,sub)
+    ...:         
+rajesh is going to give exam puppet
+
+In [77]: my_exams = [('sri','python'),('komala','django'),('ravi','chef'),('rajesh','puppet'),('balu','ansible'),('yaseen',
+    ...: 'dockers'),('phani','kubarnates')]
+
+In [78]: my_exams[0]=('sri','nginx')
+
+In [79]: print my_exams
+[('sri', 'nginx'), ('komala', 'django'), ('ravi', 'chef'), ('rajesh', 'puppet'), ('balu', 'ansible'), ('yaseen', 'dockers'), ('phani', 'kubarnates')]
+
+In [80]: my_exams[0][1]='nginx'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-80-441687fbc1bd> in <module>()
+----> 1 my_exams[0][1]='nginx'
+
+TypeError: 'tuple' object does not support item assignment
+
+In [81]: my_exams = (['sri','nginx'],['ravi','chef'],['balu','ansible'])
+
+In [82]: my_exams[-1]
+Out[82]: ['balu', 'ansible']
+
+In [83]: my_exams[-1][-1]
+Out[83]: 'ansible'
+
+In [84]: my_exams[-1][-1]='nagios'
+
+In [85]: print my_exams[-1][-1]
+nagios
+
+In [86]: print my_exams
+(['sri', 'nginx'], ['ravi', 'chef'], ['balu', 'nagios'])
+
+In [87]: my_exams[-1] = ['balu','linux']
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-87-a141d514a914> in <module>()
+----> 1 my_exams[-1] = ['balu','linux']
+
+TypeError: 'tuple' object does not support item assignment
+
+In [88]: # function
+
+In [89]: my_week.count?
+Docstring: T.count(value) -> integer -- return number of occurrences of value
+Type:      builtin_function_or_method
+
+In [90]: my_week.index?
+Docstring:
+T.index(value, [start, [stop]]) -> integer -- return first index of value.
+Raises ValueError if the value is not present.
+Type:      builtin_function_or_method
+
+In [91]: my_week
+Out[91]: ('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+
+In [92]: my_week.count('tue')
+Out[92]: 1
+
+In [93]: my_week.index('sat')
+Out[93]: 5
+
+
+-- task --
+
+In [95]: a = "hello"
+
+In [96]: b = "hello"
+
+In [97]: print a,b
+hello hello
+
+In [98]: a == b
+Out[98]: True
+
+In [99]: a is b
+Out[99]: True
+
+In [100]: a = "hello world!!"
+
+In [101]: b = "hello world!!"
+
+In [102]: print a,b
+hello world!! hello world!!
+
+In [103]: a == b
+Out[103]: True
+
+In [104]: a is b
+Out[104]: False
+
+In [105]: id(a)
+Out[105]: 140579472245456
+
+In [106]: id(b)
+Out[106]: 140579472247584
+
+In [107]: # why ? hint: interning?
+
+
+In [109]: # task2
+
+In [110]: a = 1
+
+In [111]: b = 1
+
+In [112]: id(a),id(b),id(1)
+Out[112]: (94344290218328, 94344290218328, 94344290218328)
+
+In [113]: del(a)
+
+In [114]: del(b)
+
+In [115]: print a
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-115-da1608c9d425> in <module>()
+----> 1 print a
+
+NameError: name 'a' is not defined
+
+In [116]: print b
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-116-73f3da3732cb> in <module>()
+----> 1 print b
+
+NameError: name 'b' is not defined
+
+In [117]: del(1)
+  File "<ipython-input-117-a4bb3d34dc20>", line 1
+    del(1)
+SyntaxError: can't delete literal
+
+
+In [118]: id(1)
+Out[118]: 94344290218328
+
+In [119]: # who is going to take care of the object 1
+
+In [120]: # hint: gc module
+
+In [121]: # garbage collector
