@@ -1,0 +1,468 @@
+# Dictionaries
+# hash/dict
+
+ex:
+adhar,ssn,empid
+dictionary value -> key,value
+
+In [1]: my_fruits = {'a':'apple','b':'banana','c':'cherry','d':'dates'}
+
+In [2]: print my_fruits,type(my_fruits)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'} <type 'dict'>
+
+In [3]: my_empty = {}
+
+In [4]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [5]: my_empty=dict()
+
+In [6]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [7]: # cheat sheet
+
+In [8]: # list => ['apple','banana'],[],list()
+
+In [9]: # tuple => ('apple','banana'),(),tuple()
+
+In [10]: # dict => {'a':"apple",'b':"banana"},{},dict()
+
+In [11]: ## get value for a key
+
+In [12]: print my_fruits['c']
+cherry
+
+In [13]: print my_fruits['a']
+apple
+
+In [15]: # in operator
+
+In [16]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [17]: 'a' in my_fruits
+Out[17]: True
+
+In [18]: 'apple' in my_fruits
+Out[18]: False
+
+In [19]: # in operator work only for keys on a dictionary object.
+
+In [20]: 
+
+In [15]: # in operator
+
+In [16]: print my_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [17]: 'a' in my_fruits
+Out[17]: True
+
+In [18]: 'apple' in my_fruits
+Out[18]: False
+
+In [19]: # in operator work only for keys on a dictionary object.
+
+In [20]: ## iteration
+
+In [21]: for value in my_fruits:
+    ...:     print value
+    ...:     
+a
+c
+b
+d
+
+In [22]: for value in my_fruits:
+    ...:     print value,my_fruits[value]
+    ...:     
+    ...:     
+a apple
+c cherry
+b banana
+d dates
+
+## keys are unique, the values get replace not appended.
+
+In [24]: my_fruits
+Out[24]: {'a': 'apple', 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [25]: my_fruits['a']='apricot'
+
+In [26]: print my_fruits
+{'a': 'apricot', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [27]: my_fruits['a']=['apricot','apple']
+
+In [28]: print my_fruits
+{'a': ['apricot', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [29]:
+
+In [29]: print my_fruits['a']
+['apricot', 'apple']
+
+In [30]: print my_fruits['a'][1]
+apple
+
+In [32]: # function relative to dictionaries
+
+In [33]: 
+
+In [33]: # my_fruits.get
+
+In [34]: my_fruits.get?
+Docstring: D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
+Type:      builtin_function_or_method
+
+In [35]: my_fruits.get('a')
+Out[35]: ['apricot', 'apple']
+
+In [36]: my_fruits.get('z')
+
+	In [38]: print my_fruits.get('z')
+None
+
+In [40]: print my_fruits['a']
+['apricot', 'apple']
+
+In [41]: # my_fruits.has_key
+
+In [42]: my_fruits.has_key?
+Docstring: D.has_key(k) -> True if D has a key k, else False
+Type:      builtin_function_or_method
+
+In [43]: my_fruits.has_key('a')
+Out[43]: True
+
+In [44]: 'a' in my_fruits
+Out[44]: True
+
+In [45]: # my_fruits.keys,my_fruits.iterkeys,my_fruits.viewkeys
+
+In [46]: my_fruits.keys?
+Docstring: D.keys() -> list of D's keys
+Type:      builtin_function_or_method
+
+In [47]: my_fruits.keys()
+Out[47]: ['a', 'c', 'b', 'd']
+
+In [48]: my_fruits.iterkeys?
+Docstring: D.iterkeys() -> an iterator over the keys of D
+Type:      builtin_function_or_method
+
+In [49]: my_fruits.iterkeys()
+Out[49]: <dictionary-keyiterator at 0x7f7099750730>
+
+In [50]: for value in my_fruits.iterkeys():
+    ...:     print value
+    ...:     
+a
+c
+b
+d
+
+In [51]: my_fruits.viewkeys?
+Docstring: D.viewkeys() -> a set-like object providing a view on D's keys
+Type:      builtin_function_or_method
+
+In [52]: print my_fruits.viewkeys()
+dict_keys(['a', 'c', 'b', 'd'])
+
+In [54]: # my_fruits.values,my_fruits.itervalues,my_fruits.viewvalues
+
+In [55]: print my_fruits.values()
+[['apricot', 'apple'], 'cherry', 'banana', 'dates']
+
+In [56]: my_fruits.values?
+Docstring: D.values() -> list of D's values
+Type:      builtin_function_or_method
+
+In [57]: # my_fruits.itervalues
+
+In [58]: my_fruits.itervalues?
+Docstring: D.itervalues() -> an iterator over the values of D
+Type:      builtin_function_or_method
+
+In [59]: my_fruits.itervalues()
+Out[59]: <dictionary-valueiterator at 0x7f7099806310>
+
+In [60]: my_fruits.viewvalues()
+Out[60]: dict_values([['apricot', 'apple'], 'cherry', 'banana', 'dates'])
+
+In [61]: ## items
+
+In [62]: my_fruits.items?
+Docstring: D.items() -> list of D's (key, value) pairs, as 2-tuples
+Type:      builtin_function_or_method
+
+In [63]: my_fruits.items()
+Out[63]: [('a', ['apricot', 'apple']), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates')]
+
+In [64]: my_fruits.iteritems()
+Out[64]: <dictionary-itemiterator at 0x7f7099806998>
+
+In [65]: my_fruits.viewitems()
+Out[65]: dict_items([('a', ['apricot', 'apple']), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates')])
+
+In [67]: my_students = ['sri','komala','rajesh','ravi','balu','yaseen','phani']
+
+In [68]: my_exams = ['python','django','puppet','chef','ansible','dockers','kubernates']
+
+In [69]: zip(my_students,my_exams)
+Out[69]: 
+[('sri', 'python'),
+ ('komala', 'django'),
+ ('rajesh', 'puppet'),
+ ('ravi', 'chef'),
+ ('balu', 'ansible'),
+ ('yaseen', 'dockers'),
+ ('phani', 'kubernates')]
+
+In [70]: dict(zip(my_students,my_exams))
+Out[70]: 
+{'balu': 'ansible',
+ 'komala': 'django',
+ 'phani': 'kubernates',
+ 'rajesh': 'puppet',
+ 'ravi': 'chef',
+ 'sri': 'python',
+ 'yaseen': 'dockers'}
+
+In [71]: z = zip(my_students,my_exams)
+
+In [72]: print z
+[('sri', 'python'), ('komala', 'django'), ('rajesh', 'puppet'), ('ravi', 'chef'), ('balu', 'ansible'), ('yaseen', 'dockers'), ('phani', 'kubernates')]
+
+
+In [75]: (my_s,my_e) = zip(*z)
+
+In [76]: my_s
+Out[76]: ('sri', 'komala', 'rajesh', 'ravi', 'balu', 'yaseen', 'phani')
+
+In [77]: my_e
+Out[77]: ('python', 'django', 'puppet', 'chef', 'ansible', 'dockers', 'kubernates')
+
+In [79]: my_fruits.fromkeys?
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+Type:      builtin_function_or_method
+
+In [80]: my_s
+Out[80]: ('sri', 'komala', 'rajesh', 'ravi', 'balu', 'yaseen', 'phani')
+
+In [81]: my_new = {}
+
+In [82]: my_new.fromkeys(my_s,"python")
+Out[82]: 
+{'balu': 'python',
+ 'komala': 'python',
+ 'phani': 'python',
+ 'rajesh': 'python',
+ 'ravi': 'python',
+ 'sri': 'python',
+ 'yaseen': 'python'}
+
+In [83]: 
+
+
+In [95]: my_fruits
+Out[95]: {'a': ['apricot', 'apple'], 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [96]: my_newfruits = {'g':'grapes'}
+
+In [97]: my_fruits.update(my_newfruits)
+
+In [98]: print my_fruits
+{'a': ['apricot', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes'}
+
+In [102]: # my_fruits.pop
+
+In [103]: my_fruits.pop?
+Docstring:
+D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised
+Type:      builtin_function_or_method
+
+In [104]: print my_fruits
+{'a': ['apricot', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes'}
+
+In [105]: my_fruits.pop('c')
+Out[105]: 'cherry'
+
+In [106]: print my_fruits
+{'a': ['apricot', 'apple'], 'b': 'banana', 'd': 'dates', 'g': 'grapes'}
+
+In [107]: del(my_fruits['g'])
+
+In [108]: print my_fruits
+{'a': ['apricot', 'apple'], 'b': 'banana', 'd': 'dates'}
+
+In [109]: my_fruits.pop('c')
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-109-6749044e54b1> in <module>()
+----> 1 my_fruits.pop('c')
+
+KeyError: 'c'
+
+In [110]: del(my_fruits['g'])
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-110-702e9b3de59d> in <module>()
+----> 1 del(my_fruits['g'])
+
+KeyError: 'g'
+
+In [111]: # my_fruits.popitem
+
+In [113]: my_fruits.popitem?
+Docstring:
+D.popitem() -> (k, v), remove and return some (key, value) pair as a
+2-tuple; but raise KeyError if D is empty.
+Type:      builtin_function_or_method
+
+In [114]: my_fruits
+Out[114]: {'a': ['apricot', 'apple'], 'b': 'banana', 'd': 'dates'}
+
+In [115]: my_fruits.popitem()
+Out[115]: ('a', ['apricot', 'apple'])
+
+In [116]: my_fruits.popitem()
+Out[116]: ('b', 'banana')
+
+In [117]: 
+
+In [123]: my_fruits
+Out[123]: {'d': 'dates'}
+
+In [124]: my_fruits['a'] = 'apple'
+
+In [125]: print my_fruits
+{'a': 'apple', 'd': 'dates'}
+
+In [126]: my_fruits['a'] = 'apricot'
+
+In [127]: print my_fruits
+{'a': 'apricot', 'd': 'dates'}
+
+In [128]: my_fruits.setdefault?
+Docstring: D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+Type:      builtin_function_or_method
+
+In [129]: my_fruits.setdefault('c','cherry')
+Out[129]: 'cherry'
+
+In [130]: print my_fruits
+{'a': 'apricot', 'c': 'cherry', 'd': 'dates'}
+
+In [131]: my_fruits.setdefault('c','cashew')
+Out[131]: 'cherry'
+
+In [132]: print my_fruits
+{'a': 'apricot', 'c': 'cherry', 'd': 'dates'}
+
+In [133]: my_fruits['c']='cashew'
+
+In [134]: print my_fruits
+{'a': 'apricot', 'c': 'cashew', 'd': 'dates'}
+
+In [135]: my_fruits.pop('c')
+Out[135]: 'cashew'
+
+In [136]: print my_fruits
+{'a': 'apricot', 'd': 'dates'}
+
+In [137]: my_fruits['c']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-137-70482a44a428> in <module>()
+----> 1 my_fruits['c']
+
+KeyError: 'c'
+
+In [144]: #soft copy,deep copy,shallow copy
+
+In [145]: a = [1,2,3]
+
+In [146]: b = [4,5,6]
+
+In [147]: id(a),id(b)
+Out[147]: (140121606916720, 140121606813672)
+
+In [148]: Cc = [a,b]
+
+In [149]: print Cc,id(Cc),id(Cc[0]),id(Cc[1])
+[[1, 2, 3], [4, 5, 6]] 140121588723792 140121606916720 140121606813672
+
+In [150]: # soft copy
+
+In [151]: Sc = Cc
+
+In [152]: print Sc,id(Sc),id(Sc[0]),id(Sc[1])
+[[1, 2, 3], [4, 5, 6]] 140121588723792 140121606916720 140121606813672
+
+In [153]: # deep copy
+
+In [156]: import copy
+
+In [157]: Dc = copy.deepcopy(Cc)
+
+In [158]: print Dc,id(Dc),id(Dc[0]),id(Dc[1])
+[[1, 2, 3], [4, 5, 6]] 140121588805216 140121606888552 140121587397408
+
+In [163]: # shallow copy
+
+In [164]: import copy
+
+In [165]: copy.copy?
+Signature: copy.copy(x)
+Docstring:
+Shallow copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+File:      /usr/lib/python2.7/copy.py
+Type:      function
+
+In [166]: SC = copy.copy(Cc)
+
+In [167]: print Cc,id(Cc),id(Cc[0]),id(Cc[1])
+[[1, 2, 3], [4, 5, 6]] 140121588723792 140121606916720 140121606813672
+
+In [168]: print SC,id(SC),id(SC[0]),id(SC[1])
+[[1, 2, 3], [4, 5, 6]] 140121588620464 140121606916720 140121606813672
+
+In [169]: print SC
+[[1, 2, 3], [4, 5, 6]]
+
+In [170]: print a
+[1, 2, 3]
+
+In [171]: a[0]=11
+
+In [172]: print SC
+[[11, 2, 3], [4, 5, 6]]
+
+In [173]: print Dc
+[[1, 2, 3], [4, 5, 6]]
+
+In [176]: my_fruits.clear?
+Docstring: D.clear() -> None.  Remove all items from D.
+Type:      builtin_function_or_method
+
+In [177]: my_fruits.clear()
+
+In [178]: my_fruits
+Out[178]: {}
+
+In [179]: 
+
+tasks: https://github.com/tuxfux-hlp-notes/Projects/tree/master/python
+
+
+
+
+
+
