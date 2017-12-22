@@ -1,0 +1,241 @@
+Modules
+
+reference:
+https://pypi.python.org/pypi
+https://github.com/sambapython/python
+
+p1 - f1,f2,f3,f4
+p2 - f1,f2,f3,f4(its f1 of p1)
+   - p1.f1
+
+python>
+help> modules
+--- list of modules ---
+
+help> quit
+
+1) how to import your modules
+
+In [1]: import math
+
+In [2]: math.
+ math.acos      math.atanh     math.e         math.factorial math.hypot     math.log10     math.sin       
+ math.acosh     math.ceil      math.erf       math.floor     math.isinf     math.log1p     math.sinh      
+ math.asin      math.copysign  math.erfc      math.fmod      math.isnan     math.modf      math.sqrt      
+ math.asinh     math.cos       math.exp       math.frexp     math.ldexp     math.pi        math.tan       
+ math.atan      math.cosh      math.expm1     math.fsum      math.lgamma    math.pow       math.tanh      
+ math.atan2     math.degrees   math.fabs      math.gamma     math.log       math.radians   math.trunc     
+
+
+ In [2]: math.pi
+Out[2]: 3.141592653589793
+
+In [3]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [4]: math.pow(2,3)
+Out[4]: 8.0
+
+
+In [5]: import math as m
+
+In [6]: m.
+ m.acos      m.atan2     m.cosh      m.exp       m.fmod      m.isinf     m.log10     m.radians   m.tanh      
+ m.acosh     m.atanh     m.degrees   m.expm1     m.frexp     m.isnan     m.log1p     m.sin       m.trunc     
+ m.asin      m.ceil      m.e         m.fabs      m.fsum      m.ldexp     m.modf      m.sinh                  
+ m.asinh     m.copysign  m.erf       m.factorial m.gamma     m.lgamma    m.pi        m.sqrt                  
+ m.atan      m.cos       m.erfc      m.floor     m.hypot     m.log       m.pow       m.tan                   
+
+In [6]: m.pi
+Out[6]: 3.141592653589793
+
+In [7]: m.pow(2,3)
+Out[7]: 8.0
+
+In [9]: # we want to make the variable part of our local namespace
+
+In [10]: from math import pi,pow
+
+In [11]: pi
+Out[11]: 3.141592653589793
+
+In [12]: pow(2,3)
+Out[12]: 8.0
+
+In [13]: 
+
+In [13]: # DONT TRY THIS AT HOME AND OFFICE
+
+In [14]: # from math import *
+
+In [15]: 
+
+
+In [1]: pwd
+Out[1]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules'
+
+In [2]: ls
+10-Learning_modules.txt  first.py
+
+In [3]: # save your program as .py to use it a module in future.
+
+In [4]: import first as f
+
+In [5]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'version']
+
+In [6]: f.
+           f.my_add   f.my_sub   
+           f.my_div   f.version  
+           f.my_multi            
+
+### modification to code - first.py changed version = 2.0
+
+In [14]: f.version
+Out[14]: 1.0
+
+In [15]: f.version
+Out[15]: 1.0
+
+In [16]: import first as f
+
+In [17]: f.version
+Out[17]: 1.0
+
+In [18]: run first.py
+
+In [19]: f.version
+Out[19]: 1.0
+
+In [20]: pwd
+Out[20]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules'
+
+In [21]: ls
+10-Learning_modules.txt  first.py  first.pyc
+
+In [22]: reload(f)
+Out[22]: <module 'first' from 'first.py'>
+
+In [23]: f.version
+Out[23]: 2.0
+
+### when i import a program it is running.
+
+-- my main code - first.py --
+
+--- truncated functions -- 
+# main
+print "Launching a Missile!!"
+
+
+In [1]: def foo():
+   ...:     pass
+   ...: 
+
+In [2]: import first as f
+Launching a Missile!!
+
+In [3]: foo
+Out[3]: <function __main__.foo>
+
+In [4]: f.my_add
+Out[4]: <function first.my_add>
+
+In [5]: globals()
+Out[5]: 
+{'In': ['',
+  u'def foo():\n    pass',
+  u'import first as f',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ 'Out': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_': <function first.my_add>,
+ '_3': <function __main__.foo>,
+ '_4': <function first.my_add>,
+ '__': <function __main__.foo>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '__package__': None,
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules'],
+ '_i': u'f.my_add',
+ '_i1': u'def foo():\n    pass',
+ '_i2': u'import first as f',
+ '_i3': u'foo',
+ '_i4': u'f.my_add',
+ '_i5': u'globals()',
+ '_ih': ['',
+  u'def foo():\n    pass',
+  u'import first as f',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ '_ii': u'foo',
+ '_iii': u'import first as f',
+ '_oh': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7f147b16e410>,
+ 'f': <module 'first' from 'first.pyc'>,
+ 'foo': <function __main__.foo>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7f147b185090>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7f147b16e410>}
+
+--- to avoid this we made slight changes to the code - first.py --
+
+# main
+if __name__ == '__main__':
+	print "Launching a Missile!!"
+
+-- testing in ipython ---
+
+In [1]: import first as f
+
+In [2]: f.
+           f.my_add   f.my_sub   
+           f.my_div   f.version  
+           f.my_multi 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  first.py  first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python first.py
+Launching a Missile!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python first.py
+Launching a Missile!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+addition of two integers is 33
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ mkdir extra
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ cd extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules/extra$ ls
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules/extra$ cd ..
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ mv first.py extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls extra
+first.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+addition of two integers is 33
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ rm -f first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+Traceback (most recent call last):
+  File "second.py", line 3, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+
+
+
+
