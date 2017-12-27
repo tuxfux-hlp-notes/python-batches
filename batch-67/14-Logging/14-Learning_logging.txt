@@ -1,0 +1,39 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ tail /var/log/syslog
+Dec 27 19:34:40 khyaathipython sublime_text[3087]: Source ID 963992 was not found when attempting to remove it
+Dec 27 19:35:05 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:05 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:05 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:05 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:06 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:06 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:06 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:06 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:31 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:31 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:31 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:31 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:33 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:33 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:33 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:33 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+Dec 27 19:35:45 khyaathipython compiz[2664]: WARN  2017-12-27 19:35:45 unityreak_table (break_type) <unknown>:0 Invalid UTF-8 string passed to pango_layout_set_text()
+
+
+# perl and java
+log4j
+
+# python - logging
+These are debug(), info(), warning(), error() and critical() logging function.
+
+debug(),
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67$ ssh -vv google.com
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: resolving "google.com" port 22
+debug2: ssh_connect_direct: needpriv 0
+debug1: Connecting to google.com [216.58.220.46] port 22.
+
+info() - generic messages.
+warning() - stating we are going to a threshold.
+error() - application is having a issue,but not a complete shut down.
+critical() - issue is affecting your revenue.
+
+
+
+references:
+https://docs.python.org/2/howto/logging.html
+https://docs.python.org/2/howto/logging-cookbook.html
+https://docs.python.org/2/library/logging.html
