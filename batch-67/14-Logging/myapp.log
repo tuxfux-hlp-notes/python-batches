@@ -1,21 +1,5 @@
-WARNING:root:this is an warning message.
-ERROR:root:This is an error message.
-CRITICAL:root:This is an critical message.
-WARNING:root:this is an warning message.
-ERROR:root:This is an error message.
-CRITICAL:root:This is an critical message.
-DEBUG:root:This is an debugging message.
-INFO:root:This is an information message.
-WARNING:root:this is an warning message.
-ERROR:root:This is an error message.
-CRITICAL:root:This is an critical message.
-2017-12-27 20:04:33,286 - root - DEBUG - This is an debugging message.
-2017-12-27 20:04:33,286 - root - INFO - This is an information message.
-2017-12-27 20:04:33,286 - root - WARNING - this is an warning message.
-2017-12-27 20:04:33,286 - root - ERROR - This is an error message.
-2017-12-27 20:04:33,286 - root - CRITICAL - This is an critical message.
-Wed Dec 27 20:06:17 2017 - root - DEBUG - This is an debugging message.
-Wed Dec 27 20:06:17 2017 - root - INFO - This is an information message.
-Wed Dec 27 20:06:17 2017 - root - WARNING - this is an warning message.
-Wed Dec 27 20:06:17 2017 - root - ERROR - This is an error message.
-Wed Dec 27 20:06:17 2017 - root - CRITICAL - This is an critical message.
+12-28 20:20 root         INFO     Jackdaws love my big sphinx of quartz.
+12-28 20:20 myapp.area1  DEBUG    Quick zephyrs blow, vexing daft Jim.
+12-28 20:20 myapp.area1  INFO     How quickly daft jumping zebras vex.
+12-28 20:20 myapp.area2  WARNING  Jail zesty vixen who grabbed pay from quack.
+12-28 20:20 myapp.area2  ERROR    The five boxing wizards jump quickly.
