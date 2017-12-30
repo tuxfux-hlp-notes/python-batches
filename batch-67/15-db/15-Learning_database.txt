@@ -1,0 +1,249 @@
+Database are a persistent way of storing of data.
+
+reference:
+https://www.sqlalchemy.org/
+https://image.slidesharecdn.com/sqlaintro-130921142257-phpapp02/95/michael-bayer-introduction-to-sqlalchemy-postgres-open-9-638.jpg?cb=1379773451
+youtube => sqlalchemy + pycon
+
+python with any database
++ relational databases     - oracle,mysql,postgre
++ non-relational databases - mongodb,cowchdb
+
+###
+database setup - mysql/mariadb
+mysql - 
+
+a) Installation of mysql server in our system.
+# sudo apt-get install mysql-server (server,mysql client)
+* root password - you can install a root password.
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/15-db$ mysql -u root -p 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.18-0ubuntu0.16.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> help content;
+
+Nothing found
+Please try to run 'help contents' for a list of all accessible topics
+
+mysql> help contents;
+You asked for help about help category: "Contents"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Account Management
+   Administration
+   Compound Statements
+   Data Definition
+   Data Manipulation
+   Data Types
+   Functions
+   Functions and Modifiers for Use with GROUP BY
+   Geographic Features
+   Help Metadata
+   Language Structure
+   Plugins
+   Procedures
+   Storage Engines
+   Table Maintenance
+   Transactions
+   User-Defined Functions
+   Utility
+
+mysql> help Functions;
+You asked for help about help category: "Functions"
+For more information, type 'help <item>', where <item> is one of the following
+categories:
+   Bit Functions
+   Comparison operators
+   Control flow functions
+   Date and Time Functions
+   Encryption Functions
+   Information Functions
+   Logical operators
+   Miscellaneous Functions
+   Numeric Functions
+   String Functions
+
+mysql> help Information Functions;
+You asked for help about help category: "Information Functions"
+For more information, type 'help <item>', where <item> is one of the following
+topics:
+   BENCHMARK
+   CHARSET
+   COERCIBILITY
+   COLLATION
+   CONNECTION_ID
+   CURRENT_USER
+   DATABASE
+   FOUND_ROWS
+   LAST_INSERT_ID
+   ROW_COUNT
+   SCHEMA
+   SESSION_USER
+   SYSTEM_USER
+   USER
+   VERSION
+
+mysql> help VERSION;
+Name: 'VERSION'
+Description:
+Syntax:
+VERSION()
+
+Returns a string that indicates the MySQL server version. The string
+uses the utf8 character set. The value might have a suffix in addition
+to the version number. See the description of the version system
+variable in
+http://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/information-functions.html
+
+Examples:
+mysql> SELECT VERSION();
+        -> '5.7.19-standard'
+
+mysql> select version();
++-------------------------+
+| version()               |
++-------------------------+
+| 5.7.18-0ubuntu0.16.10.1 |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch64            |
+| batch66            |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.03 sec)
+
+mysql> 
+
+
+## create a database/schema
+
+mysql> help create database;
+Name: 'CREATE DATABASE'
+Description:
+Syntax:
+CREATE {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
+    [create_specification] ...
+
+create_specification:
+    [DEFAULT] CHARACTER SET [=] charset_name
+  | [DEFAULT] COLLATE [=] collation_name
+
+CREATE DATABASE creates a database with the given name. To use this
+statement, you need the CREATE privilege for the database. CREATE
+SCHEMA is a synonym for CREATE DATABASE.
+
+URL: http://dev.mysql.com/doc/refman/5.7/en/create-database.html
+
+
+mysql> create database batch67;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> 
+
+## create a user to access our database.
+mysql> help create;
+mysql> help create user;
+
+mysql> create user 'user67'@'localhost' identified by 'user67';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> 
+
+## grant priviledges to the user for our databases.
+
+mysql> help grant;
+
+mysql> grant all on batch67.* to 'user67'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/15-db$ mysql -u user67 -p 
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 5.7.18-0ubuntu0.16.10.1 (Ubuntu)
+
+Copyright (c) 2000, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| batch67            |
++--------------------+
+2 rows in set (0.00 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.02 sec)
+
+mysql> use batch67;
+Database changed
+mysql> 
+mysql> select database();
++------------+
+| database() |
++------------+
+| batch67    |
++------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> 
+
+
+
+--- programmer playarea ---
+
+# install the python plugins
+sudo apt-get install python-mysqldb
+
+## use case
+## sqlalchemy
+
+ADP ceo - lets move to postgre(3 weeks)
+
+client UI (ADP) - 1 week
+|
+|
+python (broadridge) - 1 week
+|
+|
+mysql(oracle)=> postgre - database - 1week
+
