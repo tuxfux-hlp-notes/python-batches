@@ -1,4 +1,4 @@
-class Account():
+nclass Account():
 	def __init__(self):   # constructor
 		self.balance = 0
 	def my_withdraw(self,amount):

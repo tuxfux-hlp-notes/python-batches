@@ -2,6 +2,9 @@ Programming
  + Functional
  + object oriented programming
 
+ reference:
+ https://github.com/tuxfux-hlp/Python-examples/blob/master/opps/Good_links.txt
+
 A - Abstraction
 
 Defination/template
@@ -268,3 +271,117 @@ In [58]: print dir(balu)
 In [59]: print dir(ravi)
 ['__doc__', '__init__', '__module__', 'balance', 'my_balance', 'new_balance']
 
+
+## special class methods or magic method
+http://anandology.com/python-practice-book/object_oriented_programming.html#special-class-methods
+https://github.com/RafeKettler/magicmethods
+
+In [1]: a = 1
+
+In [2]: b = 2
+
+In [3]: a + b
+Out[3]: 3
+
+In [4]: print dir(a)
+['__abs__', '__add__', '__and__', '__class__', '__cmp__', '__coerce__', '__delattr__', '__div__', '__divmod__', '__doc__', '__float__', '__floordiv__', '__format__', '__getattribute__', '__getnewargs__', '__hash__', '__hex__', '__index__', '__init__', '__int__', '__invert__', '__long__', '__lshift__', '__mod__', '__mul__', '__neg__', '__new__', '__nonzero__', '__oct__', '__or__', '__pos__', '__pow__', '__radd__', '__rand__', '__rdiv__', '__rdivmod__', '__reduce__', '__reduce_ex__', '__repr__', '__rfloordiv__', '__rlshift__', '__rmod__', '__rmul__', '__ror__', '__rpow__', '__rrshift__', '__rshift__', '__rsub__', '__rtruediv__', '__rxor__', '__setattr__', '__sizeof__', '__str__', '__sub__', '__subclasshook__', '__truediv__', '__trunc__', '__xor__', 'bit_length', 'conjugate', 'denominator', 'imag', 'numerator', 'real']
+
+In [5]: type(a)
+Out[5]: int
+
+In [6]: # a is an instance of int class
+
+In [7]: a.__add__(b)
+Out[7]: 3
+
+In [8]: c = "python"
+
+In [9]: d = " rocks"
+
+In [10]: c.__add__(d)
+Out[10]: 'python rocks'
+
+In [11]: print type(c)
+<type 'str'>
+
+In [12]: print dir(c)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+
+  In [14]: # rational numbers
+
+In [15]: # 1/2 + 1/3 = 5/6
+
+In [16]: 1/2 + 1/3
+Out[16]: 0
+
+In [17]: 1/2.0 + 1/3.0
+Out[17]: 0.8333333333333333
+
+In [18]: a = 10
+
+In [19]: isinstance(a,int)
+Out[19]: True
+
+In [20]: isinstance(a,str)
+Out[20]: False
+
+In [21]: isinstance?
+Docstring:
+isinstance(object, class-or-type-or-tuple) -> bool
+
+Return whether an object is an instance of a class or of a subclass thereof.
+With a type as second argument, return whether that is the object's type.
+The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
+isinstance(x, A) or isinstance(x, B) or ... (etc.).
+Type:      builtin_function_or_method
+
+### encapsulation
+http://radek.io/2011/07/21/private-protected-and-public-in-python/
+
+In [24]: class Cup:
+    ...:     def __init__(self, color):
+    ...:         self._color = color    # protected variable
+    ...:         self.__content = None  # private variable
+    ...: 
+    ...:     def fill(self, beverage):
+    ...:         self.__content = beverage
+    ...: 
+    ...:     def empty(self):
+    ...:         self.__content = None
+    ...:         
+
+In [25]: 
+
+In [25]: bluecup = Cup()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-25-8fbd9c4879fc> in <module>()
+----> 1 bluecup = Cup()
+
+TypeError: __init__() takes exactly 2 arguments (1 given)
+
+In [26]: bluecup = Cup(color="blue")
+
+In [27]: bluecup._color
+Out[27]: 'blue'
+
+In [28]: bluecup.__content
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-28-2e17207350a8> in <module>()
+----> 1 bluecup.__content
+
+AttributeError: Cup instance has no attribute '__content'
+
+In [29]: bluecup.fill("coffee")
+
+In [30]: # name mangling
+
+In [31]: bluecup._Cup__content
+Out[31]: 'coffee'
+
+In [32]: bluecup._Cup__content = "tea"
+
+In [33]: bluecup._Cup__content
+Out[33]: 'tea'
