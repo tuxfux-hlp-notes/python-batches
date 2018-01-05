@@ -1,0 +1,553 @@
+Modules
+
+reference:
+https://pypi.python.org/pypi
+https://github.com/sambapython/python
+
+p1 - f1,f2,f3,f4
+p2 - f1,f2,f3,f4(its f1 of p1)
+   - p1.f1
+
+python>
+help> modules
+--- list of modules ---
+
+help> quit
+
+1) how to import your modules
+
+In [1]: import math
+
+In [2]: math.
+ math.acos      math.atanh     math.e         math.factorial math.hypot     math.log10     math.sin       
+ math.acosh     math.ceil      math.erf       math.floor     math.isinf     math.log1p     math.sinh      
+ math.asin      math.copysign  math.erfc      math.fmod      math.isnan     math.modf      math.sqrt      
+ math.asinh     math.cos       math.exp       math.frexp     math.ldexp     math.pi        math.tan       
+ math.atan      math.cosh      math.expm1     math.fsum      math.lgamma    math.pow       math.tanh      
+ math.atan2     math.degrees   math.fabs      math.gamma     math.log       math.radians   math.trunc     
+
+
+ In [2]: math.pi
+Out[2]: 3.141592653589793
+
+In [3]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [4]: math.pow(2,3)
+Out[4]: 8.0
+
+
+In [5]: import math as m
+
+In [6]: m.
+ m.acos      m.atan2     m.cosh      m.exp       m.fmod      m.isinf     m.log10     m.radians   m.tanh      
+ m.acosh     m.atanh     m.degrees   m.expm1     m.frexp     m.isnan     m.log1p     m.sin       m.trunc     
+ m.asin      m.ceil      m.e         m.fabs      m.fsum      m.ldexp     m.modf      m.sinh                  
+ m.asinh     m.copysign  m.erf       m.factorial m.gamma     m.lgamma    m.pi        m.sqrt                  
+ m.atan      m.cos       m.erfc      m.floor     m.hypot     m.log       m.pow       m.tan                   
+
+In [6]: m.pi
+Out[6]: 3.141592653589793
+
+In [7]: m.pow(2,3)
+Out[7]: 8.0
+
+In [9]: # we want to make the variable part of our local namespace
+
+In [10]: from math import pi,pow
+
+In [11]: pi
+Out[11]: 3.141592653589793
+
+In [12]: pow(2,3)
+Out[12]: 8.0
+
+In [13]: 
+
+In [13]: # DONT TRY THIS AT HOME AND OFFICE
+
+In [14]: # from math import *
+
+In [15]: 
+
+
+In [1]: pwd
+Out[1]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules'
+
+In [2]: ls
+10-Learning_modules.txt  first.py
+
+In [3]: # save your program as .py to use it a module in future.
+
+In [4]: import first as f
+
+In [5]: print dir(f)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', 'my_add', 'my_div', 'my_multi', 'my_sub', 'version']
+
+In [6]: f.
+           f.my_add   f.my_sub   
+           f.my_div   f.version  
+           f.my_multi            
+
+### modification to code - first.py changed version = 2.0
+
+In [14]: f.version
+Out[14]: 1.0
+
+In [15]: f.version
+Out[15]: 1.0
+
+In [16]: import first as f
+
+In [17]: f.version
+Out[17]: 1.0
+
+In [18]: run first.py
+
+In [19]: f.version
+Out[19]: 1.0
+
+In [20]: pwd
+Out[20]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules'
+
+In [21]: ls
+10-Learning_modules.txt  first.py  first.pyc
+
+In [22]: reload(f)
+Out[22]: <module 'first' from 'first.py'>
+
+In [23]: f.version
+Out[23]: 2.0
+
+### when i import a program it is running.
+
+-- my main code - first.py --
+
+--- truncated functions -- 
+# main
+print "Launching a Missile!!"
+
+
+In [1]: def foo():
+   ...:     pass
+   ...: 
+
+In [2]: import first as f
+Launching a Missile!!
+
+In [3]: foo
+Out[3]: <function __main__.foo>
+
+In [4]: f.my_add
+Out[4]: <function first.my_add>
+
+In [5]: globals()
+Out[5]: 
+{'In': ['',
+  u'def foo():\n    pass',
+  u'import first as f',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ 'Out': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_': <function first.my_add>,
+ '_3': <function __main__.foo>,
+ '_4': <function first.my_add>,
+ '__': <function __main__.foo>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__',
+ '__package__': None,
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules'],
+ '_i': u'f.my_add',
+ '_i1': u'def foo():\n    pass',
+ '_i2': u'import first as f',
+ '_i3': u'foo',
+ '_i4': u'f.my_add',
+ '_i5': u'globals()',
+ '_ih': ['',
+  u'def foo():\n    pass',
+  u'import first as f',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ '_ii': u'foo',
+ '_iii': u'import first as f',
+ '_oh': {3: <function __main__.foo>, 4: <function first.my_add>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7f147b16e410>,
+ 'f': <module 'first' from 'first.pyc'>,
+ 'foo': <function __main__.foo>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7f147b185090>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7f147b16e410>}
+
+--- to avoid this we made slight changes to the code - first.py --
+
+# main
+if __name__ == '__main__':
+	print "Launching a Missile!!"
+
+-- testing in ipython ---
+
+In [1]: import first as f
+
+In [2]: f.
+           f.my_add   f.my_sub   
+           f.my_div   f.version  
+           f.my_multi 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  first.py  first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python first.py
+Launching a Missile!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python first.py
+Launching a Missile!!
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+addition of two integers is 33
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ mkdir extra
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ cd extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules/extra$ ls
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules/extra$ cd ..
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ mv first.py extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls extra
+first.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+addition of two integers is 33
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ rm -f first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+Traceback (most recent call last):
+  File "second.py", line 3, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+
+
+In [3]: import sys
+
+In [4]: sys.path
+Out[4]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [5]: sys.path.insert(1,'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/extra')
+
+In [6]: sys.path
+Out[6]: 
+['',
+ '/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/extra',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls extra/
+first.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py
+Traceback (most recent call last):
+  File "second.py", line 3, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ pwd
+/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python second.py 
+addition of two integers is 33
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+
+## Installation of modules
+
+a) operating system modules
+>> sudo apt-get install <packagename>
+
+b) pip - https://pypi.python.org/pypi
+>> pip install <packagename>
+
+
+c) easy_install
+>> easy_install <packagename>
+
+d) setuptools
+
+## virtualenv
+reference: http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
+# pip install virtualenv
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls myenv/
+bin  include  lib  local  pip-selfcheck.json
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls myenv/
+bin  include  lib  local  pip-selfcheck.json
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ ls
+10-Learning_modules.txt  extra  myenv  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ pip freeze
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ which python
+/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/myenv/bin/python
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+  Using cached xlrd-1.1.0-py2.py3-none-any.whl
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ pip freeze
+excel==1.0.0
+xlrd==1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> import xlrd
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ deactivate 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+
+
+## pydoc
+
+ex: pydoc math
+ 
+pydoc first
+---
+
+Packages:
+https://docs.python.org/2/tutorial/modules.html#packages
+
+Package creation
+------------------
+a) create a directory structure as follows.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ mkdir OS
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ mkdir OS/{lin,sol,aix,hpux}
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+└── sol
+
+4 directories, 0 files
+
+b) now lets create first.py,second.py,third.py and fourth.py under lin folder.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 4 files
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ 
+
+c)Lets try to import lin folder/dir/package from ipython.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules/OS$ ls
+aix  hpux  lin  sol
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules/OS$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-cb672e599c2e> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+d) i want to import lin as a package.
+* create a __init__.py under the lin folder.
+* __init__.py is the first file to be read when you import lin folder.
+* create the following entries in __init__.py
+import first
+import second
+import third
+import fourth
+* lets try access the lin package now.
+
+In [4]: pwd
+Out[4]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/OS'
+
+In [5]: ls
+aix/  hpux/  lin/  sol/
+
+In [6]: import lin
+
+In [7]: lin.first.my_lin1_first()
+Out[7]: 'this is my first lin1 function'
+
+In [8]: lin.first.my_lin1_second()
+Out[8]: 'this is my second lin1 function'
+
+In [9]: lin.first.my_lin1_third()
+Out[9]: 'this is my third lin1 function'
+
+In [10]: lin.second.my_lin2_first()
+Out[10]: 'this is my first lin2 function'
+
+In [11]: 
+
+d) create similar files in sol folder.
+* khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/modules$ cp OS/lin/*.py OS/sol/
+* we have renamed all the lin to sol.
+* made slight modification to the __init__.py file under sol folder.
+import first
+import second
+import third
+* lets try to import the sol package now.
+
+In [13]: pwd
+Out[13]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/modules/OS'
+
+In [14]: ls
+aix/  hpux/  lin/  sol/
+
+In [15]: import sol
+
+In [16]: print dir(sol)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', '__path__', 'first', 'second', 'third']
+
+In [17]: from sol import fourth
+
+In [18]: print dir(sol)
+['__builtins__', '__doc__', '__file__', '__name__', '__package__', '__path__', 'first', 'fourth', 'second', 'third']
+
+
+so to get access to these files from any where we need to bundle it.
+
+https://docs.python.org/2/installing/index.html
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/distutils/
+
+postmortem of a package
+------------------------
+
+In [1]: import sys
+
+In [2]: sys.path
+Out[2]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [3]: 
+
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls
+dom  etree  __init__.py  __init__.pyc  parsers  sax
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls dom/
+domreg.py   expatbuilder.py   __init__.py   minicompat.py   minidom.py   NodeFilter.py   pulldom.py     xmlbuilder.pyc
+domreg.pyc  expatbuilder.pyc  __init__.pyc  minicompat.pyc  minidom.pyc  NodeFilter.pyc  xmlbuilder.py
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls etree
+cElementTree.py   ElementInclude.py  ElementPath.pyc  ElementTree.pyc  __init__.pyc
+cElementTree.pyc  ElementPath.py     ElementTree.py   __init__.py
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls parsers
+expat.py  expat.pyc  __init__.py  __init__.pyc
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ ls sax
+_exceptions.py   expatreader.py  handler.pyc  __init__.pyc  saxutils.pyc  xmlreader.pyc
+_exceptions.pyc  handler.py      __init__.py  saxutils.py   xmlreader.py
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ pwd
+/usr/lib/python2.7/xml
+khyaathi@khyaathipython:/usr/lib/python2.7/xml$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

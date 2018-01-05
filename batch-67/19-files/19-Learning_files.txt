@@ -1,0 +1,455 @@
+Persistant way of storing the data.
+
+In [3]: f = open("file1.txt")
+
+In [4]: pwd
+Out[4]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-67/19-files'
+
+In [5]: ls
+19-Learning_files.txt  file1.txt
+
+In [6]: print f
+<open file 'file1.txt', mode 'r' at 0x7fa3decff780>
+
+In [7]: # r -> read 
+
+In [8]: # r -> read -> you can only read the file.
+
+In [9]: # w -> write -> you can write into the file.
+
+In [10]: # a -> append -> you can append into the file, last line of file.
+
+In [11]: # w -> 1) if you file is not there it get created.
+
+In [12]: #      2) if file exists with some data, it get overwritten
+
+In [13]: # r+ -> read and write.
+
+In [14]: # b -> binary -> binary files -> rb,wb,ab
+
+In [15]: f = open("file.txt","rb")
+---------------------------------------------------------------------------
+IOError                                   Traceback (most recent call last)
+<ipython-input-15-15cf814eae0d> in <module>()
+----> 1 f = open("file.txt","rb")
+
+IOError: [Errno 2] No such file or directory: 'file.txt'
+
+In [16]: f = open("file1.txt","rb")
+
+In [17]: print f
+<open file 'file1.txt', mode 'rb' at 0x7fa3dd9cd780>
+
+In [18]: # f -> f is a file handlers
+
+In [19]: # f.read
+
+In [20]: f.read?
+Docstring:
+read([size]) -> read at most size bytes, returned as a string.
+
+If the size argument is negative or omitted, read until EOF is reached.
+Notice that when in non-blocking mode, less data than what was requested
+may be returned, even if no size parameter was given.
+Type:      builtin_function_or_method
+
+In [21]: f.read(2)
+Out[21]: 'Th'
+
+In [22]: f.read(2)
+Out[22]: 'is'
+
+In [23]: f.read()
+Out[23]: ' is my first line.\nthis is my second line.\nthis is my third line.\nthis is my fourth line.\nthis is my fifth line.'
+
+In [24]: f.read()
+Out[24]: ''
+
+In [25]: # f.tell
+
+In [26]: f.tell?
+Docstring: tell() -> current file position, an integer (may be a long integer).
+Type:      builtin_function_or_method
+
+In [27]: f.tell()
+Out[27]: 116
+
+In [28]: # f.seek
+
+In [29]: f.seek?
+Docstring:
+seek(offset[, whence]) -> None.  Move to new file position.
+
+Argument offset is a byte count.  Optional argument whence defaults to
+0 (offset from start of file, offset should be >= 0); other values are 1
+(move relative to current position, positive or negative), and 2 (move
+relative to end of file, usually negative, although many platforms allow
+seeking beyond the end of a file).  If the file is opened in text mode,
+only offsets returned by tell() are legal.  Use of other offsets causes
+undefined behavior.
+Note that not all file objects are seekable.
+Type:      builtin_function_or_method
+
+In [30]: f.seek(0)
+
+In [31]: f.tell()
+Out[31]: 0
+
+In [32]: f.read()
+Out[32]: 'This is my first line.\nthis is my second line.\nthis is my third line.\nthis is my fourth line.\nthis is my fifth line.'
+
+In [33]: f.read()
+Out[33]: ''
+
+In [34]: f.seek(0)
+
+In [35]: # f.readline
+
+In [36]: f.readline?
+Docstring:
+readline([size]) -> next line from the file, as a string.
+
+Retain newline.  A non-negative size argument limits the maximum
+number of bytes to return (an incomplete line may be returned then).
+Return an empty string at EOF.
+Type:      builtin_function_or_method
+
+In [37]: f.readline()
+Out[37]: 'This is my first line.\n'
+
+In [38]: f.readline()
+Out[38]: 'this is my second line.\n'
+
+In [39]: f.readline()
+Out[39]: 'this is my third line.\n'
+
+In [40]: f.readline()
+Out[40]: 'this is my fourth line.\n'
+
+In [41]: f.readline()
+Out[41]: 'this is my fifth line.'
+
+In [42]: f.readline()
+Out[42]: ''
+
+In [43]: # f.readlines?
+
+In [44]: f.readlines?
+Docstring:
+readlines([size]) -> list of strings, each a line from the file.
+
+Call readline() repeatedly and return a list of the lines so read.
+The optional size argument, if given, is an approximate bound on the
+total number of bytes in the lines returned.
+Type:      builtin_function_or_method
+
+In [45]: f.seek(0)
+
+In [46]: my_lines = f.readlines()
+
+In [47]: print my_lines
+['This is my first line.\n', 'this is my second line.\n', 'this is my third line.\n', 'this is my fourth line.\n', 'this is my fifth line.']
+
+In [49]: # writing to a file
+
+In [50]: g = open("newfile.txt","w")
+
+In [51]: g
+Out[51]: <open file 'newfile.txt', mode 'w' at 0x7fa3dd9cd5d0>
+
+In [52]: # g.write
+
+In [53]: g.write?
+Docstring:
+write(str) -> None.  Write string str to file.
+
+Note that due to buffering, flush() or close() may be needed before
+the file on disk reflects the data written.
+Type:      builtin_function_or_method
+
+In [54]: g.write("python\nDjango\ndevops\naws\nopenstack\n")
+
+In [55]: # g.flush
+
+In [56]: g.flush?
+Docstring: flush() -> None.  Flush the internal I/O buffer.
+Type:      builtin_function_or_method
+
+In [57]: # keyboard -> I/O buffers -> cpu -> I/O buffer -> monitor/disk
+
+In [58]: g.flush()
+
+In [59]: g
+Out[59]: <open file 'newfile.txt', mode 'w' at 0x7fa3dd9cd5d0>
+
+In [60]: # g.writelines
+
+In [61]: g.writelines?
+Docstring:
+writelines(sequence_of_strings) -> None.  Write the strings to the file.
+
+Note that newlines are not added.  The sequence can be any iterable object
+producing strings. This is equivalent to calling write() for each string.
+Type:      builtin_function_or_method
+
+In [62]: my_lines
+Out[62]: 
+['This is my first line.\n',
+ 'this is my second line.\n',
+ 'this is my third line.\n',
+ 'this is my fourth line.\n',
+ 'this is my fifth line.']
+
+In [63]: g.writelines(my_lines)
+
+In [64]: # g.close
+
+In [65]: g.close?
+Docstring:
+close() -> None or (perhaps) an integer.  Close the file.
+
+Sets data attribute .closed to True.  A closed file cannot be used for
+further I/O operations.  close() may be called more than once without
+error.  Some kinds of file objects (for example, opened by popen())
+may return an exit status upon closing.
+Type:      builtin_function_or_method
+
+In [66]: g.close()
+
+In [67]: g.close()
+
+In [68]: g
+Out[68]: <closed file 'newfile.txt', mode 'w' at 0x7fa3dd9cd5d0>
+
+In [69]: f
+Out[69]: <open file 'file1.txt', mode 'rb' at 0x7fa3dd9cd780>
+
+In [70]: 
+
+In [70]: g.write("hey there")
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-70-650428abe545> in <module>()
+----> 1 g.write("hey there")
+
+ValueError: I/O operation on closed file
+
+In [71]: g.closed
+Out[71]: True
+
+In [72]: f.closed
+Out[72]: False
+
+In [73]: if g.closed:
+    ...:     print "hey buddy your file is closed"
+    ...: else:
+    ...:     g.write("hey there")
+    ...:     
+hey buddy your file is closed
+
+In [74]: try:
+    ...:     g.write("hey there")
+    ...: except Exception as e:
+    ...:     print "error - {}".format(e)
+    ...: else:
+    ...:     g.write("hey there")
+    ...:     
+error - I/O operation on closed file
+
+In [75]: # with
+
+In [76]: g
+Out[76]: <closed file 'newfile.txt', mode 'w' at 0x7fa3dd9cd5d0>
+
+In [77]: with open('newfile.txt','a'):
+    ...:     g.write("\n hey there \n")
+    ...:     
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-77-8c3577ea5e60> in <module>()
+      1 with open('newfile.txt','a'):
+----> 2     g.write("\n hey there \n")
+      3 
+
+ValueError: I/O operation on closed file
+
+In [78]: with open('newfile.txt','a') as g:
+    ...:     g.write("\n hey there \n")
+    ...:     
+    ...:     
+
+In [79]: 
+
+In [79]: g
+Out[79]: <closed file 'newfile.txt', mode 'a' at 0x7fa3dd9cdf60>
+
+In [80]: g
+Out[80]: <closed file 'newfile.txt', mode 'a' at 0x7fa3dd9cdf60>
+
+In [82]: g.xreadlines?
+Docstring:
+xreadlines() -> returns self.
+
+For backward compatibility. File objects now include the performance
+optimizations previously implemented in the xreadlines module.
+Type:      builtin_function_or_method
+
+In [83]: g.readinto?
+Docstring: readinto() -> Undocumented.  Don't use this; it may go away.
+Type:      builtin_function_or_method
+
+In [84]: g.mode
+Out[84]: 'a'
+
+In [85]: g.name
+Out[85]: 'newfile.txt'
+
+In [86]: g.isatty?
+Docstring: isatty() -> true or false.  True if the file is connected to a tty device.
+Type:      builtin_function_or_method
+
+In [87]: g
+Out[87]: <closed file 'newfile.txt', mode 'a' at 0x7fa3dd9cdf60>
+
+In [88]: g.isatty()
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-88-b18ff0b80000> in <module>()
+----> 1 g.isatty()
+
+ValueError: I/O operation on closed file
+
+In [89]: f
+Out[89]: <open file 'file1.txt', mode 'rb' at 0x7fa3dd9cd780>
+
+In [90]: f.isatty()
+Out[90]: False
+
+In [91]: h = open('/dev/pts/1','a')
+
+In [92]: h.isatty()
+Out[92]: True
+
+In [93]: h.write("hey there lets go for lunch")
+
+In [94]: h.flush()
+
+-- /etc/securetty 
+
+In [96]: #g.softspace,g.newlines,g.errors,g.encoding(unicode)
+
+
+## use case - I
+
+n [7]: # pickle
+
+In [8]: import pickle as p
+
+In [9]: p.load?
+Signature: p.load(file)
+Docstring: <no docstring>
+File:      /usr/lib/python2.7/pickle.py
+Type:      function
+
+In [10]: p.dump?
+Signature: p.dump(obj, file, protocol=None)
+Docstring: <no docstring>
+File:      /usr/lib/python2.7/pickle.py
+Type:      function
+
+In [11]: my_trainings = ['linux','python','java','ansible','puppet']
+
+In [12]: f = open("my_trainings.txt","w")
+
+In [13]: p.dump(my_trainings,f)
+
+In [14]: f.close()
+
+In [15]: # unpickling
+
+In [16]: g = open("my_trainings.txt")
+
+In [17]: new_trainings = p.load(g)
+
+In [18]: print new_trainings
+['linux', 'python', 'java', 'ansible', 'puppet']
+
+In [19]: # you need to have homogenous contents in file.
+
+
+# user case - II
+https://pypi.python.org/pypi/excel/1.0.0
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-67/19-files/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ pip freeze
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+  Using cached xlrd-1.1.0-py2.py3-none-any.whl
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ pip freeze
+excel==1.0.0
+xlrd==1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ ls
+19-Learning_files.txt  file1.txt  myenv  my_trainings.txt  names_db.xls  newfile.txt  read_excel.py
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ python read_excel.py 
+[u'Name', u'komala', u'balu', u'ravi', u'sridhar', u'rajesh', u'chetan', u'phani']
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ python read_excel.py 
+[u'Name', u'komala', u'balu', u'ravi', u'sridhar', u'rajesh', u'chetan', u'phani']
+[u'gender', u'f', u'm', u'm', u'm', u'm', u'm', u'm']
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ python read_excel.py 
+[u'Name', u'komala', u'balu', u'ravi', u'sridhar', u'rajesh', u'chetan', u'phani']
+[u'gender', u'f', u'm', u'm', u'm', u'm', u'm', u'm']
+chetan m
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-67/19-files$ python read_excel.py 
+[u'Name', u'komala', u'balu', u'ravi', u'sridhar', u'rajesh', u'chetan', u'phani']
+[u'gender', u'f', u'm', u'm', u'm', u'm', u'm', u'm']
+chetan is a m
+
+
+## use case 3:
+https://www.tutorialspoint.com/python/python_xml_processing.htm
+X2H formatting - google.com
+
+## use case 4:
+log scrapping
+
+In [23]: my_string='Jan  5 20:08:59 khyaathipython sublime_text[2847]: Source ID 651299 was not found when attempting to re
+    ...: move it'
+
+In [24]: import re
+
+In [25]: re.search('k.*n',my_string)
+Out[25]: <_sre.SRE_Match at 0x7f03a563e510>
+
+In [26]: re.search('k.*n',my_string).group()
+Out[26]: 'khyaathipython sublime_text[2847]: Source ID 651299 was not found when attemptin'
+
+In [27]: re.search('k.*?n',my_string).group()
+Out[27]: 'khyaathipython'
+
+In [28]: m = re.search('k.*?n',my_string)
+
+In [29]: print m,type(m)
+<_sre.SRE_Match object at 0x7f03a563ec60> <type '_sre.SRE_Match'>
+
+In [30]: m.start
+Out[30]: <function start>
+
+In [31]: m.start()
+Out[31]: 16
+
+In [32]: m.end()
+Out[32]: 30
+
+In [33]: my_string[:m.start()] + my_string[m.end():]
+Out[33]: 'Jan  5 20:08:59  sublime_text[2847]: Source ID 651299 was not found when attempting to remove it'
+
+xlrd: https://github.com/tuxfux-hlp/Python-examples/tree/master/files
+webscrapping: https://github.com/tuxfux-hlp/Python-examples/tree/master/re
+## 
+json,yaml,webscrapping(urllib,beautifulsoap)

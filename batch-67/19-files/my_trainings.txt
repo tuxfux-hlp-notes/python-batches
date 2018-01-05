@@ -1,0 +1,12 @@
+(lp0
+S'linux'
+p1
+aS'python'
+p2
+aS'java'
+p3
+aS'ansible'
+p4
+aS'puppet'
+p5
+a.
