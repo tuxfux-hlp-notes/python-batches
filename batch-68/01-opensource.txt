@@ -1,0 +1,83 @@
+Proprietory and Opensource
+
+
+Proprietory 
+-------------
+
+* owned by a particular Organisation
+* SAP,oracle,windows
+
+Company A -> Product A
+Us (customers) -> requirement -> 
+               -> email/support/internet
+               -> we will get back to you.
+               
+* retention of the customer.
+* Frustrated customers.
+
+Opensource
+------------
+
+Company A -> Product A  -> publish the source code in internet.
+Us (customers) -> requirement -> 
+               -> email/support/internet
+               -> we will get back to you.
+               
+guy/gal b (developer) -> download/modify -> product B -> publish the source code
+                      -> hey guys have fun with B
+                      -> reviews -> vgood/good/bad/vbad
+                      
+Fast forward 6 months
+----------------------
+company A -> product A.3 ( 100 + 400(community) )
+
+* homegenous
+* hetrogenous
+
+- cost on marketing.
+- retention of customers.
+- cost cutting - 
+400 - 1modification - 1L qa + 1L developer = 8C
+
+Money
+------
+* eduction
+* support
+- bronze,silver,gold,diamond,platinum
+
+License
+---------
+GPL -> GNU(Generally not unix) General public licence
+* any modification done to a gpl product needs to go back to gpl.
+* you have to publish your source code.
+OSF -> Open Source foundation - 1960 
+
+Principles
+-----------
+* FREEdom to modify the product is called opensource.
+* there is nothing like piracy. you can modify and redisribute.
+* community support.
+
+
+
+* source code is available intenet. - TRUE
+* you can modify the source code. - TRUE
+* support from particular vendor. - TRUE
+* no license for opensource products. - FALSE
+* yes we have license. - TRUE
+* opensource source is free. - FALSE
+* money - support - TRUE
+
+ex: 
+Languages : python,perl,java,ruby,erlong
+Web frameworks: Django,flask,spring,bottle,rails
+databases: mongodb,nosql,mariadb,cassendra
+Operating: redhat,ubuntu,linuxmint,zorion
+
+- oracle virtual box
+- ubuntu/linuxmint/mac/zorion
+- python
+
+
+
+

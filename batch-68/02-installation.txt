@@ -1,0 +1,49 @@
+Linuxmint/ubuntu/zorion
+------------------------
+# sudo apt-get install python   (2.x)
+# sudo apt-get install python3  (3.x)
+# sudo apt-get install ipython
+# sudo apt-get install ipython3
+# sudo apt-get install bpython
+# sudo apt-get install bpython3
+
+## jupyter or ipython notebook
+# sudo apt-get install jupyter
+
+
+Redhat/fedora/centos
+----------------------
+# yum install python   (2.x)
+# yum install python3  (3.x)
+# yum install ipython
+# yum install ipython3
+# yum install bpython
+# yum install bpython3
+
+## jupyter or ipython notebook
+# sudo apt-get install jupyter
+
+windows
+---------
+https://conda.io/docs/user-guide/install/windows.html
+
+IDE
+----
+https://stackoverflow.com/questions/81584/what-ide-to-use-for-python
+
+
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches$ python --version
+Python 2.7.12+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches$ python3 --version
+Python 3.5.2+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 23 * 23
+529
+>>> print "hello world"
+hello world
+>>> 
