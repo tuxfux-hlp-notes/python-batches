@@ -1,0 +1,468 @@
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: help()
+
+Welcome to Python 2.7!  This is the online help utility.
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/2.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, or topics, type "modules",
+"keywords", or "topics".  Each module also comes with a one-line summary
+of what it does; to list the modules whose summaries contain a given word
+such as "spam", type "modules spam".
+
+help> keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+and                 elif                if                  print
+as                  else                import              raise
+assert              except              in                  return
+break               exec                is                  try
+class               finally             lambda              while
+continue            for                 not                 with
+def                 from                or                  yield
+del                 global              pass                
+
+help> topics
+
+Here is a list of available topics.  Enter any topic name to get more help.
+
+ASSERTION           DEBUGGING           LITERALS            SEQUENCEMETHODS2
+ASSIGNMENT          DELETION            LOOPING             SEQUENCES
+ATTRIBUTEMETHODS    DICTIONARIES        MAPPINGMETHODS      SHIFTING
+ATTRIBUTES          DICTIONARYLITERALS  MAPPINGS            SLICINGS
+AUGMENTEDASSIGNMENT DYNAMICFEATURES     METHODS             SPECIALATTRIBUTES
+BACKQUOTES          ELLIPSIS            MODULES             SPECIALIDENTIFIERS
+BASICMETHODS        EXCEPTIONS          NAMESPACES          SPECIALMETHODS
+BINARY              EXECUTION           NONE                STRINGMETHODS
+BITWISE             EXPRESSIONS         NUMBERMETHODS       STRINGS
+BOOLEAN             FILES               NUMBERS             SUBSCRIPTS
+CALLABLEMETHODS     FLOAT               OBJECTS             TRACEBACKS
+CALLS               FORMATTING          OPERATORS           TRUTHVALUE
+CLASSES             FRAMEOBJECTS        PACKAGES            TUPLELITERALS
+CODEOBJECTS         FRAMES              POWER               TUPLES
+COERCIONS           FUNCTIONS           PRECEDENCE          TYPEOBJECTS
+COMPARISON          IDENTIFIERS         PRINTING            TYPES
+COMPLEX             IMPORTING           PRIVATENAMES        UNARY
+CONDITIONAL         INTEGER             RETURNING           UNICODE
+CONTEXTMANAGERS     LISTLITERALS        SCOPING             
+CONVERSIONS         LISTS               SEQUENCEMETHODS1    
+
+help> TUPLES
+
+Related help topics: STRINGMETHODS, FORMATTING, xrange, LISTS
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+Please wait a moment while I gather a list of all available modules...
+
+DEBUG:padme:metaclass(proxy_meta)(proxy, name='proxy')
+DEBUG:padme:proxy_meta.__new__ with name: 'proxy', bases: (<class 'padme.proxy'>,) (args: (), kwargs {})
+DEBUG:padme:function <function PatternProxy.__repr__ at 0x7f5dda87a598> marked as unproxied/direct
+DEBUG:padme:proxy_meta.__new__ with name: 'PatternProxy', bases: (<class 'padme.proxy'>,) (args: (), kwargs {})
+DEBUG:padme:proxy type 'PatternProxy' will pass-thru {'__repr__'}
+AptUrl              apport              hmac                resource
+CDROM               apport_python_hook  hpmudext            rlcompleter
+CommandNotFound     apt                 html                runpy
+Crypto              apt_inst            html5lib            scanext
+DLFCN               apt_pkg             http                sched
+DistUpgrade         aptdaemon           httplib2            secretstorage
+HweSupportStatus    aptsources          idlelib             select
+IN                  argparse            idna                selectors
+LanguageSelector    array               imaplib             sessioninstaller
+LibAppArmor         ast                 imghdr              setuptools
+NvidiaDetector      asynchat            imp                 shelve
+Onboard             asyncio             importlib           shlex
+PIL                 asyncore            inspect             shutil
+Quirks              atexit              io                  signal
+TYPES               audioop             ipaddress           simplejson
+UbuntuDrivers       base64              itertools           site
+UbuntuSystemService bdb                 janitor             sitecustomize
+UpdateManager       binascii            jinja2              six
+__future__          binhex              json                smtpd
+_ast                bisect              jwt                 smtplib
+_bisect             blinker             keyring             sndhdr
+_bootlocale         brlapi              keyword             socket
+_bz2                bs4                 language_support_pkgs socketserver
+_cffi_backend       builtins            launchpadlib        softwareproperties
+_codecs             bz2                 lib2to3             speechd
+_codecs_cn          cProfile            linecache           speechd_config
+_codecs_hk          cairo               locale              spwd
+_codecs_iso2022     calendar            logging             sqlite3
+_codecs_jp          cgi                 louis               sre_compile
+_codecs_kr          cgitb               lsb_release         sre_constants
+_codecs_tw          chardet             lxml                sre_parse
+_collections        checkbox_support    lzma                ssl
+_collections_abc    chunk               macpath             stat
+_compat_pickle      click               macurl2path         statistics
+_compression        cmath               mailbox             string
+_crypt              cmd                 mailcap             stringprep
+_csv                code                mako                struct
+_ctypes             codecs              markupsafe          subprocess
+_ctypes_test        codeop              marshal             sunau
+_curses             collections         math                symbol
+_curses_panel       colorsys            mimetypes           symtable
+_datetime           compileall          mmap                sys
+_dbm                concurrent          modulefinder        sysconfig
+_dbus_bindings      configparser        multiprocessing     syslog
+_dbus_glib_bindings contextlib          netrc               systemd
+_decimal            copy                nis                 tabnanny
+_dummy_thread       copyreg             nntplib             tarfile
+_elementtree        crypt               ntpath              telnetlib
+_functools          cryptography        nturl2path          tempfile
+_gdbm               csv                 numbers             termios
+_hashlib            ctypes              oauth               test
+_heapq              cups                oauthlib            textwrap
+_imp                cupsext             opcode              this
+_io                 cupshelpers         operator            threading
+_json               curses              optparse            time
+_locale             datetime            orca                timeit
+_lsprof             dbm                 os                  tkinter
+_lzma               dbus                ossaudiodev         token
+_markupbase         deb822              padme               tokenize
+_md5                debconf             parser              trace
+_multibytecodec     debian              pathlib             traceback
+_multiprocessing    debian_bundle       pcardext            tracemalloc
+_opcode             decimal             pdb                 tty
+_operator           defer               pexpect             turtle
+_osx_support        difflib             pickle              types
+_pickle             dis                 pickletools         typing
+_posixsubprocess    distro_info         pipes               ufw
+_pydecimal          distro_info_test    pkg_resources       unicodedata
+_pyio               distutils           pkgutil             unittest
+_random             doctest             plainbox            uno
+_sha1               dummy_threading     platform            unohelper
+_sha256             easy_install        plistlib            urllib
+_sha512             email               poplib              urllib3
+_signal             encodings           posix               usbcreator
+_sitebuiltins       enum                posixpath           uu
+_socket             errno               pprint              uuid
+_sqlite3            faulthandler        problem_report      venv
+_sre                fcntl               profile             virtualenv
+_ssl                feedparser          pstats              wadllib
+_stat               feedparser_sgmllib3 pty                 warnings
+_string             filecmp             ptyprocess          wave
+_strptime           fileinput           pwd                 weakref
+_struct             first               py_compile          webbrowser
+_symtable           fnmatch             pyasn1              wsgiref
+_sysconfigdata      formatter           pyatspi             xdg
+_sysconfigdata_m    fpectl              pyclbr              xdiagnose
+_testbuffer         fractions           pycodestyle         xdrlib
+_testcapi           ftplib              pydoc               xkit
+_testimportmultiple functools           pydoc_data          xlsxwriter
+_testmultiphase     gc                  pyexpat             xml
+_thread             genericpath         pyflakes            xmlrpc
+_threading_local    getopt              pygtkcompat         xxlimited
+_tracemalloc        getpass             pyparsing           xxsubtype
+_warnings           gettext             queue               yaml
+_weakref            gi                  quopri              zipapp
+_weakrefset         glob                random              zipfile
+_yaml               grp                 re                  zipimport
+abc                 guacamole           readline            zlib
+aifc                gzip                reportlab           zope
+antigravity         hashlib             reprlib             
+apparmor            heapq               requests            
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose name or summary contain the string "spam".
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+
+
+In [1]: my_string="python"
+
+In [2]: type(my_string)
+Out[2]: str
+
+In [3]: my_num = 1
+
+In [4]: type(my_num)
+Out[4]: int
+
+In [5]: my_float = 1
+
+In [6]: type(my_float)
+Out[6]: int
+
+In [7]: my_float = 10
+
+In [8]: my_float = 10.0
+
+In [9]: type(my_float)
+Out[9]: float
+
+In [10]: # garbage collector
+
+In [11]: 
+
+In [12]: my_string.upper?
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [13]: my_string.upper??
+Docstring:
+S.upper() -> string
+
+Return a copy of the string S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [14]: my_string.upper()
+Out[14]: 'PYTHON'
+
+In [15]: my_string
+Out[15]: 'python'
+
+In [16]: my_string.zfill?
+Docstring:
+S.zfill(width) -> string
+
+Pad a numeric string S with zeros on the left, to fill a field
+of the specified width.  The string S is never truncated.
+Type:      builtin_function_or_method
+
+In [17]: my_string.zfill(10)
+Out[17]: '0000python'
+
+In [18]: # task1
+
+In [19]: my_string.
+                my_string.capitalize my_string.endswith   my_string.isalnum    my_string.istitle    my_string.lstrip      
+                my_string.center     my_string.expandtabs my_string.isalpha    my_string.isupper    my_string.partition   
+                my_string.count      my_string.find       my_string.isdigit    my_string.join       my_string.replace    >
+                my_string.decode     my_string.format     my_string.islower    my_string.ljust      my_string.rfind       
+                my_string.encode     my_string.index      my_string.isspace    my_string.lower      my_string.rindex      
+
+
+ khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> my_string='python'
+>>> type(my_string)
+<type 'str'>
+>>> 
+>>> print dir(my_string)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getslice__', '__gt__', '__hash__', '__init__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '_formatter_field_name_split', '_formatter_parser', 'capitalize', 'center', 'count', 'decode', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'index', 'isalnum', 'isalpha', 'isdigit', 'islower', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'partition', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> 
+>>> help(my_string.split)
+
+>>> 
+
+In [22]: my_num
+Out[22]: 1
+
+In [23]: my_num.
+                 my_num.bit_length  my_num.imag        
+                 my_num.conjugate   my_num.numerator   
+                 my_num.denominator my_num.real        
+
+In [23]: my_float
+Out[23]: 10.0
+
+In [24]: my_float.
+                   my_float.as_integer_ratio my_float.hex              my_float.real             
+                   my_float.conjugate        my_float.imag                                       
+                   my_float.fromhex          my_float.is_integer                                 
+
+
+In [25]: # playing a bit with strings
+
+In [26]: my_string
+Out[26]: 'python'
+
+In [27]: # a string is a sequence of characters
+
+In [28]: #  p   y   t   h   o   n
+
+In [29]: # 0    1   2   3   4   5  # +ve indexing or left to right
+
+In [30]: # -6   -5  -4  -3  -2  -1 # -ve indexing or right to left
+
+In [31]: my_string[2]
+Out[31]: 't'
+
+In [32]: my_string[-6]
+Out[32]: 'p'
+
+In [33]: # indexing
+
+In [34]: my_string[0]
+Out[34]: 'p'
+
+In [35]: my_string[0]='T'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-35-50967ec55ade> in <module>()
+----> 1 my_string[0]='T'
+
+TypeError: 'str' object does not support item assignment
+
+In [36]: # slicing
+
+In [37]: my_string[0:3] # 3 not included
+Out[37]: 'pyt'
+
+In [38]: my_string[:3] # 3 not included
+Out[38]: 'pyt'
+
+In [39]: my_string[3:7]
+Out[39]: 'hon'
+
+In [40]: my_string[3:]
+Out[40]: 'hon'
+
+In [41]: # append
+
+In [42]: my_string[:3] + my_string[3:]
+Out[42]: 'python'
+
+In [43]: # multiply
+
+In [44]: '-' * 10
+Out[44]: '----------'
+
+In [45]: # task2
+
+In [46]: my_string
+Out[46]: 'python'
+
+In [47]: # output => tython
+
+In [48]: my_string
+Out[48]: 'python'
+
+In [49]: my_string[0]='T'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-49-50967ec55ade> in <module>()
+----> 1 my_string[0]='T'
+
+TypeError: 'str' object does not support item assignment
+
+In [50]: 'T' + my_string[1:]
+Out[50]: 'Tython'
+
+In [51]: my_string[2].upper() + my_string[1:]
+Out[51]: 'Tython'
+
+In [52]: # replace
+
+In [53]: my_string.replace?
+Docstring:
+S.replace(old, new[, count]) -> string
+
+Return a copy of string S with all occurrences of substring
+old replaced by new.  If the optional argument count is
+given, only the first count occurrences are replaced.
+Type:      builtin_function_or_method
+
+In [54]: my_string('p','T')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-54-a78e056f3ac0> in <module>()
+----> 1 my_string('p','T')
+
+TypeError: 'str' object is not callable
+
+In [55]: my_string.replace('p','T')
+Out[55]: 'Tython'
+
+In [57]: # slicing
+
+In [58]: my_string
+Out[58]: 'python'
+
+In [59]: my_string[0:6]
+Out[59]: 'python'
+
+In [60]: my_string[:]
+Out[60]: 'python'
+
+In [61]: # for((i=0;i<10;i+
+
+In [62]: my_string[:]
+Out[62]: 'python'
+
+In [63]: my_string[::1]
+Out[63]: 'python'
+
+In [64]: my_string[::2]
+Out[64]: 'pto'
+
+In [65]: my_string[::-1]
+Out[65]: 'nohtyp'
+
+In [66]: # task # [::-2]
+
+In [67]: # [-1:]
+
+In [68]: 
+
+In [69]: # playing with numbers
+
+In [70]: 1 + 1
+Out[70]: 2
+
+In [71]: '1' + '1'
+Out[71]: '11'
+
+In [72]: 25 / 2
+Out[72]: 12
+
+In [73]: 25 / 2.0
+Out[73]: 12.5
+
+In [74]: # float,int
+
+In [75]: # float,int,str
+
+In [76]: float(25)/2
+Out[76]: 12.5
+
+In [77]: 25 + 25 / 2
+Out[77]: 37
+
+In [78]: (25 + 25 ) / 2
+Out[78]: 25
+
+In [79]: 2 ** 3
+Out[79]: 8
+
+In [80]: import math
+
+In [81]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [82]: math.pow(2,3)
+Out[82]: 8.0
+
+
+assignments:
+
+http://www.pythonchallenge.com/pc/def/map.html
