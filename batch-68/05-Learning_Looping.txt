@@ -1,0 +1,168 @@
+# Looping
+other prograaming : for,foreach,while,do..while,while..do,until
+python : for(finite),while(infinite)
+
+In [1]: # for - always works on a sequnce
+
+In [2]: my_string="python"
+
+In [3]: for value in my_string:
+   ...:     print value
+   ...:     
+p
+y
+t
+h
+o
+n
+
+In [4]: my_name = ["python","django","flask","devops","database"]
+
+In [5]: for value in my_name:
+   ...:     print value
+   ...:     
+python
+django
+flask
+devops
+database
+
+In [7]: range?
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+Type:      builtin_function_or_method
+
+In [8]: range(5) # 0 till 5 -> 5 not included
+Out[8]: [0, 1, 2, 3, 4]
+
+In [7]: range?
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+Type:      builtin_function_or_method
+
+In [8]: range(5) # 0 till 5 -> 5 not included
+Out[8]: [0, 1, 2, 3, 4]
+
+In [9]: range(1,5) 
+Out[9]: [1, 2, 3, 4]
+
+In [10]: range(1,10,2) 
+Out[10]: [1, 3, 5, 7, 9]
+
+In [11]: for value in range(1,10,1):
+    ...:     print value
+    ...:     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+In [13]: # iterators and generators
+
+In [14]: range?
+Docstring:
+range(stop) -> list of integers
+range(start, stop[, step]) -> list of integers
+
+Return a list containing an arithmetic progression of integers.
+range(i, j) returns [i, i+1, i+2, ..., j-1]; start (!) defaults to 0.
+When step is given, it specifies the increment (or decrement).
+For example, range(4) returns [0, 1, 2, 3].  The end point is omitted!
+These are exactly the valid indices for a list of 4 elements.
+Type:      builtin_function_or_method
+
+In [15]: xrange?
+Docstring:
+xrange(stop) -> xrange object
+xrange(start, stop[, step]) -> xrange object
+
+Like range(), but instead of returning a list, returns an object that
+generates the numbers in the range on demand.  For looping, this is 
+slightly faster than range() and more memory efficient.
+Type:      type
+
+In [16]: range(1,6)
+Out[16]: [1, 2, 3, 4, 5]
+
+In [17]: xrange(1,6)
+Out[17]: xrange(1, 6)
+
+In [18]: for value in range(1,6):
+    ...:     print value
+    ...:     
+1
+2
+3
+4
+5
+
+In [19]: for value in xrange(1,6):
+    ...:     print value
+    ...:     
+1
+2
+3
+4
+5
+
+In [20]: 
+
+In [21]: # how a iterator works
+
+In [22]: m = iter(range(1,6))
+
+In [23]: print m,type(m)
+<listiterator object at 0x7f6c219e6750> <type 'listiterator'>
+
+In [24]: m.next()
+Out[24]: 1
+
+In [25]: m.next()
+Out[25]: 2
+
+In [26]: m.next()
+Out[26]: 3
+
+In [27]: m.next()
+Out[27]: 4
+
+In [28]: m.next()
+Out[28]: 5
+
+In [29]: m.next()
+---------------------------------------------------------------------------
+StopIteration                             Traceback (most recent call last)
+<ipython-input-29-e97a0f4742ad> in <module>()
+----> 1 m.next()
+
+StopIteration: 
+
+In [30]: iter?
+Docstring:
+iter(collection) -> iterator
+iter(callable, sentinel) -> iterator
+
+Get an iterator from an object.  In the first form, the argument must
+supply its own iterator, or be a sequence.
+In the second form, the callable is called until it returns the sentinel.
+Type:      builtin_function_or_method
+
