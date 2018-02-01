@@ -1,0 +1,312 @@
+List is a linear representation of data.
+arrays is a multi dimension representation of data.
+
+https://scipy.org/
+
+In [1]: my_fruits = ['avacado','banana','cherry','dates']
+
+In [2]: print my_fruits,type(my_fruits)
+['avacado', 'banana', 'cherry', 'dates'] <type 'list'>
+
+In [3]: my_empty = []
+
+In [4]: print my_empty,type(my_empty)
+[] <type 'list'>
+
+In [5]: my_empty = list()
+
+In [6]: print my_empty,type(my_empty)
+[] <type 'list'>
+
+In [7]: # lists are indexed
+
+In [8]: # my_fruits = ['avacado','banana','cherry','dates']
+
+In [9]: #                 0         1        2       3
+
+In [10]: #                -4        -3       -2      -1
+
+In [11]: my_fruits[2]
+Out[11]: 'cherry'
+
+In [12]: # slicking
+
+In [13]: my_fruits[1:3]
+Out[13]: ['banana', 'cherry']
+
+In [14]: # lists are mutable
+
+In [15]: my_string = "python"
+
+In [16]: my_string[0]
+Out[16]: 'p'
+
+In [17]: my_string[0] = 'T'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-17-e4f7accd7b64> in <module>()
+----> 1 my_string[0] = 'T'
+
+TypeError: 'str' object does not support item assignment
+
+In [18]: my_fruits[1]="blue berry"
+
+In [19]: print my_fruits
+['avacado', 'blue berry', 'cherry', 'dates']
+
+In [20]: # in
+
+In [21]: 'apple' in my_fruits
+Out[21]: False
+
+In [22]: 'avacado' in my_fruits
+Out[22]: True
+
+In [23]: pwd
+Out[23]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-68'
+
+In [24]: ls
+01-opensource.txt    04-Learning_conditions.txt  06-results.py  guess_number.py  results.py
+02-installation.txt  05-Learning_Looping.txt     big.py         market.py        second.py
+03-Helpme.txt        06-Learning_lists.txt       first.py*      mynote.ipynb
+
+In [25]: run 06-results.py
+results for - navya
+results for - mukunda
+results for - vinay
+results for - naresh
+results for - raja
+results for - bala
+results for - madhu
+
+In [26]: run 06-results.py
+results for - navya
+results for - mukunda
+results for - vinay
+results for - naresh
+results for - raja
+results for - bala
+
+In [28]: # converting a string to a list and viceversa
+
+In [29]: my_string = "python"
+
+In [30]: # convert a string to a list
+
+In [31]: Lmy_string = list(my_string)
+
+In [32]: print Lmy_string
+['p', 'y', 't', 'h', 'o', 'n']
+
+In [33]: # modify the list
+
+In [34]: Lmy_string[0]='J'
+
+In [35]: print Lmy_string
+['J', 'y', 't', 'h', 'o', 'n']
+
+In [36]: # conver list to string
+
+In [37]: limiter=''
+
+In [38]: limiter.join?
+Docstring:
+S.join(iterable) -> string
+
+Return a string which is the concatenation of the strings in the
+iterable.  The separator between elements is S.
+Type:      builtin_function_or_method
+
+In [39]: limiter.join(Lmy_string)
+Out[39]: 'Jython'
+
+In [40]: new_string=limiter.join(Lmy_string)
+
+In [41]: print my_string,new_string
+python Jython
+
+In [43]: my_sentence = "Today is friday"
+
+In [44]: # convert a string to list
+
+In [45]: Lmy_sentence = list(my_sentence)
+
+In [46]: print Lmy_sentence
+['T', 'o', 'd', 'a', 'y', ' ', 'i', 's', ' ', 'f', 'r', 'i', 'd', 'a', 'y']
+
+In [47]: my_sentence.split?
+Docstring:
+S.split([sep [,maxsplit]]) -> list of strings
+
+Return a list of the words in the string S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are removed
+from the result.
+Type:      builtin_function_or_method
+
+In [48]: my_sentence.split()
+Out[48]: ['Today', 'is', 'friday']
+
+In [49]: Lmy_sentence=my_sentence.split()
+
+In [50]: print Lmy_sentence
+['Today', 'is', 'friday']
+
+In [51]: # modify
+
+In [52]: Lmy_sentence[-1]="thursday"
+
+In [53]: print Lmy_sentence
+['Today', 'is', 'thursday']
+
+In [54]: # convert a list to string
+
+In [55]: delimiter = " "
+
+In [56]: delimiter.join(Lmy_sentence)
+Out[56]: 'Today is thursday'
+
+In [57]: new_sentence=delimiter.join(Lmy_sentence)
+
+In [58]: print my_sentence,new_sentence
+Today is friday Today is thursday
+
+In [64]: # useradd kumar
+
+In [65]: tail /etc/passwd
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-65-c3df29ee24cc> in <module>()
+----> 1 tail /etc/passwd
+
+NameError: name 'tail' is not defined
+
+In [66]: !tail /etc/passwd
+speech-dispatcher:x:117:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+nm-openvpn:x:118:124:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/bin/false
+clickpkg:x:119:125::/nonexistent:/bin/false
+avahi:x:120:126:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+pulse:x:121:127:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+colord:x:122:130:colord colour management daemon,,,:/var/lib/colord:/bin/false
+saned:x:123:131::/var/lib/saned:/bin/false
+hplip:x:124:7:HPLIP system user,,,:/var/run/hplip:/bin/false
+khyaathi:x:1000:1000:KHYAATHI,,,:/home/khyaathi:/bin/bash
+mysql:x:125:133:MySQL Server,,,:/nonexistent:/bin/false
+
+In [67]: my_details = ['kumar','x','1001','1001','user kumar','/home/kumar','/bin/bash']
+
+In [68]: my_details
+Out[68]: ['kumar', 'x', '1001', '1001', 'user kumar', '/home/kumar', '/bin/bash']
+
+In [69]: sanjay=':'
+
+In [70]: sanjay.join(my_details)
+Out[70]: 'kumar:x:1001:1001:user kumar:/home/kumar:/bin/bash'
+
+In [71]: sanjay=','
+
+In [72]: sanjay.join(my_details)
+Out[72]: 'kumar,x,1001,1001,user kumar,/home/kumar,/bin/bash'
+
+In [73]: '-'.join(my_details)
+Out[73]: 'kumar-x-1001-1001-user kumar-/home/kumar-/bin/bash'
+
+In [74]: 
+
+In [77]: # function
+
+In [78]: # my_fruits.append
+
+In [79]: my_fruits.append?
+Docstring: L.append(object) -- append object to end
+Type:      builtin_function_or_method
+
+In [80]: my_fruits.append('fig')
+
+In [81]: print my_fruits
+['avacado', 'blue berry', 'cherry', 'dates', 'fig']
+
+In [82]: # my_fruits.extend
+
+In [83]: my_fruits.extend?
+Docstring: L.extend(iterable) -- extend list by appending elements from the iterable
+Type:      builtin_function_or_method
+
+In [84]: my_fruits.extend(['guava','grapes'])
+
+In [85]: print my_fruits
+['avacado', 'blue berry', 'cherry', 'dates', 'fig', 'guava', 'grapes']
+
+In [86]: # my_fruits.insert
+
+In [87]: my_fruits.insert?
+Docstring: L.insert(index, object) -- insert object before index
+Type:      builtin_function_or_method
+
+In [88]: my_fruits.insert(1,'apple')
+
+In [89]: print my_fruits
+['avacado', 'apple', 'blue berry', 'cherry', 'dates', 'fig', 'guava', 'grapes']
+
+In [90]: #my_fruits.index
+
+In [91]: my_fruits.index?
+Docstring:
+L.index(value, [start, [stop]]) -> integer -- return first index of value.
+Raises ValueError if the value is not present.
+Type:      builtin_function_or_method
+
+In [92]: my_fruits.index('dates')
+Out[92]: 4
+
+In [93]: my_fruits.insert(4,'grapes')
+
+In [94]: print  my_fruits
+['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes']
+
+In [95]: my_fruits.index('grapes')
+Out[95]: 4
+
+In [96]: my_fruits.index('grapes',5)
+Out[96]: 8
+
+In [97]: my_fruits.index('grapes',8)
+Out[97]: 8
+
+In [98]: my_fruits.index('grapes',9)
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-98-134c1017ac71> in <module>()
+----> 1 my_fruits.index('grapes',9)
+
+ValueError: 'grapes' is not in list
+
+In [99]: # my_fruits.count
+
+In [100]: my_fruits.count?
+Docstring: L.count(value) -> integer -- return number of occurrences of value
+Type:      builtin_function_or_method
+
+In [101]: my_fruits.count('grapes')
+Out[101]: 2
+
+In [102]: my_fruits.count('fig')
+Out[102]: 1
+
+In [103]: 
+
+In [104]: print my_fruits
+['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes']
+
+In [105]: my_fruits.append(['jackfruit','kiwi'])
+
+In [106]: print my_fruits
+['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes', ['jackfruit', 'kiwi']]
+
+In [107]: my_fruits.extend(['jackfruit','kiwi'])
+
+In [108]: print my_fruits
+['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes', ['jackfruit', 'kiwi'], 'jackfruit', 'kiwi']
+
+In [109]: 
