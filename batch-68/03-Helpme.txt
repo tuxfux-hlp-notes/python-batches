@@ -466,3 +466,119 @@ Out[82]: 8.0
 assignments:
 
 http://www.pythonchallenge.com/pc/def/map.html
+
+# printing
+
+In [1]: my_school = "De Paul"
+
+In [2]: another_another = "st. xaviers"
+
+In [3]: town = 'township'
+
+In [4]: beach = 'blue'
+
+In [5]: commute = "bus"
+
+In [6]: # basic
+
+In [7]: print "my school name is my_school"
+my school name is my_school
+
+In [8]: print "my school name is " , my_school
+my school name is  De Paul
+
+In [9]: print "my school name is ", my_school , 'we had another school adjacent to us' , another_another , "our town is a s
+   ...: mall ", town , ' we have a beach which has color' , beach , "we used to commute on ", commute
+my school name is  De Paul we had another school adjacent to us st. xaviers our town is a small  township  we have a beach which has color blue we used to commute on  bus
+
+In [10]: # typecasting
+
+In [11]: print "my school name is %s.we had another school adjacent to us %s.Our town is a small %s.we have a beach which h
+    ...: as color %s.we used to commute on %s." %(my_school,another_another,town,beach,commute)
+my school name is De Paul.we had another school adjacent to us st. xaviers.Our town is a small township.we have a beach which has color blue.we used to commute on bus.
+
+In [12]: # %s -> string,%f-> float,%d-> integer,%r -> raw
+
+In [13]: # format
+
+In [14]: print "my school name is %s.I love my %s" %(my_school,my_school)
+my school name is De Paul.I love my De Paul
+
+In [15]: print "my school name is {}.I love my {}".format(my_school,my_school)
+my school name is De Paul.I love my De Paul
+
+In [16]: print "my school name is {}.I love my {}".format(my_school,another_another)
+my school name is De Paul.I love my st. xaviers
+
+In [17]: print "my school name is {0}.I love my {0}".format(my_school,another_another)
+my school name is De Paul.I love my De Paul
+
+In [18]: print "my school name is {1}.I love my {1}".format(my_school,another_another)
+my school name is st. xaviers.I love my st. xaviers
+
+In [19]: print "my school name is {ms}.I love my {ms}".format(ms=my_school,ans=another_another)
+my school name is De Paul.I love my De Paul
+
+## input
+
+In [21]: # raw_input and input
+
+In [22]: name = raw_input("please enter your name:")
+please enter your name:kumar
+
+In [23]: print name
+kumar
+
+In [24]: gender = raw_input("please enter your gender:")
+please enter your gender:m
+
+In [25]: print gender
+m
+
+In [26]: num = raw_input("please enter your age:")
+please enter your age:16
+
+In [27]: print num,type(num)
+16 <type 'str'>
+
+In [28]: # type casting function
+
+In [29]: num = int(raw_input("please enter your age:"))
+please enter your age:16
+
+In [30]: print num,type(num)
+16 <type 'int'>
+
+In [31]: print num,type(num)
+16 <type 'int'>
+
+In [32]: num = int(raw_input("please enter your age:"))
+please enter your age:sixteen
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-32-334d0133990e> in <module>()
+----> 1 num = int(raw_input("please enter your age:"))
+
+ValueError: invalid literal for int() with base 10: 'sixteen'
+
+In [33]: # raw_input by defaults takes string as default.
+
+In [34]: ## input
+
+In [35]: whatsup = input("please enter your name:")
+please enter your name:name
+
+In [36]: print whatsup
+kumar
+
+In [37]: print whatsup,type(whatsup)
+kumar <type 'str'>
+
+In [38]: num = input("please enter your age:")
+please enter your age:16
+
+In [39]: print num,type(num)
+16 <type 'int'>
+
+In [40]: # 3.0 does not have raw_input(2.x)
+

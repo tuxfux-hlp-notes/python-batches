@@ -310,3 +310,265 @@ In [108]: print my_fruits
 ['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes', ['jackfruit', 'kiwi'], 'jackfruit', 'kiwi']
 
 In [109]: 
+
+In [1]: my_fruits = ['avacado','banana','cherry','dates']
+
+In [2]: # my_fruits.pop
+
+In [3]: my_fruits.pop?
+Docstring:
+L.pop([index]) -> item -- remove and return item at index (default last).
+Raises IndexError if list is empty or index is out of range.
+Type:      builtin_function_or_method
+
+In [4]: my_fruits.pop(1)
+Out[4]: 'banana'
+
+In [5]: print my_fruits
+['avacado', 'cherry', 'dates']
+
+In [6]: my_fruits.pop(10)
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-6-293403469973> in <module>()
+----> 1 my_fruits.pop(10)
+
+IndexError: pop index out of range
+
+In [7]: # my_fruits.remove
+
+In [8]: my_fruits.remove?
+Docstring:
+L.remove(value) -- remove first occurrence of value.
+Raises ValueError if the value is not present.
+Type:      builtin_function_or_method
+
+In [9]: my_fruits.remove('dates')
+
+In [10]: print my_fruits
+['avacado', 'cherry']
+
+In [11]: my_fruits.remove('dates')
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-11-3bd9ba354b04> in <module>()
+----> 1 my_fruits.remove('dates')
+
+ValueError: list.remove(x): x not in list
+
+In [12]:           
+                                                
+In [13]: my_fruits = ['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes', ['jackfruit'
+    ...: , 'kiwi'], 'jackfruit', 'kiwi']
+
+In [14]: print my_fruits
+['avacado', 'apple', 'blue berry', 'cherry', 'grapes', 'dates', 'fig', 'guava', 'grapes', ['jackfruit', 'kiwi'], 'jackfruit', 'kiwi']
+
+In [15]: #my_fruits.reverse
+
+In [16]: my_fruits.reverse?
+Docstring: L.reverse() -- reverse *IN PLACE*
+Type:      builtin_function_or_method
+
+In [17]: my_fruits.reverse()
+
+In [18]: print my_fruits
+['kiwi', 'jackfruit', ['jackfruit', 'kiwi'], 'grapes', 'guava', 'fig', 'dates', 'grapes', 'cherry', 'blue berry', 'apple', 'avacado']
+
+In [19]: # my_fruits.sort
+
+In [20]: my_fruits.sort?
+Docstring:
+L.sort(cmp=None, key=None, reverse=False) -- stable sort *IN PLACE*;
+cmp(x, y) -> -1, 0, 1
+Type:      builtin_function_or_method
+
+In [21]: my_fruits.sort()
+
+In [22]: print my_fruits
+[['jackfruit', 'kiwi'], 'apple', 'avacado', 'blue berry', 'cherry', 'dates', 'fig', 'grapes', 'grapes', 'guava', 'jackfruit', 'kiwi']
+
+In [23]: 
+
+In [40]: # aliasing or memory in lists
+
+In [41]: # soft copy and deep copy
+
+In [42]: a = 1
+
+In [43]: id?
+Docstring:
+id(object) -> integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it's the object's memory address.)
+Type:      builtin_function_or_method
+
+In [44]: id(1)
+Out[44]: 94441917178200
+
+In [45]: b = 1
+
+In [46]: id(a)
+Out[46]: 94441917178200
+
+In [47]: id(b)
+Out[47]: 94441917178200
+
+In [48]: # is
+
+In [49]: a is b
+Out[49]: True
+
+In [50]: a in b
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-50-c2af8a794091> in <module>()
+----> 1 a in b
+
+TypeError: argument of type 'int' is not iterable
+
+In [51]: 1 == 1
+Out[51]: True
+
+In [52]: 1 is 1
+Out[52]: True
+
+In [53]: b = 2
+
+In [54]: id(a)
+Out[54]: 94441917178200
+
+In [55]: id(b)
+Out[55]: 94441917178176
+
+In [56]: id(1)
+Out[56]: 94441917178200
+
+In [57]: id(2)
+Out[57]: 94441917178176
+
+In [58]: del(a)
+
+In [59]: id(1)
+Out[59]: 94441917178200
+
+In [60]: # garbage collector
+
+In [61]: d = 1
+
+In [62]: id(d)
+Out[62]: 94441917178200
+
+In [63]: id(1)
+Out[63]: 94441917178200
+
+In [64]: id(a)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-64-c390db2718d1> in <module>()
+----> 1 id(a)
+
+NameError: name 'a' is not defined
+
+
+## task1: why are the memory location changed :(
+
+In [66]: a = 300
+
+In [67]: b = 300
+
+In [68]: id(300)
+Out[68]: 94441924884224
+
+In [69]: id(a)
+Out[69]: 94441924030560
+
+In [70]: id(b)
+Out[70]: 94441924030416
+
+In [71]: 
+
+ ## soft copy
+
+In [72]: # lists
+
+In [73]: a = [11,12,13]
+
+In [74]: id(a)
+Out[74]: 140157773100888
+
+In [75]: b = a
+
+In [76]: print a
+[11, 12, 13]
+
+In [77]: print b
+[11, 12, 13]
+
+In [78]: id(b)
+Out[78]: 140157773100888
+
+In [79]: a is b
+Out[79]: True
+
+In [80]: a[0] = '1'
+
+In [81]: print a,b
+['1', 12, 13] ['1', 12, 13]
+
+In [82]: a = ['1','2','3']
+
+In [83]: print a,b
+['1', '2', '3'] ['1', 12, 13]
+
+In [84]:
+
+In [85]: 
+
+In [86]: # deep copy
+
+In [87]: # in all programming languages every object has new memory block.
+
+In [88]: a = [1,2,3]
+
+In [89]: import copy
+
+In [90]: copy.deepcopy?
+Signature: copy.deepcopy(x, memo=None, _nil=[])
+Docstring:
+Deep copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+File:      /usr/lib/python2.7/copy.py
+Type:      function
+
+In [91]: b = copy.deepcopy(a)
+
+In [92]: id(a)
+Out[92]: 140157783489856
+
+In [93]: id(b)
+Out[93]: 140157774369208
+
+In [94]: c = 1
+
+In [95]: d = copy.deepcopy(c)
+
+In [96]: id(c)
+Out[96]: 94441917178200
+
+In [97]: id(d)
+Out[97]: 94441917178200
+
+In [98]: c = a[:]
+
+In [99]: id(c)
+Out[99]: 140157792897216
+
+In [100]: id(a)
+Out[100]: 140157783489856
+
+
+## Learning python the hardway
+## How to Think Like a Computer Scientist
