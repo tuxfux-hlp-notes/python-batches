@@ -1,0 +1,40 @@
+### List comprehension
+creating lists on fly.
+
+In [97]: num = raw_input("please enter numbers seperated by commas:")
+please enter numbers seperated by commas:1,2,3,4,5,6,7,8,9,10
+
+In [98]: print num,type(num)
+1,2,3,4,5,6,7,8,9,10 <type 'str'>
+
+In [99]: # output : 2,4,6,8,10
+
+In [100]: num.split(',')
+Out[100]: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [101]: my_even=[]
+
+In [102]: for value in num.split(','):
+     ...:     if int(value) % 2 == 0:
+     ...:         my_even.append(value)
+     ...:         
+
+In [103]: print my_even
+['2', '4', '6', '8', '10']
+
+In [104]: limiter=','
+
+In [105]: limiter.join(my_even)
+Out[105]: '2,4,6,8,10'
+
+In [106]: ## [value;expression;condition]
+
+In [107]: [ value for value in num.split(',')]
+Out[107]: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+In [108]: [ value for value in num.split(',') if int(value) % 2 == 0]
+Out[108]: ['2', '4', '6', '8', '10']
+
+In [109]: ','.join([ value for value in num.split(',') if int(value) % 2 == 0])
+Out[109]: '2,4,6,8,10'
+

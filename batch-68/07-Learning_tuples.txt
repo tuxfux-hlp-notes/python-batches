@@ -1,0 +1,266 @@
+## tuples
+Readonly representation of lists.
+ex:
+days of a week,longitute and latitude(gmaps)
+gender(male,female)
+
+In [1]: my_week=('sun','mon','tue','wed','thu','fri','sat')
+
+In [2]: print my_week,type(my_week)
+('sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat') <type 'tuple'>
+
+In [3]: my_empty = ()
+
+In [4]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [5]: my_empty = tuple()
+
+In [6]: print my_empty,type(my_empty)
+() <type 'tuple'>
+
+In [7]: # tuples - indexing,slicing
+
+In [8]: # tuples are immutable
+
+In [9]: my_week[0]
+Out[9]: 'sun'
+
+In [10]: my_week[0] = 'sunday'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-10-493590f877c9> in <module>()
+----> 1 my_week[0] = 'sunday'
+
+TypeError: 'tuple' object does not support item assignment
+
+In [11]: # packaging
+
+In [12]: # tuples and lists are packaging
+
+In [13]: a = my_week[0]
+
+In [14]: print a
+sun
+
+In [15]: a,b,c,d,e,f,g = my_week
+
+In [16]: print a
+sun
+
+In [17]: print b
+mon
+
+In [18]: print c
+tue
+
+In [19]: print d
+wed
+
+In [20]: print e
+thu
+
+In [21]: print f
+fri
+
+In [22]: print g
+sat
+
+In [23]: a,b,c,d,e,f,gh = my_week
+
+In [24]: a,b,c,d,e,f,g,h = my_week
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-24-5eeaddff8ae0> in <module>()
+----> 1 a,b,c,d,e,f,g,h = my_week
+
+ValueError: need more than 7 values to unpack
+
+In [25]: a,b,c,d,e,f = my_week
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-25-df13026cebef> in <module>()
+----> 1 a,b,c,d,e,f = my_week
+
+ValueError: too many values to unpack
+
+In [26]: a,b,c,d,e,f = my_week[0:7]
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-26-78f5f925a935> in <module>()
+----> 1 a,b,c,d,e,f = my_week[0:7]
+
+ValueError: too many values to unpack
+
+In [27]: a,b,c,d,e,f = my_week[0:6]
+
+In [29]: # lists and tuples
+
+In [30]: my_student = ('suchitra','mukunda','navya','akarsh','asish','dinesh','manoj')
+
+In [31]: my_student = ['suchitra','mukunda','navya','akarsh','asish','dinesh','manoj']
+
+In [32]: my_subjects = ['python','django','flask','ansible','chef','puppet','github']
+
+In [33]: 'suchitra' in my_student
+Out[33]: True
+
+In [34]: my_student.index('suchitra')
+Out[34]: 0
+
+In [35]: my_subjects[my_student.index('suchitra')]
+Out[35]: 'python'
+
+In [36]: name='suchitra'
+
+In [37]: if name in my_student:
+    ...:     print "{} is going to give subject {}".format(name,my_subjects[my_student.index(name)])
+    ...:     
+suchitra is going to give subject python
+
+In [38]: name='asish'
+
+In [39]: if name in my_student:
+    ...:     print "{} is going to give subject {}".format(name,my_subjects[my_student.index(name)])
+    ...:     
+asish is going to give subject chef
+
+In [40]: 
+
+In [40]: # anticlimax - juniour - principle
+
+In [41]: my_student.sort()
+
+In [42]: print my_student
+['akarsh', 'asish', 'dinesh', 'manoj', 'mukunda', 'navya', 'suchitra']
+
+In [43]: print my_subject
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-43-e83d5b98e55a> in <module>()
+----> 1 print my_subject
+
+NameError: name 'my_subject' is not defined
+
+In [44]: print my_subjects
+['python', 'django', 'flask', 'ansible', 'chef', 'puppet', 'github']
+
+In [45]: name='suchitra'
+
+In [46]: if name in my_student:
+    ...:     print "{} is going to give subject {}".format(name,my_subjects[my_student.index(name)])
+    ...:     
+suchitra is going to give subject github
+
+In [47]: name='asish'
+
+In [48]: if name in my_student:
+    ...:     print "{} is going to give subject {}".format(name,my_subjects[my_student.index(name)])
+    ...:     
+asish is going to give subject django
+
+In [49]: 
+
+In [50]: # list of tuples
+
+In [51]: my_exams = [('suchitra','python'),('mukunda','django'),('navya','flask'),('akarsh','ansible'),('asish','chef'),('d
+    ...: inesh','puppet'),('manoj','github')]
+
+In [52]: print my_exams
+[('suchitra', 'python'), ('mukunda', 'django'), ('navya', 'flask'), ('akarsh', 'ansible'), ('asish', 'chef'), ('dinesh', 'puppet'), ('manoj', 'github')]
+
+In [53]: name='suchitra'
+
+In [54]: my_exams[0]
+Out[54]: ('suchitra', 'python')
+
+In [55]: my_exams[0][0]
+Out[55]: 'suchitra'
+
+In [56]: for student in my_exams:
+    ...:     print student
+    ...:     
+('suchitra', 'python')
+('mukunda', 'django')
+('navya', 'flask')
+('akarsh', 'ansible')
+('asish', 'chef')
+('dinesh', 'puppet')
+('manoj', 'github')
+
+In [57]: for student,subject in my_exams:
+    ...:     if student == name:
+    ...:         print "{} is studying the exam {}".format(student,subject)
+    ...:         
+    ...:     
+suchitra is studying the exam python
+
+In [58]: for student,subject in my_exams:
+    ...:     print student,subject
+    ...:         
+    ...:     
+suchitra python
+mukunda django
+navya flask
+akarsh ansible
+asish chef
+dinesh puppet
+manoj github
+
+In [59]: # anticlimax: principle
+
+In [60]: # juniour
+
+In [61]: my_exams.sort()
+
+In [62]: print my_exams
+[('akarsh', 'ansible'), ('asish', 'chef'), ('dinesh', 'puppet'), ('manoj', 'github'), ('mukunda', 'django'), ('navya', 'flask'), ('suchitra', 'python')]
+
+In [63]: for student,subject in my_exams:
+    ...:     if student == name:
+    ...:         print "{} is studying the exam {}".format(student,subject)
+    ...:         
+    ...:     
+suchitra is studying the exam python
+
+In [64]: 
+
+In [65]: my_exams = [('suchitra','python'),('mukunda','django'),('navya','flask'),('akarsh','ansible'),('asish','chef'),('d
+    ...: inesh','puppet'),('manoj','github')]
+
+In [66]: my_exams[0]
+Out[66]: ('suchitra', 'python')
+
+In [67]: my_exams[0][1]
+Out[67]: 'python'
+
+In [68]: my_exams[0][1] = 'bottle'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-68-9af440585ae0> in <module>()
+----> 1 my_exams[0][1] = 'bottle'
+
+TypeError: 'tuple' object does not support item assignment
+
+In [69]: my_exams[0] = ('suchitra','nose')
+
+In [70]: print my_exams
+[('suchitra', 'nose'), ('mukunda', 'django'), ('navya', 'flask'), ('akarsh', 'ansible'), ('asish', 'chef'), ('dinesh', 'puppet'), ('manoj', 'github')]
+
+In [71]: 
+
+In [71]: my_exams[0] = ('suchitra',['nose','python'])
+
+In [72]: print my_exams
+[('suchitra', ['nose', 'python']), ('mukunda', 'django'), ('navya', 'flask'), ('akarsh', 'ansible'), ('asish', 'chef'), ('dinesh', 'puppet'), ('manoj', 'github')]
+
+In [73]: my_new = ([1,'one'],[22,'two'],[33,'three'])
+
+In [74]: my_new[1]
+Out[74]: [22, 'two']
+
+In [75]: my_new[1][0]=2
+
+In [76]: print my_new
+([1, 'one'], [2, 'two'], [33, 'three'])
+
