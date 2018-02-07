@@ -38,3 +38,21 @@ Out[108]: ['2', '4', '6', '8', '10']
 In [109]: ','.join([ value for value in num.split(',') if int(value) % 2 == 0])
 Out[109]: '2,4,6,8,10'
 
+In [111]: my_string = "today is wednesday"
+
+In [112]: [value for value in my_string.split()]
+Out[112]: ['today', 'is', 'wednesday']
+
+In [113]: [[value.lower(),value.upper(),value.capitalize()] for value in my_string.split()]
+Out[113]: 
+[['today', 'TODAY', 'Today'],
+ ['is', 'IS', 'Is'],
+ ['wednesday', 'WEDNESDAY', 'Wednesday']]
+
+In [114]: [(value.lower(),value.upper(),value.capitalize()) for value in my_string.split()]
+Out[114]: 
+[('today', 'TODAY', 'Today'),
+ ('is', 'IS', 'Is'),
+ ('wednesday', 'WEDNESDAY', 'Wednesday')]
+
+In [115]: 

@@ -1,0 +1,73 @@
+https://github.com/tuxfux-hlp-notes/Projects/blob/master/python/code_break/code_break.txt
+
+In [108]: import string
+
+In [109]: string.ascii_lowercase()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-109-7d07da7e8a5b> in <module>()
+----> 1 string.ascii_lowercase()
+
+TypeError: 'str' object is not callable
+
+In [110]: string.ascii_lowercase
+Out[110]: 'abcdefghijklmnopqrstuvwxyz'
+
+In [111]: list(string.ascii_lowercase)
+Out[111]: 
+['a',
+ 'b',
+ 'c',
+ 'd',
+ 'e',
+ 'f',
+ 'g',
+ 'h',
+ 'i',
+ 'j',
+ 'k',
+ 'l',
+ 'm',
+ 'n',
+ 'o',
+ 'p',
+ 'q',
+ 'r',
+ 's',
+ 't',
+ 'u',
+ 'v',
+ 'w',
+ 'x',
+ 'y',
+ 'z']
+
+In [112]: my_string='QM YR JYQR WMS YPC Y NWRFML ESW'
+
+In [113]: my_string = my_string.lower()
+
+In [114]: my_string
+Out[114]: 'qm yr jyqr wms ypc y nwrfml esw'
+
+In [115]: my_ascii=list(string.ascii_lowercase)
+
+In [116]: my_output=[]
+
+In [117]: for value in my_string:
+     ...:     if value in my_ascii:
+     ...:         if value == 'y':
+     ...:             my_output.append('a')
+     ...:         elif value == 'z':
+     ...:             my_output.append('b')
+     ...:         else:
+     ...:             my_output.append(my_ascii[my_ascii.index(value) + 2])
+     ...:     else:
+     ...:         my_output.append(value)
+     ...:         
+
+In [118]: print my_output
+['s', 'o', ' ', 'a', 't', ' ', 'l', 'a', 's', 't', ' ', 'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'a', ' ', 'p', 'y', 't', 'h', 'o', 'n', ' ', 'g', 'u', 'y']
+
+In [119]: ''.join(my_output)
+Out[119]: 'so at last you are a python guy'
+

@@ -1,0 +1,402 @@
+In [1]: # dictionary,hashes,hash,dict
+
+In [2]: # ssn,uid
+
+In [3]: # adhar-0001 -> kukatpally,xyz
+
+In [4]: # adhar-0002 -> kukatapally,zyz
+
+In [5]: my_fruits = {'a':'apple','b':'banana','c':'cherry','d':'dates'}
+
+In [6]: print my_fruits,type(my_fruits)
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'} <type 'dict'>
+
+In [7]: my_empty = {}
+
+In [8]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [9]: my_empty = dict()
+
+In [10]: print my_empty,type(my_empty)
+{} <type 'dict'>
+
+In [11]: # cheat sheet
+
+In [12]: # list => ['apple','banana'],[],list()
+
+In [13]: # tuple => ('apple','banana'),(),tuple()
+
+In [14]: # dict => {'a':'apple','b':'banana'},{},dict()
+
+In [15]: # fun tasks
+
+In [16]: my_string = "python"
+
+In [17]: print my_string,type(my_string)
+python <type 'str'>
+
+In [18]: my_string = "python","java","ruby","erlong","ada"
+
+In [19]: print my_string,type(my_string)
+('python', 'java', 'ruby', 'erlong', 'ada') <type 'tuple'>
+
+In [20]: my_string = "python,java,ruby,erlong,ada"
+
+In [21]: print my_string,type(my_string)
+python,java,ruby,erlong,ada <type 'str'>
+
+In [22]: my_string = ("python")
+
+In [23]: print my_string,type(my_string)
+python <type 'str'>
+
+In [24]: my_string = ("python",)
+
+In [25]: print my_string,type(my_string)
+('python',) <type 'tuple'>
+
+In [27]: my_fruits
+Out[27]: {'a': 'apple', 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [28]: # access elements of my_fruits
+
+In [29]: my_fruits['a']
+Out[29]: 'apple'
+
+In [30]: # modification
+
+In [31]: my_fruits['a']='avacado'
+
+In [32]: print my_fruits
+{'a': 'avacado', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [33]: my_fruits['a']=['avacado','apple']
+
+In [34]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [35]: my_fruits['a'][1]
+Out[35]: 'apple'
+
+In [36]: # in 
+
+In [37]: 'a' in my_fruits
+Out[37]: True
+
+In [38]: 'cherry' in my_fruits
+Out[38]: False
+
+In [41]: # iteration
+
+In [42]: for key in my_fruits:
+    ...:     print key
+    ...:     
+a
+c
+b
+d
+
+In [43]: for key in my_fruits:
+    ...:     print key,my_fruits[key]
+    ...:     
+    ...:     
+a ['avacado', 'apple']
+c cherry
+b banana
+d dates
+
+In [44]: 
+
+In [45]: # functions
+
+In [46]: my_fruits.has_key?
+Docstring: D.has_key(k) -> True if D has a key k, else False
+Type:      builtin_function_or_method
+
+In [47]: my_fruits.has_key('a')
+Out[47]: True
+
+In [48]: 'a' in my_fruits
+Out[48]: True
+
+In [49]: my_fruits.has_key('cherry')
+Out[49]: False
+
+In [50]: #my_fruits.get
+
+In [51]: my_fruits.get?
+Docstring: D.get(k[,d]) -> D[k] if k in D, else d.  d defaults to None.
+Type:      builtin_function_or_method
+
+In [52]: my_fruits.get('a')
+Out[52]: ['avacado', 'apple']
+
+In [53]: my_fruits['a']
+Out[53]: ['avacado', 'apple']
+
+In [54]: # my_fruits.keys,my_fruits.iterkeys,my_fruits.viewkeys
+
+In [55]: my_fruits.keys?
+Docstring: D.keys() -> list of D's keys
+Type:      builtin_function_or_method
+
+In [56]: my_fruits.keys()
+Out[56]: ['a', 'c', 'b', 'd']
+
+In [57]: my_fruits.iterkeys?
+Docstring: D.iterkeys() -> an iterator over the keys of D
+Type:      builtin_function_or_method
+
+In [58]: my_fruits.iterkeys()
+Out[58]: <dictionary-keyiterator at 0x7f4ad840b208>
+
+In [59]: for value in my_fruits.iterkeys():
+    ...:     print value
+    ...:     
+a
+c
+b
+d
+
+In [60]: my_fruits.viewkeys()
+Out[60]: dict_keys(['a', 'c', 'b', 'd'])
+
+In [61]: my_fruits.viewkeys?
+Docstring: D.viewkeys() -> a set-like object providing a view on D's keys
+Type:      builtin_function_or_method
+
+In [63]: # jinja
+
+In [64]: # my_fruits.values,my_fruits.itervalues,my_fruits.viewvalues
+
+In [65]: my_fruits.values?
+Docstring: D.values() -> list of D's values
+Type:      builtin_function_or_method
+
+In [66]: my_fruits.values()
+Out[66]: [['avacado', 'apple'], 'cherry', 'banana', 'dates']
+
+In [67]: my_fruits.itervalues?
+Docstring: D.itervalues() -> an iterator over the values of D
+Type:      builtin_function_or_method
+
+In [68]: my_fruits.itervalues()
+Out[68]: <dictionary-valueiterator at 0x7f4ad840bc58>
+
+In [69]: for value in my_fruits.itervalues():
+    ...:     print value
+    ...:     
+['avacado', 'apple']
+cherry
+banana
+dates
+
+## my_fruits.items(),my_fruits.iteritems(),my_fruits.viewitems()
+
+In [70]: my_fruits.items?
+Docstring: D.items() -> list of D's (key, value) pairs, as 2-tuples
+Type:      builtin_function_or_method
+
+In [71]: my_fruits.items()
+Out[71]: [('a', ['avacado', 'apple']), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates')]
+
+In [72]: 
+
+In [70]: my_fruits.items?
+Docstring: D.items() -> list of D's (key, value) pairs, as 2-tuples
+Type:      builtin_function_or_method
+
+In [71]: my_fruits.items()
+Out[71]: [('a', ['avacado', 'apple']), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates')]
+
+In [72]: my_fruits.viewitems()
+Out[72]: dict_items([('a', ['avacado', 'apple']), ('c', 'cherry'), ('b', 'banana'), ('d', 'dates')])
+
+In [73]: my_fruits.iteritems()
+Out[73]: <dictionary-itemiterator at 0x7f4ad847a310>
+
+In [75]: # my_fruits.setdefault
+
+In [76]: my_fruits.setdefault?
+Docstring: D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+Type:      builtin_function_or_method
+
+In [77]: my_fruits
+Out[77]: {'a': ['avacado', 'apple'], 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [78]: my_fruits['g']='guava'
+
+In [79]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'guava'}
+
+In [75]: # my_fruits.setdefault
+
+In [76]: my_fruits.setdefault?
+Docstring: D.setdefault(k[,d]) -> D.get(k,d), also set D[k]=d if k not in D
+Type:      builtin_function_or_method
+
+In [77]: my_fruits
+Out[77]: {'a': ['avacado', 'apple'], 'b': 'banana', 'c': 'cherry', 'd': 'dates'}
+
+In [78]: my_fruits['g']='guava'
+
+In [79]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'guava'}
+
+In [80]: my_fruits.setdefault('g','grapes)
+  File "<ipython-input-80-da63efb1760d>", line 1
+    my_fruits.setdefault('g','grapes)
+                                    ^
+SyntaxError: EOL while scanning string literal
+
+
+In [81]: my_fruits.setdefault('g','grapes)
+  File "<ipython-input-81-da63efb1760d>", line 1
+    my_fruits.setdefault('g','grapes)
+                                    ^
+SyntaxError: EOL while scanning string literal
+
+
+In [82]: my_fruits.setdefault('g','grapes')
+Out[82]: 'guava'
+
+In [83]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'guava'}
+
+In [84]: my_fruits['g']='grapes'
+
+In [85]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes'}
+
+In [86]: my_fruits.setdefault('f','fig')
+Out[86]: 'fig'
+
+In [87]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig'}
+
+In [88]: 
+
+In [89]: my_fruits.update?
+Docstring:
+D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+If E present and has a .keys() method, does:     for k in E: D[k] = E[k]
+If E present and lacks .keys() method, does:     for (k, v) in E: D[k] = v
+In either case, this is followed by: for k in F: D[k] = F[k]
+Type:      builtin_function_or_method
+
+In [90]: my_fruits
+Out[90]: 
+{'a': ['avacado', 'apple'],
+ 'b': 'banana',
+ 'c': 'cherry',
+ 'd': 'dates',
+ 'f': 'fig',
+ 'g': 'grapes'}
+
+In [91]: my_fruits.update({'j':'jackfruits','k':'kiwi'})
+
+In [92]: print my_fruits
+{'a': ['avacado', 'apple'], 'c': 'cherry', 'b': 'banana', 'd': 'dates', 'g': 'grapes', 'f': 'fig', 'k': 'kiwi', 'j': 'jackfruits'}
+
+In [93]: 
+
+In [94]: #my_fruits.fromkeys
+
+In [95]: my_fruits.fromkeys?
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+Type:      builtin_function_or_method
+
+In [96]: my_class = {}
+
+In [97]: my_class.fromkeys(my_fruits,"fruits")
+Out[97]: 
+{'a': 'fruits',
+ 'b': 'fruits',
+ 'c': 'fruits',
+ 'd': 'fruits',
+ 'f': 'fruits',
+ 'g': 'fruits',
+ 'j': 'fruits',
+ 'k': 'fruits'}
+
+In [98]: my_class.fromkeys(my_fruits,"fresh-fruits")
+Out[98]: 
+{'a': 'fresh-fruits',
+ 'b': 'fresh-fruits',
+ 'c': 'fresh-fruits',
+ 'd': 'fresh-fruits',
+ 'f': 'fresh-fruits',
+ 'g': 'fresh-fruits',
+ 'j': 'fresh-fruits',
+ 'k': 'fresh-fruits'}
+
+In [94]: #my_fruits.fromkeys
+
+In [95]: my_fruits.fromkeys?
+Docstring:
+dict.fromkeys(S[,v]) -> New dict with keys from S and values equal to v.
+v defaults to None.
+Type:      builtin_function_or_method
+
+In [96]: my_class = {}
+
+In [97]: my_class.fromkeys(my_fruits,"fruits")
+Out[97]: 
+{'a': 'fruits',
+ 'b': 'fruits',
+ 'c': 'fruits',
+ 'd': 'fruits',
+ 'f': 'fruits',
+ 'g': 'fruits',
+ 'j': 'fruits',
+ 'k': 'fruits'}
+
+In [98]: my_class.fromkeys(my_fruits,"fresh-fruits")
+Out[98]: 
+{'a': 'fresh-fruits',
+ 'b': 'fresh-fruits',
+ 'c': 'fresh-fruits',
+ 'd': 'fresh-fruits',
+ 'f': 'fresh-fruits',
+ 'g': 'fresh-fruits',
+ 'j': 'fresh-fruits',
+ 'k': 'fresh-fruits'}
+
+In [99]: my_class.fromkeys(my_fruits.keys(),"fresh-fruits")
+Out[99]: 
+{'a': 'fresh-fruits',
+ 'b': 'fresh-fruits',
+ 'c': 'fresh-fruits',
+ 'd': 'fresh-fruits',
+ 'f': 'fresh-fruits',
+ 'g': 'fresh-fruits',
+ 'j': 'fresh-fruits',
+ 'k': 'fresh-fruits'}
+
+In [100]: my_class.fromkeys(my_fruits.keys()[0:4],"fresh-fruits")
+Out[100]: 
+{'a': 'fresh-fruits',
+ 'b': 'fresh-fruits',
+ 'c': 'fresh-fruits',
+ 'd': 'fresh-fruits'}
+
+In [101]: my_class.fromkeys(my_fruits['a'],"fresh-fruits")
+Out[101]: {'apple': 'fresh-fruits', 'avacado': 'fresh-fruits'}
+
+In [102]: my_class.fromkeys('python',"fresh-fruits")
+Out[102]: 
+{'h': 'fresh-fruits',
+ 'n': 'fresh-fruits',
+ 'o': 'fresh-fruits',
+ 'p': 'fresh-fruits',
+ 't': 'fresh-fruits',
+ 'y': 'fresh-fruits'}
+
+In [103]: my_class.fromkeys('madam',"fresh-fruits")
+Out[103]: {'a': 'fresh-fruits', 'd': 'fresh-fruits', 'm': 'fresh-fruits'}
+
+
+

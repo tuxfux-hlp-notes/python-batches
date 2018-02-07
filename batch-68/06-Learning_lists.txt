@@ -572,3 +572,5 @@ Out[100]: 140157783489856
 
 ## Learning python the hardway
 ## How to Think Like a Computer Scientist
+
+

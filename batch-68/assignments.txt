@@ -1,0 +1,6 @@
+1) http://pythonchallege.com
+2) books - Learning python the hardway
+3) https://github.com/sambapython/python/blob/master/assignments.txt
+4) project: https://github.com/sambapython/python
+5) List comprehension: https://github.com/tuxfux-hlp/Python-examples/blob/master/lists/list_comprehension.txt
+6) Project: https://github.com/tuxfux-hlp-notes/Projects
