@@ -398,5 +398,101 @@ Out[102]:
 In [103]: my_class.fromkeys('madam',"fresh-fruits")
 Out[103]: {'a': 'fresh-fruits', 'd': 'fresh-fruits', 'm': 'fresh-fruits'}
 
+In [123]: my_fruits.copy?
+Docstring: D.copy() -> a shallow copy of D
+Type:      builtin_function_or_method
+
+In [124]: # softcopy,deepcopy and shallowcopy
+
+In [125]: a = [1,2,3]
+
+In [126]: b = [11,12,13]
+
+In [127]: Cc = [a,b]
+
+In [128]: print Cc,id(Cc),id(a),id(Cc[0]),id(b),id(Cc[1])
+[[1, 2, 3], [11, 12, 13]] 139959432836520 139959434074808 139959434074808 139959435101752 139959435101752
+
+In [129]: # soft copy
+
+In [130]: Sc = Cc
+
+In [131]: print Cc,Sc,id(Cc),id(Sc),id(Sc[0]),id(Cc[0]),id(Sc[1]),id(Cc[1])
+[[1, 2, 3], [11, 12, 13]] [[1, 2, 3], [11, 12, 13]] 139959432836520 139959432836520 139959434074808 139959434074808 139959435101752 139959435101752
+
+In [132]: # Deep copy
+
+In [133]: import copy
+
+In [135]: Dc = copy.deepcopy(Cc)
+
+In [136]: print Cc,Dc,id(Cc),id(Dc),id(Dc[0]),id(Cc[0]),id(Dc[1]),id(Cc[1])
+[[1, 2, 3], [11, 12, 13]] [[1, 2, 3], [11, 12, 13]] 139959432836520 139959432702936 139959432518616 139959434074808 139959432549944 139959435101752
+
+In [137]: # shallow copy
+
+In [138]: import copy
+
+In [139]: copy.copy?
+Signature: copy.copy(x)
+Docstring:
+Shallow copy operation on arbitrary Python objects.
+
+See the module's __doc__ string for more info.
+File:      /usr/lib/python2.7/copy.py
+Type:      function
+
+In [140]: Ss = copy.copy(Cc)
+
+In [141]: print Sc,Cc
+[[1, 2, 3], [11, 12, 13]] [[1, 2, 3], [11, 12, 13]]
+
+In [142]: print Ss,Cc
+[[1, 2, 3], [11, 12, 13]] [[1, 2, 3], [11, 12, 13]]
+
+In [143]: Ss is Cc
+Out[143]: False
+
+In [144]: print id(Cc[1]),id(Ss[1]),id(Ss[0]),id(Cc[0])
+139959435101752 139959435101752 139959434074808 139959434074808
+
+In [145]: print a
+[1, 2, 3]
+
+In [146]: print b
+[11, 12, 13]
+
+In [147]: a[0]="one"
+
+In [148]: print Cc
+[['one', 2, 3], [11, 12, 13]]
+
+In [149]: print Ss
+[['one', 2, 3], [11, 12, 13]]
+
+In [150]: Ss[0]=["ten","ton","don"]
+
+In [151]: print Ss
+[['ten', 'ton', 'don'], [11, 12, 13]]
+
+In [152]: print Cc
+[['one', 2, 3], [11, 12, 13]]
+
+In [153]: my_fruits = {'a':'apple','b':'banana','c':'cherry','d':'dates'}
+
+In [154]: my_new_fruits = my_fruits.copy()
+
+In [155]: print my_new_fruits
+{'a': 'apple', 'c': 'cherry', 'b': 'banana', 'd': 'dates'}
+
+In [156]: #my_fruits.clear
+
+In [157]: print my_fruits.clear()
+None
+
+In [158]: print my_fruits
+{}
+
+In [159]: 
 
 

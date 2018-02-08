@@ -1,0 +1,248 @@
+# function
+A block of code which can be called n number of times.
+
+In [1]: def my_func():
+   ...:     print "hello there"
+   ...:     
+
+In [2]: print my_func,id(my_func)
+<function my_func at 0x7fb5e7659cf8> 140419248004344
+
+In [3]: print my_func,type(my_func)
+<function my_func at 0x7fb5e7659cf8> <type 'function'>
+
+In [4]: my_func
+Out[4]: <function __main__.my_func>
+
+In [5]: print my_func
+<function my_func at 0x7fb5e7659cf8>
+
+In [6]: print my_func()
+hello there
+None
+
+In [7]: # every function has a return value.
+
+In [8]: # if there is no return value we get none.
+
+In [9]: def my_func():
+   ...:     return "hello world"
+   ...: 
+
+In [10]: print my_func()
+hello world
+
+In [11]: def my_func():
+    ...:     return "hello world"
+    ...:     print "my first line"
+    ...:     print "my second line"
+    ...:     print "my third line"
+    ...: 
+
+In [12]: print my_func()
+hello world
+
+In [13]: # return is not a print statement
+
+In [14]: # return marks the end of your function.
+
+In [15]: # return takes out the control out of function.
+
+In [17]: ## variabels(local/global) and namespaces
+
+In [18]: def my_func():
+    ...:     x = 5
+    ...:     return x
+    ...: 
+
+In [19]: print my_func()
+5
+
+In [20]: print x
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-20-0b640320f694> in <module>()
+----> 1 print x
+
+NameError: name 'x' is not defined
+
+In [21]: # any variable defined inside a function is restricted to the funciton.
+
+In [22]: # there is no syntax to access the local variables ( ex: x = 5)
+
+In [23]: # during the runtime of the function the variables are getting initialized.
+
+In [24]: def my_func():
+    ...:     x = 5
+    ...:     print locals()
+    ...:     return x
+    ...: 
+
+In [25]: print my_func()
+{'x': 5}
+5
+
+In [26]: # locals() is a function to display our local variables.
+
+In [27]: x = 1
+
+In [28]: def my_func():
+    ...:     print locals()
+    ...:     return x
+    ...: 
+
+In [29]: print my_func()
+{}
+1
+
+In [30]: # x is a global variable and is associated with global namesspace.
+
+In [31]: # if there is no value in local scope look into global scope.
+
+In [32]: x = 10
+
+In [33]: def my_func():
+    ...:     x = 2
+    ...:     print locals()
+    ...:     return x
+    ...: 
+
+In [34]: print my_func()
+{'x': 2}
+2
+
+In [35]: # a local scope is given a higher priority then global scope.
+
+In [36]: 
+
+
+In [37]: # globals() 
+
+In [38]: # A global namespace
+
+In [39]: globals()
+Out[39]: 
+{'In': ['',
+  u'def my_func():\n    print "hello there"\n    ',
+  u'print my_func,id(my_func)',
+--- truncated ---
+
+In [45]: # global
+
+In [46]: balance = 0
+
+In [47]: def my_deposit():
+    ...:     balance = balance + 1000
+    ...:     return balance
+    ...: 
+    ...: 
+
+In [48]: def my_withdraw():
+    ...:     balance = balance - 200
+    ...:     return balance
+    ...: 
+
+In [49]: my_deposit()
+---------------------------------------------------------------------------
+UnboundLocalError                         Traceback (most recent call last)
+<ipython-input-49-a78f69abe684> in <module>()
+----> 1 my_deposit()
+
+<ipython-input-47-170af8eccbd7> in my_deposit()
+      1 def my_deposit():
+----> 2     balance = balance + 1000
+      3     return balance
+      4 
+
+UnboundLocalError: local variable 'balance' referenced before assignment
+
+In [50]: # workaround
+
+In [51]: def my_withdraw():
+    ...:     balance = 0
+    ...:     balance = balance - 200
+    ...:     return balance
+    ...: 
+
+In [52]: def my_deposit():
+    ...:     balance=0
+    ...:     balance = balance + 1000
+    ...:     return balance
+    ...: 
+    ...: 
+
+In [53]: my_deposit()
+Out[53]: 1000
+
+In [54]: print balance
+0
+
+In [55]: my_withdraw()
+Out[55]: -200
+
+In [56]: # global hero
+
+
+In [58]: def my_withdraw():
+    ...:     global balance
+    ...:     balance = balance - 200
+    ...:     return balance
+    ...: 
+    ...: 
+
+## defining the function
+In [59]: def my_deposit():
+    ...:     global balance
+    ...:     print locals()
+    ...:     balance = balance + 1000
+    ...:     return balance
+    ...: 
+    ...: 
+    ...: 
+
+## calling the function.
+In [60]: my_deposit()
+{}
+Out[60]: 1000
+
+In [61]: print balance
+1000
+
+In [62]: my_withdraw()
+Out[62]: 800
+
+In [63]: print balance
+800
+
+In [64]: 
+
+In [65]: 
+
+In [65]: # functional parameters
+
+In [66]: def my_func(a,b):
+    ...:     return a + b
+    ...: 
+
+In [67]: print my_func("linux"," rocks")
+linux rocks
+
+In [68]: print my_func(" rocks","linux")
+ rockslinux
+
+In [69]: print my_func(" rocks","linux","as python")
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-69-b159056889fc> in <module>()
+----> 1 print my_func(" rocks","linux","as python")
+
+TypeError: my_func() takes exactly 2 arguments (3 given)
+
+In [70]: # key based arguments
+
+In [71]: print my_func(b=" rocks",a="linux")
+linux rocks
+
+In [72]: # default values
+
+In [73]: 
