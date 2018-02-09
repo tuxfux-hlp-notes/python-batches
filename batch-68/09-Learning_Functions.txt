@@ -245,4 +245,333 @@ linux rocks
 
 In [72]: # default values
 
-In [73]: 
+In [93]: # default values
+
+In [94]: def my_multi(num,limit=10):
+    ...:     for value in range(1,limit+1):
+    ...:         print "{} * {} = {}".format(num,value,num*value)
+    ...:         
+
+In [95]: my_multi(2)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+
+In [96]: def my_multi(num,limit=10):
+    ...:     for value in range(1,limit+1):
+    ...:         print "{0:2d} * {1:2d} = {2:3d}".format(num,value,num*value)
+    ...:         
+    ...:         
+
+In [97]: my_multi(2)
+ 2 *  1 =   2
+ 2 *  2 =   4
+ 2 *  3 =   6
+ 2 *  4 =   8
+ 2 *  5 =  10
+ 2 *  6 =  12
+ 2 *  7 =  14
+ 2 *  8 =  16
+ 2 *  9 =  18
+ 2 * 10 =  20
+
+In [98]: my_multi(2,5)
+ 2 *  1 =   2
+ 2 *  2 =   4
+ 2 *  3 =   6
+ 2 *  4 =   8
+ 2 *  5 =  10
+
+In [99]: my_multi(2,limit=5)
+ 2 *  1 =   2
+ 2 *  2 =   4
+ 2 *  3 =   6
+ 2 *  4 =   8
+ 2 *  5 =  10
+
+
+In [93]: # default values
+
+In [94]: def my_multi(num,limit=10):
+    ...:     for value in range(1,limit+1):
+    ...:         print "{} * {} = {}".format(num,value,num*value)
+    ...:         
+
+In [95]: my_multi(2)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+
+In [96]: def my_multi(num,limit=10):
+    ...:     for value in range(1,limit+1):
+    ...:         print "{0:2d} * {1:2d} = {2:3d}".format(num,value,num*value)
+    ...:         
+    ...:         
+
+In [97]: my_multi(2)
+ 2 *  1 =   2
+ 2 *  2 =   4
+ 2 *  3 =   6
+ 2 *  4 =   8
+ 2 *  5 =  10
+ 2 *  6 =  12
+ 2 *  7 =  14
+ 2 *  8 =  16
+ 2 *  9 =  18
+ 2 * 10 =  20
+
+In [98]: my_multi(2,5)
+ 2 *  1 =   2
+ 2 *  2 =   4
+ 2 *  3 =   6
+ 2 *  4 =   8
+ 2 *  5 =  10
+
+In [99]: my_multi(2,limit=5)
+ 2 *  1 =   2
+ 2 *  2 =   4
+ 2 *  3 =   6
+ 2 *  4 =   8
+ 2 *  5 =  10
+
+In [100]: def putty(hostname,port=22):
+     ...:     pass
+     ...: 
+
+In [101]: #  putty(google.com)
+
+In [102]: # putty(google.com,port=80)
+
+In [105]: # *
+
+In [106]: def my_add(a,b):
+     ...:     return a + b
+     ...: 
+
+In [107]: my_value = [11,22]
+
+In [108]: def my_add(my_value)
+  File "<ipython-input-108-5ac70d7d6016>", line 1
+    def my_add(my_value)
+                        ^
+SyntaxError: invalid syntax
+
+
+In [109]: my_add(my_value)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-109-1970b1cc4781> in <module>()
+----> 1 my_add(my_value)
+
+TypeError: my_add() takes exactly 2 arguments (1 given)
+
+In [110]: my_add(*my_value)
+Out[110]: 33
+
+In [111]: my_value=[11,22,33]
+
+In [112]: my_add(*my_value)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-112-90633cdc0007> in <module>()
+----> 1 my_add(*my_value)
+
+TypeError: my_add() takes exactly 2 arguments (3 given)
+
+In [113]: 
+
+## **
+
+In [114]: # **
+
+In [115]: def my_add(a,b):
+     ...:     return a + b
+     ...: 
+
+In [116]: 
+
+In [116]: my_value = {'a':11,'b':12}
+
+In [117]: my_add(**my_value)
+Out[117]: 23
+
+In [118]: for value in [[11,22],[33,44],[55,66]]:
+     ...:     print my_add(*value)
+     ...:     
+33
+77
+121
+
+In [119]: my_value={'a':11,'c':13}
+
+In [120]: my_add(**my_value)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-120-c08ad1d6bc31> in <module>()
+----> 1 my_add(**my_value)
+
+TypeError: my_add() got an unexpected keyword argument 'c'
+
+In [121]: ## task
+
+In [122]: # in python arguments passed to a function , is it passed as value or reference or an object ?
+
+In [124]: # *args
+
+In [125]: max?
+Docstring:
+max(iterable[, key=func]) -> value
+max(a, b, c, ...[, key=func]) -> value
+
+With a single iterable argument, return its largest item.
+With two or more arguments, return the largest argument.
+Type:      builtin_function_or_method
+
+In [126]: max(11,22)
+Out[126]: 22
+
+In [127]: max(11,33,5,32,42,12)
+Out[127]: 42
+
+In [128]: ## gmax
+
+In [129]: def gmax(*args):
+     ...:     return args
+     ...: 
+
+In [130]: print gmax(11,22)
+(11, 22)
+
+In [131]: print gmax(11,33,5,32,42,12)
+(11, 33, 5, 32, 42, 12)
+
+In [132]: def gmax(*args):
+     ...:     big = -1
+     ...:     for value in args:
+     ...:         if value > big:
+     ...:             big = value
+     ...:     return big
+     ...: 
+
+In [133]: print gmax(11,22)
+22
+
+In [134]: print gmax(11,33,5,32,42,12)
+42
+
+In [135]: 
+
+In [136]: # **kwargs
+
+In [137]: def callme(**kwargs):
+     ...:     return kwargs
+     ...: 
+
+In [138]: print callme('name'='kumar','gender'='male')
+  File "<ipython-input-138-1500de3eb955>", line 1
+    print callme('name'='kumar','gender'='male')
+SyntaxError: keyword can't be an expression
+
+
+In [139]: print callme(name='kumar',gender='male')
+{'gender': 'male', 'name': 'kumar'}
+
+In [140]: print callme(name='kumar',maiden='vijaya')
+{'name': 'kumar', 'maiden': 'vijaya'}
+
+In [141]: print callme(name='kumar',maiden='vijaya',home='KPHB')
+{'home': 'KPHB', 'name': 'kumar', 'maiden': 'vijaya'}
+
+In [142]: def callme(**kwargs):
+     ...:     if 'name' in kwargs:
+     ...:         print "my name is {}".format(kwargs['name'])
+     ...:     if 'gender' in kwargs:
+     ...:         print "my gender is {}".format(kwargs['gender'])
+     ...:     if 'maiden' in kwargs:
+     ...:         print "my maiden name is {}".format(kwargs['maiden'])
+     ...:     if 'home' in kwargs:
+     ...:         print "my home name is {}".format(kwargs['home'])
+     ...:         
+
+In [143]: print callme(name='kumar',maiden='vijaya',home='KPHB')
+my name is kumar
+my maiden name is vijaya
+my home name is KPHB
+None
+
+In [144]: print callme(name='kumar',maiden='vijaya')
+my name is kumar
+my maiden name is vijaya
+None
+
+In [145]: print callme(name='kumar',gender='male')
+my name is kumar
+my gender is male
+None
+
+In [147]: # function is a first class object
+
+In [148]: def my_add(a,b):
+     ...:     return a + b
+     ...: 
+
+In [149]: def my_sub(a,b):
+     ...:     return a - b
+     ...: 
+
+In [150]: def my_extra(my_func,a,b):
+     ...:     return my_func(a,b)
+     ...: 
+
+In [151]: print my_extra(my_add,11,12)
+23
+
+In [152]: print my_extra(my_sub,11,12)
+-1
+
+In [153]: ## try fibonacci series
+
+In [154]: ## try factorial of a number
+
+
+In [156]: ## function within a function
+
+In [157]: def my_upper():
+     ...:     x = 1
+     ...:     def my_lower():
+     ...:         return x
+     ...:     return my_lower()
+     ...: 
+
+In [158]: print my_upper() #1,error
+1
+
+In [159]: print my_lower() # 1,x,error
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-159-f43a2ce8f756> in <module>()
+----> 1 print my_lower() # 1,x,error
+
+NameError: name 'my_lower' is not defined
+
+In [160]: print x
+11
+
+In [161]: 
+
+
+

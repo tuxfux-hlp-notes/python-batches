@@ -4,3 +4,7 @@
 4) project: https://github.com/sambapython/python
 5) List comprehension: https://github.com/tuxfux-hlp/Python-examples/blob/master/lists/list_comprehension.txt
 6) Project: https://github.com/tuxfux-hlp-notes/Projects
+## function
+7) fibonacci series.
+8) factorial of a number.
+9) in python arguments passed to a function , is it passed as value or reference or an object ?
