@@ -573,5 +573,130 @@ In [160]: print x
 
 In [161]: 
 
+In [162]: ## functions witin a function
+
+In [163]: def upper():
+     ...:     x = 1
+     ...:     def lower():
+     ...:         return x
+     ...:     return lower
+     ...: 
+
+In [164]: def foo():
+     ...:     pass
+     ...: 
+
+In [165]: foo
+Out[165]: <function __main__.foo>
+
+In [166]: print foo
+<function foo at 0x7fb5e7ecc050>
+
+In [167]: inner = upper()
+
+In [168]: print inner
+<function lower at 0x7fb5e6c74938>
+
+In [169]: print inner()
+1
+
+In [170]: x
+Out[170]: 11
+
+In [171]: # when ever i define a function(lower),if i return it(return lower), it also remembers the value available to it 
+     ...: durings its defination time.
+
+In [172]: # function closures
+
+In [174]: # map,filter and lambda
+
+In [175]: map?
+Docstring:
+map(function, sequence[, sequence, ...]) -> list
+
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+Type:      builtin_function_or_method
+
+In [176]: def my_square(a):
+     ...:     return a * a
+     ...: 
+
+In [177]: my_square(2)
+Out[177]: 4
+
+In [178]: my_square(25)
+Out[178]: 625
+
+In [179]: my_square(23)
+Out[179]: 529
+
+In [180]: # when ever i get a return value, the fucntion is called true, else the function is called false.
+
+In [181]: map(my_square,(21,22,23,24,25,26))
+Out[181]: [441, 484, 529, 576, 625, 676]
+
+In [182]: # filter
+
+In [183]: filter?
+Docstring:
+filter(function or None, sequence) -> list, tuple, or string
+
+Return those items of sequence for which function(item) is true.  If
+function is None, return the items that are true.  If sequence is a tuple
+or string, return the same type, else return a list.
+Type:      builtin_function_or_method
+
+In [184]: def my_even(a):
+     ...:     if a % 2 == 0:
+     ...:         return 'even'
+     ...:     
+
+In [185]: my_even(2)
+Out[185]: 'even'
+
+In [186]: my_even(3)
+
+In [187]: print my_even(3)
+None
+
+In [188]: filter(my_even,range(11,21))
+Out[188]: [12, 14, 16, 18, 20]
+
+In [189]: # playing with map and filter
+
+In [190]: map(my_square,(21,22,23,24,25,26))
+Out[190]: [441, 484, 529, 576, 625, 676]
+
+In [191]: filter(my_square,(21,22,23,24,25,26))
+Out[191]: (21, 22, 23, 24, 25, 26)
+
+In [192]: filter(my_even,range(11,21))
+Out[192]: [12, 14, 16, 18, 20]
+
+In [193]: map(my_even,range(11,21))
+Out[193]: [None, 'even', None, 'even', None, 'even', None, 'even', None, 'even']
+
+In [194]: # lambda - creating a nameless function on fly..
+
+In [195]: map(lambda a:a*a,(21,22,23,24,25,26))
+Out[195]: [441, 484, 529, 576, 625, 676]
+
+In [196]: filter(lamdba a:a%2==0,range(11,21))
+  File "<ipython-input-196-cd9636a03abb>", line 1
+    filter(lamdba a:a%2==0,range(11,21))
+                  ^
+SyntaxError: invalid syntax
+
+
+In [197]: filter(lambda a:a%2==0,range(11,21))
+Out[197]: [12, 14, 16, 18, 20]
+
+In [198]: 
+
 
 

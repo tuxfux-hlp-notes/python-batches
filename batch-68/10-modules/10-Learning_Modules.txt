@@ -1,0 +1,427 @@
+Modules
+--------
+reusability of the code.
+
+P1 - f1,f2,f3
+P2 - f1,f2,f3,p1.f1
+
+Python 3.5.2+ (default, Sep 22 2016, 12:18:14) 
+[GCC 6.2.0 20160927] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> help()
+
+Welcome to Python 3.5's help utility!
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at http://docs.python.org/3.5/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type "quit".
+
+To get a list of available modules, keywords, symbols, or topics, type
+"modules", "keywords", "symbols", or "topics".  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as "spam", type "modules spam".
+
+help> modules
+
+Please wait a moment while I gather a list of all available modules...
+
+DEBUG:padme:metaclass(proxy_meta)(proxy, name='proxy')
+DEBUG:padme:proxy_meta.__new__ with name: 'proxy', bases: (<class 'padme.proxy'>,) (args: (), kwargs {})
+DEBUG:padme:function <function PatternProxy.__repr__ at 0x7fdc56f93598> marked as unproxied/direct
+DEBUG:padme:proxy_meta.__new__ with name: 'PatternProxy', bases: (<class 'padme.proxy'>,) (args: (), kwargs {})
+DEBUG:padme:proxy type 'PatternProxy' will pass-thru {'__repr__'}
+06-results          aifc                gzip                reprlib
+06-task1            antigravity         hashlib             requests
+06-task2            apparmor            heapq               resource
+08-task1            apport              hmac                results
+09-task1            apport_python_hook  hpmudext            rlcompleter
+AptUrl              apt                 html                runpy
+CDROM               apt_inst            html5lib            scanext
+CommandNotFound     apt_pkg             http                sched
+Crypto              aptdaemon           httplib2            second
+DLFCN               aptsources          idlelib             secretstorage
+DistUpgrade         argparse            idna                select
+HweSupportStatus    array               imaplib             selectors
+IN                  ast                 imghdr              sessioninstaller
+LanguageSelector    asynchat            imp                 setuptools
+LibAppArmor         asyncio             importlib           shelve
+NvidiaDetector      asyncore            inspect             shlex
+Onboard             atexit              io                  shutil
+PIL                 audioop             ipaddress           signal
+Quirks              base64              itertools           simplejson
+TYPES               bdb                 janitor             site
+UbuntuDrivers       big                 jinja2              sitecustomize
+UbuntuSystemService binascii            json                six
+UpdateManager       binhex              jwt                 smtpd
+__future__          bisect              keyring             smtplib
+_ast                blinker             keyword             sndhdr
+_bisect             brlapi              language_support_pkgs socket
+_bootlocale         bs4                 launchpadlib        socketserver
+_bz2                builtins            lib2to3             softwareproperties
+_cffi_backend       bz2                 linecache           speechd
+_codecs             cProfile            locale              speechd_config
+_codecs_cn          cairo               logging             spwd
+_codecs_hk          calendar            louis               sqlite3
+_codecs_iso2022     cgi                 lsb_release         sre_compile
+_codecs_jp          cgitb               lxml                sre_constants
+_codecs_kr          chardet             lzma                sre_parse
+_codecs_tw          checkbox_support    macpath             ssl
+_collections        chunk               macurl2path         stat
+_collections_abc    click               mailbox             statistics
+_compat_pickle      cmath               mailcap             string
+_compression        cmd                 mako                stringprep
+_crypt              code                market              struct
+_csv                codecs              markupsafe          subprocess
+_ctypes             codeop              marshal             sunau
+_ctypes_test        collections         math                symbol
+_curses             colorsys            mimetypes           symtable
+_curses_panel       compileall          mmap                sys
+_datetime           concurrent          modulefinder        sysconfig
+_dbm                configparser        multiprocessing     syslog
+_dbus_bindings      contextlib          netrc               systemd
+_dbus_glib_bindings copy                nis                 tabnanny
+_decimal            copyreg             nntplib             tarfile
+_dummy_thread       crypt               ntpath              telnetlib
+_elementtree        cryptography        nturl2path          tempfile
+_functools          csv                 numbers             termios
+_gdbm               ctypes              oauth               test
+_hashlib            cups                oauthlib            textwrap
+_heapq              cupsext             opcode              this
+_imp                cupshelpers         operator            threading
+_io                 curses              optparse            time
+_json               datetime            orca                timeit
+_locale             dbm                 os                  tkinter
+_lsprof             dbus                ossaudiodev         token
+_lzma               deb822              padme               tokenize
+_markupbase         debconf             parser              trace
+_md5                debian              pathlib             traceback
+_multibytecodec     debian_bundle       pcardext            tracemalloc
+_multiprocessing    decimal             pdb                 tty
+_opcode             defer               pexpect             turtle
+_operator           difflib             pickle              types
+_osx_support        dis                 pickletools         typing
+_pickle             distro_info         pipes               ufw
+_posixsubprocess    distro_info_test    pkg_resources       unicodedata
+_pydecimal          distutils           pkgutil             unittest
+_pyio               doctest             plainbox            uno
+_random             dummy_threading     platform            unohelper
+_sha1               easy_install        plistlib            urllib
+_sha256             email               poplib              urllib3
+_sha512             encodings           posix               usbcreator
+_signal             enum                posixpath           uu
+_sitebuiltins       errno               pprint              uuid
+_socket             faulthandler        problem_report      venv
+_sqlite3            fcntl               profile             virtualenv
+_sre                feedparser          pstats              wadllib
+_ssl                feedparser_sgmllib3 pty                 warnings
+_stat               filecmp             ptyprocess          wave
+_string             fileinput           pwd                 weakref
+_strptime           first               py_compile          webbrowser
+_struct             fnmatch             pyasn1              wsgiref
+_symtable           formatter           pyatspi             xdg
+_sysconfigdata      fpectl              pyclbr              xdiagnose
+_sysconfigdata_m    fractions           pycodestyle         xdrlib
+_testbuffer         ftplib              pydoc               xkit
+_testcapi           functools           pydoc_data          xlsxwriter
+_testimportmultiple gc                  pyexpat             xml
+_testmultiphase     genericpath         pyflakes            xmlrpc
+_thread             getopt              pygtkcompat         xxlimited
+_threading_local    getpass             pyparsing           xxsubtype
+_tracemalloc        gettext             queue               yaml
+_warnings           gi                  quopri              zipapp
+_weakref            glob                random              zipfile
+_weakrefset         grp                 re                  zipimport
+_yaml               guacamole           readline            zlib
+abc                 guess_number        reportlab           zope
+
+Enter any module name to get more help.  Or, type "modules spam" to search
+for modules whose name or summary contain the string "spam".
+
+help> quit()
+No Python documentation found for 'quit()'.
+Use help() to get the interactive help utility.
+Use help(str) for help on the str class.
+
+help> quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type "help(object)".  Executing "help('string')"
+has the same effect as typing a particular string at the help> prompt.
+>>> 
+>>> quit
+Use quit() or Ctrl-D (i.e. EOF) to exit
+>>> quit()
+
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import math
+
+In [2]: math.pi
+Out[2]: 3.141592653589793
+
+In [3]: math.pow?
+Docstring:
+pow(x, y)
+
+Return x**y (x to the power of y).
+Type:      builtin_function_or_method
+
+In [4]: math.pow(2,3)
+Out[4]: 8.0
+
+In [5]: # case II
+
+In [6]: import math as m
+
+In [7]: m.pi
+Out[7]: 3.141592653589793
+
+In [8]: m.pow(2,3)
+Out[8]: 8.0
+
+In [9]: # case III
+
+In [10]: from math import pi,pow
+
+In [11]: pow(2,3)
+Out[11]: 8.0
+
+In [12]: pi
+Out[12]: 3.141592653589793
+
+In [13]: # case IV
+
+In [14]: # dont try this at home or office
+
+In [15]: # from math import *
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: pwd
+Out[1]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules'
+
+In [2]: ls
+10-Learning_Modules.txt  first.py
+
+In [3]: import first as f
+
+In [4]: f.version
+Out[4]: 1.0
+
+In [5]: f.my_add?
+Signature: f.my_add(a, b)
+Docstring: this is adding numbers and strings.
+File:      ~/Documents/git_repos/python-batches/batch-68/10-modules/first.py
+Type:      function
+
+In [6]: f.my_add("linux"," rocks")
+Out[6]: 'linux rocks'
+
+In [7]: f.my_add("python",' too rocks')
+Out[7]: 'python too rocks'
+
+In [8]: f.my_sub(22,11)
+Out[8]: 11
+
+In [9]: f.my_sub(11,22)
+Out[9]: 11
+
+In [10]: f.version
+Out[10]: 1.0
+
+In [11]: import first as f
+
+In [12]: f.version
+Out[12]: 1.0
+
+In [13]: ls
+10-Learning_Modules.txt  first.py  first.pyc
+
+In [14]: reload(f)
+Out[14]: <module 'first' from 'first.py'>
+
+In [15]: f.version
+Out[15]: 2.0
+
+### use of __name__ and __main__
+
+In [1]: ls
+10-Learning_Modules.txt  first.py  first.pyc
+
+In [2]: import first as f
+Launching a missile.
+
+In [3]: def foo():
+   ...:     pass
+   ...: 
+
+In [4]: foo
+Out[4]: <function __main__.foo>
+
+In [5]: f.my_add
+Out[5]: <function first.my_add>
+
+In [6]: globals()
+Out[6]: 
+{'In': ['',
+  u"get_ipython().magic(u'ls ')",
+  u'import first as f',
+  u'def foo():\n    pass',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ 'Out': {4: <function __main__.foo>, 5: <function first.my_add>},
+ '_': <function first.my_add>,
+ '_4': <function __main__.foo>,
+ '_5': <function first.my_add>,
+ '__': <function __main__.foo>,
+ '___': '',
+ '__builtin__': <module '__builtin__' (built-in)>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': 'Automatically created module for IPython interactive environment',
+ '__name__': '__main__', **
+ '__package__': None,
+ '_dh': [u'/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules'],
+ '_exit_code': 0,
+ '_i': u'f.my_add',
+ '_i1': u'ls',
+ '_i2': u'import first as f',
+ '_i3': u'def foo():\n    pass',
+ '_i4': u'foo',
+ '_i5': u'f.my_add',
+ '_i6': u'globals()',
+ '_ih': ['',
+  u"get_ipython().magic(u'ls ')",
+  u'import first as f',
+  u'def foo():\n    pass',
+  u'foo',
+  u'f.my_add',
+  u'globals()'],
+ '_ii': u'foo',
+ '_iii': u'def foo():\n    pass',
+ '_oh': {4: <function __main__.foo>, 5: <function first.my_add>},
+ '_sh': <module 'IPython.core.shadowns' from '/usr/local/lib/python2.7/dist-packages/IPython/core/shadowns.pyc'>,
+ 'exit': <IPython.core.autocall.ExitAutocall at 0x7f1eae88c590>,
+ 'f': <module 'first' from 'first.py'>,
+ 'foo': <function __main__.foo>,
+ 'get_ipython': <bound method TerminalInteractiveShell.get_ipython of <IPython.terminal.interactiveshell.TerminalInteractiveShell object at 0x7f1eae8263d0>>,
+ 'quit': <IPython.core.autocall.ExitAutocall at 0x7f1eae88c590>}
+
+to avoid this i made a slight modification in my first.py
+
+
+# main
+if __name__ == '__main__':
+	print "Launching a missile."
+
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import first as f
+
+In [2]: f.
+           f.my_add   f.my_sub   
+           f.my_div   f.version  
+           f.my_multi            
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ls
+10-Learning_Modules.txt  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ python second.py 
+addition of two numbers is 23
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ mkdir extra
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ls
+10-Learning_Modules.txt  extra  first.py  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ mv first.py extra/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ls
+10-Learning_Modules.txt  extra  first.pyc  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ python second.py
+addition of two numbers is 23
+addition of two string is linuxrocks
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ rm -f first.pyc
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ python second.py
+Traceback (most recent call last):
+  File "second.py", line 2, in <module>
+    import first as f
+ImportError: No module named first
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ls
+10-Learning_Modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+
+---
+why is my second.py not working ?
+
+
+In [3]: import sys
+
+In [4]: sys.path
+Out[4]: 
+['',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [5]: sys.path.insert(0,'/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/extra')
+
+In [6]: sys.path
+Out[6]: 
+['/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/extra',
+ '',
+ '/usr/local/bin',
+ '/usr/lib/python2.7',
+ '/usr/lib/python2.7/plat-x86_64-linux-gnu',
+ '/usr/lib/python2.7/lib-tk',
+ '/usr/lib/python2.7/lib-old',
+ '/usr/lib/python2.7/lib-dynload',
+ '/home/khyaathi/.local/lib/python2.7/site-packages',
+ '/usr/local/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages',
+ '/usr/lib/python2.7/dist-packages/PILcompat',
+ '/usr/lib/python2.7/dist-packages/gtk-2.0',
+ '/usr/local/lib/python2.7/dist-packages/IPython/extensions',
+ '/home/khyaathi/.ipython']
+
+In [7]: 
+
+
