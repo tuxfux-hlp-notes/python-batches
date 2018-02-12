@@ -424,4 +424,230 @@ Out[6]:
 
 In [7]: 
 
+## modules
+reference:
+https://docs.python.org/2/tutorial/modules.html#packages
+
+1) i created a OS directory with lin,sol,aix,hpux under it.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ls
+10-Learning_Modules.txt  extra  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ mkdir OS
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ mkdir OS/{lin,sol,aix,hpux}
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+└── sol
+
+4 directories, 0 files
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+
+
+2) lets create first.py,second.py,third.py,fourth.py under the OS/lin folder.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ tree OS
+OS
+├── aix
+├── hpux
+├── lin
+│   ├── first.py
+│   ├── fourth.py
+│   ├── second.py
+│   └── third.py
+└── sol
+
+4 directories, 4 files
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+
+3) now go the OS folder and run ipython from there. we notice we are not able to import.
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/OS$ pwd
+/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/OS
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/OS$ ls
+aix  hpux  lin  sol
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/OS$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import lin
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+<ipython-input-1-cb672e599c2e> in <module>()
+----> 1 import lin
+
+ImportError: No module named lin
+
+In [2]: 
+
+4) Lets make our lin folder a package.S
+
+creat a __init__.py under the lin folder.
+when ever you import the lin folder , the first file which get touched is __init__.py
+
+lets udate the __init__.py with the following entries
+
+import first
+import second
+import third
+import fourth
+
+5) Now lets try to import the lin folder/package.
+
+In [2]: pwd
+Out[2]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/OS'
+
+In [3]: ls
+aix/  hpux/  lin/  sol/
+
+In [4]: import lin
+
+In [5]: lin.         
+             lin.first  lin.second                                      
+             lin.fourth lin.third                                       
+
+In [7]: lin.first.my_
+                      lin.first.my_first_lin1  lin.first.my_second_lin1 
+                      lin.first.my_fouth_lin1  lin.first.my_third_lin1  
+
+
+
+In [5]: lin.first.my_first_lin1()
+Out[5]: 'this is my first lin1 function.'
+
+In [6]: lin.first.my_second_lin1()
+Out[6]: 'this is my second lin1 function.'
+
+6) create the first.py,second.py,third.py and fourth.py under the sol folder now.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ cp OS/lin/*.py OS/sol/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+
+a) now rename all the lin in the .py files to sol.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ cd OS/sol/
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/OS/sol$ ls
+first.py  fourth.py  __init__.py  second.py  third.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/OS/sol$ sed -i 's#lin#sol#g' *.py
+
+b) also create the __init__.py file with following entries.
+import first
+import second
+import third
+
+7) lets import sol
+
+In [8]: pwd
+Out[8]: u'/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/OS'
+
+In [9]: ls
+aix/  hpux/  lin/  sol/
+
+In [10]: import sol
+
+### all the modules are loaded implicitly.
+In [11]: sol.
+              sol.first  
+              sol.second 
+              sol.third 
+
+In [11]: sol.first.my_
+                       sol.first.my_first_sol1  sol.first.my_second_sol1 
+                       sol.first.my_fouth_sol1  sol.first.my_third_sol1  
+                         
+
+
+In [11]: sol.first.my_first_sol1()
+Out[11]: 'this is my first sol1 function.'
+
+In [12]: sol.first.my_second_sol1()
+Out[12]: 'this is my second sol1 function.'
+
+## how about loading a module implicilty.
+
+In [13]: ## we are providing a new feature
+
+In [14]: from sol import fourth
+
+In [15]: sol.
+              sol.first  sol.second 
+              sol.fourth sol.third  
+
+reference:
+https://docs.python.org/2/distributing/index.html
+https://docs.python.org/2/installing/index.html
+https://docs.python.org/2/distutils/
+
+## installation of modules.
+
+#os level
+>> sudo apt-get install <modulename>
+# pip
+>> pip install <modulename>
+# easy_install
+>> easy_install <modulename>
+# setuptools
+
+https://pypi.python.org/pypi
+
+### Installation of python modules
+# pip install virtualenv
+reference: https://virtualenv.pypa.io/en/stable/installation/
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ virtualenv myenv
+New python executable in /home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/myenv/bin/python
+Installing setuptools, pip, wheel...done.
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ ls
+10-Learning_Modules.txt  extra  myenv  OS  second.py
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ source myenv/bin/activate
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ which python
+/home/khyaathi/Documents/git_repos/python-batches/batch-68/10-modules/myenv/bin/python
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ pip freeze
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ pip install excel
+Collecting excel
+Collecting xlrd (from excel)
+  Using cached xlrd-1.1.0-py2.py3-none-any.whl
+Installing collected packages: xlrd, excel
+Successfully installed excel-1.0.0 xlrd-1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ pip freeze
+excel==1.0.0
+xlrd==1.1.0
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+>>> quit()
+(myenv) khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ deactivate 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ python
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+[GCC 6.2.0 20160914] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import excel
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named excel
+>>> 
+>>> quit()
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules$ 
+
+## pydoc
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/extra$ pydoc first
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/extra$ pydoc math
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/extra$ pydoc sys
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/10-modules/extra$ 
+
+
 
