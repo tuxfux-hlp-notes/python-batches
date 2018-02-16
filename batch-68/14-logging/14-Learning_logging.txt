@@ -1,0 +1,105 @@
+Logging
+---------
+
+java - log4j
+perl - log4j
+python - logging
+
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-68# head /var/log/syslog
+Feb  2 18:40:11 khyaathipython rsyslogd: [origin software="rsyslogd" swVersion="8.16.0" x-pid="618" x-info="http://www.rsyslog.com"] rsyslogd was HUPed
+Feb  2 18:40:23 khyaathipython anacron[611]: Job `cron.daily' terminated
+Feb  2 18:42:33 khyaathipython sublime_text[2908]: Source ID 8466 was not found when attempting to remove it
+Feb  2 18:42:35 khyaathipython sublime_text[2908]: Source ID 9331 was not found when attempting to remove it
+Feb  2 18:42:36 khyaathipython sublime_text[2908]: Source ID 9362 was not found when attempting to remove it
+Feb  2 18:42:46 khyaathipython sublime_text[2908]: Source ID 9366 was not found when attempting to remove it
+Feb  2 18:43:39 khyaathipython sublime_text[2908]: Source ID 15326 was not found when attempting to remove it
+Feb  2 18:43:41 khyaathipython sublime_text[2908]: Source ID 16216 was not found when attempting to remove it
+Feb  2 18:45:30 khyaathipython sublime_text[2908]: Source ID 16220 was not found when attempting to remove it
+Feb  2 18:46:00 khyaathipython sublime_text[2908]: Error loading theme icon 'edit-find' for stock: Fatal error reading PNG image file: bad parameters to zlib
+
+khyaathi@khyaathipython:~/Documents/git_repos/python-batches/batch-68/13-debugging$ ipython
+Python 2.7.12+ (default, Sep 17 2016, 12:08:02) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.5.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]: import logging as l
+
+In [2]: l.
+           l.addLevelName       l.DEBUG              l.getLevelName       l.logThreads         l.StreamHandler      
+           l.atexit             l.debug              l.getLogger          l.makeLogRecord      l.sys                
+           l.BASIC_FORMAT       l.disable            l.getLoggerClass     l.Manager            l.thread             
+           l.basicConfig        l.error              l.Handler            l.NOTSET             l.threading          
+           l.BufferingFormatter l.ERROR              l.info               l.NullHandler        l.time               
+           l.captureWarnings    l.exception          l.INFO               l.os                 l.traceback          
+           l.codecs             l.FATAL              l.log                l.PlaceHolder        l.warn               
+           l.collections        l.fatal              l.Logger             l.raiseExceptions    l.WARN               
+           l.CRITICAL           l.FileHandler        l.LoggerAdapter      l.root               l.WARNING            
+           l.critical           l.Filter             l.logMultiprocessing l.RootLogger         l.warning            
+           l.cStringIO          l.Filterer           l.logProcesses       l.setLoggerClass     l.warnings           
+           l.currentframe       l.Formatter          l.LogRecord          l.shutdown           l.weakref            
+
+
+# logging functions -> severity
+
+logging.debug -> logging.DEBUG
+logging.info -> logging.INFO
+logging.warning -> logging.WARNING
+logging.error -> logging.ERROR
+logging.critical -> logging.CRITICAL
+
+
+logging.debug -> logging.DEBUG
+
+oot@khyaathipython:~/Documents/git_repos/python-batches/batch-68# ssh -v localhost
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host localhost port 22: Connection refused
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-68# ssh -vv localhost
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: resolving "localhost" port 22
+debug2: ssh_connect_direct: needpriv 0
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host localhost port 22: Connection refused
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-68# ssh -vvv localhost
+OpenSSH_7.3p1 Ubuntu-1, OpenSSL 1.0.2g  1 Mar 2016
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug2: resolving "localhost" port 22
+debug2: ssh_connect_direct: needpriv 0
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: connect to address 127.0.0.1 port 22: Connection refused
+ssh: connect to host localhost port 22: Connection refused
+
+
+- logging.info -> logging.INFO
+
+root@khyaathipython:~/Documents/git_repos/python-batches/batch-68# ssh localhost
+ssh: connect to host localhost port 22: Connection refused
+
+logging.warning -> logging.WARNING
+
+ex: two raid level disks
+disk is getting filled up and its 80% full.
+
+logging.error -> logging.ERROR
+
+ex: two raid level disks
+- disk is getting filled up and its 90% full.
+- one of the disk is gone bad.
+
+logging.critical -> logging.CRITICAL
+
+ex: two raid level disks
+- disk is getting filled up and its 90% full.
+- two of the disk is gone bad.

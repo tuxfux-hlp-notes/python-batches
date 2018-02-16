@@ -1,0 +1,6 @@
+Fri Feb 16 19:26:33 2018 - root - INFO - Your disk looks healthy at 10.
+Fri Feb 16 19:27:19 2018 - root - INFO - Your disk looks healthy at 45.
+Fri Feb 16 19:27:23 2018 - root - WARNING - Buddy!! your disk is getting fat - 67.
+Fri Feb 16 19:27:26 2018 - root - ERROR - Buddy!! you disk is feeling sick - 89.
+Fri Feb 16 19:27:30 2018 - root - CRITICAL - Buddy!! you disk is dead - 98.
+Fri Feb 16 19:27:33 2018 - root - INFO - Your disk looks healthy at 10.
